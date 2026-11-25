@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/sap-successfactors/" },
   description: "SAP SuccessFactors services: integrate employee data, recruitment, performance, and development to manage your workforce from hire to retire.",
   openGraph: {
-    title: "SAP SuccessFactors Services | Support Studio Technologies",
+    title: "SAP SuccessFactors Services | Ascendus",
     description: "SAP SuccessFactors services: integrate employee data, recruitment, performance, and development to manage your workforce from hire to retire.",
     url: "/services/sap-successfactors/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "SAP SuccessFactors Services",
 };

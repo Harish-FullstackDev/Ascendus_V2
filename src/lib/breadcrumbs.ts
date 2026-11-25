@@ -51,7 +51,7 @@ export const ROUTE_LABELS: Record<string, string> = {
   cookies: "Cookie Policy",
   disclaimer: "Disclaimer",
   privacyCommitment: "Privacy Commitment",
-  "sst-partner": "SST Partner Program",
+  "sst-partner": "Ascendus Partner Program",
   "sst-errors": "Errors",
   trustcenter: "Trust Center",
   whitepapers: "Whitepapers",

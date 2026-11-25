@@ -47,7 +47,7 @@ export default function IotServices() {
                 className="flex flex-col items-start sm:items-center gap-2 max-w-[900px] mx-auto text-left sm:text-center self-start sm:self-auto"
             >
                 <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
-                    IoT Services Driving <br className="sm:hidden" />SST&apos;s <span className="text-[#2D8EC5]">Digital Transformation</span>
+                    IoT Services Driving <br className="sm:hidden" />Ascendus&apos;s <span className="text-[#2D8EC5]">Digital Transformation</span>
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     The ways connected devices and their data put your operations to work.

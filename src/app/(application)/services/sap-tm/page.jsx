@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/sap-tm/" },
   description: "SAP T&M tracks project costs and resources accurately, integrates with billing systems and gives real-time insights for project and financial control.",
   openGraph: {
-    title: "SAP Time & Materials (T&M) | Support Studio Technologies",
+    title: "SAP Time & Materials (T&M) | Ascendus",
     description: "SAP T&M tracks project costs and resources accurately, integrates with billing systems and gives real-time insights for project and financial control.",
     url: "/services/sap-tm/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "SAP Time & Materials (T&M)",
 };

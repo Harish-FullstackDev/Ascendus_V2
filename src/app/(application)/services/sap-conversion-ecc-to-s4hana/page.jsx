@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/sap-conversion-ecc-to-s4hana/" },
   description: "SAP ECC to S/4HANA conversion is essential for modernizing your ERP system, leveraging real-time analytics, improved performance, and simplified data models.",
   openGraph: {
-    title: "SAP ECC to S/4HANA Conversion | Support Studio Technologies",
+    title: "SAP ECC to S/4HANA Conversion | Ascendus",
     description: "SAP ECC to S/4HANA conversion is essential for modernizing your ERP system, leveraging real-time analytics, improved performance, and simplified data models.",
     url: "/services/sap-conversion-ecc-to-s4hana/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "SAP ECC to S/4HANA Conversion",
 };

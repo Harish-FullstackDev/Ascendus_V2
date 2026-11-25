@@ -4,7 +4,7 @@
 export const INTRO = {
     title: "Step into the digital realm with our",
     titleAccent: "innovative services",
-    body: "Our team is committed to providing an unparalleled experience for our clients. With Support Studio, you can anticipate outstanding customer service, cutting-edge solutions, and a dedication to achieving tangible results for your business.",
+    body: "Our team is committed to providing an unparalleled experience for our clients. With Ascendus, you can anticipate outstanding customer service, cutting-edge solutions, and a dedication to achieving tangible results for your business.",
 };
 
 export const CATEGORIES = [

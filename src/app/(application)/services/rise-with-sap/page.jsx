@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/rise-with-sap/" },
   description: "RISE with SAP implementation services: integrate and manage finances, operations, and customer relationships through the SAP S/4HANA ERP suite in the cloud.",
   openGraph: {
-    title: "RISE with SAP | Support Studio Technologies",
+    title: "RISE with SAP | Ascendus",
     description: "RISE with SAP implementation services: integrate and manage finances, operations, and customer relationships through the SAP S/4HANA ERP suite in the cloud.",
     url: "/services/rise-with-sap/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "RISE with SAP",
 };

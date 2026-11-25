@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/amazon-web-services/" },
   description: "Amazon Web Services from certified solutions architects: EC2, S3, RDS, Lambda, VPC and CloudFront, designed for scalability, security and cost efficiency.",
   openGraph: {
-    title: "Amazon Web Services | Support Studio Technologies",
+    title: "Amazon Web Services | Ascendus",
     description: "Amazon Web Services from certified solutions architects: EC2, S3, RDS, Lambda, VPC and CloudFront, designed for scalability, security and cost efficiency.",
     url: "/services/amazon-web-services/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Amazon Web Services",
 };

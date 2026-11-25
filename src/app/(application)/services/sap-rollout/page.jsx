@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/sap-rollout/" },
   description: "SAP Rollout services for unified system deployment across locations, optimizing processes, improving decision-making and driving operational efficiency.",
   openGraph: {
-    title: "SAP Rollout | Support Studio Technologies",
+    title: "SAP Rollout | Ascendus",
     description: "SAP Rollout services for unified system deployment across locations, optimizing processes, improving decision-making and driving operational efficiency.",
     url: "/services/sap-rollout/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "SAP Rollout",
 };

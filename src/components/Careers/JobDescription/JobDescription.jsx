@@ -23,10 +23,10 @@ const SUB_NAV = [
 ];
 
 const ABOUT_SST =
-    "Support Studio Technologies (SST) designs, builds and runs enterprise technology for organisations across India and the GCC: SAP transformation, cloud and infrastructure, data and AI, digital engineering, cybersecurity and managed services, delivered by one accountable team.";
+    "Ascendus designs, builds and runs enterprise technology for organisations across India and the GCC: SAP transformation, cloud and infrastructure, data and AI, digital engineering, cybersecurity and managed services, delivered by one accountable team.";
 
 const PAYMENT_NOTICE =
-    "Support Studio Technologies never asks candidates for payment at any stage of the hiring process. Apply only through this website or the SST careers portal, and report suspicious offers to info@isupportz.com.";
+    "Ascendus never asks candidates for payment at any stage of the hiring process. Apply only through this website or the Ascendus careers portal, and report suspicious offers to info@isupportz.com.";
 
 // Same horizontal frame as the reference: 64px side margins at desktop.
 const FRAME = "mx-auto w-full max-w-[1440px] px-4 sm:px-8 lg:px-16";
@@ -161,7 +161,7 @@ export default function JobDescription({ job, otherJobs = [] }) {
             items: job.qualifications,
         },
         {
-            title: "About SST",
+            title: "About Ascendus",
             content: (
                 <p>
                     {ABOUT_SST}{" "}

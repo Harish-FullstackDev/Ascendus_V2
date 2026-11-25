@@ -4,12 +4,12 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/legal/cookies/" },
-  description: "How Support Studio Technologies uses cookies and similar technologies on this site, what each category does, and how to manage your preferences.",
+  description: "How Ascendus uses cookies and similar technologies on this site, what each category does, and how to manage your preferences.",
   openGraph: {
-    title: "Cookie Policy | Support Studio Technologies",
-    description: "How Support Studio Technologies uses cookies and similar technologies on this site, what each category does, and how to manage your preferences.",
+    title: "Cookie Policy | Ascendus",
+    description: "How Ascendus uses cookies and similar technologies on this site, what each category does, and how to manage your preferences.",
     url: "/legal/cookies/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Cookie Policy",
 };

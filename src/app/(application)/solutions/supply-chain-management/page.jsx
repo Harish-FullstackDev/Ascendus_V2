@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/solutions/supply-chain-management/" },
   description: "SAP Supply Chain Management: an integrated supply chain solution with robust optimization tools and advanced logistics and planning capabilities.",
   openGraph: {
-    title: "Supply Chain Management | Support Studio Technologies",
+    title: "Supply Chain Management | Ascendus",
     description: "SAP Supply Chain Management: an integrated supply chain solution with robust optimization tools and advanced logistics and planning capabilities.",
     url: "/solutions/supply-chain-management/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Supply Chain Management",
 };

@@ -6,7 +6,7 @@
 import { hrmsSelect } from "@/lib/hrmsClient";
 
 const PUBLISHED = "published";
-const COMPANY = "Support Studio Technologies";
+const COMPANY = "Ascendus";
 
 const HRMS_URL = (process.env.NEXT_PUBLIC_HRMS_URL || "").replace(/\/$/, "");
 

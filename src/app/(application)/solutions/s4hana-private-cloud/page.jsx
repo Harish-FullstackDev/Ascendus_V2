@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/solutions/s4hana-private-cloud/" },
   description: "SAP S/4HANA Private Cloud: cloud ERP in a dedicated environment, with greater control over data privacy, security and compliance, and tailored deployment.",
   openGraph: {
-    title: "SAP S/4HANA Private Cloud | Support Studio Technologies",
+    title: "SAP S/4HANA Private Cloud | Ascendus",
     description: "SAP S/4HANA Private Cloud: cloud ERP in a dedicated environment, with greater control over data privacy, security and compliance, and tailored deployment.",
     url: "/solutions/s4hana-private-cloud/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "SAP S/4HANA Private Cloud",
 };

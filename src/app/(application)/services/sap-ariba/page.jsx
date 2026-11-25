@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/sap-ariba/" },
   description: "SAP Ariba services: simplify procurement, enhance supplier collaboration, and gain real-time insights for smarter, data-driven decisions.",
   openGraph: {
-    title: "SAP Ariba | Support Studio Technologies",
+    title: "SAP Ariba | Ascendus",
     description: "SAP Ariba services: simplify procurement, enhance supplier collaboration, and gain real-time insights for smarter, data-driven decisions.",
     url: "/services/sap-ariba/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "SAP Ariba",
 };

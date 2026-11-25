@@ -25,7 +25,7 @@ export default function AmsQualityPrinciple() {
                 <div className="flex flex-col gap-2">
                     <h2 className="text-white text-2xl sm:text-[28px] font-semibold">Quality &amp; Assurance</h2>
                     <p className="text-white/85 text-base sm:text-lg font-light">
-                        The standard every SST support ticket is held to.
+                        The standard every Ascendus support ticket is held to.
                     </p>
                 </div>
 

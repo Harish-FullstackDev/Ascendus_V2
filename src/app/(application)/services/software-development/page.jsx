@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/software-development/" },
   description: "Software development services: custom software, web and mobile apps, integration, and ongoing support that streamline processes and drive business growth.",
   openGraph: {
-    title: "Software Development | Support Studio Technologies",
+    title: "Software Development | Ascendus",
     description: "Software development services: custom software, web and mobile apps, integration, and ongoing support that streamline processes and drive business growth.",
     url: "/services/software-development/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Software Development",
 };

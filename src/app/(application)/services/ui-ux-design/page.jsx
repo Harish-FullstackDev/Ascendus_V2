@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/ui-ux-design/" },
   description: "UI/UX design services: user research, wireframing, prototyping, visual design and usability testing for intuitive, user-centric digital experiences.",
   openGraph: {
-    title: "UI/UX Design | Support Studio Technologies",
+    title: "UI/UX Design | Ascendus",
     description: "UI/UX design services: user research, wireframing, prototyping, visual design and usability testing for intuitive, user-centric digital experiences.",
     url: "/services/ui-ux-design/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "UI/UX Design",
 };

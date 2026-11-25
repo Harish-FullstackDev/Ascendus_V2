@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/full-stack-development/" },
   description: "Full-stack development services: end-to-end web solutions that pair advanced front-end interfaces with robust back-end systems for performance and UX.",
   openGraph: {
-    title: "Full Stack Development | Support Studio Technologies",
+    title: "Full Stack Development | Ascendus",
     description: "Full-stack development services: end-to-end web solutions that pair advanced front-end interfaces with robust back-end systems for performance and UX.",
     url: "/services/full-stack-development/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Full Stack Development",
 };

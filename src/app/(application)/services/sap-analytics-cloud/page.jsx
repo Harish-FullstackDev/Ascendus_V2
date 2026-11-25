@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/sap-analytics-cloud/" },
   description: "SAP Analytics Cloud (SAC) services: combine business intelligence, planning, and predictive analytics to turn data into actionable insights.",
   openGraph: {
-    title: "SAP Analytics Cloud Services | Support Studio Technologies",
+    title: "SAP Analytics Cloud Services | Ascendus",
     description: "SAP Analytics Cloud (SAC) services: combine business intelligence, planning, and predictive analytics to turn data into actionable insights.",
     url: "/services/sap-analytics-cloud/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "SAP Analytics Cloud Services",
 };

@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/case-studies/" },
   description: "Documented delivery evidence from enterprise technology programs, published with the client's approval and a stated measurement basis.",
   openGraph: {
-    title: "Client Case Studies | Support Studio Technologies",
+    title: "Client Case Studies | Ascendus",
     description: "Documented delivery evidence from enterprise technology programs, published with the client's approval and a stated measurement basis.",
     url: "/case-studies/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Client Case Studies",
 };

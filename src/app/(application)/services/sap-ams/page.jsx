@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/sap-ams/" },
   description: "SAP AMS reduces costs, mitigates risks, and ensures smooth operations with tailored support and maintenance for efficient SAP technology management.",
   openGraph: {
-    title: "SAP AMS Application Management | Support Studio Technologies",
+    title: "SAP AMS Application Management | Ascendus",
     description: "SAP AMS reduces costs, mitigates risks, and ensures smooth operations with tailored support and maintenance for efficient SAP technology management.",
     url: "/services/sap-ams/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "SAP AMS Application Management",
 };

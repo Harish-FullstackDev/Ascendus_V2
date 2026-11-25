@@ -4,12 +4,12 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/solutions/" },
-  description: "SAP ERP, business technology, CRM, finance, HCM, spend and supply chain solutions from Support Studio Technologies.",
+  description: "SAP ERP, business technology, CRM, finance, HCM, spend and supply chain solutions from Ascendus.",
   openGraph: {
-    title: "Solutions | Support Studio Technologies",
-    description: "SAP ERP, business technology, CRM, finance, HCM, spend and supply chain solutions from Support Studio Technologies.",
+    title: "Solutions | Ascendus",
+    description: "SAP ERP, business technology, CRM, finance, HCM, spend and supply chain solutions from Ascendus.",
     url: "/solutions/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Solutions",
 };

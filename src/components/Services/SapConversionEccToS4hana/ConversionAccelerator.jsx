@@ -128,7 +128,7 @@ export default function ConversionAccelerator() {
                 className="flex flex-col items-start sm:items-center gap-2 text-left sm:text-center self-start sm:self-auto mb-10 sm:mb-16 w-full max-w-[860px] mx-auto"
             >
                 <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
-                    The Role of the S/4HANA <span className="text-[#2D8EC5]">Conversion Accelerator</span> at SST
+                    The Role of the S/4HANA <span className="text-[#2D8EC5]">Conversion Accelerator</span> at Ascendus
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Nine accelerator components that shorten the path from ECC to a working S/4HANA system.

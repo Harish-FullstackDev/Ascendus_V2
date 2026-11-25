@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/microsoft-dynamics-365/" },
   description: "Microsoft Dynamics 365 Business Central implementation using the Microsoft Sure Step methodology, with an optimal strategy and guided setup assistance.",
   openGraph: {
-    title: "Microsoft Dynamics 365 Business Central Implementation | Support Studio Technologies",
+    title: "Microsoft Dynamics 365 Business Central Implementation | Ascendus",
     description: "Microsoft Dynamics 365 Business Central implementation using the Microsoft Sure Step methodology, with an optimal strategy and guided setup assistance.",
     url: "/services/microsoft-dynamics-365/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Microsoft Dynamics 365",
 };

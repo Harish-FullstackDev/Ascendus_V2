@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/ai-ml/" },
   description: "AI & Machine Learning services: NLP, computer vision, predictive analytics, recommendation systems, RPA and chatbots that turn data into smarter decisions.",
   openGraph: {
-    title: "AI & Machine Learning | Support Studio Technologies",
+    title: "AI & Machine Learning | Ascendus",
     description: "AI & Machine Learning services: NLP, computer vision, predictive analytics, recommendation systems, RPA and chatbots that turn data into smarter decisions.",
     url: "/services/ai-ml/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "AI & Machine Learning",
 };

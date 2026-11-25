@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/robotic-process-automation/" },
   description: "Robotic Process Automation (RPA) services: data entry, workflow, onboarding, invoice processing, reporting and chatbot automation that cut errors.",
   openGraph: {
-    title: "Robotic Process Automation | Support Studio Technologies",
+    title: "Robotic Process Automation | Ascendus",
     description: "Robotic Process Automation (RPA) services: data entry, workflow, onboarding, invoice processing, reporting and chatbot automation that cut errors.",
     url: "/services/robotic-process-automation/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Robotic Process Automation",
 };

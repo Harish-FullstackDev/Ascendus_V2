@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
             authors: report.author ? [report.author] : undefined,
             images: report.cover_image
                 ? [{ url: report.cover_image, width: 1200, height: 630, alt: report.title }]
-                : [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+                : [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
         },
     };
 }

@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/sap-migration/" },
   description: "SAP migration services that update your systems, improve functionality and data integrity, and align SAP with modern business needs for sustainable growth.",
   openGraph: {
-    title: "SAP Migration | Support Studio Technologies",
+    title: "SAP Migration | Ascendus",
     description: "SAP migration services that update your systems, improve functionality and data integrity, and align SAP with modern business needs for sustainable growth.",
     url: "/services/sap-migration/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "SAP Migration",
 };

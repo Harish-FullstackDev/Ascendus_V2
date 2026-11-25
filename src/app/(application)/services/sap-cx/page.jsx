@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/sap-cx/" },
   description: "SAP CX services: integrate sales, marketing, commerce, and service into a unified solution for personalized, seamless customer experiences.",
   openGraph: {
-    title: "SAP CX | Support Studio Technologies",
+    title: "SAP CX | Ascendus",
     description: "SAP CX services: integrate sales, marketing, commerce, and service into a unified solution for personalized, seamless customer experiences.",
     url: "/services/sap-cx/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "SAP CX",
 };

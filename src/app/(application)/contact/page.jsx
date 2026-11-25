@@ -6,12 +6,12 @@ export const metadata = {
   alternates: { canonical: "/contact/" },
   description: "Route your enquiry to the right team — new engagements, existing clients, partnerships, careers or media — with a stated response time.",
   openGraph: {
-    title: "Contact Support Studio Technologies",
+    title: "Contact Ascendus",
     description: "Route your enquiry to the right team — new engagements, existing clients, partnerships, careers or media — with a stated response time.",
     url: "/contact/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
-  title: { absolute: "Contact Support Studio Technologies" },
+  title: { absolute: "Contact Ascendus" },
 };
 
 export default function Page() {

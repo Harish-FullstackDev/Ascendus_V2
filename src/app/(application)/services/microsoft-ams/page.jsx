@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/microsoft-ams/" },
   description: "Microsoft Application & Management Services: certified end-to-end management that monitors, maintains and optimizes business applications for reliability.",
   openGraph: {
-    title: "Microsoft Application & Management Services | Support Studio Technologies",
+    title: "Microsoft Application & Management Services | Ascendus",
     description: "Microsoft Application & Management Services: certified end-to-end management that monitors, maintains and optimizes business applications for reliability.",
     url: "/services/microsoft-ams/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Microsoft AMS",
 };

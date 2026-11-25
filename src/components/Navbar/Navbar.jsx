@@ -231,7 +231,7 @@ const Navbar = () => {
                   }
                 `}
               />
-              {/* Left Logo Area with SST and SAP logos */}
+              {/* Left Logo Area with Ascendus and SAP logos */}
               {/* <div className="flex items-center gap-3 px-4 sm:px-8 lg:px-10">
                 <Link
                   href="/"
@@ -242,7 +242,7 @@ const Navbar = () => {
               {/* <div className="relative z-10 flex-shrink-0">
                     <Image
                       src={logo3}
-                      alt="SST Icon"
+                      alt="Ascendus Icon"
                       width={124}
                       height={101}
                       className="h-8.5 w-auto object-contain transition-all duration-300 ease-out"
@@ -266,7 +266,7 @@ const Navbar = () => {
                   >
                     <Image
                       src={isNavbarLight ? logo5 : logo4}
-                      alt="SST"
+                      alt="Ascendus"
                       width={344}
                       height={60}
                       className="block h-6 w-auto max-w-none object-contain"
@@ -302,7 +302,7 @@ const Navbar = () => {
                   <div className="relative z-10 flex-shrink-0">
                     <Image
                       src={isNavbarLight ? logo2 : logo}
-                      alt="Support Studio Technologies logo"
+                      alt="Ascendus logo"
                       width={180}
                       height={40}
                       className="h-8 sm:h-10 w-auto object-contain transition-all duration-300 ease-out"
@@ -546,7 +546,7 @@ const Navbar = () => {
             <Link href="/" onClick={closeMenu} className="flex items-center p-2">
               <Image
                 src={isNavbarLight ? logo2 : logo}
-                alt="Support Studio Technologies logo"
+                alt="Ascendus logo"
                 className="h-8 sm:h-10 w-auto"
                 width={180}
                 height={40}
@@ -578,7 +578,7 @@ const Navbar = () => {
           <Link href="/" onClick={closeMenu}>
             <Image
               src={logo2}
-              alt="Support Studio Technologies logo"
+              alt="Ascendus logo"
               className="h-8 sm:h-10 w-auto"
               width={180}
               height={40}

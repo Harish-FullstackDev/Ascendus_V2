@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/microsoft-rollout/" },
   description: "Microsoft Rollout Services by certified professionals: structured deployment planning, seamless integration and change management for a low-risk rollout.",
   openGraph: {
-    title: "Microsoft Rollout Services | Support Studio Technologies",
+    title: "Microsoft Rollout Services | Ascendus",
     description: "Microsoft Rollout Services by certified professionals: structured deployment planning, seamless integration and change management for a low-risk rollout.",
     url: "/services/microsoft-rollout/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Microsoft Rollout",
 };

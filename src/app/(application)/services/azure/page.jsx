@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/azure/" },
   description: "Microsoft Azure services from certified cloud architects: virtual machines, storage, Azure SQL, Cosmos DB, AKS, identity, Functions and Logic Apps.",
   openGraph: {
-    title: "Azure | Support Studio Technologies",
+    title: "Azure | Ascendus",
     description: "Microsoft Azure services from certified cloud architects: virtual machines, storage, Azure SQL, Cosmos DB, AKS, identity, Functions and Logic Apps.",
     url: "/services/azure/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Azure",
 };

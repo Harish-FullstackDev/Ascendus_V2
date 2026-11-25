@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/big-data/" },
   description: "Big Data services: data storage, integration, visualization, analytics, processing and management for real-time, data-driven business decisions.",
   openGraph: {
-    title: "Big Data | Support Studio Technologies",
+    title: "Big Data | Ascendus",
     description: "Big Data services: data storage, integration, visualization, analytics, processing and management for real-time, data-driven business decisions.",
     url: "/services/big-data/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Big Data",
 };

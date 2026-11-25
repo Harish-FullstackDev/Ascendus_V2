@@ -4,12 +4,12 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/sst-partner/" },
-  description: "Apply to the Support Studio Technologies partner program — the qualification criteria, engagement model and next steps for prospective partners.",
+  description: "Apply to the Ascendus partner program — the qualification criteria, engagement model and next steps for prospective partners.",
   openGraph: {
-    title: "Partner Program | Support Studio Technologies",
-    description: "Apply to the Support Studio Technologies partner program — the qualification criteria, engagement model and next steps for prospective partners.",
+    title: "Partner Program | Ascendus",
+    description: "Apply to the Ascendus partner program — the qualification criteria, engagement model and next steps for prospective partners.",
     url: "/sst-partner/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Partner Program",
 };

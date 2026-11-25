@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/cyber-security/" },
   description: "Cybersecurity services: threat detection and response, network security, endpoint protection, IAM, data encryption and incident response planning.",
   openGraph: {
-    title: "Cyber Security | Support Studio Technologies",
+    title: "Cyber Security | Ascendus",
     description: "Cybersecurity services: threat detection and response, network security, endpoint protection, IAM, data encryption and incident response planning.",
     url: "/services/cyber-security/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Cyber Security",
 };

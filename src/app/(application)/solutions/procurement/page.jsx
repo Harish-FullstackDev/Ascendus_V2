@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/solutions/procurement/" },
   description: "SAP Supply Spend Management procurement: strategic sourcing, streamlined procurement processes and contract lifecycle management for spend visibility.",
   openGraph: {
-    title: "Procurement | Support Studio Technologies",
+    title: "Procurement | Ascendus",
     description: "SAP Supply Spend Management procurement: strategic sourcing, streamlined procurement processes and contract lifecycle management for spend visibility.",
     url: "/solutions/procurement/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
   },
   title: "Procurement",
 };
