@@ -1,0 +1,57 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import overviewPhoto from "@/assets/Services/CyberSecurity/overview.webp";
+import { INTRO_TAGS_CLASS, INTRO_TAG_CLASS } from "@/components/CommonComponents/introTags";
+
+const CREDENTIALS = [
+    "Cybersecurity Specialist",
+    "Defender of Digital Assets",
+    "Certified Security Architect",
+];
+
+export default function CyberOverview() {
+    return (
+        <section className="w-full px-8 py-10 sm:px-[64px] sm:py-[64px] bg-[#f3f6f9]">
+            <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-12 xl:gap-[143px]">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="w-full lg:flex-1 lg:min-w-0 lg:max-w-[700px] flex flex-col gap-2"
+                >
+                    <p className="text-[#2d8ec5] text-base sm:text-lg font-light">Connect, Innovate, Succeed.</p>
+                    <h2 className="text-2xl sm:text-[28px] text-[#2E3033] font-semibold leading-normal">
+                        <span className="text-[#2D8EC5]">Proactive Defense</span> Against Evolving Threats
+                    </h2>
+
+                    <p className="text-base sm:text-lg text-[#55595E] font-light leading-relaxed">
+                        Cybersecurity ensures robust protection against evolving threats, safeguarding your data,
+                        systems, and reputation with cutting-edge technologies and proactive defenses.
+                    </p>
+
+                    {/* Credentials strip from the old page, shown as chips */}
+                    <ul className={`${INTRO_TAGS_CLASS} pt-4`}>
+                        {CREDENTIALS.map((item) => (
+                            <li key={item} className={INTRO_TAG_CLASS}>
+                                {item}
+                            </li>
+                        ))}
+                    </ul>
+                </motion.div>
+
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
+                    className="relative w-full lg:w-[467px] lg:max-w-[40%] lg:ml-auto shrink-0 aspect-[467/357] overflow-hidden"
+                >
+                    <Image src={overviewPhoto} alt="Close-up of hands typing on a laptop keyboard" fill className="object-cover" />
+                </motion.div>
+            </div>
+        </section>
+    );
+}

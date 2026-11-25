@@ -1,0 +1,81 @@
+"use client";
+
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { LuChartColumn, LuLayers, LuPlug, LuUsers } from "react-icons/lu";
+import adoptionImage from "@/assets/Solutions/AnalyticsCloud/adoption.webp";
+
+const STEPS = [
+    {
+        icon: LuPlug,
+        title: "Connect",
+        desc: "Identify the SAP and non-SAP sources that matter and set up live or import connections to each.",
+    },
+    {
+        icon: LuLayers,
+        title: "Model",
+        desc: "Shape the data into models that support reporting, planning, and predictive scenarios.",
+    },
+    {
+        icon: LuChartColumn,
+        title: "Visualize & Plan",
+        desc: "Build the dashboards, stories, budgets, and forecasts each team needs to run the business.",
+    },
+    {
+        icon: LuUsers,
+        title: "Collaborate & Grow",
+        desc: "Roll insights out across departments, enable annotation and sharing, and extend use cases over time.",
+    },
+];
+
+export default function SacAdoption() {
+    return (
+        <section className="w-full bg-white px-8 py-10 sm:px-[64px] sm:py-[64px]">
+            <div className="flex flex-col lg:flex-row items-start gap-10 lg:gap-16">
+                <motion.div
+                    initial={{ opacity: 0, x: -24 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    className="flex flex-col gap-6 w-full lg:w-[45%] shrink-0 lg:sticky lg:top-28"
+                >
+                    <div className="flex flex-col gap-2">
+                        <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">How We Bring <br className="sm:hidden" />SAP Analytics Cloud <span className="text-[#2D8EC5]">to Life</span></h2>
+                        <p className="text-[#55595E] text-base sm:text-lg font-light">
+                            From the first data connection to insight shared across the organization.
+                        </p>
+                    </div>
+                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#565656]">
+                        <Image src={adoptionImage} alt="" fill className="object-cover" />
+                    </div>
+                </motion.div>
+
+                {/* Vertical timeline: icon nodes joined by a rule, drawn per step from each
+                    node's centre to the next node; the last step has none, so it ends there. */}
+                <div className="relative flex flex-col w-full lg:flex-1 min-w-0">
+                    {STEPS.map((step, index) => (
+                        <motion.div
+                            key={step.title}
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true, amount: 0.3 }}
+                            transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
+                            className="relative flex items-start gap-5 sm:gap-8 pb-10 last:pb-0"
+                        >
+                            {index < STEPS.length - 1 && (
+                                <span aria-hidden="true" className="absolute left-5 sm:left-6 top-5 sm:top-6 bottom-0 w-px bg-[#d3dae2]" />
+                            )}
+                            <span className="relative z-10 flex items-center justify-center size-10 sm:size-12 shrink-0 bg-white border-[1.25px] sm:border-[1.5px] border-[#2d8ec5] text-[#2d8ec5]">
+                                <step.icon aria-hidden="true" strokeWidth={1.5} className="size-5 sm:size-6" />
+                            </span>
+                            <div className="flex flex-col gap-2 min-w-0 pt-1 sm:pt-2">
+                                <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h3>
+                                <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">{step.desc}</p>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
+}

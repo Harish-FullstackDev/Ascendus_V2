@@ -1,0 +1,792 @@
+"use client";
+
+import React, { useState, useEffect, useRef } from "react";
+import { IoMdMenu, IoMdClose } from "react-icons/io";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
+import logo from "../../assets/Navbar/SST_Updated_White.svg";
+import logo2 from "../../assets/Navbar/SST_Logo_Dark.svg";
+import { isValidRoute } from "../Constants/Routes/routes";
+// For future impelement
+import ContactUsButton from "../Contactusbutton/contact_us_button";
+import BookAcallButton from "../BookAcallButton/BookAcall_button";
+import CalendlyModal from "../CommonComponents/CommonCalendy";
+import { MENUS } from "./menuLinks";
+
+const trimSlash = (path) => (path.length > 1 ? path.replace(/\/+$/, "") : path);
+
+// Where the current page sits in a mega menu: its category, the item under it,
+// and (for grouped items) the child link. Null when the page is not in the menu.
+function findMenuPath(menu, pathname) {
+  const here = trimSlash(pathname || "");
+  for (const category of menu.items) {
+    for (const item of category.items) {
+      if (item.href && trimSlash(item.href) === here) return { category, item, child: null };
+      const child = item.children?.find((c) => trimSlash(c.href) === here);
+      if (child) return { category, item, child };
+    }
+  }
+  return null;
+}
+
+const MegaChevron = () => (
+  <svg className="w-4 h-4 shrink-0 opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+  </svg>
+);
+
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showCalendly, setShowCalendly] = useState(false);
+  // Which mobile-menu dropdown (by label) is expanded, if any.
+  const [openMobileMenu, setOpenMobileMenu] = useState(null);
+  // …and which category inside it (SAP, Cloud…).
+  const [openMobileCategory, setOpenMobileCategory] = useState(null);
+  const pathname = usePathname();
+  const [visible, setVisible] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  const lightThemeRoutes = ["/legal/privacy/", "/sst-errors/", "/legal/terms/", "/legal/disclaimer/"];
+
+  const navLinkClass = `
+                          relative py-2 px-3
+                          transition-colors duration-300
+                          text-[clamp(0.9rem,1vw,1rem)]
+ 
+                          after:absolute
+                          after:left-0
+                          after:-bottom-1
+                          after:h-[2px]
+                          after:w-0
+                          after:transition-[width]
+                          after:duration-300
+                          after:content-['']
+
+                          hover:after:w-full
+                        `;
+  // The underline grows by width, not scale-x: a running transform puts the
+  // 2px line on its own GPU layer, where a fractional y position blurs it
+  // across an extra pixel row — thick while sliding, snapping thin once the
+  // animation ends. Width keeps it painted the same way throughout.
+
+  // No blue anywhere, active or hover — the underline is always after:bg-current,
+  // so it (and the text above it) just match whatever color the link already is
+  // in each navbar state (white on the dark/top-of-page navbar, black on the
+  // scrolled/bright navbar). Active links show that line permanently
+  // (after:w-full); inactive links reveal the same line on hover only
+  // (via navLinkClass's hover:after:w-full).
+  const activeLinkClass = "after:w-full after:bg-current";
+  const inactiveLinkClass = "after:bg-current";
+
+  const isLight = lightThemeRoutes.includes(pathname) || !isValidRoute(pathname);
+  const isNavbarLight = isLight || isScrolled;
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [isMenuOpen]);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+
+      // Always show navbar near the top of the page (within 10px)
+      if (currentScrollY <= 10) {
+        setVisible(true);
+        setLastScrollY(currentScrollY);
+        return;
+      }
+
+      // Check threshold (at least 10px scroll difference) to prevent jitter
+      const scrollDifference = currentScrollY - lastScrollY;
+      if (Math.abs(scrollDifference) < 10) {
+        return;
+      }
+
+      if (scrollDifference > 0) {
+        // Scrolling down
+        setVisible(false);
+      } else {
+        // Scrolling up
+        setVisible(true);
+      }
+
+      setLastScrollY(currentScrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollY]);
+
+  // Desktop mega menu: which menu is open, and which category / item inside it
+  // is hovered. The first category is pre-selected so the panel never opens empty.
+  const [openMegaMenu, setOpenMegaMenu] = useState(null);
+  const [activeCategory, setActiveCategory] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
+  const megaCloseTimer = useRef(null);
+
+  const openMega = (menu) => {
+    clearTimeout(megaCloseTimer.current);
+    if (openMegaMenu === menu.label) return;
+    setOpenMegaMenu(menu.label);
+    // Open on the current page's branch so the reader sees where they are;
+    // anywhere else, start from the first category.
+    const current = findMenuPath(menu, pathname);
+    setActiveCategory(current?.category ?? menu.items[0]);
+    setActiveItem(current?.item.children ? current.item : null);
+  };
+
+  const closeMega = () => {
+    clearTimeout(megaCloseTimer.current);
+    setOpenMegaMenu(null);
+  };
+
+  const scheduleMegaClose = () => {
+    clearTimeout(megaCloseTimer.current);
+    megaCloseTimer.current = setTimeout(() => setOpenMegaMenu(null), 150);
+  };
+
+  useEffect(() => () => clearTimeout(megaCloseTimer.current), []);
+
+  // Close on navigation, and whenever the navbar hides itself on scroll.
+  useEffect(() => {
+    closeMega();
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!visible) closeMega();
+  }, [visible]);
+
+  // isCurrent: the row being hovered or expanded. isHere: the row is on the
+  // current page's path, marked with an accent bar and colour that stay put
+  // while the reader hovers elsewhere.
+  const megaRowClass = (isCurrent, isHere = false) =>
+    `flex items-center justify-between gap-4 px-3 py-2.5 border-l-2 transition-colors duration-200 ${isHere ? "border-[#2d8ec5]" : "border-transparent"
+    } ${isNavbarLight
+      ? `${isCurrent ? "bg-gray-100" : "hover:bg-gray-100"} ${isHere ? "text-[#2d8ec5]" : isCurrent ? "text-black" : "text-gray-700 hover:text-black"}`
+      : `${isCurrent ? "bg-white/10" : "hover:bg-white/10"} ${isHere ? "text-[#7cc4ec]" : isCurrent ? "text-white" : "text-white/75 hover:text-white"}`
+    }`;
+
+  const toggleMenu = () => {
+    if (!isMenuOpen) {
+      // Unfold the drawer down to the current page.
+      for (const menu of MENUS) {
+        const current = findMenuPath(menu, pathname);
+        if (current) {
+          setOpenMobileMenu(menu.label);
+          setOpenMobileCategory(current.category.id);
+          break;
+        }
+      }
+    }
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+    setOpenMobileMenu(null);
+  };
+
+
+  return (
+    <>
+      <nav
+        className={`w-full z-50 fixed top-0 left-0 transition-transform duration-300 ease-in-out ${visible || isMenuOpen ? "translate-y-0" : "-translate-y-full"
+          }`}
+      >
+        <div className="max-w-full mx-auto">
+          <div className="hidden lg:flex">
+            <div
+              className="
+                relative
+                lg:h-[80px]
+                w-full
+                flex items-center
+                justify-between
+                py-[24px]
+              "
+            >
+              {/* Sibling background layer to avoid nested backdrop-filter bug */}
+              <div
+                className={`
+                  absolute inset-0 -z-10
+                  backdrop-blur-md
+                  transition-all duration-500 ease-in-out
+                  ${isNavbarLight
+                    ? "bg-white/80 border-b border-gray-200/20 shadow-md"
+                    : "bg-white/10 border-b border-white/10"
+                  }
+                `}
+              />
+              {/* Left Logo Area with SST and SAP logos */}
+              {/* <div className="flex items-center gap-3 px-4 sm:px-8 lg:px-10">
+                <Link
+                  href="/"
+                  onClick={closeMenu}
+                  className="group flex items-center overflow-hidden"
+                > */}
+              {/* Icon */}
+              {/* <div className="relative z-10 flex-shrink-0">
+                    <Image
+                      src={logo3}
+                      alt="SST Icon"
+                      width={124}
+                      height={101}
+                      className="h-8.5 w-auto object-contain transition-all duration-300 ease-out"
+                    />
+                  </div> */}
+
+              {/* Company Name Reveal */}
+              {/* <div
+                    className="
+                    w-0
+                    ml-0
+                    opacity-0
+                    overflow-hidden
+                    transition-all
+                    duration-500
+                    ease-out
+                    group-hover:w-[140px]
+                    group-hover:ml-2.5
+                    group-hover:opacity-100
+                  "
+                  >
+                    <Image
+                      src={isNavbarLight ? logo5 : logo4}
+                      alt="SST"
+                      width={344}
+                      height={60}
+                      className="block h-6 w-auto max-w-none object-contain"
+                    />
+                  </div>
+                </Link> */}
+
+              {/* Subtle vertical separator line */}
+              {/* <div
+                  className={`h-8 w-[1px] ${isNavbarLight ? "bg-gray-400/40" : "bg-white/20"
+                    }`}
+                /> */}
+
+              {/* SAP Partner Logo */}
+              {/* <Link href="/" className="flex items-center flex-shrink-0">
+                  <Image
+                    src="/sap-logo-svg.svg"
+                    alt="SAP Partner Logo"
+                    className="h-8.5 w-auto object-contain"
+                    width={140}
+                    height={40}
+                  />
+                </Link>
+              </div> */}
+
+              {/* Logo — row's left edge, 64px in. */}
+              <div className="flex items-center pl-[64px]">
+                <Link
+                  href="/"
+                  onClick={closeMenu}
+                  className="group flex items-center overflow-hidden"
+                >
+                  <div className="relative z-10 flex-shrink-0">
+                    <Image
+                      src={isNavbarLight ? logo2 : logo}
+                      alt="Support Studio Technologies logo"
+                      width={180}
+                      height={40}
+                      className="h-8 sm:h-10 w-auto object-contain transition-all duration-300 ease-out"
+                    />
+                  </div>
+                </Link>
+              </div>
+
+              {/* Nav links — pinned to the row's right edge, ending 64px in. Deliberately
+                  not positioned: the mega menu anchors to the full-width row instead. */}
+              <div className="ml-auto pr-[64px]">
+                <ul className="flex items-center gap-3">
+                  <Link
+                    href="/"
+                    className={`${navLinkClass} ${pathname === "/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                      }`}
+                  >
+                    Home
+                  </Link>
+
+                  {MENUS.map((menu) => {
+                    const herePath = findMenuPath(menu, pathname);
+                    const isOpen = openMegaMenu === menu.label;
+                    const isActive = pathname.startsWith(menu.href);
+
+                    return (
+                      <li
+                        key={menu.label}
+                        onMouseEnter={() => openMega(menu)}
+                        onMouseLeave={scheduleMegaClose}
+                        onKeyDown={(e) => e.key === "Escape" && closeMega()}
+                      >
+                        <Link
+                          href={menu.href}
+                          onFocus={() => openMega(menu)}
+                          onClick={closeMega}
+                          aria-expanded={isOpen}
+                          className={`${navLinkClass} ${isActive ? activeLinkClass : inactiveLinkClass} flex items-center gap-1 ${isNavbarLight ? "text-black" : "text-white"
+                            }`}
+                        >
+                          {menu.label}
+
+                          <svg
+                            className={`w-4 h-4 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth={2}
+                              d="M19 9l-7 7-7-7"
+                            />
+                          </svg>
+                        </Link>
+
+                        {/* Full-width mega menu, at least 65vh tall and growing to fit its longest
+                            column rather than scrolling (only a viewport shorter than the menu
+                            itself scrolls the panel as a whole). Neither this <li> nor the links block is
+                            positioned, so the panel anchors to the 80px navbar row and spans
+                            the viewport edge to edge, flush under it. The pointer crosses
+                            ~21px of row between trigger and panel; the close delay in
+                            scheduleMegaClose covers that gap. Three columns like the live
+                            site: category → its items → an item's children. */}
+                        <div
+                          className={`
+                            absolute left-0 top-full w-full z-50
+                            transition-all duration-300
+                            ${isOpen ? "visible opacity-100 translate-y-0" : "invisible opacity-0 translate-y-3"}
+                          `}
+                        >
+                          <div
+                            className={`flex flex-col min-h-[65vh] max-h-[calc(100vh-80px)] shadow-2xl border-y backdrop-blur-xl transition-colors duration-500 ${isNavbarLight
+                              ? "bg-white/90 border-gray-200/30 text-gray-800"
+                              : "bg-neutral-900/70 border-white/15 text-white"
+                              }`}
+                          >
+                            {/* The scroll lives on this inner box, not the blurred panel: a
+                                backdrop-filter element that is itself a scroll container
+                                loses its blur in Chrome. */}
+                            <div className="flex-1 min-h-0 overflow-y-auto flex flex-col">
+                              <div className="flex-1 grid grid-cols-[minmax(220px,0.9fr)_1fr_1fr] gap-x-[clamp(24px,4vw,64px)] px-[64px] py-[clamp(24px,4vh,48px)]">
+                                {/* Column 1 — categories */}
+                                <div className={`flex flex-col min-h-0 border-r pr-[clamp(16px,2vw,32px)] ${isNavbarLight ? "border-gray-200" : "border-white/15"}`}>
+                                  <p className={`text-xs uppercase tracking-[0.2em] ${isNavbarLight ? "text-gray-500" : "text-white/50"}`}>
+                                    {menu.label}
+                                  </p>
+                                  <ul className="mt-4 flex-1 space-y-1">
+                                    {menu.items.map((category) => {
+                                      const isCurrent = activeCategory?.id === category.id;
+                                      const isHere = herePath?.category.id === category.id;
+                                      const showCategory = () => {
+                                        setActiveCategory(category);
+                                        setActiveItem(null);
+                                      };
+                                      // A category with a single item would only redirect to the
+                                      // overview page to show that one item again, so it is not a
+                                      // link: same row style and hover as its siblings, default
+                                      // cursor. Hover and focus swap column 2 to its item, the way in.
+                                      if (category.items.length === 1) {
+                                        return (
+                                          <li key={category.id}>
+                                            <div
+                                              tabIndex={0}
+                                              onMouseEnter={showCategory}
+                                              onFocus={showCategory}
+                                              className={`${megaRowClass(isCurrent, isHere)} cursor-default`}
+                                            >
+                                              <span className="text-[clamp(1rem,1.25vw,1.25rem)] font-medium">{category.name}</span>
+                                              <MegaChevron />
+                                            </div>
+                                          </li>
+                                        );
+                                      }
+                                      return (
+                                        <li key={category.id}>
+                                          <Link
+                                            href={category.href}
+                                            onMouseEnter={() => {
+                                              setActiveCategory(category);
+                                              setActiveItem(null);
+                                            }}
+                                            onFocus={() => {
+                                              setActiveCategory(category);
+                                              setActiveItem(null);
+                                            }}
+                                            onClick={closeMega}
+                                            className={megaRowClass(isCurrent, isHere)}
+                                            aria-current={isHere ? "true" : undefined}
+                                          >
+                                            <span className="text-[clamp(1rem,1.25vw,1.25rem)] font-medium">{category.name}</span>
+                                            <MegaChevron />
+                                          </Link>
+                                        </li>
+                                      );
+                                    })}
+                                  </ul>
+                                  <Link
+                                    href={menu.href}
+                                    onClick={closeMega}
+                                    className={`group mt-4 inline-flex items-center gap-2 text-sm font-medium ${isNavbarLight ? "text-gray-900" : "text-white"}`}
+                                  >
+                                    {/* Underline the words only, not the arrow. */}
+                                    <span className="underline-offset-4 group-hover:underline group-focus-visible:underline">View all {menu.label.toLowerCase()}</span>
+                                    <span aria-hidden="true">→</span>
+                                  </Link>
+                                </div>
+
+                                {/* Column 2 — the hovered category's items */}
+                                <ul className="space-y-1 pt-8">
+                                  {activeCategory?.items.map((item) => {
+                                    const isCurrent = activeItem?.name === item.name;
+                                    const isHere = herePath?.category.id === activeCategory?.id && herePath?.item.name === item.name;
+                                    const rowProps = {
+                                      onMouseEnter: () => setActiveItem(item),
+                                      onFocus: () => setActiveItem(item),
+                                      className: megaRowClass(isCurrent, isHere),
+                                      "aria-current": isHere ? (item.children ? "true" : "page") : undefined,
+                                    };
+                                    return (
+                                      <li key={item.name}>
+                                        {item.children ? (
+                                          <button type="button" {...rowProps} className={`${rowProps.className} w-full text-left`}>
+                                            <span className="text-sm uppercase tracking-wide">{item.name}</span>
+                                            <MegaChevron />
+                                          </button>
+                                        ) : (
+                                          <Link href={item.href} onClick={closeMega} {...rowProps}>
+                                            <span className="text-sm uppercase tracking-wide">{item.name}</span>
+                                          </Link>
+                                        )}
+                                      </li>
+                                    );
+                                  })}
+                                </ul>
+
+                                {/* Column 3 — the hovered item's children, when it has any */}
+                                <ul className="space-y-1 pt-8">
+                                  {activeItem?.children?.map((child) => (
+                                    <li key={child.href}>
+                                      <Link
+                                        href={child.href}
+                                        onClick={closeMega}
+                                        aria-current={herePath?.child?.href === child.href ? "page" : undefined}
+                                        className={megaRowClass(herePath?.child?.href === child.href, herePath?.child?.href === child.href)}
+                                      >
+                                        <span className="text-sm uppercase tracking-wide">{child.name}</span>
+                                      </Link>
+                                    </li>
+                                  ))}
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </li>
+                    );
+                  })}
+
+
+                  <li>
+                    <Link
+                      href="/about-us"
+                      className={`${navLinkClass} ${pathname === "/about-us/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                        }`}
+                    >
+                      About Us
+                    </Link>
+                  </li>
+
+                  <li>
+                    <Link
+                      href="/contact"
+                      className={`${navLinkClass} ${pathname === "/contact/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                        }`}
+                    >
+                      Contact
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/careers"
+                      className={`${navLinkClass} ${pathname === "/careers/" ? activeLinkClass : inactiveLinkClass} ${isNavbarLight ? "text-black" : "text-white"
+                        }`}
+                    >
+                      Careers
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+            </div>
+          </div>
+
+          {/* Improved Mobile Layout Header */}
+          <div className={`flex justify-between items-center lg:hidden w-full px-6 py-2.5 md:px-8 md:py-5 border-b shadow-md transition-all duration-500 ease-in-out backdrop-blur-md ${isNavbarLight
+            ? "bg-white/80 border-gray-200/20 text-black shadow-md"
+            : "bg-neutral-900/90 border-neutral-800/30 text-white"
+            }`}>
+            <Link href="/" onClick={closeMenu} className="flex items-center p-2">
+              <Image
+                src={isNavbarLight ? logo2 : logo}
+                alt="Support Studio Technologies logo"
+                className="h-8 sm:h-10 w-auto"
+                width={180}
+                height={40}
+              />
+            </Link>
+
+            {/* Mobile menu toggle button — right side, menu slides in from the right */}
+            <button
+              className={`lg:hidden transition-colors duration-300 flex items-center justify-center p-2 ${isNavbarLight
+                ? "text-black hover:bg-gray-100"
+                : "text-white hover:bg-neutral-800"
+                }`}
+              onClick={toggleMenu}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+            >
+              <IoMdMenu className="text-3xl sm:text-4xl" />
+            </button>
+          </div>
+        </div>
+      </nav>
+
+      {/* Full-screen Mobile Menu Overlay */}
+      <div
+        className={`fixed inset-0 lg:hidden transform transition-transform duration-500 ease-in-out ${isMenuOpen ? "translate-x-0" : "translate-x-full"
+          } bg-white z-[60] flex flex-col`}
+      >
+        <div className="flex justify-between items-center p-5">
+          {/* Logo inside mobile menu */}
+          <Link href="/" onClick={closeMenu}>
+            <Image
+              src={logo2}
+              alt="Support Studio Technologies logo"
+              className="h-8 sm:h-10 w-auto"
+              width={180}
+              height={40}
+            />
+          </Link>
+          {/* Right side controls (Close Menu button) */}
+          <div className="flex items-center gap-3">
+            {/* Close button */}
+            <button onClick={closeMenu} aria-label="Close menu" className="flex items-center justify-center">
+              <IoMdClose className="text-3xl sm:text-4xl text-black" />
+            </button>
+          </div>
+        </div>
+
+        {/* Menu items */}
+        <div className="flex-1 overflow-y-auto px-5 py-8">
+          <ul className="flex flex-col gap-6">
+            <li>
+              <Link
+                href="/"
+                className={`block py-3 px-4 text-xl font-medium transition-colors duration-300 ${pathname === "/"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
+                  }`}
+                onClick={closeMenu}
+              >
+                Home
+              </Link>
+            </li>
+
+            {MENUS.map((menu) => {
+              const isOpen = openMobileMenu === menu.label;
+              const isActive = pathname.startsWith(menu.href);
+
+              return (
+                <li key={menu.label}>
+                  <button
+                    type="button"
+                    onClick={() => setOpenMobileMenu(isOpen ? null : menu.label)}
+                    className={`w-full flex items-center justify-between py-3 px-4 text-xl font-medium text-left transition-colors duration-300 ${isActive
+                      ? "text-[#2d8ec5] bg-gray-100"
+                      : "text-gray-800 hover:text-[#2d8ec5]"
+                      }`}
+                    aria-expanded={isOpen}
+                  >
+                    {menu.label}
+                    <svg
+                      className={`w-6 h-6 transition-transform duration-300 ${isOpen ? "rotate-180" : ""
+                        }`}
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M19 9l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${isOpen ? "max-h-[3000px] mt-2" : "max-h-0"
+                      }`}
+                  >
+                    <ul className="bg-gray-50 border border-gray-200 py-3">
+                      <li>
+                        <Link
+                          href={menu.href}
+                          onClick={closeMenu}
+                          className="block pl-8 pr-4 py-2 font-medium text-gray-800 hover:text-[#2d8ec5]"
+                        >
+                          All {menu.label.toLowerCase()}
+                        </Link>
+                      </li>
+                      {menu.items.map((category) => {
+                        const isCategoryOpen = openMobileCategory === category.id;
+                        const mobileHere = findMenuPath(menu, pathname);
+                        return (
+                          <li key={category.id}>
+                            <button
+                              type="button"
+                              onClick={() => setOpenMobileCategory(isCategoryOpen ? null : category.id)}
+                              aria-expanded={isCategoryOpen}
+                              className={`w-full flex items-center justify-between pl-8 pr-4 py-2 text-left font-medium hover:text-[#2d8ec5] ${mobileHere?.category.id === category.id ? "text-[#2d8ec5]" : "text-gray-800"}`}
+                            >
+                              {category.name}
+                              <svg
+                                className={`w-4 h-4 transition-transform duration-300 ${isCategoryOpen ? "rotate-180" : ""}`}
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                              >
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                              </svg>
+                            </button>
+                            {isCategoryOpen && (
+                              <ul className="pb-2">
+                                {category.items.map((item) => (
+                                  <li key={item.name}>
+                                    {item.children ? (
+                                      <>
+                                        <p className={`pl-12 pr-4 pt-2 pb-1 text-xs uppercase tracking-wide ${mobileHere?.category.id === category.id && mobileHere?.item.name === item.name ? "text-[#2d8ec5]" : "text-gray-400"}`}>
+                                          {item.name}
+                                        </p>
+                                        {item.children.map((child) => (
+                                          <Link
+                                            key={child.href}
+                                            href={child.href}
+                                            onClick={closeMenu}
+                                            aria-current={mobileHere?.child?.href === child.href ? "page" : undefined}
+                                            className={`block pl-16 pr-4 py-1.5 hover:text-[#2d8ec5] ${mobileHere?.child?.href === child.href ? "text-[#2d8ec5] font-medium" : "text-gray-600"}`}
+                                          >
+                                            {child.name}
+                                          </Link>
+                                        ))}
+                                      </>
+                                    ) : (
+                                      <Link
+                                        href={item.href}
+                                        onClick={closeMenu}
+                                        aria-current={mobileHere?.category.id === category.id && mobileHere?.item.name === item.name ? "page" : undefined}
+                                        className={`block pl-12 pr-4 py-1.5 hover:text-[#2d8ec5] ${mobileHere?.category.id === category.id && mobileHere?.item.name === item.name ? "text-[#2d8ec5] font-medium" : "text-gray-600"}`}
+                                      >
+                                        {item.name}
+                                      </Link>
+                                    )}
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  </div>
+                </li>
+              );
+            })}
+
+            <li>
+              <Link
+                href="/about-us"
+                className={`block py-3 px-4 text-xl font-medium transition-colors duration-300 ${pathname === "/about-us/"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
+                  }`}
+                onClick={closeMenu}
+              >
+                About Us
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                href="/contact"
+                className={`block py-3 px-4 text-xl font-medium transition-colors duration-300 ${pathname === "/contact/"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
+                  }`}
+                onClick={closeMenu}
+              >
+                Contact
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/careers"
+                className={`block py-3 px-4 text-xl font-medium transition-colors duration-300 ${pathname === "/careers/"
+                  ? "text-[#2d8ec5] bg-gray-100"
+                  : "text-gray-800 hover:text-[#2d8ec5]"
+                  }`}
+                onClick={closeMenu}
+              >
+                Careers
+              </Link>
+            </li>
+          </ul>
+        </div>
+        {/* Book a call — not wanted in the navbar for now. The desktop instance above
+            was already commented out; this was the last live one (the floating button
+            inside the open mobile menu). The import and the Calendly modal below are
+            left in place so this is a one-line revert when it's wanted again. The
+            ContactUsButton that sat alongside it here was already commented out before
+            this, and is dropped from the block rather than nested inside the comment. */}
+        {/* {isMenuOpen && (
+          <div className="lg:hidden fixed bottom-6 right-6 z-[70]">
+            <BookAcallButton setShowCalendly={setShowCalendly} />
+          </div>
+        )} */}
+      </div>
+      {/* Spacer to prevent content overlap */}
+      <div className="h-[64px] lg:h-[68px] w-full" />
+
+      {/* Calendly Modal */}
+      <CalendlyModal
+        isOpen={showCalendly}
+        onClose={() => setShowCalendly(false)}
+        calendlyUrl={process.env.NEXT_PUBLIC_CALENDLY_URL}
+        pageSettings={{
+          backgroundColor: "ffffff",
+          primaryColor: "#2d8ec5",
+          textColor: "#2d8ec5",
+        }}
+      />
+    </>
+  );
+};
+
+export default Navbar;

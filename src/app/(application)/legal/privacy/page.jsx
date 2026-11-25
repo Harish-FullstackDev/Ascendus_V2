@@ -1,0 +1,29 @@
+import PageClient from "./PageClient";
+import { generateBreadcrumbSchema } from "@/lib/seo";
+import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
+
+export const metadata = {
+  alternates: { canonical: "/legal/privacy/" },
+  description: "How Support Studio Technologies collects, uses, stores and protects personal data submitted through this site, and your rights under applicable law.",
+  openGraph: {
+    title: "Privacy Policy | Support Studio Technologies",
+    description: "How Support Studio Technologies collects, uses, stores and protects personal data submitted through this site, and your rights under applicable law.",
+    url: "/legal/privacy/",
+    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+  },
+  title: "Privacy Policy",
+};
+
+export default function Page() {
+  const breadcrumbSchema = generateBreadcrumbSchema(buildBreadcrumbItems("/legal/privacy/"));
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <PageClient />
+    </>
+  );
+}

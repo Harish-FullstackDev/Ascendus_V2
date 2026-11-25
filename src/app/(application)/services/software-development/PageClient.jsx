@@ -1,0 +1,52 @@
+"use client";
+
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+
+import Hero from "@/components/Services/SoftwareDevelopment/Hero";
+import HeroText from "@/components/Services/SoftwareDevelopment/HeroText";
+import SoftwareIntro from "@/components/Services/SoftwareDevelopment/SoftwareIntro";
+import WhySoftwareDevelopment from "@/components/Services/SoftwareDevelopment/WhySoftwareDevelopment";
+import SoftwareInvestment from "@/components/Services/SoftwareDevelopment/SoftwareInvestment";
+import SoftwareServices from "@/components/Services/SoftwareDevelopment/SoftwareServices";
+import SoftwareLifecycle from "@/components/Services/SoftwareDevelopment/SoftwareLifecycle";
+import SoftwareQuality from "@/components/Services/SoftwareDevelopment/SoftwareQuality";
+import ReadyToTransform from "@/components/Services/SoftwareDevelopment/ReadyToTransform";
+
+const page = () => {
+    return (
+        <div className="min-h-screen bg-white flex flex-col font-sans">
+            <Navbar />
+
+            <div className="relative -mt-[64px] lg:-mt-[68px] h-[680px] sm:h-[200vh]">
+                <div className="sticky top-0 h-[340px] sm:h-screen z-0">
+                    <Hero />
+                </div>
+
+                <div className="absolute inset-x-0 top-0 h-[340px] sm:h-screen z-[5]">
+                    <HeroText />
+                </div>
+            </div>
+            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
+                <SoftwareIntro />
+                <WhySoftwareDevelopment />
+                {/* Kept inside the white z-10 layer: on tall screens Intro + Why are shorter
+                    than the 100vh overlap, so sections outside it showed the sticky hero
+                    through their transparent background. */}
+                <SoftwareInvestment />
+                <SoftwareServices />
+                <SoftwareLifecycle />
+                <SoftwareQuality />
+            </div>
+
+            <ReadyToTransform
+                title="Turn Your Ideas Into Working Solutions."
+                description="Develop reliable software aligned with your business objectives."
+                buttonLabel="Get in Touch"
+            />
+            <Footer />
+        </div>
+    );
+};
+
+export default page;

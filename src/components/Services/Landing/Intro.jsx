@@ -1,0 +1,45 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { CATEGORIES, INTRO } from "./servicesLandingData";
+
+// Opening band: the old site's welcome copy on the left, and a jump list of
+// the five categories on the right so the page reads as an index.
+export default function Intro() {
+    return (
+        <section className="w-full bg-white px-8 py-10 sm:px-[64px] sm:py-[64px]">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
+                className="grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-10 lg:gap-16"
+            >
+                <div className="flex flex-col gap-4">
+                    <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold capitalize">
+                        {INTRO.title} <span className="text-[#2d8ec5]">{INTRO.titleAccent}</span>
+                    </h2>
+                    <p className="text-[#55595E] text-base sm:text-lg font-light max-w-[720px]">{INTRO.body}</p>
+                </div>
+
+                {/* Dividers only between items; the first and last links drop their outer
+                    padding so the list top-aligns with the heading and ends flush. */}
+                <ul className="flex flex-col">
+                    {CATEGORIES.map((category) => (
+                        <li key={category.id} className="border-b border-[#d9dcdf] last:border-b-0 [&:first-child>a]:pt-0 [&:last-child>a]:pb-0">
+                            <a
+                                href={`#${category.id}`}
+                                className="group flex items-center justify-between gap-4 py-4 text-[#2E3033] transition-colors hover:text-[#2d8ec5]"
+                            >
+                                <span className="text-lg sm:text-xl font-medium">{category.title}</span>
+                                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" className="size-5 shrink-0 text-[#55595E] transition-transform duration-300 group-hover:translate-x-1 group-hover:text-[#2d8ec5]">
+                                    <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                                </svg>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </motion.div>
+        </section>
+    );
+}
