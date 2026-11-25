@@ -228,9 +228,13 @@ const Navbar = () => {
         {/* Desktop: links on the left, logo on the right, 64px in from each edge. */}
         <div className="hidden lg:block">
           <div className="relative w-full flex items-center justify-between gap-6 py-[24px] px-8 xl:px-[64px]">
-            {/* Sibling background layer to avoid the nested backdrop-filter bug. */}
+            {/* Sibling background layer to avoid the nested backdrop-filter bug.
+                While Services or Industries is open the bar takes the panel's
+                background, so bar and panel read as one surface. */}
             <div
-              className={`absolute inset-0 -z-10 backdrop-blur-[12px] transition-colors duration-500 ease-in-out ${isNavbarLight ? "bg-white/80 shadow-md" : "bg-black/10"
+              className={`absolute inset-0 -z-10 backdrop-blur-[12px] transition-colors duration-300 ease-in-out ${openMegaMenu
+                ? isNavbarLight ? "bg-white/95" : "bg-black/70"
+                : isNavbarLight ? "bg-white/80 shadow-md" : "bg-black/10"
                 }`}
             />
 
