@@ -111,7 +111,7 @@ export default function AwsServices() {
                     <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold lg:whitespace-nowrap">
                         Unlocking <span className="text-[#2D8EC5] whitespace-nowrap">Business Potential</span>
                         <br />
-                        with AWS at SST
+                        with AWS at Ascendus
                     </h2>
                     <p className="text-[#55595E] text-base sm:text-xl font-light lg:w-0 lg:min-w-full">
                         The core AWS services we architect, deploy, and optimize for our clients.

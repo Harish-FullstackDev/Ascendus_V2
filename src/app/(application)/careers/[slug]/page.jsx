@@ -15,16 +15,16 @@ export async function generateMetadata({ params }) {
   const description =
     job.aboutJob && job.aboutJob.length > 157
       ? `${job.aboutJob.slice(0, 157)}...`
-      : job.aboutJob || `${job.title} — apply for this role at Support Studio Technologies.`;
+      : job.aboutJob || `${job.title} — apply for this role at Ascendus.`;
   return {
     title: job.title,
     description,
     alternates: { canonical: `/careers/${slug}/` },
     openGraph: {
-      title: `${job.title} | Support Studio Technologies`,
+      title: `${job.title} | Ascendus`,
       description,
       url: `/careers/${slug}/`,
-      images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+      images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
     },
   };
 }

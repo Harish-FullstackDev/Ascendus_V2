@@ -32,7 +32,7 @@ const Footer = () => {
         <div className="relative h-8 w-auto aspect-[358.7/80] mb-6 md:hidden">
           <Image
             src={logo}
-            alt="Support Studio Technologies logo"
+            alt="Ascendus logo"
             fill
             style={{
               objectFit: "contain",
@@ -48,7 +48,7 @@ const Footer = () => {
             <div className="hidden md:block relative h-10 w-auto aspect-[358.7/80] mb-[46px]">
               <Image
                 src={logo}
-                alt="Support Studio Technologies logo"
+                alt="Ascendus logo"
                 fill
                 style={{
                   objectFit: "contain",
@@ -118,7 +118,7 @@ const Footer = () => {
                   href="/sst-partner"
                   className="hover:text-white transition-colors duration-200"
                 >
-                  SST Partnership
+                  Ascendus Partnership
                 </Link>
               </li>
               <li>
@@ -473,7 +473,7 @@ const Footer = () => {
                   Disclaimer
                 </a>
           </p>
-          <p className="md:whitespace-nowrap">© 2026 Support Studio Technologies. All Rights Reserved.</p>
+          <p className="md:whitespace-nowrap">© 2026 Ascendus. All Rights Reserved.</p>
         </div>
       </footer >
     </>

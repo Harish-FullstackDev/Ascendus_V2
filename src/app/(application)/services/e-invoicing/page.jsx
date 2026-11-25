@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/services/e-invoicing/" },
   description: "E-Invoicing services: invoice validation, generation, transmission, tax compliance, audit reporting and ERP integration that accelerate payment cycles.",
   openGraph: {
-    title: "E-Invoicing | Support Studio Technologies",
+    title: "E-Invoicing | Ascendus",
     description: "E-Invoicing services: invoice validation, generation, transmission, tax compliance, audit reporting and ERP integration that accelerate payment cycles.",
     url: "/services/e-invoicing/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "E-Invoicing",
 };

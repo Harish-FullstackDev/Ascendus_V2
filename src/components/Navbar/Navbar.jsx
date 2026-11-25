@@ -136,25 +136,25 @@ const Navbar = () => {
   // pale, so the accent becomes Ascendus blue.
   const tone = isNavbarLight
     ? {
-        text: "text-[#2E3033]",
-        accent: "text-[#0061AF] border-[#0061AF]",
-        accentText: "text-[#0061AF]",
-        hoverAccent: "hover:text-[#0061AF] hover:border-[#0061AF]",
-        panel: "bg-white/95 text-[#2E3033]",
-        panelRule: "border-[#2E3033]",
-        subLink: "text-[#4B5563] hover:text-[#0061AF]",
-        groupLink: "hover:text-[#0061AF]",
-      }
+      text: "text-[#2E3033]",
+      accent: "text-[#0061AF] border-[#0061AF]",
+      accentText: "text-[#0061AF]",
+      hoverAccent: "hover:text-[#0061AF] hover:border-[#0061AF]",
+      panel: "bg-white/95 text-[#2E3033]",
+      panelRule: "border-[#2E3033]",
+      subLink: "text-[#4B5563] hover:text-[#0061AF]",
+      groupLink: "hover:text-[#0061AF]",
+    }
     : {
-        text: "text-white",
-        accent: "text-[#68C2F2] border-[#68C2F2]",
-        accentText: "text-[#68C2F2]",
-        hoverAccent: "hover:text-[#68C2F2] hover:border-[#68C2F2]",
-        panel: "bg-black/70 text-white",
-        panelRule: "border-white",
-        subLink: "text-[#D5E2F2] hover:text-[#68C2F2]",
-        groupLink: "hover:text-[#68C2F2]",
-      };
+      text: "text-white",
+      accent: "text-[#68C2F2] border-[#68C2F2]",
+      accentText: "text-[#68C2F2]",
+      hoverAccent: "hover:text-[#68C2F2] hover:border-[#68C2F2]",
+      panel: "bg-black/70 text-white",
+      panelRule: "border-white",
+      subLink: "text-[#D5E2F2] hover:text-[#68C2F2]",
+      groupLink: "hover:text-[#68C2F2]",
+    };
 
   // Each top-level item: 6px padding, 18px Medium, and a 2px bottom rule that
   // shows in the accent colour when the item is current, open or hovered.

@@ -26,7 +26,7 @@ export async function generateMetadata({ params }) {
             authors: caseStudy.author ? [caseStudy.author] : undefined,
             images: caseStudy.cover_image
                 ? [{ url: caseStudy.cover_image, width: 1200, height: 630, alt: caseStudy.title }]
-                : [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+                : [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
         },
     };
 }

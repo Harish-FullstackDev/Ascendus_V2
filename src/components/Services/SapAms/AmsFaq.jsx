@@ -11,7 +11,7 @@ const ITEMS = [
         desc: "SAP AMS is an ongoing support agreement in which a specialist partner runs, maintains and improves your SAP applications after go-live, covering incident resolution, small enhancements, system administration and continuous optimization under agreed service levels.",
     },
     {
-        title: "Which SAP systems can SST support?",
+        title: "Which SAP systems can Ascendus support?",
         desc: "We support SAP ECC and SAP S/4HANA landscapes, both on-premise and in the cloud, including the functional modules, custom developments, interfaces and Basis layer that sit around them.",
     },
     {
@@ -20,7 +20,7 @@ const ITEMS = [
     },
     {
         title: "How do you take over from our current support team or partner?",
-        desc: "We start with a structured transition: documentation review, knowledge transfer sessions and a period of shadow support, so your users see continuity rather than a drop in service while responsibility moves to SST.",
+        desc: "We start with a structured transition: documentation review, knowledge transfer sessions and a period of shadow support, so your users see continuity rather than a drop in service while responsibility moves to Ascendus.",
     },
     {
         title: "How is service quality measured?",

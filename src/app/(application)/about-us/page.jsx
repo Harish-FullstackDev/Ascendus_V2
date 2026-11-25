@@ -4,14 +4,14 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/about-us/" },
-  description: "Who Support Studio Technologies is, how we are structured, where we deliver from, and what a client can independently verify before engaging us.",
+  description: "Who Ascendus is, how we are structured, where we deliver from, and what a client can independently verify before engaging us.",
   openGraph: {
-    title: "About Support Studio Technologies | Enterprise IT Services",
-    description: "Who Support Studio Technologies is, how we are structured, where we deliver from, and what a client can independently verify before engaging us.",
+    title: "About Ascendus | Enterprise IT Services",
+    description: "Who Ascendus is, how we are structured, where we deliver from, and what a client can independently verify before engaging us.",
     url: "/about-us/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
-  title: { absolute: "About Support Studio Technologies | Enterprise IT Services" },
+  title: { absolute: "About Ascendus | Enterprise IT Services" },
 };
 
 export default function Page() {

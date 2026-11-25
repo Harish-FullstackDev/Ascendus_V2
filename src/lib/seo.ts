@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/siteUrl";
 import { SERVICES, SOLUTIONS } from "@/components/Navbar/menuLinks";
 
 // serviceType for a page, taken from the menu category it sits under
-// (e.g. /services/sap-tm → "SAP", /solutions/procurement → "Supply Spend Management"),
+// (e.g. /services/sap/ariba → "SAP", /solutions/procurement → "Supply Spend Management"),
 // so each Service schema describes its own area instead of one shared label.
 const categoryForPath = (url: string): string | undefined => {
   const path = url.replace(/^https?:\/\/[^/]+/, "").replace(/\/$/, "");
@@ -22,10 +22,10 @@ const categoryForPath = (url: string): string | undefined => {
 };
 
 // Metadata title for content pages (blog, case study, whitepaper, report).
-// The root layout appends " | Support Studio Technologies" (30 characters);
+// The root layout appends " | Ascendus" (11 characters);
 // when that would push the <title> past 60 characters, the title is used on
 // its own so search results don't cut it off.
-const TITLE_SUFFIX_LENGTH = " | Support Studio Technologies".length;
+const TITLE_SUFFIX_LENGTH = " | Ascendus".length;
 export const fitTitle = (title: string) =>
   title.length + TITLE_SUFFIX_LENGTH <= 60 ? title : { absolute: title };
 
@@ -33,11 +33,10 @@ export const generateOrganizationSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Support Studio Technologies",
-    "alternateName": "SST",
+    "name": "Ascendus",
     "url": SITE_URL,
     "logo": `${SITE_URL}/logo.png`,
-    "description": "Support Studio Technologies is a premium enterprise IT and SAP consulting firm providing digital transformation, cloud managed services, and S/4HANA migration across the UAE, Saudi Arabia, and the GCC.",
+    "description": "Ascendus is a premium enterprise IT and SAP consulting firm providing digital transformation, cloud managed services, and S/4HANA migration across the UAE, Saudi Arabia, and the GCC.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "#192, Kamaraj Salai",
@@ -67,7 +66,7 @@ export const generateWebsiteSchema = () => {
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "name": "Support Studio Technologies",
+    "name": "Ascendus",
     "url": SITE_URL
   };
 };
@@ -95,7 +94,7 @@ export const generateServiceSchema = (service: { name: string; description: stri
     "serviceType": service.category || categoryForPath(service.url) || "IT Consulting",
     "provider": {
       "@type": "Organization",
-      "name": "Support Studio Technologies",
+      "name": "Ascendus",
       "url": SITE_URL
     },
     "name": service.name,
@@ -129,14 +128,14 @@ export const generateArticleSchema = (article: {
   "description": article.description,
   "url": absolute(article.url),
   "mainEntityOfPage": absolute(article.url),
-  "image": absolute(article.image || "/og-image.png?v=3"),
+  "image": absolute(article.image || "/og-image.png?v=4"),
   ...(article.datePublished ? { "datePublished": article.datePublished } : {}),
   "author": article.author
     ? { "@type": "Person", "name": article.author }
-    : { "@type": "Organization", "name": "Support Studio Technologies" },
+    : { "@type": "Organization", "name": "Ascendus" },
   "publisher": {
     "@type": "Organization",
-    "name": "Support Studio Technologies",
+    "name": "Ascendus",
     "logo": { "@type": "ImageObject", "url": `${SITE_URL}/logo.png` }
   }
 });
@@ -174,7 +173,7 @@ export const generateJobPostingSchema = (job: {
     ...((job.modeOfWork || "").toLowerCase().includes("remote") ? { "jobLocationType": "TELECOMMUTE" } : {}),
     "hiringOrganization": {
       "@type": "Organization",
-      "name": "Support Studio Technologies",
+      "name": "Ascendus",
       "sameAs": SITE_URL,
       "logo": `${SITE_URL}/logo.png`
     },

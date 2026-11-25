@@ -14,24 +14,24 @@ export const SERVICES = [
       {
         name: "Implementation",
         children: [
-          { name: "RISE with SAP", href: "/services/rise-with-sap" },
-          { name: "GROW with SAP", href: "/services/grow-with-sap" },
+          { name: "RISE with SAP", href: "/services/sap/s4hana-transformation" },
+          { name: "GROW with SAP", href: "/services/sap/implementation" },
         ],
       },
       {
         name: "Line of Business",
         children: [
-          { name: "SAP SuccessFactors", href: "/services/sap-successfactors" },
-          { name: "SAP Ariba", href: "/services/sap-ariba" },
-          { name: "SAP CX", href: "/services/sap-cx" },
-          { name: "SAP Analytics Cloud", href: "/services/sap-analytics-cloud" },
+          { name: "SAP SuccessFactors", href: "/services/sap/successfactors" },
+          { name: "SAP Ariba", href: "/services/sap/ariba" },
+          { name: "SAP CX", href: "/services/sap/customer-experience" },
+          { name: "SAP Analytics Cloud", href: "/services/sap/analytics-reporting" },
         ],
       },
-      { name: "AMS", href: "/services/sap-ams" },
-      { name: "Conversion (ECC – S/4HANA)", href: "/services/sap-conversion-ecc-to-s4hana" },
-      { name: "Rollout", href: "/services/sap-rollout" },
-      { name: "Migration", href: "/services/sap-migration" },
-      { name: "T&M", href: "/services/sap-tm" },
+      { name: "AMS", href: "/services/sap/application-management" },
+      { name: "Conversion (ECC – S/4HANA)", href: "/services/sap/migration-conversion" },
+      { name: "Rollout", href: "/services/sap/rollout-services" },
+      { name: "Migration", href: "/services/sap/migration-conversion" },
+      { name: "T&M", href: "/services/sap/time-and-material" },
     ],
   },
   {
@@ -42,13 +42,13 @@ export const SERVICES = [
       {
         name: "Implementation",
         children: [
-          { name: "Microsoft Dynamics 365", href: "/services/microsoft-dynamics-365" },
-          { name: "Power BI", href: "/services/power-bi" },
+          { name: "Microsoft Dynamics 365", href: "/services/microsoft/dynamics-365" },
+          { name: "Power BI", href: "/services/microsoft/power-bi-analytics" },
         ],
       },
-      { name: "AMS", href: "/services/microsoft-ams" },
-      { name: "Migration", href: "/services/microsoft-migration" },
-      { name: "Rollout", href: "/services/microsoft-rollout" },
+      { name: "AMS", href: "/services/microsoft/application-management" },
+      { name: "Migration", href: "/services/microsoft/cloud-migration" },
+      { name: "Rollout", href: "/services/microsoft/rollout" },
     ],
   },
   {
@@ -56,9 +56,9 @@ export const SERVICES = [
     name: "Cloud",
     href: "/services#cloud",
     items: [
-      { name: "Google Cloud Platform", href: "/services/google-cloud-platform" },
-      { name: "Amazon Web Services", href: "/services/amazon-web-services" },
-      { name: "Azure", href: "/services/azure" },
+      { name: "Google Cloud Platform", href: "/services/microsoft/google-cloud" },
+      { name: "Amazon Web Services", href: "/services/microsoft/aws" },
+      { name: "Azure", href: "/services/microsoft/azure" },
     ],
   },
   {
@@ -66,12 +66,12 @@ export const SERVICES = [
     name: "Digital Transformation",
     href: "/services#digital-transformation",
     items: [
-      { name: "Robotic Process Automation", href: "/services/robotic-process-automation" },
-      { name: "AI & Machine Learning", href: "/services/ai-ml" },
+      { name: "Robotic Process Automation", href: "/services/digital-transformation/ai-automation" },
+      { name: "AI & Machine Learning", href: "/services/digital-transformation/ai-automation" },
       { name: "E-Invoicing", href: "/services/e-invoicing" },
-      { name: "Internet of Things", href: "/services/internet-of-things" },
-      { name: "Big Data", href: "/services/big-data" },
-      { name: "Cyber Security", href: "/services/cyber-security" },
+      { name: "Internet of Things", href: "/services/digital-transformation/iot" },
+      { name: "Big Data", href: "/services/digital-transformation/data-analytics" },
+      { name: "Cyber Security", href: "/services/digital-transformation/cybersecurity" },
     ],
   },
   {
@@ -79,9 +79,9 @@ export const SERVICES = [
     name: "Design & Development",
     href: "/services#design-development",
     items: [
-      { name: "Full Stack Development", href: "/services/full-stack-development" },
-      { name: "UI/UX Design", href: "/services/ui-ux-design" },
-      { name: "Software Development", href: "/services/software-development" },
+      { name: "Full Stack Development", href: "/services/digital-engineering/web-applications" },
+      { name: "UI/UX Design", href: "/services/digital-engineering/ui-ux-design" },
+      { name: "Software Development", href: "/services/digital-engineering/custom-software" },
     ],
   },
 ];
@@ -164,9 +164,7 @@ export const flattenLinks = (categories) =>
 // Ascendus navbar (Figma 2278:2725 Services, 2279:4200 Industries).
 //
 // The footer and the /services and /solutions landing pages above still read
-// SERVICES / SOLUTIONS / MENUS; the new navbar reads only what follows. Links
-// reuse an existing page where one matches; every other href is the planned
-// slug for a page that is not built yet.
+// SERVICES / SOLUTIONS / MENUS; the new navbar reads only what follows.
 // ---------------------------------------------------------------------------
 
 const slug = (text) =>
@@ -176,89 +174,94 @@ const slug = (text) =>
     .replace(/[^a-z0-9]+/g, "-")
     .replace(/^-|-$/g, "");
 
-// A link under /services/: the existing page when one matches, else the slug.
-const service = (name, href) => ({ name, href: href ?? `/services/${slug(name)}` });
+const service = (name, href) => ({ name, href });
 
 // Services mega menu, column by column as Figma lays it out (column 2 stacks
-// two groups).
+// two groups). Each group href is its category overview page; item hrefs are
+// the service page URLs.
 export const NAV_SERVICE_COLUMNS = [
   [
     {
       name: "SAP & Enterprise Applications",
+      href: "/services/sap",
       items: [
-        service("SAP S/4HANA Transformation"),
-        service("SAP Implementation"),
-        service("SAP Migration & System Conversion", "/services/sap-migration"),
-        service("SAP Application Management Services", "/services/sap-ams"),
-        service("SAP Support & Maintenance"),
-        service("SAP Rollout Services", "/services/sap-rollout"),
-        service("SAP BTP"),
-        service("SAP Integration"),
-        service("SAP Ariba", "/services/sap-ariba"),
-        service("SAP SuccessFactors", "/services/sap-successfactors"),
-        service("SAP Analytics & Reporting", "/services/sap-analytics-cloud"),
-        service("SAP EHS"),
-        service("SAP Customer Experience", "/services/sap-cx"),
+        service("SAP S/4HANA Transformation", "/services/sap/s4hana-transformation"),
+        service("SAP Implementation", "/services/sap/implementation"),
+        service("SAP Migration & System Conversion", "/services/sap/migration-conversion"),
+        service("SAP Application Management Services", "/services/sap/application-management"),
+        service("SAP Support & Maintenance", "/services/sap/support-maintenance"),
+        service("SAP Rollout Services", "/services/sap/rollout-services"),
+        service("SAP BTP", "/services/sap/btp"),
+        service("SAP Integration", "/services/sap/integration"),
+        service("SAP Ariba", "/services/sap/ariba"),
+        service("SAP SuccessFactors", "/services/sap/successfactors"),
+        service("SAP Analytics & Reporting", "/services/sap/analytics-reporting"),
+        service("SAP EHS", "/services/sap/ehs"),
+        service("SAP Customer Experience", "/services/sap/customer-experience"),
       ],
     },
   ],
   [
     {
       name: "E-Invoicing & Tax Technology",
+      href: "/services/e-invoicing",
       items: [
-        service("Saudi Arabia – ZATCA E-Invoicing"),
-        service("UAE E-Invoicing"),
-        service("SAP E-Invoicing Integration"),
-        service("ERP E-Invoicing Integration"),
-        service("Invoice Automation"),
-        service("E-Invoicing Implementation", "/services/e-invoicing"),
-        service("E-Invoicing Support"),
+        service("Saudi Arabia – ZATCA E-Invoicing", "/services/e-invoicing/saudi-arabia"),
+        service("UAE E-Invoicing", "/services/e-invoicing/uae"),
+        service("SAP E-Invoicing Integration", "/services/e-invoicing/sap-integration"),
+        service("ERP E-Invoicing Integration", "/services/e-invoicing/erp-integration"),
+        service("Invoice Automation", "/services/e-invoicing/invoice-automation"),
+        service("E-Invoicing Implementation", "/services/e-invoicing/implementation"),
+        service("E-Invoicing Support", "/services/e-invoicing/support-maintenance"),
       ],
     },
     {
       name: "Microsoft & Cloud Solutions",
+      href: "/services/microsoft",
       items: [
-        service("Microsoft Azure", "/services/azure"),
-        service("Microsoft 365"),
-        service("Power BI & Analytics", "/services/power-bi"),
-        service("Power Platform"),
-        service("SharePoint Solutions"),
-        service("Cloud Migration & Management"),
-        service("Microsoft Security"),
+        service("Microsoft Azure", "/services/microsoft/azure"),
+        service("Microsoft 365", "/services/microsoft/microsoft-365"),
+        service("Power BI & Analytics", "/services/microsoft/power-bi-analytics"),
+        service("Power Platform", "/services/microsoft/power-platform"),
+        service("SharePoint Solutions", "/services/microsoft/sharepoint"),
+        service("Cloud Migration & Management", "/services/microsoft/cloud-migration"),
+        service("Microsoft Security", "/services/microsoft/security"),
       ],
     },
   ],
   [
     {
       name: "Digital Engineering & Product Development",
+      href: "/services/digital-engineering",
       items: [
-        service("Custom Software Development", "/services/software-development"),
-        service("Enterprise Application Development"),
-        service("Product Engineering"),
-        service("SaaS Development"),
-        service("Web Application Development"),
-        service("Mobile Application Development"),
-        service("API Development & Integration"),
-        service("UI/UX Design", "/services/ui-ux-design"),
-        service("Application Modernisation"),
-        service("Quality Engineering & Testing"),
+        service("Custom Software Development", "/services/digital-engineering/custom-software"),
+        service("Enterprise Application Development", "/services/digital-engineering/enterprise-applications"),
+        service("Product Engineering", "/services/digital-engineering/product-engineering"),
+        service("SaaS Development", "/services/digital-engineering/saas-development"),
+        service("Web Application Development", "/services/digital-engineering/web-applications"),
+        service("Mobile Application Development", "/services/digital-engineering/mobile-applications"),
+        service("API Development & Integration", "/services/digital-engineering/api-integration"),
+        service("UI/UX Design", "/services/digital-engineering/ui-ux-design"),
+        service("Application Modernisation", "/services/digital-engineering/application-modernisation"),
+        service("Quality Engineering & Testing", "/services/digital-engineering/quality-engineering"),
       ],
     },
   ],
   [
     {
       name: "Digital Transformation & Managed Services",
+      href: "/services/digital-transformation",
       items: [
-        service("Business Process Optimisation"),
-        service("Enterprise Technology Advisory"),
-        service("Data & Analytics", "/services/big-data"),
-        service("AI & Intelligent Automation", "/services/ai-ml"),
-        service("Cybersecurity Solutions", "/services/cyber-security"),
-        service("IT Infrastructure Management"),
-        service("Managed IT Services"),
-        service("Application Support Services"),
-        service("Enterprise Website Development"),
-        service("E-Commerce Development"),
+        service("Business Process Optimisation", "/services/digital-transformation/business-process-optimisation"),
+        service("Enterprise Technology Advisory", "/services/digital-transformation/technology-advisory"),
+        service("Data & Analytics", "/services/digital-transformation/data-analytics"),
+        service("AI & Intelligent Automation", "/services/digital-transformation/ai-automation"),
+        service("Cybersecurity Solutions", "/services/digital-transformation/cybersecurity"),
+        service("IT Infrastructure Management", "/services/digital-transformation/infrastructure-management"),
+        service("Managed IT Services", "/services/digital-transformation/managed-it-services"),
+        service("Application Support Services", "/services/digital-transformation/application-support"),
+        service("Enterprise Website Development", "/services/digital-transformation/website-development"),
+        service("E-Commerce Development", "/services/digital-transformation/ecommerce-development"),
       ],
     },
   ],

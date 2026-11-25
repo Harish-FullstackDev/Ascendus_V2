@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Snackbar, Alert, CircularProgress } from '@mui/material';
 
 // Country codes for the contact number. India is the default; the GCC markets
-// SST serves follow. len is the national number length (no trunk 0); group is how
+// Ascendus serves follow. len is the national number length (no trunk 0); group is how
 // the digits are spaced while typing; start, when set, is the required first digit.
 const DIAL_CODES = [
   { code: '+91', name: 'India', len: 10, group: [5, 5], start: /^[6-9]/ },

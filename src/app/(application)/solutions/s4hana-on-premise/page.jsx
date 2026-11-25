@@ -6,10 +6,10 @@ export const metadata = {
   alternates: { canonical: "/solutions/s4hana-on-premise/" },
   description: "SAP S/4HANA On-Premises: SAP's next-generation ERP on infrastructure you control, with real-time insights, end-to-end visibility and full customization.",
   openGraph: {
-    title: "SAP S/4HANA On-Premises | Support Studio Technologies",
+    title: "SAP S/4HANA On-Premises | Ascendus",
     description: "SAP S/4HANA On-Premises: SAP's next-generation ERP on infrastructure you control, with real-time insights, end-to-end visibility and full customization.",
     url: "/solutions/s4hana-on-premise/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "SAP S/4HANA On-Premises",
 };

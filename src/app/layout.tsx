@@ -25,13 +25,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Support Studio Technologies | Enterprise SAP & IT Consulting GCC",
-    template: "%s | Support Studio Technologies"
+    default: "Ascendus | Enterprise SAP & IT Consulting GCC",
+    template: "%s | Ascendus"
   },
-  description: "Support Studio Technologies delivers SAP consulting, IT managed services and digital transformation for enterprises in Saudi Arabia, the UAE and the GCC.",
-  authors: [{ name: "Support Studio Technologies", url: SITE_URL }],
-  creator: "Support Studio Technologies",
-  publisher: "Support Studio Technologies",
+  description: "Ascendus delivers SAP consulting, IT managed services and digital transformation for enterprises in Saudi Arabia, the UAE and the GCC.",
+  authors: [{ name: "Ascendus", url: SITE_URL }],
+  creator: "Ascendus",
+  publisher: "Ascendus",
   formatDetection: {
     email: false,
     address: false,
@@ -44,15 +44,15 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Support Studio Technologies",
-    title: "Support Studio Technologies | Enterprise Technology, SAP and Managed Services",
-    description: "Support Studio Technologies designs, builds and runs enterprise technology: SAP, cloud, data, AI, security and managed operations, under one team.",
+    siteName: "Ascendus",
+    title: "Ascendus | Enterprise Technology, SAP and Managed Services",
+    description: "Ascendus designs, builds and runs enterprise technology: SAP, cloud, data, AI, security and managed operations, under one team.",
     images: [
       {
-        url: "/og-image.png?v=3",
-        width: 512,
-        height: 512,
-        alt: "Support Studio Technologies Enterprise Solutions",
+        url: "/og-image.png?v=4",
+        width: 1200,
+        height: 630,
+        alt: "Ascendus Enterprise Solutions",
       },
     ],
   },
@@ -73,10 +73,10 @@ export const metadata: Metadata = {
     ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
     : {}),
   twitter: {
-    card: "summary",
-    title: "Support Studio Technologies | Enterprise Technology, SAP and Managed Services",
-    description: "Support Studio Technologies designs, builds and runs enterprise technology: SAP, cloud, data, AI, security and managed operations, under one team.",
-    images: ["/og-image.png?v=3"],
+    card: "summary_large_image",
+    title: "Ascendus | Enterprise Technology, SAP and Managed Services",
+    description: "Ascendus designs, builds and runs enterprise technology: SAP, cloud, data, AI, security and managed operations, under one team.",
+    images: ["/og-image.png?v=4"],
   },
 };
 

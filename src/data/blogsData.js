@@ -8,7 +8,7 @@ export const staticBlogsData = [
     title: "Conversion, Greenfield or Selective: Choosing Your SAP S/4HANA Migration Path",
     type: "Blog",
     category: "SAP",
-    author: "SST Editorial Team",
+    author: "Ascendus Editorial Team",
     publish_date: "2026-11-04",
     cover_image: "/insights/blog/s4hana-migration-paths.webp",
     sections: [
@@ -35,7 +35,7 @@ export const staticBlogsData = [
       {
         heading: "How to Decide",
         content:
-          "Start with an assessment rather than a preference. Run the SAP readiness check, review custom code usage, map which processes the business wants to change, and agree how much history must remain reportable.\n\nWith that evidence, the decision usually becomes clear. SST's migration assessments are built around exactly these questions, so the chosen path is backed by your own data rather than a vendor's default.",
+          "Start with an assessment rather than a preference. Run the SAP readiness check, review custom code usage, map which processes the business wants to change, and agree how much history must remain reportable.\n\nWith that evidence, the decision usually becomes clear. Ascendus's migration assessments are built around exactly these questions, so the chosen path is backed by your own data rather than a vendor's default.",
       },
     ],
   },
@@ -45,7 +45,7 @@ export const staticBlogsData = [
     title: "RISE with SAP or GROW with SAP: Which One Fits Your Business?",
     type: "Blog",
     category: "SAP",
-    author: "SST Editorial Team",
+    author: "Ascendus Editorial Team",
     publish_date: "2026-10-21",
     cover_image: "/insights/blog/rise-vs-grow-with-sap.webp",
     sections: [
@@ -67,7 +67,7 @@ export const staticBlogsData = [
       {
         heading: "Questions to Ask Before Choosing",
         content:
-          "How far do your processes differ from industry standard, and is that difference a competitive advantage or simply history? How much customisation do you rely on today? Who will own extensions, and will they be built on SAP BTP to keep the core clean?\n\nAnswering these honestly usually points to one option. SST helps customers work through them before any subscription is signed.",
+          "How far do your processes differ from industry standard, and is that difference a competitive advantage or simply history? How much customisation do you rely on today? Who will own extensions, and will they be built on SAP BTP to keep the core clean?\n\nAnswering these honestly usually points to one option. Ascendus helps customers work through them before any subscription is signed.",
       },
     ],
   },
@@ -77,7 +77,7 @@ export const staticBlogsData = [
     title: "Preparing Your Finance Team for E-Invoicing in the GCC",
     type: "Blog",
     category: "Compliance",
-    author: "SST Editorial Team",
+    author: "Ascendus Editorial Team",
     publish_date: "2026-10-07",
     cover_image: "/insights/blog/gcc-e-invoicing-readiness.webp",
     sections: [
@@ -99,7 +99,7 @@ export const staticBlogsData = [
       {
         heading: "Plan for Rejection and Exceptions",
         content:
-          "Invoices will occasionally be rejected by validation. Teams need a monitoring view, a playbook for common errors, and agreed response times so rejected invoices do not delay customer billing or cash collection.\n\nAlways confirm the current requirements and deadlines with the relevant tax authority, as timelines and technical specifications are updated over time. SST's e-invoicing team works with clients to build compliant SAP integrations and the operating processes around them.",
+          "Invoices will occasionally be rejected by validation. Teams need a monitoring view, a playbook for common errors, and agreed response times so rejected invoices do not delay customer billing or cash collection.\n\nAlways confirm the current requirements and deadlines with the relevant tax authority, as timelines and technical specifications are updated over time. Ascendus's e-invoicing team works with clients to build compliant SAP integrations and the operating processes around them.",
       },
     ],
   },
@@ -109,7 +109,7 @@ export const staticBlogsData = [
     title: "What Good Application Support Looks Like After Go-Live",
     type: "Blog",
     category: "Managed Services",
-    author: "SST Editorial Team",
+    author: "Ascendus Editorial Team",
     publish_date: "2026-09-23",
     cover_image: "/insights/blog/application-support-after-go-live.webp",
     sections: [

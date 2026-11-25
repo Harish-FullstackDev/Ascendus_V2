@@ -37,7 +37,7 @@ export default function CommonError() {
             href="/"
             className="text-blue-500 hover:underline"
           >
-            Support Studio Technologies
+            Ascendus
           </a>{' '}
           to choose a new direction.
         </span>

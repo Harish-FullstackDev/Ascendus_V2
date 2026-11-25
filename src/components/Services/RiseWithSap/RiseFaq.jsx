@@ -23,7 +23,7 @@ const ITEMS = [
         desc: "RISE with SAP can run on the major hyperscalers as well as in SAP data centres, depending on the edition and region. We help you weigh the options against data residency, integration, and cost requirements.",
     },
     {
-        title: "What does SST do in a RISE with SAP engagement?",
+        title: "What does Ascendus do in a RISE with SAP engagement?",
         desc: "We guide the full journey: assessing your landscape, recommending the best course of action, fit-to-standard design, supervised configuration, data migration, testing, cutover, and support after go-live.",
     },
 ];

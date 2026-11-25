@@ -13,7 +13,7 @@ export const sectionContent = {
   Summary: {
     title: "Disclaimer",
     paragraphs: [
-      `The information on the Support Studio Technologies website is provided for general informational purposes only. By accessing or using this website, you acknowledge and agree to the terms of this Disclaimer.`,
+      `The information on the Ascendus website is provided for general informational purposes only. By accessing or using this website, you acknowledge and agree to the terms of this Disclaimer.`,
     ],
   },
 
@@ -27,14 +27,14 @@ export const sectionContent = {
   "Accuracy of Information": {
     title: "Accuracy of Information",
     paragraphs: [
-      "Support Studio Technologies (SST) makes reasonable efforts to keep website content accurate and up to date, but makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or availability of the information, products, services, or related graphics contained on the website.",
+      "Ascendus makes reasonable efforts to keep website content accurate and up to date, but makes no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, or availability of the information, products, services, or related graphics contained on the website.",
     ],
   },
 
   "Third-Party Links": {
     title: "Third-Party Links",
     paragraphs: [
-      "This website may contain links to third-party websites or resources. SST does not endorse and is not responsible for the content, accuracy, or practices of any linked third-party site.",
+      "This website may contain links to third-party websites or resources. Ascendus does not endorse and is not responsible for the content, accuracy, or practices of any linked third-party site.",
     ],
   },
 
@@ -48,14 +48,14 @@ export const sectionContent = {
   "Limitation Of Liability": {
     title: "Limitation of Liability",
     paragraphs: [
-      "To the maximum extent permitted by applicable law, SST shall not be liable for any loss or damage, including without limitation indirect or consequential loss or damage, arising from reliance on information published on this website.",
+      "To the maximum extent permitted by applicable law, Ascendus shall not be liable for any loss or damage, including without limitation indirect or consequential loss or damage, arising from reliance on information published on this website.",
     ],
   },
 
   Changes: {
     title: "Changes to This Disclaimer",
     paragraphs: [
-      "SST may update this Disclaimer from time to time. Continued use of the website following the publication of a revised Disclaimer constitutes acceptance of those changes.",
+      "Ascendus may update this Disclaimer from time to time. Continued use of the website following the publication of a revised Disclaimer constitutes acceptance of those changes.",
     ],
   },
 
@@ -64,7 +64,7 @@ export const sectionContent = {
     paragraphs: [
       {
         parts: [
-          "For questions regarding this Disclaimer, please contact Support Studio Technologies using the contact details provided on our website or by emailing ",
+          "For questions regarding this Disclaimer, please contact Ascendus using the contact details provided on our website or by emailing ",
           { text: "info@isupportz.com", href: "mailto:info@isupportz.com" },
           ".",
         ],

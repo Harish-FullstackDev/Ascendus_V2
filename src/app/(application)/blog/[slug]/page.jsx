@@ -15,7 +15,7 @@ export async function generateMetadata({ params }) {
         const firstSectionText = stripHtml(staticBlog.sections?.[0]?.content);
         const description = firstSectionText
             ? `${firstSectionText.slice(0, 157)}${firstSectionText.length > 157 ? "..." : ""}`
-            : `Read "${staticBlog.title}" on the Support Studio Technologies blog.`;
+            : `Read "${staticBlog.title}" on the Ascendus blog.`;
         return {
             title: fitTitle(staticBlog.title),
             description,
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }) {
                 authors: staticBlog.author ? [staticBlog.author] : undefined,
                 images: staticBlog.cover_image
                     ? [{ url: staticBlog.cover_image, width: 1200, height: 630, alt: staticBlog.title }]
-                    : [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+                    : [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
             },
         };
     }
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }) {
     const firstSectionText = stripHtml(blog.sections?.[0]?.content);
     const description = firstSectionText
         ? `${firstSectionText.slice(0, 157)}${firstSectionText.length > 157 ? "..." : ""}`
-        : `Read "${blog.title}" on the Support Studio Technologies blog.`;
+        : `Read "${blog.title}" on the Ascendus blog.`;
 
     return {
         title: fitTitle(blog.title),
@@ -63,7 +63,7 @@ export async function generateMetadata({ params }) {
             authors: blog.author ? [blog.author] : undefined,
             images: blog.cover_image
                 ? [{ url: blog.cover_image, width: 1200, height: 630, alt: blog.title }]
-                : [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+                : [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
         },
     };
 }

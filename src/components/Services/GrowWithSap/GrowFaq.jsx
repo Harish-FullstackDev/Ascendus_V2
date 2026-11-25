@@ -23,7 +23,7 @@ const ITEMS = [
         desc: "SAP delivers updates on a regular release schedule. We help you review each release, test the processes that matter to you, and adopt the new features worth using.",
     },
     {
-        title: "What does SST provide during a GROW with SAP project?",
+        title: "What does Ascendus provide during a GROW with SAP project?",
         desc: "Assessment and the best course of action, fit-to-standard workshops, supervised configuration, data migration, testing, go-live support, and ongoing help as your business grows.",
     },
 ];

@@ -4,34 +4,60 @@ export const ROUTE_LABELS: Record<string, string> = {
   "about-us": "About Us",
   services: "Services",
   solutions: "Solutions",
-  "rise-with-sap": "RISE with SAP",
-  "grow-with-sap": "GROW with SAP",
-  "sap-successfactors": "SAP SuccessFactors",
-  "sap-ariba": "SAP Ariba",
-  "sap-cx": "SAP CX",
-  "sap-analytics-cloud": "SAP Analytics Cloud",
-  "sap-ams": "SAP AMS",
-  "sap-conversion-ecc-to-s4hana": "SAP Conversion (ECC – S/4HANA)",
-  "sap-rollout": "SAP Rollout",
-  "sap-migration": "SAP Migration",
-  "sap-tm": "SAP T&M",
-  "microsoft-dynamics-365": "Microsoft Dynamics 365",
-  "power-bi": "Power BI",
-  "microsoft-ams": "Microsoft AMS",
-  "microsoft-migration": "Microsoft Migration",
-  "microsoft-rollout": "Microsoft Rollout",
-  "google-cloud-platform": "Google Cloud Platform",
-  "amazon-web-services": "Amazon Web Services",
-  azure: "Azure",
-  "robotic-process-automation": "Robotic Process Automation",
-  "ai-ml": "AI & Machine Learning",
+  sap: "SAP & Enterprise Applications",
+  microsoft: "Microsoft & Cloud Solutions",
+  "digital-engineering": "Digital Engineering",
+  "digital-transformation": "Digital Transformation",
   "e-invoicing": "E-Invoicing",
-  "internet-of-things": "Internet of Things",
-  "big-data": "Big Data",
-  "cyber-security": "Cyber Security",
-  "full-stack-development": "Full Stack Development",
+  "s4hana-transformation": "SAP S/4HANA Transformation",
+  implementation: "Implementation",
+  "migration-conversion": "Migration & System Conversion",
+  "application-management": "Application Management Services",
+  "support-maintenance": "Support & Maintenance",
+  "rollout-services": "Rollout Services",
+  btp: "SAP BTP",
+  integration: "SAP Integration",
+  ariba: "SAP Ariba",
+  "analytics-reporting": "SAP Analytics & Reporting",
+  ehs: "SAP EHS",
+  "customer-experience": "SAP Customer Experience",
+  "time-and-material": "SAP T&M",
+  "saudi-arabia": "Saudi Arabia – ZATCA",
+  uae: "UAE",
+  "sap-integration": "SAP E-Invoicing Integration",
+  "erp-integration": "ERP E-Invoicing Integration",
+  "invoice-automation": "Invoice Automation",
+  azure: "Microsoft Azure",
+  "microsoft-365": "Microsoft 365",
+  "power-bi-analytics": "Power BI & Analytics",
+  "power-platform": "Power Platform",
+  sharepoint: "SharePoint Solutions",
+  "cloud-migration": "Cloud Migration & Management",
+  "dynamics-365": "Microsoft Dynamics 365",
+  rollout: "Rollout",
+  aws: "Amazon Web Services",
+  "google-cloud": "Google Cloud Platform",
+  "custom-software": "Custom Software Development",
+  "enterprise-applications": "Enterprise Application Development",
+  "product-engineering": "Product Engineering",
+  "saas-development": "SaaS Development",
+  "web-applications": "Web Application Development",
+  "mobile-applications": "Mobile Application Development",
+  "api-integration": "API Development & Integration",
   "ui-ux-design": "UI/UX Design",
-  "software-development": "Software Development",
+  "application-modernisation": "Application Modernisation",
+  "quality-engineering": "Quality Engineering & Testing",
+  "business-process-optimisation": "Business Process Optimisation",
+  "technology-advisory": "Enterprise Technology Advisory",
+  "data-analytics": "Data & Analytics",
+  "ai-automation": "AI & Intelligent Automation",
+  cybersecurity: "Cybersecurity Solutions",
+  iot: "Internet of Things",
+  "infrastructure-management": "IT Infrastructure Management",
+  "managed-it-services": "Managed IT Services",
+  "application-support": "Application Support Services",
+  "website-development": "Enterprise Website Development",
+  "ecommerce-development": "E-Commerce Development",
   "s4hana-on-premise": "S/4HANA On-Premise",
   "s4hana-public-cloud": "S/4HANA Public Cloud",
   "s4hana-private-cloud": "S/4HANA Private Cloud",
@@ -51,7 +77,7 @@ export const ROUTE_LABELS: Record<string, string> = {
   cookies: "Cookie Policy",
   disclaimer: "Disclaimer",
   privacyCommitment: "Privacy Commitment",
-  "sst-partner": "SST Partner Program",
+  "sst-partner": "Ascendus Partner Program",
   "sst-errors": "Errors",
   trustcenter: "Trust Center",
   whitepapers: "Whitepapers",
@@ -62,13 +88,19 @@ export const ROUTE_LABELS: Record<string, string> = {
   contact: "Contact",
 };
 
+// Labels for a full path, for segments whose ROUTE_LABELS entry means
+// something else elsewhere (e.g. "security" is also /legal/security).
+const PATH_LABELS: Record<string, string> = {
+  "/services/microsoft/security": "Microsoft Security",
+};
+
 // Path prefixes that are only grouping folders, with no page of their own.
 // Their crumb is shown as plain text and left out of the JSON-LD.
 const NO_PAGE = new Set(["/legal"]);
 
 export type BreadcrumbItem = { name: string; item: string | null };
 
-// Builds breadcrumb items (Home first) from a path like "/services/sap-ams".
+// Builds breadcrumb items (Home first) from a path like "/services/sap/application-management".
 // Falls back to a title-cased version of the segment when it isn't in ROUTE_LABELS.
 export function buildBreadcrumbItems(pathname: string): BreadcrumbItem[] {
   const segments = pathname.split("/").filter(Boolean);
@@ -78,6 +110,7 @@ export function buildBreadcrumbItems(pathname: string): BreadcrumbItem[] {
   for (const segment of segments) {
     running += `/${segment}`;
     const label =
+      PATH_LABELS[running] ||
       ROUTE_LABELS[segment] ||
       segment
         .split("-")

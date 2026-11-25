@@ -8,12 +8,12 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 export const metadata = {
   alternates: { canonical: "/legal/disclaimer/" },
   title: "Disclaimer",
-  description: "The disclaimer governing use of information published on the Support Studio Technologies website, including limitation of liability and third-party links.",
+  description: "The disclaimer governing use of information published on the Ascendus website, including limitation of liability and third-party links.",
   openGraph: {
-    title: "Disclaimer | Support Studio Technologies",
-    description: "The disclaimer governing use of information published on the Support Studio Technologies website, including limitation of liability and third-party links.",
+    title: "Disclaimer | Ascendus",
+    description: "The disclaimer governing use of information published on the Ascendus website, including limitation of liability and third-party links.",
     url: "/legal/disclaimer/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
 }
 

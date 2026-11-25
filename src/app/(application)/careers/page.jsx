@@ -4,14 +4,14 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/careers/" },
-  description: "Engineering, SAP, cloud, data and delivery roles at Support Studio Technologies, with the employing entity and work location stated on every posting.",
+  description: "Engineering, SAP, cloud, data and delivery roles at Ascendus, with the employing entity and work location stated on every posting.",
   openGraph: {
-    title: "Careers at Support Studio Technologies",
-    description: "Engineering, SAP, cloud, data and delivery roles at Support Studio Technologies, with the employing entity and work location stated on every posting.",
+    title: "Careers at Ascendus",
+    description: "Engineering, SAP, cloud, data and delivery roles at Ascendus, with the employing entity and work location stated on every posting.",
     url: "/careers/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Support Studio Technologies" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
-  title: { absolute: "Careers at Support Studio Technologies" },
+  title: { absolute: "Careers at Ascendus" },
 };
 
 export default function Page() {

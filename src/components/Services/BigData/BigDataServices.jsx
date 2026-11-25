@@ -40,7 +40,7 @@ export default function BigDataServices() {
                 className="flex flex-col items-start sm:items-center gap-2 max-w-[960px] mx-auto text-left sm:text-center self-start sm:self-auto mb-10 sm:mb-16 px-8 sm:px-[64px]"
             >
                 <h2 className="text-[#2E3033] text-2xl sm:text-[28px] font-semibold">
-                    Unlocking the Power of Core <span className="text-[#2D8EC5]">Big Data</span> Services at SST
+                    Unlocking the Power of Core <span className="text-[#2D8EC5]">Big Data</span> Services at Ascendus
                 </h2>
                 <p className="text-[#55595E] text-base sm:text-lg font-light">
                     Six service areas, each built on proven platforms, covering the full journey of your data.
