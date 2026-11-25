@@ -106,6 +106,18 @@ const Navbar = () => {
 
   useEffect(() => () => clearTimeout(megaCloseTimer.current), []);
 
+  // The open panel fills the screen from under the bar to the bottom edge, so
+  // it needs the bar's real height (88px at xl, a little less at lg).
+  const barRef = useRef(null);
+  const [barHeight, setBarHeight] = useState(88);
+  useEffect(() => {
+    const bar = barRef.current;
+    if (!bar) return;
+    const observer = new ResizeObserver(([entry]) => setBarHeight(entry.target.offsetHeight));
+    observer.observe(bar);
+    return () => observer.disconnect();
+  }, []);
+
   // Close on navigation, and whenever the navbar hides itself on scroll.
   useEffect(() => {
     closeMega();
@@ -182,9 +194,11 @@ const Navbar = () => {
           {entry.columns.map((column, i) => (
             <div key={i} className="flex flex-col gap-[24px]">
               {column.map((group) => (
-                <div key={group.name} className="flex flex-col gap-[16px]">
+                <div key={group.name} className="flex flex-col gap-[12px]">
+                  {/* 12px vertical rhythm (Figma had 16) so the tallest column fits a
+                      laptop screen without scrolling the panel. */}
                   <p className="text-[18px] font-medium leading-[1.2]">{group.name}</p>
-                  <ul className="flex flex-col gap-[16px] pl-[24px]">
+                  <ul className="flex flex-col gap-[12px] pl-[24px]">
                     {group.items.map((item) => (
                       <li key={item.href}>
                         <Link
@@ -227,7 +241,7 @@ const Navbar = () => {
       >
         {/* Desktop: links on the left, logo on the right, 64px in from each edge. */}
         <div className="hidden lg:block">
-          <div className="relative w-full flex items-center justify-between gap-6 py-[24px] px-8 xl:px-[64px]">
+          <div ref={barRef} className="relative w-full flex items-center justify-between gap-6 py-[24px] px-8 xl:px-[64px]">
             {/* Sibling background layer to avoid the nested backdrop-filter bug.
                 While Services or Industries is open the bar takes the panel's
                 background, so bar and panel read as one surface. */}
@@ -286,7 +300,13 @@ const Navbar = () => {
                         }`}
                     >
                       <div className={`backdrop-blur-[12px] transition-colors duration-500 ${tone.panel}`}>
-                        <div className="min-h-[600px] max-h-[calc(100vh-88px)] overflow-y-auto px-8 xl:px-[64px] py-[12px]">
+                        {/* Always reaches the bottom of the screen (designer's request):
+                            on tall screens no hero strip shows under the panel; on short
+                            ones the links scroll inside it. */}
+                        <div
+                          className="overflow-y-auto px-8 xl:px-[64px] py-[12px]"
+                          style={{ height: `calc(100dvh - ${barHeight}px)` }}
+                        >
                           {renderMegaPanel(entry)}
                         </div>
                       </div>

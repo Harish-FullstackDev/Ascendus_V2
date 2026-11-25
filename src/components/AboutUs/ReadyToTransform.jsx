@@ -7,7 +7,12 @@ import { motion } from "framer-motion";
 import ctaBg from "@/assets/sst-cta.webp";
 import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 
-export default function ReadyToTransform() {
+// Closing CTA band, shared by About and Why Ascendus; each page passes its own copy.
+export default function ReadyToTransform({
+    title = "Tell us what you need to change.",
+    text = "Describe the challenge and the outcome you want. We will help frame the next step.",
+    buttonLabel = "Request a Consultation",
+}) {
     const [showCalendly, setShowCalendly] = useState(false);
 
     const handleContactClick = () => {
@@ -29,11 +34,11 @@ export default function ReadyToTransform() {
                 >
                     <div className="flex flex-col gap-3 w-full sm:w-[60%] lg:w-[74%] text-center sm:text-left items-center sm:items-start">
                         <h2 className="text-2xl sm:text-[32px] lg:text-[40px] leading-tight font-semibold text-white">
-                            Let&apos;s Shape What&apos;s Next, Together.
+                            {title}
                         </h2>
 
                         <p className="text-base sm:text-xl font-light text-white/90">
-                            Transform business ambitions into measurable outcomes through trusted expertise.
+                            {text}
                         </p>
                     </div>
 
@@ -42,7 +47,7 @@ export default function ReadyToTransform() {
                         onClick={handleContactClick}
                         className="shrink-0 rounded-none border border-[#d0d0d0] px-6 sm:px-[24px] py-2 sm:py-[8px] text-lg font-light text-white transition-colors hover:bg-white hover:text-black"
                     >
-                        Book a Consultation
+                        {buttonLabel}
                     </button>
                 </motion.div>
             </section>

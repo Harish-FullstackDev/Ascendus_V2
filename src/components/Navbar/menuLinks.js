@@ -288,10 +288,7 @@ export const NAV_LINKS = [
   { label: "Services", href: "/services", mega: "columns", columns: NAV_SERVICE_COLUMNS },
   { label: "Industries", href: "/industries", mega: "grid", links: NAV_INDUSTRIES },
   { label: "Why Ascendus", href: "/why-ascendus" },
-  // Insights has no page of its own yet; it opens the blog and stays lit on
-  // the other insight listings.
-  { label: "Insights", href: "/blog", match: ["/blog", "/case-studies", "/whitepapers", "/industry-reports"] },
-  { label: "Careers", href: "/careers" },
+  // Insights and Careers were taken out of the header on request (2026-11-26).
   { label: "Contact", href: "/contact" },
 ];
 

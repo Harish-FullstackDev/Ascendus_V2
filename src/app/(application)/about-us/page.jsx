@@ -4,14 +4,14 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/about-us/" },
-  description: "Who Ascendus is, how we are structured, where we deliver from, and what a client can independently verify before engaging us.",
+  description: "Ascendus helps organisations modernise enterprise systems and processes, combining SAP, e-invoicing and digital engineering around clear business priorities.",
   openGraph: {
-    title: "About Ascendus | Enterprise IT Services",
-    description: "Who Ascendus is, how we are structured, where we deliver from, and what a client can independently verify before engaging us.",
+    title: "About Ascendus | Enterprise Technology & Business Transformation",
+    description: "Ascendus helps organisations modernise enterprise systems and processes, combining SAP, e-invoicing and digital engineering around clear business priorities.",
     url: "/about-us/",
     images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
-  title: { absolute: "About Ascendus | Enterprise IT Services" },
+  title: { absolute: "About Ascendus | Enterprise Technology & Business Transformation" },
 };
 
 export default function Page() {

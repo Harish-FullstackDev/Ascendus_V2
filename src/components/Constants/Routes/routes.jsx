@@ -5,6 +5,7 @@ export const validRoutes = [
   "/whitepapers/",
   "/industry-reports/",
   "/about-us/",
+  "/why-ascendus/",
   "/book-a-consultation/",
   "/careers/",
   "/contact/",

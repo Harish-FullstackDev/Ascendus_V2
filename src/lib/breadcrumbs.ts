@@ -2,6 +2,7 @@
 // Add an entry here whenever a new route is created.
 export const ROUTE_LABELS: Record<string, string> = {
   "about-us": "About Us",
+  "why-ascendus": "Why Ascendus",
   services: "Services",
   solutions: "Solutions",
   sap: "SAP & Enterprise Applications",
