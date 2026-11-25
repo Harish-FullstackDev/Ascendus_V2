@@ -9,7 +9,7 @@ export const metadata = {
     title: "SAP S/4HANA Public Cloud | Ascendus",
     description: "SAP S/4HANA Public Cloud: agile, scalable cloud ERP with rapid deployment, automated updates, built-in AI and analytics, and predictable pricing.",
     url: "/solutions/s4hana-public-cloud/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "SAP S/4HANA Public Cloud",
 };

@@ -9,7 +9,7 @@ export const metadata = {
     title: "Client Case Studies | Ascendus",
     description: "Documented delivery evidence from enterprise technology programs, published with the client's approval and a stated measurement basis.",
     url: "/case-studies/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "Client Case Studies",
 };

@@ -9,7 +9,7 @@ export const metadata = {
     title: "Book a Consultation | Ascendus",
     description: "Book a working session with an architect or practice lead. Choose the consultation type and tell us what your estate looks like now.",
     url: "/book-a-consultation/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "Book a Consultation",
 };

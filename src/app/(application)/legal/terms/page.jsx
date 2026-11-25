@@ -13,7 +13,7 @@ export const metadata = {
     title: "Terms & Conditions | Ascendus",
     description: "The terms governing your use of the Ascendus website, including acceptable use, intellectual property and limitation of liability.",
     url: "/legal/terms/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
 }
 

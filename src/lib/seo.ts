@@ -8,7 +8,7 @@ import { SITE_URL } from "@/lib/siteUrl";
 import { SERVICES, SOLUTIONS } from "@/components/Navbar/menuLinks";
 
 // serviceType for a page, taken from the menu category it sits under
-// (e.g. /services/sap-tm → "SAP", /solutions/procurement → "Supply Spend Management"),
+// (e.g. /services/sap/ariba → "SAP", /solutions/procurement → "Supply Spend Management"),
 // so each Service schema describes its own area instead of one shared label.
 const categoryForPath = (url: string): string | undefined => {
   const path = url.replace(/^https?:\/\/[^/]+/, "").replace(/\/$/, "");
@@ -128,7 +128,7 @@ export const generateArticleSchema = (article: {
   "description": article.description,
   "url": absolute(article.url),
   "mainEntityOfPage": absolute(article.url),
-  "image": absolute(article.image || "/og-image.png?v=3"),
+  "image": absolute(article.image || "/og-image.png?v=4"),
   ...(article.datePublished ? { "datePublished": article.datePublished } : {}),
   "author": article.author
     ? { "@type": "Person", "name": article.author }

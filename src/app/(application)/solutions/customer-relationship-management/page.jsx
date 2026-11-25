@@ -9,7 +9,7 @@ export const metadata = {
     title: "SAP CRM Solutions & Services | Ascendus",
     description: "SAP Customer Relationship Management (CRM): integrated sales, marketing, service, commerce and analytics, connected to SAP ERP for unified customer data.",
     url: "/solutions/customer-relationship-management/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "SAP CRM Solutions & Services",
 };

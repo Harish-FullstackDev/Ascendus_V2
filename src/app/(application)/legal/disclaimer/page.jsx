@@ -13,7 +13,7 @@ export const metadata = {
     title: "Disclaimer | Ascendus",
     description: "The disclaimer governing use of information published on the Ascendus website, including limitation of liability and third-party links.",
     url: "/legal/disclaimer/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
 }
 

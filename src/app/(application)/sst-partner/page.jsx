@@ -9,7 +9,7 @@ export const metadata = {
     title: "Partner Program | Ascendus",
     description: "Apply to the Ascendus partner program — the qualification criteria, engagement model and next steps for prospective partners.",
     url: "/sst-partner/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "Partner Program",
 };

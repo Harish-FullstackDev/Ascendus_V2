@@ -9,7 +9,7 @@ export const metadata = {
     title: "Careers at Ascendus",
     description: "Engineering, SAP, cloud, data and delivery roles at Ascendus, with the employing entity and work location stated on every posting.",
     url: "/careers/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: { absolute: "Careers at Ascendus" },
 };

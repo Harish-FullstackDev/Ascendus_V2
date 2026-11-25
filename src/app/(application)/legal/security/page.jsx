@@ -9,7 +9,7 @@ export const metadata = {
     title: "Security and Privacy Policy | Ascendus",
     description: "The technical and organizational controls Ascendus applies to protect data confidentiality, integrity and availability across its systems.",
     url: "/legal/security/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "Security and Privacy Policy",
 };

@@ -49,9 +49,9 @@ export const metadata: Metadata = {
     description: "Ascendus designs, builds and runs enterprise technology: SAP, cloud, data, AI, security and managed operations, under one team.",
     images: [
       {
-        url: "/og-image.png?v=3",
-        width: 512,
-        height: 512,
+        url: "/og-image.png?v=4",
+        width: 1200,
+        height: 630,
         alt: "Ascendus Enterprise Solutions",
       },
     ],
@@ -73,10 +73,10 @@ export const metadata: Metadata = {
     ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION } }
     : {}),
   twitter: {
-    card: "summary",
+    card: "summary_large_image",
     title: "Ascendus | Enterprise Technology, SAP and Managed Services",
     description: "Ascendus designs, builds and runs enterprise technology: SAP, cloud, data, AI, security and managed operations, under one team.",
-    images: ["/og-image.png?v=3"],
+    images: ["/og-image.png?v=4"],
   },
 };
 

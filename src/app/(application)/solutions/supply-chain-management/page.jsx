@@ -9,7 +9,7 @@ export const metadata = {
     title: "Supply Chain Management | Ascendus",
     description: "SAP Supply Chain Management: an integrated supply chain solution with robust optimization tools and advanced logistics and planning capabilities.",
     url: "/solutions/supply-chain-management/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "Supply Chain Management",
 };

@@ -9,7 +9,7 @@ export const metadata = {
     title: "Solutions | Ascendus",
     description: "SAP ERP, business technology, CRM, finance, HCM, spend and supply chain solutions from Ascendus.",
     url: "/solutions/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "Solutions",
 };

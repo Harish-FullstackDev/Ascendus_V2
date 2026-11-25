@@ -9,7 +9,7 @@ export const metadata = {
     title: "SAP Human Capital Management | Ascendus",
     description: "SAP Human Capital Management (HCM) covers the full employee lifecycle from hire to retire, with integrated core HR, time, payroll, talent and self-service.",
     url: "/solutions/human-capital-management/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "SAP Human Capital Management",
 };

@@ -9,7 +9,7 @@ export const metadata = {
     title: "SAP SuccessFactors Solution | Ascendus",
     description: "SAP SuccessFactors cloud HCM solution: recruiting, performance and goals, learning, Employee Central, compensation, succession and workforce analytics.",
     url: "/solutions/successfactors/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "SAP SuccessFactors Solution",
 };

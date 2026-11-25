@@ -9,7 +9,7 @@ export const metadata = {
     title: "Job Application | Ascendus",
     description: "Submit your application for an open role at Ascendus. Tell us about your experience and what you would bring to the team.",
     url: "/careers/apply/",
-    images: [{ url: "/og-image.png?v=3", width: 512, height: 512, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
   },
   title: "Job Application",
 };
