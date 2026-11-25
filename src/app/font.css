@@ -375,3 +375,32 @@
   descent-override: 0%;
   line-gap-override: 0%;
 }
+
+/* ---------------------------------------------------------------- */
+/* Switzer — Ascendus font (Figma "Primary" / "Secondary").          */
+/* Used by the redesigned Ascendus components (navbar first); the     */
+/* rest of the site still inherits General Sans until it is redone.   */
+/* ---------------------------------------------------------------- */
+@font-face {
+  font-family: 'Switzer';
+  src: url('../fonts/switzer/Switzer-Regular.woff2') format('woff2'),
+       url('../fonts/switzer/Switzer-Regular.woff') format('woff'),
+       url('../fonts/switzer/Switzer-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Switzer';
+  src: url('../fonts/switzer/Switzer-Medium.woff2') format('woff2'),
+       url('../fonts/switzer/Switzer-Medium.woff') format('woff'),
+       url('../fonts/switzer/Switzer-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+.font-switzer {
+  font-family: 'Switzer', sans-serif;
+}
