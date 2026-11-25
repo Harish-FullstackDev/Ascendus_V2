@@ -9,16 +9,16 @@ import OurStory from "@/components/AboutUs/OurStory";
 import WhatWeDo from "@/components/AboutUs/WhatWeDo";
 import WhereWeHeadedAndWhy from "@/components/AboutUs/WhereWeHeadedAndWhy";
 import WhatShapesHowWeDeliver from "@/components/AboutUs/WhatShapesHowWeDeliver";
+import Leadership from "@/components/AboutUs/Leadership";
 import WhereWeWork from "@/components/AboutUs/WhereWeWork";
 import Partners from "@/components/AboutUs/Partners";
+import OurStrength from "@/components/AboutUs/OurStrength";
 import ReadyToTransform from "@/components/AboutUs/ReadyToTransform";
 
 // About Ascendus answers "who are you" (content plan section 2). Process content
 // lives only on /why-ascendus/, so the two pages never repeat each other.
 //
-// Held back until Ascendus confirms the content (plan 2.3): Leadership (names,
-// bios, photos, consent), Ascendus at a glance (one verified set of numbers;
-// the old OurStrength component is kept for it), partner logos (written proof).
+// Partner logos and the Ascendus at a glance figures were supplied by Ascendus.
 // Removed as unsupported: the performance tiles, the "Trusted by 150+" banner,
 // the testimonials and the finance filler subtitles.
 
@@ -34,8 +34,10 @@ const SECTIONS = [
     { id: "our-story", label: "Our story" },
     { id: "vision-mission", label: "Vision & mission" },
     { id: "how-we-build", label: "How we build" },
+    { id: "leadership", label: "Leadership" },
     { id: "where-we-work", label: "Where we work" },
     { id: "partners", label: "Partners" },
+    { id: "at-a-glance", label: "At a glance" },
 ];
 
 const page = () => {
@@ -66,8 +68,10 @@ const page = () => {
                 <WhatWeDo />
                 <WhereWeHeadedAndWhy />
                 <WhatShapesHowWeDeliver />
+                <Leadership />
                 <WhereWeWork />
                 <Partners />
+                <OurStrength />
                 <ReadyToTransform />
             </div>
 

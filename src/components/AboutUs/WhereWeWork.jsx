@@ -12,7 +12,7 @@ const MARKETS = ["Saudi Arabia", "UAE", "Oman", "Qatar", "Kuwait", "Bahrain", "I
 
 export default function WhereWeWork() {
     return (
-        <section id="where-we-work" className="scroll-mt-16 w-full bg-[#f3f6f9] px-8 sm:px-[64px] py-10 sm:py-16">
+        <section id="where-we-work" className="scroll-mt-16 w-full px-8 sm:px-[64px] py-10 sm:py-16">
             <SectionTitle
                 title="Rooted in Saudi Arabia. Focused on the GCC. Open to global collaboration."
                 highlight="Focused on the GCC."
@@ -33,7 +33,7 @@ export default function WhereWeWork() {
                     <p className="mt-8 text-sm font-medium uppercase tracking-wide text-[#2E3033]">Markets we serve</p>
                     <ul className="mt-4 flex flex-wrap gap-3">
                         {MARKETS.map((market) => (
-                            <li key={market} className="border border-[#2E3033]/20 bg-white px-4 py-2 text-base text-[#2E3033]">
+                            <li key={market} className="border border-[#2E3033]/20 bg-[#f3f6f9] px-4 py-2 text-base text-[#2E3033]">
                                 {market}
                             </li>
                         ))}

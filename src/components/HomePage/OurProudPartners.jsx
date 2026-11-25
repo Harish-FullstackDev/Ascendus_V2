@@ -60,6 +60,39 @@ const MARQUEE_CSS = `
 }
 `;
 
+// The scrolling logo strip on its own, shared with the About page Partners
+// section so both always show the same logos.
+export function PartnerLogoMarquee() {
+    return (
+        <>
+            <style>{MARQUEE_CSS}</style>
+            <div className="partner-marquee w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
+                <div className="partner-marquee-track flex w-max items-center">
+                    {[0, 1].map((copy) => (
+                        <div
+                            key={copy}
+                            aria-hidden={copy === 1 ? true : undefined}
+                            className={`flex shrink-0 items-center gap-x-12 sm:gap-x-16 pr-12 sm:pr-16 ${copy === 1 ? "partner-marquee-copy" : ""}`}
+                        >
+                            {PARTNERS.map((partner) => (
+                                <Image
+                                    key={partner.name}
+                                    src={partner.logo}
+                                    alt={copy === 1 ? "" : partner.name}
+                                    width={partner.width}
+                                    height={partner.height}
+                                    style={{ "--logo-h": `${partner.height}px` }}
+                                    className="w-auto h-[calc(var(--logo-h)*0.75)] sm:h-[var(--logo-h)] object-contain shrink-0"
+                                />
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </>
+    );
+}
+
 export default function OurProudPartners() {
     return (
         <section className="w-full bg-white pt-10 sm:pt-16 px-8 sm:px-[64px]">
@@ -76,30 +109,7 @@ export default function OurProudPartners() {
                     <span className="text-[#2D8EC5]">Partners</span>
                 </h2>
 
-                <style>{MARQUEE_CSS}</style>
-                <div className="partner-marquee w-full overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]">
-                    <div className="partner-marquee-track flex w-max items-center">
-                        {[0, 1].map((copy) => (
-                            <div
-                                key={copy}
-                                aria-hidden={copy === 1 ? true : undefined}
-                                className={`flex shrink-0 items-center gap-x-12 sm:gap-x-16 pr-12 sm:pr-16 ${copy === 1 ? "partner-marquee-copy" : ""}`}
-                            >
-                                {PARTNERS.map((partner) => (
-                                    <Image
-                                        key={partner.name}
-                                        src={partner.logo}
-                                        alt={copy === 1 ? "" : partner.name}
-                                        width={partner.width}
-                                        height={partner.height}
-                                        style={{ "--logo-h": `${partner.height}px` }}
-                                        className="w-auto h-[calc(var(--logo-h)*0.75)] sm:h-[var(--logo-h)] object-contain shrink-0"
-                                    />
-                                ))}
-                            </div>
-                        ))}
-                    </div>
-                </div>
+                <PartnerLogoMarquee />
             </motion.div>
             {/* Full-width hairline separating Our Proud Partners from the FAQ below
                 (both white), 64px from each; the negative margins cancel the
