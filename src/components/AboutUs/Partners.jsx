@@ -6,7 +6,7 @@ import SectionTitle from "@/components/CommonComponents/SectionTitle";
 
 // Content plan 2.3 item 8. Text and button only: a partner logo appears here
 // only with written proof of that partnership, using the exact status the
-// vendor granted.
+// vendor granted. The button opens the partner programme application form.
 export default function Partners() {
     return (
         <section id="partners" className="scroll-mt-16 w-full px-8 sm:px-[64px] py-10 sm:py-16">
@@ -24,7 +24,7 @@ export default function Partners() {
                     fit, delivery capability and long-term alignment.
                 </p>
                 <Link
-                    href="/contact"
+                    href="/sst-partner"
                     className="inline-flex items-center justify-center bg-[#0061AF] px-6 py-2 text-lg font-light text-white transition-colors hover:bg-[#004174]"
                 >
                     Discuss a partnership
