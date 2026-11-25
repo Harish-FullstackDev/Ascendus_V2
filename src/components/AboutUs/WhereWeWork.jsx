@@ -1,19 +1,23 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
 import SectionTitle from "@/components/CommonComponents/SectionTitle";
+import hqBg from "@/assets/AboutUs/contact-ksa.webp";
 
 // Content plan 2.3 item 7. Only Riyadh is shown as an office: the market chips
 // are markets served, not locations, and no other pin is implied until an
 // office is confirmed. The full street address is still to be confirmed, so
-// the HQ card shows the city only.
+// the HQ card shows the city only. Its background is the KSA desert night photo,
+// darkened at the top where the text sits.
 const MARKETS = ["Saudi Arabia", "UAE", "Oman", "Qatar", "Kuwait", "Bahrain", "International"];
 
 export default function WhereWeWork() {
     return (
         <section id="where-we-work" className="scroll-mt-16 w-full px-8 sm:px-[64px] py-10 sm:py-16">
             <SectionTitle
+                capitalize
                 title="Rooted in Saudi Arabia. Focused on the GCC. Open to global collaboration."
                 highlight="Focused on the GCC."
                 className="mb-10 sm:mb-16"
@@ -45,12 +49,16 @@ export default function WhereWeWork() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="bg-[#004174] p-8 text-white"
+                    className="relative min-h-[280px] overflow-hidden rounded-[8px] bg-[#0e2b4b] p-8 text-white sm:min-h-[320px]"
                 >
-                    <MapPin className="size-8 sm:size-10 text-white" strokeWidth={1.5} aria-hidden="true" />
-                    <p className="mt-6 text-sm font-medium uppercase tracking-wide text-white/70">Headquarters</p>
-                    <p className="mt-2 text-xl sm:text-2xl font-semibold">Riyadh</p>
-                    <p className="mt-1 text-base sm:text-lg font-light text-white/90">Kingdom of Saudi Arabia</p>
+                    <Image src={hqBg} alt="" fill sizes="(min-width: 1024px) 420px, 100vw" className="object-cover object-bottom" />
+                    <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/35 to-black/10" />
+                    <div className="relative">
+                        <MapPin className="size-8 sm:size-10 text-white" strokeWidth={1.5} aria-hidden="true" />
+                        <p className="mt-6 text-sm font-medium uppercase tracking-wide text-white/80">Headquarters</p>
+                        <p className="mt-2 text-xl sm:text-2xl font-semibold">Riyadh</p>
+                        <p className="mt-1 text-base sm:text-lg font-light text-white/90">Kingdom of Saudi Arabia</p>
+                    </div>
                 </motion.div>
             </div>
         </section>

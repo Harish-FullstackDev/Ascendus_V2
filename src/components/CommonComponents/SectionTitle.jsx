@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 // Centred section heading used across the About and Why Ascendus pages: an h2
 // with one key phrase in the accent blue, and an optional light subtitle.
 // `highlight` must appear verbatim inside `title`. `dark` switches the colours
-// for use on a navy band.
-export default function SectionTitle({ title, highlight, subtitle, dark = false, className = "" }) {
+// for use on a navy band. `capitalize` sets every word in title case, matching
+// the About page headings.
+export default function SectionTitle({ title, highlight, subtitle, dark = false, capitalize = false, className = "" }) {
     const at = highlight ? title.indexOf(highlight) : -1;
 
     return (
@@ -17,7 +18,7 @@ export default function SectionTitle({ title, highlight, subtitle, dark = false,
             transition={{ duration: 0.6, ease: "easeOut" }}
             className={`text-center max-w-3xl mx-auto ${className}`}
         >
-            <h2 className={`text-2xl sm:text-[28px] font-semibold ${dark ? "text-white" : "text-[#2E3033]"}`}>
+            <h2 className={`text-2xl sm:text-[28px] font-semibold ${capitalize ? "capitalize" : ""} ${dark ? "text-white" : "text-[#2E3033]"}`}>
                 {at === -1 ? (
                     title
                 ) : (

@@ -13,6 +13,7 @@ import Leadership from "@/components/AboutUs/Leadership";
 import WhereWeWork from "@/components/AboutUs/WhereWeWork";
 import Partners from "@/components/AboutUs/Partners";
 import OurStrength from "@/components/AboutUs/OurStrength";
+import AboutUsInsights from "@/components/AboutUs/AboutUsInsights";
 import ReadyToTransform from "@/components/AboutUs/ReadyToTransform";
 
 // About Ascendus answers "who are you" (content plan section 2). Process content
@@ -32,12 +33,13 @@ const HERO_ACTIONS = [
 
 const SECTIONS = [
     { id: "our-story", label: "Our story" },
+    { id: "at-a-glance", label: "At a glance" },
     { id: "vision-mission", label: "Vision & mission" },
-    { id: "how-we-build", label: "How we build" },
     { id: "leadership", label: "Leadership" },
+    { id: "how-we-build", label: "How we build" },
     { id: "where-we-work", label: "Where we work" },
     { id: "partners", label: "Partners" },
-    { id: "at-a-glance", label: "At a glance" },
+    { id: "insights", label: "Insights" },
 ];
 
 const page = () => {
@@ -66,13 +68,14 @@ const page = () => {
                 <SectionAnchorNav items={SECTIONS} />
                 <OurStory />
                 <WhatWeDo />
+                <OurStrength />
                 <WhereWeHeadedAndWhy />
-                <WhatShapesHowWeDeliver />
                 <Leadership />
+                <WhatShapesHowWeDeliver />
                 <WhereWeWork />
                 <Partners />
-                <OurStrength />
-                <ReadyToTransform />
+                <AboutUsInsights />
+                <ReadyToTransform capitalizeTitle />
             </div>
 
             <Footer />

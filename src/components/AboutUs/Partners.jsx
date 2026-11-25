@@ -11,7 +11,7 @@ import { PartnerLogoMarquee } from "@/components/HomePage/OurProudPartners";
 export default function Partners() {
     return (
         <section id="partners" className="scroll-mt-16 w-full bg-[#f3f6f9] px-8 sm:px-[64px] py-10 sm:py-16">
-            <SectionTitle title="Stronger outcomes through the right technology ecosystem." highlight="technology ecosystem." />
+            <SectionTitle capitalize title="Stronger outcomes through the right technology ecosystem." highlight="technology ecosystem." />
 
             <motion.div
                 initial={{ opacity: 0, y: 20 }}

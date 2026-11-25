@@ -24,7 +24,7 @@ export default function OurStrength() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
             >
-                <h2 className="text-2xl sm:text-[28px] font-semibold text-[#2E3033]">
+                <h2 className="text-2xl sm:text-[28px] font-semibold capitalize text-[#2E3033]">
                     Ascendus <span className="text-[#2D8EC5]">at a glance</span>
                 </h2>
             </motion.div>
