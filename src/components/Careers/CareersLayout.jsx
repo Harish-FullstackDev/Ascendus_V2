@@ -34,7 +34,7 @@ export default function CareersLayout({
 
             {children && (
                 <main className="relative z-10 -mt-[75vh] flex-grow w-full pb-16 bg-white">
-                    <div className={`w-full max-w-[1100px] mx-auto px-8 sm:px-6 lg:px-8 ${cardBg}`}>
+                    <div className={`w-full max-w-[1100px] mx-auto px-4 sm:px-6 lg:px-8 ${cardBg}`}>
                         {breadcrumbs && (
                             <div className="flex items-center gap-2 pt-10 pb-2.5 sm:pt-12 text-sm border-b border-black/10">
                                 {breadcrumbs}

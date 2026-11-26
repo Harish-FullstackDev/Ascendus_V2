@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Cloud, CodeXml, Layers, LayoutGrid } from "lucide-react";
+import { Cloud, CodeXml, Layers, ReceiptText } from "lucide-react";
 
-// The five service categories from the /services landing page. Ids and titles
-// come straight from its data file so this section can never drift out of sync
-// with the landing page or the mega menu; each card links to its band there
-// (/services#sap, …).
-import { CATEGORIES } from "@/components/Services/Landing/servicesLandingData";
+// The five service divisions, read from the navbar's Services mega menu (its
+// group headings), so this section, the navbar and the footer always list the
+// same five. Each card links to its division overview page.
+import { NAV_SERVICE_COLUMNS } from "@/components/Navbar/menuLinks";
 
 // Custom mark for Digital Transformation: a square softening into a rounded
 // square and then a circle, read left to right as "one form becoming another".
@@ -33,30 +32,37 @@ function MorphIcon({ strokeWidth = 2, className }) {
     );
 }
 
-// One fine-line icon per category, unframed, at the top of each card.
-const ICONS = {
-    sap: Layers,
-    microsoft: LayoutGrid,
-    cloud: Cloud,
-    "digital-transformation": MorphIcon,
-    "design-development": CodeXml,
+// One fine-line icon and a one-line summary per division, keyed by its
+// overview page and written from the services listed under it in the menu.
+const DETAILS = {
+    "/services/sap": {
+        icon: Layers,
+        desc: "S/4HANA transformation, implementation, migration, AMS, BTP, integration and SAP line-of-business solutions.",
+    },
+    "/services/e-invoicing": {
+        icon: ReceiptText,
+        desc: "ZATCA and UAE e-invoicing, SAP and ERP integration, invoice automation and support.",
+    },
+    "/services/microsoft": {
+        icon: Cloud,
+        desc: "Azure, Microsoft 365, Power BI, Power Platform, SharePoint, cloud migration and security.",
+    },
+    "/services/digital-engineering": {
+        icon: CodeXml,
+        desc: "Custom software, web and mobile applications, SaaS, APIs, UI/UX and quality engineering.",
+    },
+    "/services/digital-transformation": {
+        icon: MorphIcon,
+        desc: "Process optimisation, data and AI, cybersecurity, managed IT and application support.",
+    },
 };
 
-// One-line summaries for the home page, written from each category's service list.
-const SUMMARIES = {
-    sap: "Implementation, rollout, migration, conversion, and AMS support across SAP.",
-    microsoft: "Dynamics 365 and Power BI implementation, migration, and support.",
-    cloud: "Design, migration, and management on GCP, AWS, and Azure.",
-    "digital-transformation": "RPA, AI and machine learning, e-invoicing, IoT, big data, and cyber security.",
-    "design-development": "Full-stack development, UI/UX design, and custom software development.",
-};
-
-const CARDS = CATEGORIES.map((category) => ({
-    id: category.id,
-    title: category.title,
-    desc: SUMMARIES[category.id],
-    icon: ICONS[category.id],
-    href: `/services#${category.id}`,
+const CARDS = NAV_SERVICE_COLUMNS.flat().map((group) => ({
+    id: group.href,
+    title: group.name,
+    desc: DETAILS[group.href]?.desc,
+    icon: DETAILS[group.href]?.icon ?? Layers,
+    href: `${group.href}/`,
 }));
 
 const containerVariants = {

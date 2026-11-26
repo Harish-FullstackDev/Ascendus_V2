@@ -2,13 +2,14 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../assets/Footer/Ascendus_Outline_Wordmark.svg";
+import logo from "../../assets/Footer/ASCENDUS.svg";
 import logoSecondary from "../../assets/Navbar/Ascendus_Secondary_logo.png";
 import InstagramIcon from "../../assets/Footer/Instagram_Icon.svg";
 import LinkedinIcon from "../../assets/Footer/LinkedIn_Icon.svg";
 import TwitterIcon from "../../assets/Footer/X_Icon.svg";
+import { NAV_INDUSTRIES, NAV_SERVICE_COLUMNS } from "@/components/Navbar/menuLinks";
 
-const LOGO_RATIO = 193 / 1355.34; // Ascendus_Outline_Wordmark.svg intrinsic size — height per unit width
+const LOGO_RATIO = 169 / 1313; // ASCENDUS.svg intrinsic size — height per unit width
 
 const AT_END_PX = 2; // how close to the page bottom counts as being at the end
 const RESISTANCE = 0.5; // fraction of the gesture the pull actually travels
@@ -237,51 +238,20 @@ const labelClass = "text-gray-500 cursor-default";
 
 // One entry per footer column. Each renders as its own natural-width block
 // (not an equal-width grid cell), so a short list like Quick Links stays
-// narrow while Industries and Solutions — both full 10-item lists — take
-// the width their longest label needs. Links point at this site's routes;
-// Industries has no pages yet, so its entries stay plain labels.
+// narrow while Industries — a full 10-item list — takes
+// the width their longest label needs. Industries and Services come from the
+// navbar's own lists (menuLinks.js), so the two always match: every industry,
+// and the five service divisions (the mega menu's group headings).
 const columns = [
   {
     heading: "Industries",
-    items: [
-      { name: "Manufacturing" },
-      { name: "Retail & Consumer" },
-      { name: "Government & Public Sector" },
-      { name: "Banking & Financial Services" },
-      { name: "Energy & Utilities" },
-      { name: "Engineering & Construction" },
-      { name: "Healthcare & Life Sciences" },
-      { name: "Technology, Media & Communications" },
-      { name: "Transportation & Logistics" },
-      { name: "Education & Research" },
-    ],
-  },
-  {
-    heading: "Solutions",
-    headingHref: "/solutions/",
-    items: [
-      { name: "SAP S/4HANA", href: "/services/sap/s4hana-transformation/" },
-      { name: "SAP Ariba", href: "/services/sap/ariba/" },
-      { name: "SAP SuccessFactors", href: "/services/sap/successfactors/" },
-      { name: "SAP BTP", href: "/services/sap/btp/" },
-      { name: "SAP Analytics", href: "/services/sap/analytics-reporting/" },
-      { name: "SAP Integration", href: "/services/sap/integration/" },
-      { name: "SAP EHS", href: "/services/sap/ehs/" },
-      { name: "SAP CX", href: "/services/sap/customer-experience/" },
-      { name: "RISE with SAP", href: "/services/sap/s4hana-transformation/" },
-      { name: "GROW with SAP", href: "/services/sap/implementation/" },
-    ],
+    headingHref: "/industries",
+    items: NAV_INDUSTRIES,
   },
   {
     heading: "Services",
     headingHref: "/services/",
-    items: [
-      { name: "SAP", href: "/services/sap/" },
-      { name: "E-Invoicing", href: "/services/e-invoicing/" },
-      { name: "Microsoft", href: "/services/microsoft/" },
-      { name: "Digital Engineering", href: "/services/digital-engineering/" },
-      { name: "Digital Transformation", href: "/services/digital-transformation/" },
-    ],
+    items: NAV_SERVICE_COLUMNS.flat().map(({ name, href }) => ({ name, href })),
   },
   {
     heading: "Insights",
@@ -298,7 +268,7 @@ const columns = [
       { name: "Home", href: "/" },
       { name: "About Us", href: "/about-us/" },
       { name: "Why Ascendus", href: "/why-ascendus/" },
-      { name: "Partners", href: "/ascendus-partner/" },
+      { name: "Partners", href: "/partnership/" },
       { name: "Careers", href: "/careers/" },
       { name: "Contact", href: "/contact/" },
       { name: "Book a call", href: "/book-a-consultation/" },
@@ -347,15 +317,15 @@ const Footer = () => {
           />
         </div>
 
-        {/* Main row: the five nav columns on the left, each its own natural
-          width, with the logo / registered-office / social block pinned to
-          the right via ml-auto. flex-wrap lets that right block drop below
-          the columns on narrow screens instead of squeezing them. */}
-        <div className="flex flex-wrap items-start gap-x-12 gap-y-10">
+        {/* Main row: the four nav columns and the logo / office / social block,
+          each its own natural width. On wide screens they sit on one line
+          with justify-between, so every gap between them is the same size.
+          Narrower, the row wraps and ml-auto keeps the right block right. */}
+        <div className="flex flex-wrap items-start gap-x-12 gap-y-10 xl:flex-nowrap xl:justify-between xl:gap-x-8">
           {columns.map((column) => (
             <div key={column.heading} className="shrink-0">
               {/* A heading links out only when its section has a page of its own
-                (Industries and Solutions do); the rest stay plain labels. */}
+                (Industries and Services do); the rest stay plain labels. */}
               <h2 className="text-white text-base lg:text-lg font-semibold mb-4">
                 {column.headingHref ? (
                   <Link href={column.headingHref} className={linkClass}>
@@ -388,7 +358,7 @@ const Footer = () => {
           {/* Logo, registered-office address and socials — stacked, right
             aligned on desktop (ml-auto pins the whole block to the row's
             right edge); centred if it wraps onto its own line on mobile. */}
-          <div className="ml-auto shrink-0 flex flex-col items-center sm:items-end gap-6 text-center sm:text-right">
+          <div className="ml-auto xl:ml-0 shrink-0 flex flex-col items-center sm:items-end gap-6 text-center sm:text-right">
             <div className="relative h-9 w-40 aspect-[4/1]">
               <Image
                 src={logoSecondary}
