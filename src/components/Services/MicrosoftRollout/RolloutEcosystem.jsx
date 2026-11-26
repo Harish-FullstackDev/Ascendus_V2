@@ -73,7 +73,7 @@ export default function RolloutEcosystem() {
                                     type="button"
                                     aria-pressed={isActive}
                                     onClick={() => setActive(index)}
-                                    className={`bg-white h-[56px] sm:h-[93px] flex items-center justify-center transition-all duration-300 ${isActive
+                                    className={`bg-white h-[56px] sm:h-[93px] flex items-center justify-center transition-all duration-300 rounded-ui-md ${isActive
                                         ? "shadow-[2px_4px_20px_0px_rgba(0,0,0,0.25)]"
                                         : ""
                                         }`}

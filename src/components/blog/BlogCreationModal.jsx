@@ -37,7 +37,7 @@ export default function BlogCreationModal({
                         initial={{ scale: 0.95, opacity: 0 }}
                         animate={{ scale: 1, opacity: 1 }}
                         exit={{ scale: 0.95, opacity: 0 }}
-                        className="w-full max-w-2xl bg-white dark:bg-neutral-900 rounded-3xl shadow-2xl p-6 md:p-8 relative max-h-[90vh] overflow-y-auto"
+                        className="w-full max-w-2xl bg-white dark:bg-neutral-900 rounded-ui-lg shadow-2xl p-6 md:p-8 relative max-h-[90vh] overflow-y-auto"
                         onClick={(e) => e.stopPropagation()}
                     >
                         <button
@@ -53,7 +53,7 @@ export default function BlogCreationModal({
                         </h2>
 
                         {error && (
-                            <div className="mb-4 p-3 bg-red-500/10 border border-red-500/20 rounded-xl text-red-500 text-sm">
+                            <div className="mb-4 p-3 bg-red-500/10 border border-red-500/20 rounded-ui-sm text-red-500 text-sm">
                                 {error}
                             </div>
                         )}
@@ -65,7 +65,7 @@ export default function BlogCreationModal({
                                 <label className="block text-sm font-semibold text-neutral-700 dark:text-neutral-300 mb-2">
                                     Cover Image
                                 </label>
-                                <div className="relative border-2 border-dashed border-neutral-300 dark:border-neutral-700 hover:border-[#2d8ec5] dark:hover:border-[#2d8ec5] rounded-2xl p-6 flex flex-col items-center justify-center cursor-pointer transition-colors">
+                                <div className="relative border-2 border-dashed border-neutral-300 dark:border-neutral-700 hover:border-[#2d8ec5] dark:hover:border-[#2d8ec5] rounded-ui-md p-6 flex flex-col items-center justify-center cursor-pointer transition-colors">
                                     <input
                                         type="file"
                                         accept="image/*"
@@ -74,7 +74,7 @@ export default function BlogCreationModal({
                                         required
                                     />
                                     {imagePreview ? (
-                                        <div className="relative w-full h-44 rounded-xl overflow-hidden shadow-inner">
+                                        <div className="relative w-full h-44 rounded-ui-md overflow-hidden shadow-inner">
                                             <img
                                                 src={imagePreview}
                                                 alt="Cover image preview"
@@ -118,7 +118,7 @@ export default function BlogCreationModal({
                                         onChange={(e) => setTitle(e.target.value)}
                                         required
                                         placeholder="e.g. Navigating SAP S/4HANA Migration"
-                                        className="w-full px-4 py-2.5 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#2d8ec5]"
+                                        className="w-full px-4 py-2.5 rounded-ui-sm border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#2d8ec5]"
                                     />
                                 </div>
                                 <div>
@@ -131,7 +131,7 @@ export default function BlogCreationModal({
                                         onChange={(e) => setAuthor(e.target.value)}
                                         required
                                         placeholder="e.g. John Doe"
-                                        className="w-full px-4 py-2.5 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#2d8ec5]"
+                                        className="w-full px-4 py-2.5 rounded-ui-sm border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#2d8ec5]"
                                     />
                                 </div>
                             </div>
@@ -145,7 +145,7 @@ export default function BlogCreationModal({
                                     value={publishDate}
                                     onChange={(e) => setPublishDate(e.target.value)}
                                     required
-                                    className="w-full px-4 py-2.5 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#2d8ec5]"
+                                    className="w-full px-4 py-2.5 rounded-ui-sm border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-[#2d8ec5]"
                                 />
                             </div>
 
@@ -157,7 +157,7 @@ export default function BlogCreationModal({
                                     <button
                                         type="button"
                                         onClick={() => setSections([...sections, { id: Date.now(), heading: "", content: "", showImage: false, imageFile: null, imagePreview: null, caption: "" }])}
-                                        className="flex items-center gap-1 px-3 py-1.5 bg-[#2d8ec5] hover:bg-[#1C5F85] text-white text-xs font-bold rounded-xl transition-all"
+                                        className="flex items-center gap-1 px-3 py-1.5 bg-[#2d8ec5] hover:bg-[#1C5F85] text-white text-xs font-bold rounded-ui-sm transition-all"
                                     >
                                         <Plus className="w-3.5 h-3.5" /> Add Section
                                     </button>
@@ -177,7 +177,7 @@ export default function BlogCreationModal({
                                     <button
                                         type="button"
                                         onClick={() => setSections([...sections, { id: Date.now(), heading: "", content: "", showImage: false, imageFile: null, imagePreview: null, caption: "" }])}
-                                        className="flex items-center gap-2 px-5 py-2.5 bg-[#2d8ec5]/10 hover:bg-[#2d8ec5]/10 text-[#2d8ec5] text-sm font-bold rounded-xl transition-all border border-[#2d8ec5]/30 cursor-pointer"
+                                        className="flex items-center gap-2 px-5 py-2.5 bg-[#2d8ec5]/10 hover:bg-[#2d8ec5]/10 text-[#2d8ec5] text-sm font-bold rounded-ui-sm transition-all border border-[#2d8ec5]/30 cursor-pointer"
                                     >
                                         <Plus className="w-4 h-4" /> Add Another Section
                                     </button>
@@ -188,14 +188,14 @@ export default function BlogCreationModal({
                                 <button
                                     type="button"
                                     onClick={onClose}
-                                    className="flex-1 px-4 py-3 rounded-xl border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
+                                    className="flex-1 px-4 py-3 rounded-ui-sm border border-neutral-300 dark:border-neutral-700 text-neutral-700 dark:text-neutral-300 hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors"
                                 >
                                     Cancel
                                 </button>
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="flex-1 px-4 py-3 rounded-xl bg-[#2d8ec5] hover:bg-[#1C5F85] text-white font-semibold disabled:opacity-50 transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-[#2d8ec5]/20"
+                                    className="flex-1 px-4 py-3 rounded-ui-sm bg-[#2d8ec5] hover:bg-[#1C5F85] text-white font-semibold disabled:opacity-50 transition-colors flex items-center justify-center gap-2 shadow-lg hover:shadow-[#2d8ec5]/20"
                                 >
                                     {isSubmitting ? (
                                         <>

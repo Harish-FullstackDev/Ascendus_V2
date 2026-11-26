@@ -37,7 +37,7 @@ export default function GlobalTemplateLocalFit() {
                             redesigning it, which keeps reporting comparable and support simple across the group.
                         </p>
                     </div>
-                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656]">
+                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656] rounded-ui-lg overflow-hidden">
                         <Image src={templateImage} alt="Technician connecting network cables in an equipment cabinet" fill className="object-cover" />
                     </div>
                 </motion.div>
@@ -51,7 +51,7 @@ export default function GlobalTemplateLocalFit() {
                     // reversed when stacked so the text still leads, as in row 1.
                     className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-[clamp(3rem,7vw,6.25rem)]"
                 >
-                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656]">
+                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656] rounded-ui-lg overflow-hidden">
                         <Image src={localizationImage} alt="Robotic arm in an automated manufacturing facility" fill className="object-cover" />
                     </div>
                     <div className="flex flex-col gap-5 w-full">

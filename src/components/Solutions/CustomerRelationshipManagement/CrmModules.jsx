@@ -111,7 +111,7 @@ export default function CrmModules() {
                                         >
                                             <div className="flex flex-col gap-4 pb-6 sm:pl-[68px] pr-2 sm:pr-16">
                                                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">{item.desc}</p>
-                                                <div className="bg-white border-l-[3px] border-[#2d8ec5] px-4 py-3 sm:px-5 sm:py-4">
+                                                <div className="bg-white border-l-[3px] border-[#2d8ec5] px-4 py-3 sm:px-5 sm:py-4 rounded-ui-lg">
                                                     <p className="font-switzer text-[#2E3033] text-base sm:text-lg font-semibold">Benefits</p>
                                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{item.benefits}</p>
                                                 </div>

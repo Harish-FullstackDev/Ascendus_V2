@@ -40,7 +40,7 @@ export default function GcpOverview() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-full lg:w-[40%] lg:max-w-[518px] aspect-[518/325] shrink-0 self-start overflow-hidden"
+                className="relative w-full lg:w-[40%] lg:max-w-[518px] aspect-[518/325] shrink-0 self-start overflow-hidden rounded-ui-md"
             >
                 <Image src={overviewImage} alt="Team working on laptops with charts and reports on the desk" fill className="object-cover" />
             </motion.div>

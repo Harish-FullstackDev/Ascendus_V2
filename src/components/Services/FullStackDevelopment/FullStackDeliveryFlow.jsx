@@ -52,9 +52,9 @@ export default function FullStackDeliveryFlow() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.4, delay: index * 0.06 }}
-                        className="flex gap-4 bg-[#F5F6F6] px-5 py-4"
+                        className="flex gap-4 bg-[#F5F6F6] px-5 py-4 rounded-ui-md"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-[#0A3A52] text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-[#0A3A52] text-white rounded-ui-sm">
                             <step.icon aria-hidden="true" strokeWidth={1.5} className="size-5" />
                         </div>
                         <div className="flex flex-col gap-1">
@@ -85,7 +85,7 @@ export default function FullStackDeliveryFlow() {
                                     setIsPaused(true);
                                     setHoveredIndex(index);
                                 }}
-                                className={`relative flex-1 min-w-0 flex flex-col justify-center gap-5 px-6 xl:px-10 cursor-pointer transition-colors duration-300 ${isHovered ? "bg-[#0A3A52]/80" : ""}`}
+                                className={`relative flex-1 min-w-0 flex flex-col justify-center gap-5 px-6 xl:px-10 cursor-pointer transition-colors duration-300 rounded-ui-md ${isHovered ? "bg-[#0A3A52]/80" : ""}`}
                             >
                                 <step.icon aria-hidden="true" strokeWidth={1.5} className="size-8 text-white/70" />
                                 <h3 className="font-switzer text-white text-xl xl:text-2xl font-semibold">{step.title}</h3>

@@ -64,7 +64,7 @@ export default function SoftwareLifecycle() {
                                 <span className="absolute top-5 bottom-0 left-[19px] lg:left-1/2 w-px bg-[#2d8ec5]/40" aria-hidden />
                             )}
                             <div className="col-start-1 row-start-1 lg:col-start-2 flex justify-center">
-                                <span className="relative z-10 flex size-10 items-center justify-center bg-[#0A3A52] text-white text-sm sm:text-base font-semibold">
+                                <span className="relative z-10 flex size-10 items-center justify-center bg-[#0A3A52] text-white text-sm sm:text-base font-semibold rounded-ui-sm">
                                     {String(index + 1).padStart(2, "0")}
                                 </span>
                             </div>
@@ -73,7 +73,7 @@ export default function SoftwareLifecycle() {
                                 height (28px / 32px) + the 1px border, minus the badge's half height (20px)
                                 = 19px on phones, 21px from sm up. */}
                             <div
-                                className={`col-start-2 row-start-1 -mt-[19px] sm:-mt-[21px] flex flex-col gap-2 bg-white border border-[#d3d5d8] px-6 py-6 sm:px-8 ${isRight ? "lg:col-start-3" : "lg:col-start-1 lg:text-right"}`}
+                                className={`col-start-2 row-start-1 -mt-[19px] sm:-mt-[21px] flex flex-col gap-2 bg-white border border-[#d3d5d8] px-6 py-6 sm:px-8 rounded-ui-md ${isRight ? "lg:col-start-3" : "lg:col-start-1 lg:text-right"}`}
                             >
                                 <h2 className="text-[#2E3033] text-xl leading-[28px] sm:text-2xl sm:leading-[32px] font-semibold">{step.title}</h2>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{step.desc}</p>

@@ -53,9 +53,9 @@ export default function AboutUsInsights() {
                         >
                             <Link
                                 href={`/blog/${post.slug}/`}
-                                className="group flex h-full flex-col overflow-hidden rounded-[8px] border border-[#d3dae2] bg-white transition-shadow duration-300 hover:shadow-[0px_8px_24px_rgba(0,0,0,0.12)]"
+                                className="group flex h-full flex-col overflow-hidden rounded-ui-md border border-[#d3dae2] bg-white transition-shadow duration-300 hover:shadow-[0px_8px_24px_rgba(0,0,0,0.12)]"
                             >
-                                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e9edf2]">
+                                <div className="relative aspect-[4/3] w-full overflow-hidden bg-[#e9edf2] rounded-ui-md">
                                     <Image
                                         src={post.cover_image}
                                         alt=""

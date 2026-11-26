@@ -37,7 +37,7 @@ export default function WhereWeWork() {
                     <p className="mt-8 text-sm font-medium uppercase tracking-wide text-[#2E3033]">Markets we serve</p>
                     <ul className="mt-4 flex flex-wrap gap-3">
                         {MARKETS.map((market) => (
-                            <li key={market} className="border border-[#2E3033]/20 bg-[#f3f6f9] px-4 py-2 text-base text-[#2E3033]">
+                            <li key={market} className="border border-[#2E3033]/20 bg-[#f3f6f9] px-4 py-2 text-base text-[#2E3033] rounded-ui-sm">
                                 {market}
                             </li>
                         ))}
@@ -49,7 +49,7 @@ export default function WhereWeWork() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative min-h-[280px] overflow-hidden rounded-[8px] bg-[#0e2b4b] p-8 text-white sm:min-h-[320px]"
+                    className="relative min-h-[280px] overflow-hidden rounded-ui-md bg-[#0e2b4b] p-8 text-white sm:min-h-[320px]"
                 >
                     <Image src={hqBg} alt="" fill sizes="(min-width: 1024px) 420px, 100vw" className="object-cover object-bottom" />
                     <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/35 to-black/10" />

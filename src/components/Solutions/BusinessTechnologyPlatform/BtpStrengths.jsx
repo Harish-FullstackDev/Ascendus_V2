@@ -25,7 +25,7 @@ export default function BtpStrengths() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative w-full lg:w-[46%] aspect-[4/3] lg:aspect-auto lg:min-h-[420px] shrink-0 overflow-hidden bg-[#565656]"
+                    className="relative w-full lg:w-[46%] aspect-[4/3] lg:aspect-auto lg:min-h-[420px] shrink-0 overflow-hidden bg-[#565656] rounded-ui-lg"
                 >
                     <Image src={strengthsImage} alt="" fill className="object-cover" />
                 </motion.div>

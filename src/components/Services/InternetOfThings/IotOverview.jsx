@@ -21,7 +21,7 @@ export default function IotOverview() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative w-full lg:w-[520px] lg:max-w-[42%] shrink-0 aspect-[520/380] overflow-hidden"
+                    className="relative w-full lg:w-[520px] lg:max-w-[42%] shrink-0 aspect-[520/380] overflow-hidden rounded-ui-md"
                 >
                     <Image src={overviewPhoto} alt="Close-up of wireless connectivity controls on a smartphone screen" fill className="object-cover" />
                 </motion.div>

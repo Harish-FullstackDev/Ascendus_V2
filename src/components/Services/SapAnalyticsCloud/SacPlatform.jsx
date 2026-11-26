@@ -47,7 +47,7 @@ export default function SacPlatform() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.45, delay: index * 0.1 }}
-                        className="bg-white flex flex-col gap-4 px-6 py-8 sm:px-8 sm:py-10 border-t-[3px] border-[#2d8ec5]"
+                        className="bg-white flex flex-col gap-4 px-6 py-8 sm:px-8 sm:py-10 border-t-[3px] border-[#2d8ec5] rounded-ui-md"
                     >
                         <pillar.icon aria-hidden="true" strokeWidth={1.5} className="size-8 sm:size-10 text-[#1C5F85]" />
                         <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{pillar.title}</h3>

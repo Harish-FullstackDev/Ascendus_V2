@@ -152,7 +152,7 @@ export default function SacFeatures() {
                                         <div className="flex flex-col gap-4 pb-6 pr-2">
                                             <h3 className="text-[#2E3033] text-base font-medium">{tab.title}</h3>
                                             <p className="text-[#55595E] text-base font-light leading-[1.5]">{tab.desc}</p>
-                                            <div className="bg-[#f3f6f9] border-l-[3px] border-[#2d8ec5] px-4 py-3">
+                                            <div className="bg-[#f3f6f9] border-l-[3px] border-[#2d8ec5] px-4 py-3 rounded-ui-md">
                                                 <p className="font-switzer text-[#2E3033] text-base font-semibold">Highlights</p>
                                                 <ul className="mt-1 flex flex-col gap-1">
                                                     {tab.points.map((point) => (
@@ -184,7 +184,7 @@ export default function SacFeatures() {
                                 setIsPaused(true);
                             }}
                             aria-pressed={index === active}
-                            className={`shrink-0 whitespace-nowrap border px-5 py-2 text-center text-base font-semibold transition-colors ${
+                            className={`shrink-0 whitespace-nowrap border px-5 py-2 text-center text-base font-semibold transition-colors rounded-ui-sm ${
                                 index === active
                                     ? "bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] border-[#003756] text-white"
                                     : "bg-white border-[#d3d5d8] text-[#55595E] hover:border-[#2d8ec5] hover:text-[#2d8ec5]"
@@ -196,8 +196,8 @@ export default function SacFeatures() {
                 </div>
             </div>
 
-            <div className="hidden sm:flex flex-col lg:flex-row lg:items-stretch gap-0 w-full bg-[#f5f6f6]">
-                <div className="relative w-full lg:w-[55%] aspect-[16/10] lg:aspect-auto lg:min-h-[420px] shrink-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+            <div className="hidden sm:flex flex-col lg:flex-row lg:items-stretch gap-0 w-full bg-[#f5f6f6] rounded-ui-lg">
+                <div className="relative w-full lg:w-[55%] aspect-[16/10] lg:aspect-auto lg:min-h-[420px] shrink-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] rounded-ui-lg">
                     <style>{DRAW_KEYFRAMES}</style>
                     <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.4),rgba(28,95,133,0)_65%)]" />
                     <AnimatePresence mode="wait">

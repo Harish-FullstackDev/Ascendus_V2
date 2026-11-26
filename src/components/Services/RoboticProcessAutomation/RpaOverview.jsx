@@ -53,7 +53,7 @@ export default function RpaOverview() {
                         ease: "easeOut",
                         delay: 0.1,
                     }}
-                    className="relative w-full lg:w-[467px] lg:max-w-[40%] lg:ml-auto shrink-0 aspect-[467/357] overflow-hidden"
+                    className="relative w-full lg:w-[467px] lg:max-w-[40%] lg:ml-auto shrink-0 aspect-[467/357] overflow-hidden rounded-ui-md"
                 >
                     <Image src={overviewPhoto} alt="Automated laboratory equipment processing samples" fill className="object-cover" />
                 </motion.div>

@@ -21,7 +21,7 @@ const Bookacall = () => {
             <div className="text-center">
               <div className="flex justify-center mb-4">
                 <div className=" flex items-center justify-center">
-                  <Image src={msg} alt="" className="w-12 h-12 rounded-2xl" />
+                  <Image src={msg} alt="" className="w-12 h-12 rounded-ui-sm" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Email us</h3>
@@ -41,7 +41,7 @@ const Bookacall = () => {
             <div className="text-center">
               <div className="flex justify-center mb-4">
                 <div className=" flex items-center justify-center">
-                  <Image src={call} alt="" className="w-12 h-12 rounded-2xl" />
+                  <Image src={call} alt="" className="w-12 h-12 rounded-ui-sm" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Call us</h3>
@@ -61,14 +61,14 @@ const Bookacall = () => {
             <div className="text-center">
               <div className="flex justify-center mb-4">
                 <div className="  flex items-center justify-center">
-                  <Image src={people} alt="" className="w-12 h-12 rounded-2xl" />
+                  <Image src={people} alt="" className="w-12 h-12 rounded-ui-sm" />
                 </div>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Book a call</h3>
               <p className="text-gray-600 text-md mb-4 leading-relaxed">
                 Schedule a call with our team to discuss your needs and how we can help you.
               </p>
-              <button type="button" onClick={handleScheduleCall} className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors border border-blue-200 hover:border-blue-300 rounded-lg px-4 py-2" >
+              <button type="button" onClick={handleScheduleCall} className="inline-flex items-center text-blue-600 font-medium hover:text-blue-700 transition-colors border border-blue-200 hover:border-blue-300 px-4 py-2 rounded-ui-sm" >
                 Book a call
                 <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

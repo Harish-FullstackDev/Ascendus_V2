@@ -84,7 +84,7 @@ export default function InsightsListing({
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
-                className={`px-4 py-2 rounded-none text-sm border transition-all cursor-pointer ${activeCategory === cat
+                className={`px-4 py-2 text-sm border transition-all cursor-pointer rounded-ui-sm ${activeCategory === cat
                   ? "bg-[#2d8ec5] border-[#2d8ec5] text-white shadow-md shadow-[#2d8ec5]/20"
                   : "bg-white border-neutral-200 text-neutral-600 hover:border-[#2d8ec5]/40 hover:text-[#2d8ec5]"
                   }`}
@@ -100,7 +100,7 @@ export default function InsightsListing({
             <div className="w-12 h-12 border-4 border-[#2d8ec5]/20 border-t-[#2d8ec5] rounded-full animate-spin" />
           </div>
         ) : filteredItems.length === 0 ? (
-          <div className="text-center py-40 border border-dashed border-neutral-200 rounded-none p-8 bg-white">
+          <div className="text-center py-40 border border-dashed border-neutral-200 rounded-ui-lg p-8 bg-white">
             <p className="text-[#55595E] font-light text-base sm:text-lg">{emptyStateText}</p>
           </div>
         ) : (
@@ -122,13 +122,13 @@ export default function InsightsListing({
               >
 
                 <CardContainer className="inter-var w-full h-full" containerClassName="py-0 flex-grow">
-                  <CardBody className="bg-[#F5F6F6] relative shadow-md hover:shadow-2xl group/card dark:hover:shadow-2xl dark:hover:shadow-[#2d8ec5]/[0.1] dark:bg-neutral-900 dark:border-neutral-850 border-neutral-100 w-full h-full rounded-none p-6 border flex flex-col justify-between">
+                  <CardBody className="bg-[#F5F6F6] rounded-ui-md relative shadow-md hover:shadow-2xl group/card dark:hover:shadow-2xl dark:hover:shadow-[#2d8ec5]/[0.1] dark:bg-neutral-900 dark:border-neutral-850 border-neutral-100 w-full h-full rounded-none p-6 border flex flex-col justify-between">
 
                     <div className="flex flex-col flex-grow">
                       <CardItem translateZ="0" className="w-full mt-4 relative">
                         <img
                           src={item.cover_image}
-                          className="h-60 w-full object-cover group-hover/card:shadow-xl"
+                          className="h-60 w-full object-cover group-hover/card:shadow-xl rounded-ui-md"
                           alt={item.title}
                         />
 

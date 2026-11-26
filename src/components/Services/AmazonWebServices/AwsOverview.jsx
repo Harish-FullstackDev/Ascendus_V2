@@ -53,7 +53,7 @@ export default function AwsOverview() {
                         {BOXES.map((box) => (
                             <div
                                 key={box.title}
-                                className="bg-white w-full sm:flex-1 lg:h-full flex flex-col items-start gap-8 lg:gap-12 px-6 py-8"
+                                className="bg-white w-full sm:flex-1 lg:h-full flex flex-col items-start gap-8 lg:gap-12 px-6 py-8 rounded-ui-md"
                             >
                                 <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{box.title}</h3>
                                 <div className="flex flex-col gap-3">
@@ -72,7 +72,7 @@ export default function AwsOverview() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:flex-[475_1_0%] lg:aspect-[475/563] overflow-hidden"
+                    className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:flex-[475_1_0%] lg:aspect-[475/563] overflow-hidden rounded-ui-lg"
                 >
                     <Image src={overviewPhoto} alt="Close-up of storage server drive bays in a rack" fill className="object-cover" />
                 </motion.div>

@@ -24,7 +24,7 @@ export default function ScmPillars() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative w-full lg:w-[44%] aspect-[4/3] lg:aspect-auto lg:min-h-[460px] shrink-0 overflow-hidden bg-[#565656]"
+                    className="relative w-full lg:w-[44%] aspect-[4/3] lg:aspect-auto lg:min-h-[460px] shrink-0 overflow-hidden bg-[#565656] rounded-ui-lg"
                 >
                     <Image src={pillarsImage} alt="Warehouse manager tracking inventory on a tablet in the aisles" fill className="object-cover" />
                 </motion.div>
@@ -52,7 +52,7 @@ export default function ScmPillars() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 + index * 0.1 }}
-                            className="group flex bg-white border-l-2 border-[#2d8ec5] px-6 py-6 sm:px-8 sm:py-8 transition-shadow duration-300 hover:shadow-lg"
+                            className="group flex bg-white border-l-2 border-[#2d8ec5] px-6 py-6 sm:px-8 sm:py-8 transition-shadow duration-300 hover:shadow-lg rounded-ui-lg"
                         >
                             <div className="flex flex-col gap-2 min-w-0">
                                 <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{pillar.title}</h3>

@@ -14,13 +14,13 @@ export default function BlogCardGrid({ blogs, loading, onCardClick, onWriteFirst
 
     if (blogs.length === 0) {
         return (
-            <div className="text-center py-40 border border-dashed border-neutral-200 dark:border-neutral-800 rounded-3xl p-8 bg-white">
+            <div className="text-center py-40 border border-dashed border-neutral-200 dark:border-neutral-800 rounded-ui-lg p-8 bg-white">
                 <p className="text-[#55595E] font-light text-base sm:text-lg mb-6">
                     No blog posts found. Due too techenical issue
                 </p>
                 {/* <button
                     onClick={onWriteFirstPost}
-                    className="inline-flex items-center gap-2 px-5 py-3 bg-[#2d8ec5] hover:bg-[#1C5F85] text-white font-bold rounded-xl transition-colors"
+                    className="inline-flex items-center gap-2 px-5 py-3 bg-[#2d8ec5] hover:bg-[#1C5F85] text-white font-bold rounded-ui-sm transition-colors"
                 >
                     <Plus className="w-5 h-5" />
                     Write First Post

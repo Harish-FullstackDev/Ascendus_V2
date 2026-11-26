@@ -199,7 +199,7 @@ const SecurityPractices = () => {
           {securityFeatures.map((feature, index) => (
             <motion.div 
               key={index}
-              className="group text-center p-4 lg:p-2 rounded-lg transition-all duration-100  cursor-pointer"
+              className="group text-center p-4 lg:p-2 rounded-ui-sm transition-all duration-100 cursor-pointer"
               variants={cardVariants}
               whileHover={{ 
                 scale: 1.05,

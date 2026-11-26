@@ -46,7 +46,7 @@ export default function AzureAtAGlance() {
                             innovations, empowering businesses to achieve their goals effectively.
                         </p>
                     </div>
-                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656] overflow-hidden">
+                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656] overflow-hidden rounded-ui-lg">
                         <Image src={glanceImage1} alt="Professional reviewing documents at a desk in a glass office" fill className="object-cover object-[50%_25%]" />
                     </div>
                 </motion.div>
@@ -60,7 +60,7 @@ export default function AzureAtAGlance() {
                     // reversed when stacked so the text still leads on mobile.
                     className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-[clamp(3rem,7vw,100px)]"
                 >
-                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656] overflow-hidden">
+                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656] overflow-hidden rounded-ui-lg">
                         <Image src={glanceImage2} alt="Colleagues discussing a plan over a tablet in a bright office" fill className="object-cover" />
                     </div>
                     <div className="flex flex-col gap-5 w-full">

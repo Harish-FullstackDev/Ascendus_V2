@@ -45,7 +45,7 @@ function OutcomeBanner({ item }) {
     const Icon = item.icon;
 
     return (
-        <div ref={ref} className="relative aspect-[512/200] w-full overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+        <div ref={ref} className="relative aspect-[512/200] w-full overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] rounded-ui-lg">
             <div
                 aria-hidden="true"
                 className={`absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.45),rgba(28,95,133,0)_70%)] transition-opacity duration-[1500ms] ease-out ${inView ? "opacity-100" : "opacity-0"}`}

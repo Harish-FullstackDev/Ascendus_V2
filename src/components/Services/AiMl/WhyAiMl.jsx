@@ -56,7 +56,7 @@ export default function WhyAiMl() {
                         {BOXES.map((box) => (
                             <div
                                 key={box.title}
-                                className="bg-white w-full sm:flex-1 flex flex-col items-start gap-6 lg:gap-10 px-6 py-8"
+                                className="bg-white w-full sm:flex-1 flex flex-col items-start gap-6 lg:gap-10 px-6 py-8 rounded-ui-md"
                             >
                                 <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{box.title}</h3>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{box.desc}</p>
@@ -70,7 +70,7 @@ export default function WhyAiMl() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:min-h-[420px] lg:flex-[475_1_0%] overflow-hidden"
+                    className="relative w-full h-[300px] sm:h-[420px] lg:h-auto lg:min-h-[420px] lg:flex-[475_1_0%] overflow-hidden rounded-ui-lg"
                 >
                     <Image src={whyPhoto} alt="Robotic hand and human hand reaching to touch fingertips" fill className="object-cover" />
                 </motion.div>

@@ -64,7 +64,7 @@ export default function UiUxProcess() {
                         {index < STEPS.length - 1 && (
                             <span className="absolute left-[22px] top-[22px] -bottom-8 w-px bg-[#d3d5d8]" aria-hidden />
                         )}
-                        <span className="relative z-10 flex size-11 shrink-0 items-center justify-center bg-[#0A3A52] text-white">
+                        <span className="relative z-10 flex size-11 shrink-0 items-center justify-center bg-[#0A3A52] text-white rounded-ui-sm">
                             <step.icon aria-hidden="true" strokeWidth={1.5} className="size-5" />
                         </span>
                         <div className="flex flex-col gap-1 pt-2">
@@ -88,7 +88,7 @@ export default function UiUxProcess() {
                         className="group relative flex flex-col items-center gap-4 text-center"
                     >
                         {/* Navy square + white icon, as on the AI/ML, Azure, IoT and Cybersecurity pages. */}
-                        <span className="relative z-10 flex size-16 items-center justify-center bg-[#0A3A52] text-white transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105">
+                        <span className="relative z-10 flex size-16 items-center justify-center bg-[#0A3A52] text-white transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105 rounded-ui-sm">
                             <step.icon aria-hidden="true" strokeWidth={1.5} className="size-8" />
                         </span>
                         <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{step.title}</h3>

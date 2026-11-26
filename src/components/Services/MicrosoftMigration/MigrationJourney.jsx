@@ -53,9 +53,9 @@ export default function MigrationJourney() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.4, delay: index * 0.06 }}
-                        className="flex gap-4 bg-[#F5F6F6] px-5 py-4"
+                        className="flex gap-4 bg-[#F5F6F6] px-5 py-4 rounded-ui-md"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-[#00447A] text-sm font-semibold text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-[#00447A] text-sm font-semibold text-white rounded-ui-sm">
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">
@@ -84,7 +84,7 @@ export default function MigrationJourney() {
                                     setIsPaused(true);
                                     setHoveredIndex(index);
                                 }}
-                                className={`relative flex-1 flex flex-col items-center justify-center gap-5 px-4 text-left transition-colors duration-300 ${isHovered ? "bg-[#00447A]/80 cursor-pointer" : "cursor-pointer"
+                                className={`relative flex-1 flex flex-col items-center justify-center gap-5 px-4 text-left transition-colors duration-300 rounded-ui-md ${isHovered ? "bg-[#00447A]/80 cursor-pointer" : "cursor-pointer"
                                     }`}
                             >
                                 <h2 className="text-white text-xl font-semibold w-full max-w-[240px]">{step.title}</h2>

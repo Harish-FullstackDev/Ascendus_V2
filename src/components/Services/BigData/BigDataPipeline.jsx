@@ -52,7 +52,7 @@ export default function BigDataPipeline() {
             </motion.div>
 
             <div className="flex flex-col lg:flex-row max-w-screen mx-auto lg:h-[500px] pt-16 md:pt-16">
-                <div className="relative hidden lg:block w-full lg:h-full lg:w-[35%] shrink-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                <div className="relative hidden lg:block w-full lg:h-full lg:w-[35%] shrink-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] rounded-ui-md">
                     <style>{DRAW_KEYFRAMES}</style>
                     <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.4),rgba(28,95,133,0)_65%)]" />
 
@@ -102,7 +102,7 @@ export default function BigDataPipeline() {
                                 <button
                                     type="button"
                                     onClick={() => setActive(index)}
-                                    className={`relative text-left flex flex-col justify-center gap-3 px-6 sm:px-8 sm:h-1/4 border-b border-[#cac9c9] last:border-b-0 overflow-hidden bg-[#F8FAFC] ${isActive ? "py-6 sm:py-6" : "py-6 sm:py-0"
+                                    className={`relative text-left flex flex-col justify-center gap-3 px-6 sm:px-8 sm:h-1/4 border-b border-[#cac9c9] last:border-b-0 overflow-hidden bg-[#F8FAFC] rounded-ui-lg ${isActive ? "py-6 sm:py-6" : "py-6 sm:py-0"
                                         }`}
                                 >
                                     {isActive && (

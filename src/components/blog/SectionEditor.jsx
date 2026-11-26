@@ -4,7 +4,7 @@ import { ArrowDown, ArrowUp, ImageIcon, Plus, Trash2, X } from "lucide-react";
 
 export default function SectionEditor({ sec, idx, sections, setSections }) {
     return (
-        <div className="p-5 border border-neutral-200 dark:border-neutral-800 rounded-2xl space-y-4 bg-slate-50/50 dark:bg-neutral-800/10 relative">
+        <div className="p-5 border border-neutral-200 dark:border-neutral-800 rounded-ui-lg space-y-4 bg-slate-50/50 dark:bg-neutral-800/10 relative">
 
             {/* Section Header with Actions */}
             <div className="flex justify-between items-center">
@@ -23,7 +23,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                             updated[idx - 1] = temp;
                             setSections(updated);
                         }}
-                        className="p-1.5 rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-800 text-neutral-500 disabled:opacity-30 transition-all cursor-pointer"
+                        className="p-1.5 rounded-ui-sm hover:bg-neutral-200 dark:hover:bg-neutral-800 text-neutral-500 disabled:opacity-30 transition-all cursor-pointer"
                         title="Move Up"
                     >
                         <ArrowUp className="w-4 h-4" />
@@ -39,7 +39,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                             updated[idx + 1] = temp;
                             setSections(updated);
                         }}
-                        className="p-1.5 rounded-lg hover:bg-neutral-200 dark:hover:bg-neutral-800 text-neutral-500 disabled:opacity-30 transition-all cursor-pointer"
+                        className="p-1.5 rounded-ui-sm hover:bg-neutral-200 dark:hover:bg-neutral-800 text-neutral-500 disabled:opacity-30 transition-all cursor-pointer"
                         title="Move Down"
                     >
                         <ArrowDown className="w-4 h-4" />
@@ -51,7 +51,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                             if (sections.length === 1) return;
                             setSections(sections.filter(s => s.id !== sec.id));
                         }}
-                        className="p-1.5 rounded-lg hover:bg-red-50 text-red-500 disabled:opacity-30 transition-all ml-1 cursor-pointer"
+                        className="p-1.5 rounded-ui-sm hover:bg-red-50 text-red-500 disabled:opacity-30 transition-all ml-1 cursor-pointer"
                         title="Delete Section"
                     >
                         <Trash2 className="w-4 h-4" />
@@ -74,7 +74,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                     }}
                     placeholder="e.g. Introduction or Clean Core"
                     required
-                    className="w-full px-3 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2d8ec5]"
+                    className="w-full px-3 py-2 rounded-ui-sm border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2d8ec5]"
                 />
             </div>
 
@@ -93,13 +93,13 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                     placeholder="Enter paragraph text..."
                     required
                     rows={4}
-                    className="w-full px-3 py-2 rounded-xl border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2d8ec5] resize-y"
+                    className="w-full px-3 py-2 rounded-ui-sm border border-neutral-300 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-sm focus:outline-none focus:ring-2 focus:ring-[#2d8ec5] resize-y"
                 />
             </div>
 
             {/* Optional Image Area */}
             {sec.showImage ? (
-                <div className="space-y-3 p-4 bg-neutral-100/50 dark:bg-neutral-950/40 border border-neutral-200 dark:border-neutral-800 rounded-xl relative">
+                <div className="space-y-3 p-4 bg-neutral-100/50 dark:bg-neutral-950/40 border border-neutral-200 dark:border-neutral-800 rounded-ui-md relative">
                     <button
                         type="button"
                         onClick={() => {
@@ -117,7 +117,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                     <label className="block text-xs font-semibold text-neutral-600 dark:text-neutral-400">
                         Section Image (optional)
                     </label>
-                    <div className="relative border border-dashed border-neutral-300 dark:border-neutral-700 rounded-xl p-4 flex flex-col items-center justify-center bg-white dark:bg-neutral-900 cursor-pointer hover:border-[#2d8ec5] transition-colors">
+                    <div className="relative border border-dashed border-neutral-300 dark:border-neutral-700 rounded-ui-md p-4 flex flex-col items-center justify-center bg-white dark:bg-neutral-900 cursor-pointer hover:border-[#2d8ec5] transition-colors">
                         <input
                             type="file"
                             accept="image/*"
@@ -137,7 +137,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                             className="absolute inset-0 opacity-0 cursor-pointer"
                         />
                         {sec.imagePreview ? (
-                            <div className="relative w-full h-32 rounded-lg overflow-hidden shadow-inner">
+                            <div className="relative w-full h-32 rounded-ui-md overflow-hidden shadow-inner">
                                 <img src={sec.imagePreview} alt="Section image preview" className="w-full h-full object-cover" />
                                 <button
                                     type="button"
@@ -176,7 +176,7 @@ export default function SectionEditor({ sec, idx, sections, setSections }) {
                                 updated[idx].caption = e.target.value;
                                 setSections(updated);
                             }}
-                            className="w-full px-3 py-2 rounded-xl border border-neutral-350 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-xs focus:outline-none focus:ring-1 focus:ring-[#2d8ec5]"
+                            className="w-full px-3 py-2 rounded-ui-sm border border-neutral-350 dark:border-neutral-700 bg-transparent text-neutral-900 dark:text-white text-xs focus:outline-none focus:ring-1 focus:ring-[#2d8ec5]"
                         />
                     </div>
                 </div>

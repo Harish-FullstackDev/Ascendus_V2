@@ -105,7 +105,7 @@ export default function FullStackServices() {
 
                 {/* Phones: no tab list (the dots replace it); the photo panel fits its copy
                     plus the dots, with photo showing above (sizer), and a swipe changes the tab. */}
-                <motion.div {...phoneSwipeProps(go)} className="relative w-full lg:flex-1 sm:aspect-[798/446] overflow-hidden">
+                <motion.div {...phoneSwipeProps(go)} className="relative w-full lg:flex-1 sm:aspect-[798/446] overflow-hidden rounded-ui-lg">
                     <div aria-hidden="true" className="sm:hidden invisible grid px-5 pt-28 pb-[60px]">
                         {TABS.map((tab) => (
                             <div key={tab.title} className="[grid-area:1/1] flex flex-col gap-2">

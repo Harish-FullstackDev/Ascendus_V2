@@ -34,7 +34,7 @@ export default function RolloutOutcomes() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.4, delay: index * 0.08 }}
-                                className="flex flex-col gap-2 bg-[#f3f6f9] p-6 border-l-[3px] border-[#2d8ec5]"
+                                className="flex flex-col gap-2 bg-[#f3f6f9] p-6 border-l-[3px] border-[#2d8ec5] rounded-ui-md"
                             >
                                 <h3 className="text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</h3>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
@@ -48,7 +48,7 @@ export default function RolloutOutcomes() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full lg:w-[42%] shrink-0 aspect-square overflow-hidden"
+                    className="relative w-full lg:w-[42%] shrink-0 aspect-square overflow-hidden rounded-ui-lg"
                 >
                     <Image src={outcomesPhoto} alt="Consultants reviewing rollout results with a client over a laptop" fill className="object-cover" />
                 </motion.div>

@@ -52,7 +52,7 @@ export default function EngagementModels() {
                 {/* Phones: one card per model. */}
                 <ul className="md:hidden flex flex-col gap-4">
                     {MODELS.map((row) => (
-                        <li key={row.model} className="border-l-2 border-[#2D8EC5] bg-[#f3f6f9] p-6">
+                        <li key={row.model} className="border-l-2 border-[#2D8EC5] bg-[#f3f6f9] p-6 rounded-ui-md">
                             <h3 className="text-lg font-semibold text-[#2E3033]">{row.model}</h3>
                             <p className="mt-3 text-sm font-medium uppercase tracking-wide text-[#0061AF]">Best for</p>
                             <p className="mt-1 text-base font-light text-[#55595E]">{row.bestFor}</p>

@@ -36,7 +36,7 @@ const QuickResources = () => {
   return (
     <div className="flex justify-center items-center text-gray-800 overflow-x-hidden">
       <motion.div
-        className="w-full max-w-7xl p-4 sm:p-6 lg:p-8 rounded-lg mx-4 sm:mx-6 lg:mx-12 mb-8 sm:mb-12 lg:-mt-7 -mt-4"
+        className="w-full max-w-7xl p-4 sm:p-6 lg:p-8 rounded-ui-lg mx-4 sm:mx-6 lg:mx-12 mb-8 sm:mb-12 lg:-mt-7 -mt-4"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
@@ -115,7 +115,7 @@ const QuickResources = () => {
           {resources.map((resource, index) => (
             <motion.div
               key={index}
-              className="bg-gray-50 rounded-lg p-4 border border-gray-200"
+              className="bg-gray-50 p-4 border border-gray-200 rounded-ui-md"
               variants={textVariants}
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 200, damping: 15 }}

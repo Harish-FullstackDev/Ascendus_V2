@@ -139,9 +139,9 @@ export default function CyberServices() {
                                 // hard 280px and spilled out of the card. The track is a flex row
                                 // with the default stretch alignment, so every card still matches
                                 // the tallest one and the row stays even.
-                                className="snap-start shrink-0 w-[260px] sm:w-[335px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col"
+                                className="snap-start shrink-0 w-[260px] sm:w-[335px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col rounded-ui-md overflow-hidden"
                             >
-                                <div className="relative w-full aspect-[335/200] overflow-hidden">
+                                <div className="relative w-full aspect-[335/200] overflow-hidden rounded-ui-md">
                                     <Image src={card.image} alt={card.title} fill className="object-cover" />
                                 </div>
                                 <div className="flex flex-col gap-3 px-6 sm:px-7 py-6 sm:py-7">

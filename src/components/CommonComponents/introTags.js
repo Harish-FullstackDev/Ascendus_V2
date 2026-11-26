@@ -18,4 +18,4 @@ export const INTRO_TAGS_CLASS = [
 ].join(" ");
 // 12px text and 10px sides on phones so two tags fit on the first line on most
 // pages; 16px from sm up.
-export const INTRO_TAG_CLASS = "border border-[#2d8ec5]/50 bg-white px-2.5 sm:px-3 py-1 text-[#1c5f85] text-xs sm:text-base font-light";
+export const INTRO_TAG_CLASS = "border border-[#2d8ec5]/50 bg-white px-2.5 sm:px-3 py-1 text-[#1c5f85] text-xs sm:text-base font-light rounded-ui-sm";

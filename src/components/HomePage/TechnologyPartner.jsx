@@ -161,7 +161,7 @@ export default function TechnologyPartner() {
 
                     <Link
                         href="/about-us"
-                        className="self-start sm:self-center shrink-0 btn-premium px-8 py-3 text-lg font-light text-center"
+                        className="self-start sm:self-center shrink-0 btn-premium px-8 py-3 text-lg font-light text-center rounded-ui-sm"
                     >
                         More About Us
                     </Link>

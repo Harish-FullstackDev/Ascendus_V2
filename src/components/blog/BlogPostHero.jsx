@@ -91,11 +91,11 @@ export default function BlogPostHero({ blog, copied, onShare, onShareEmail, onSh
 
                 {/* Right: Cover Image */}
                 <div className="lg:col-span-6 flex justify-center">
-                    <div className="inline-flex rounded-none overflow-hidden shadow-lg bg-neutral-100">
+                    <div className="inline-flex rounded-ui-lg overflow-hidden shadow-lg bg-neutral-100">
                         <img
                             src={blog.cover_image}
                             alt={blog.title}
-                            className="block max-h-[250px] md:max-h-[400px] w-auto object-contain rounded-none"
+                            className="block max-h-[250px] md:max-h-[400px] w-auto object-contain "
                         />
                     </div>
                 </div>

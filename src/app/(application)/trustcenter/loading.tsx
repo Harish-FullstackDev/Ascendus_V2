@@ -48,14 +48,14 @@ export default function TrustCenterLoading() {
           <SkeletonSectionHeading />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {[0, 1, 2].map((i) => (
-              <div key={i} className="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm flex flex-col gap-4">
-                <Shimmer className="h-10 w-10 bg-teal-50" rounded="rounded-xl" />
-                <Shimmer className="h-6 w-36" rounded="rounded-lg" />
-                <Shimmer className="h-4 w-full" rounded="rounded-md" />
-                <Shimmer className="h-4 w-4/5" rounded="rounded-md" />
+              <div key={i} className="bg-white p-8 rounded-ui-lg border border-slate-100 shadow-sm flex flex-col gap-4">
+                <Shimmer className="h-10 w-10 bg-teal-50" rounded="rounded-ui-md" />
+                <Shimmer className="h-6 w-36" rounded="rounded-ui-sm" />
+                <Shimmer className="h-4 w-full" rounded="rounded-ui-sm" />
+                <Shimmer className="h-4 w-4/5" rounded="rounded-ui-sm" />
                 <div className="flex flex-col gap-2 mt-2">
-                  <Shimmer className="h-3 w-5/6" rounded="rounded-md" />
-                  <Shimmer className="h-3 w-4/5" rounded="rounded-md" />
+                  <Shimmer className="h-3 w-5/6" rounded="rounded-ui-sm" />
+                  <Shimmer className="h-3 w-4/5" rounded="rounded-ui-sm" />
                 </div>
               </div>
             ))}
@@ -74,12 +74,12 @@ export default function TrustCenterLoading() {
           <SkeletonSectionHeading />
           <div className="flex flex-col gap-4 mt-8">
             {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="bg-white p-5 rounded-2xl border border-slate-100 flex items-center justify-between gap-4">
+              <div key={i} className="bg-white p-5 rounded-ui-lg border border-slate-100 flex items-center justify-between gap-4">
                 <div className="flex items-center gap-3">
-                  <Shimmer className="h-10 w-10 flex-shrink-0" rounded="rounded-lg" />
+                  <Shimmer className="h-10 w-10 flex-shrink-0" rounded="rounded-ui-sm" />
                   <div className="flex flex-col gap-1.5">
-                    <Shimmer className="h-4 w-48" rounded="rounded-md" />
-                    <Shimmer className="h-3.5 w-16" rounded="rounded-md" />
+                    <Shimmer className="h-4 w-48" rounded="rounded-ui-sm" />
+                    <Shimmer className="h-3.5 w-16" rounded="rounded-ui-sm" />
                   </div>
                 </div>
                 <Shimmer className="h-9 w-24 flex-shrink-0" rounded="rounded-full" />

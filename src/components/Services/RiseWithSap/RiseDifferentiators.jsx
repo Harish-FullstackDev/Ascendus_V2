@@ -146,7 +146,7 @@ export default function RiseDifferentiators() {
                                 transition={{ duration: 0.5, ease: "easeOut" }}
                                 // Height is a floor, not a fixed size, so longer copy grows the card
                                 // and the default stretch alignment keeps the row even.
-                                className="snap-start shrink-0 w-[260px] sm:w-[335px] min-h-[280px] sm:min-h-[320px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
+                                className="snap-start shrink-0 w-[260px] sm:w-[335px] min-h-[280px] sm:min-h-[320px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8 rounded-ui-md"
                             >
                                 <card.icon aria-hidden="true" strokeWidth={1.5} className="mb-5 size-8 sm:size-10 text-[#1C5F85]" />
                                 <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h3>

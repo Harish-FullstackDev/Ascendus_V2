@@ -97,7 +97,7 @@ export default function HowWeWork() {
                             {/* Soft brand-blue wash from the line, fading in behind the active step. */}
                             <span
                                 aria-hidden="true"
-                                className={`pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(45,142,197,0.08),rgba(45,142,197,0)_75%)] transition-opacity duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none ${isActive ? "opacity-100" : "opacity-0"
+                                className={`pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(45,142,197,0.08),rgba(45,142,197,0)_75%)] transition-opacity duration-[900ms] ease-[cubic-bezier(0.4,0,0.2,1)] motion-reduce:transition-none rounded-ui-md ${isActive ? "opacity-100" : "opacity-0"
                                     }`}
                             />
                             {/* 2px brand-blue line drawing down over the grey border. While

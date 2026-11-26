@@ -42,7 +42,7 @@ export default function UiUxIntro() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full lg:w-[467px] lg:max-w-[40%] lg:ml-auto shrink-0 aspect-[467/357] overflow-hidden"
+                    className="relative w-full lg:w-[467px] lg:max-w-[40%] lg:ml-auto shrink-0 aspect-[467/357] overflow-hidden rounded-ui-md"
                 >
                     <Image src={introPhoto} alt="Designer workstation showing interface layouts" fill className="object-cover" />
                 </motion.div>

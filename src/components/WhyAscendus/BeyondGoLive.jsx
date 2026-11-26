@@ -43,12 +43,12 @@ export default function BeyondGoLive() {
                     <ol className="flex items-center justify-between gap-3">
                         {LOOP.map((step, index) => (
                             <Fragment key={step}>
-                                <li className="flex-1 bg-[#004174] px-4 py-4 text-center text-lg font-medium text-white">{step}</li>
+                                <li className="flex-1 bg-[#004174] px-4 py-4 text-center text-lg font-medium text-white rounded-ui-sm">{step}</li>
                                 {index < LOOP.length - 1 && <ArrowRight className="size-5 shrink-0 text-[#2D8EC5]" aria-hidden="true" />}
                             </Fragment>
                         ))}
                     </ol>
-                    <div aria-hidden="true" className="relative mx-[10%] h-8 border-x border-b border-[#2D8EC5]">
+                    <div aria-hidden="true" className="relative mx-[10%] h-8 border-x border-b border-[#2D8EC5] rounded-ui-sm">
                         <span className="absolute -left-[5px] -top-1 size-0 border-x-[5px] border-b-[7px] border-x-transparent border-b-[#2D8EC5]" />
                     </div>
                     <p className="mt-3 flex items-center justify-center gap-2 text-sm text-[#55595E]">
@@ -61,7 +61,7 @@ export default function BeyondGoLive() {
                     <ol className="flex flex-col items-stretch gap-2">
                         {LOOP.map((step, index) => (
                             <Fragment key={step}>
-                                <li className="bg-[#004174] px-4 py-3 text-center text-lg font-medium text-white">{step}</li>
+                                <li className="bg-[#004174] px-4 py-3 text-center text-lg font-medium text-white rounded-ui-sm">{step}</li>
                                 {index < LOOP.length - 1 && <ArrowDown className="size-5 self-center text-[#2D8EC5]" aria-hidden="true" />}
                             </Fragment>
                         ))}

@@ -67,7 +67,7 @@ export default function SacSuccessFactors() {
                             The strengths behind every SAP Analytics Cloud engagement we deliver.
                         </p>
                     </div>
-                    <div className="relative w-full aspect-[912/480] overflow-hidden">
+                    <div className="relative w-full aspect-[912/480] overflow-hidden rounded-ui-lg">
                         <Image src={factorsPhoto} alt="Consultant presenting SAP Analytics Cloud dashboards to colleagues" fill className="object-cover" />
                     </div>
                 </motion.div>

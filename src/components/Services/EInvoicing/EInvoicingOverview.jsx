@@ -54,7 +54,7 @@ export default function EInvoicingOverview() {
                             ))}
                         </ul>
                     </div>
-                    <div className="relative w-full lg:w-[46%] lg:max-w-[569px] aspect-[569/300] shrink-0 bg-[#565656] lg:mr-[64px]">
+                    <div className="relative w-full lg:w-[46%] lg:max-w-[569px] aspect-[569/300] shrink-0 bg-[#565656] lg:mr-[64px] rounded-ui-lg overflow-hidden">
                         <Image src={overviewImage} alt="Two colleagues completing an invoice form at a desk" fill className="object-cover" />
                     </div>
                 </motion.div>

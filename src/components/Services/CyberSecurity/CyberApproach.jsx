@@ -62,7 +62,7 @@ export default function CyberApproach() {
                             className="group flex lg:flex-col items-start lg:items-center gap-5 lg:gap-4 lg:text-center"
                         >
                             {/* Navy tile + white icon; 44px tile with a 24px icon, as in SAP CX Methodology. */}
-                            <div className="relative shrink-0 size-11 bg-[#0A3A52] flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105">
+                            <div className="relative shrink-0 size-11 bg-[#0A3A52] flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105 rounded-ui-sm">
                                 <step.icon aria-hidden="true" strokeWidth={1.5} className="size-6 text-white" />
                             </div>
                             <div className="flex flex-col gap-2 min-w-0">

@@ -82,7 +82,7 @@ export default function UiUxServices() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, delay: index * 0.06 }}
-                        className="relative w-full min-h-[200px] overflow-hidden"
+                        className="relative w-full min-h-[200px] overflow-hidden rounded-ui-md"
                     >
                         <Image src={card.image} alt="" fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
@@ -117,7 +117,7 @@ export default function UiUxServices() {
                                 setActive(index);
                             }}
                             tabIndex={0}
-                            className="relative aspect-[4/3] overflow-hidden outline-none"
+                            className="relative aspect-[4/3] overflow-hidden outline-none rounded-ui-md"
                         >
                             <Image
                                 src={card.image}

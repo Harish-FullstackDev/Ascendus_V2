@@ -48,7 +48,7 @@ export default function Leadership() {
                 portrait's studio backdrop, with the whole portrait (never
                 cropped) pinned to its right edge. The portrait's sides fade into
                 the field so no seam shows where the photo ends. */}
-            <div className="relative w-full overflow-hidden bg-[linear-gradient(180deg,#e3e6ec_0%,#f1f3f8_50%,#ebeff4_100%)] lg:absolute lg:inset-y-0 lg:right-0 lg:-z-10 lg:w-[46%] lg:[clip-path:polygon(20px_0,100%_0,100%_100%,0_100%)] xl:w-[540px]">
+            <div className="relative w-full overflow-hidden bg-[linear-gradient(180deg,#e3e6ec_0%,#f1f3f8_50%,#ebeff4_100%)] lg:absolute lg:inset-y-0 lg:right-0 lg:-z-10 lg:w-[46%] lg:[clip-path:polygon(20px_0,100%_0,100%_100%,0_100%)] xl:w-[540px] rounded-ui-lg">
                 <div className="relative mx-auto aspect-[500/480] w-full max-w-[500px] lg:absolute lg:inset-y-0 lg:right-0 lg:mx-0 lg:h-full lg:w-auto lg:max-w-none">
                     <Image
                         src={ceoBanner}
@@ -64,7 +64,7 @@ export default function Leadership() {
                     pale rim, and a soft inner glow along the edges where real
                     glass bends the light. No sheen or colour boost — those read
                     as frosted plastic rather than glass. */}
-                    <div className="absolute left-[57%] top-[75%] flex flex-col rounded-[12px] border border-white/25 bg-black/30 px-3 py-2 text-[12px] capitalize leading-[1.5] text-white whitespace-nowrap shadow-[inset_0_0_10px_rgba(255,255,255,0.18),inset_0_1px_0_rgba(255,255,255,0.25),0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-[3px] sm:px-6 sm:py-3 sm:text-base">
+                    <div className="absolute left-[57%] top-[75%] flex flex-col rounded-ui-sm border border-white/25 bg-black/30 px-3 py-2 text-[12px] capitalize leading-[1.5] text-white whitespace-nowrap shadow-[inset_0_0_10px_rgba(255,255,255,0.18),inset_0_1px_0_rgba(255,255,255,0.25),0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-[3px] sm:px-6 sm:py-3 sm:text-base">
                         <p className="font-semibold">Krishnakumar</p>
                         <p>Founder &amp; CEO, Ascendus</p>
                     </div>

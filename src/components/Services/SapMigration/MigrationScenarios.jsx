@@ -41,7 +41,7 @@ const itemVariants = {
 // it never plays backwards.
 function CardBackground({ isActive }) {
     return (
-        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[#004174]">
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[#004174] rounded-ui-md">
             <div
                 className={`absolute inset-0 bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] transition-opacity duration-500 ease-out ${isActive ? "opacity-100" : "opacity-0"}`}
             />
@@ -92,7 +92,7 @@ export default function MigrationScenarios() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, delay: index * 0.08 }}
-                            className="relative w-full min-h-[200px] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
+                            className="relative w-full min-h-[200px] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)] rounded-ui-md"
                         >
                             <CardBackground isActive />
                             <div className="relative flex min-h-[inherit] flex-col justify-center gap-2 px-[10%] py-6 text-white">
@@ -120,7 +120,7 @@ export default function MigrationScenarios() {
                                 key={scenario.title}
                                 variants={itemVariants}
                                 onMouseEnter={() => setActiveIndex(index)}
-                                className="relative w-full min-h-[240px] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
+                                className="relative w-full min-h-[240px] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)] rounded-ui-md"
                             >
                                 <CardBackground isActive={isActive} />
                                 <div className="absolute inset-0 flex flex-col justify-center px-[10%] text-white">

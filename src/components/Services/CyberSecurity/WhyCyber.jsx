@@ -49,7 +49,7 @@ export default function WhyCyber() {
                     {POINTS.map((point) => (
                         <li
                             key={point}
-                            className="border-l-[3px] border-[#2d8ec5] bg-white/10 backdrop-blur-sm px-4 py-3 text-white text-base sm:text-lg font-light"
+                            className="border-l-[3px] border-[#2d8ec5] bg-white/10 backdrop-blur-sm px-4 py-3 text-white text-base sm:text-lg font-light rounded-ui-sm"
                         >
                             {point}
                         </li>

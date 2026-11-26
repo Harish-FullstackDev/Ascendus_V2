@@ -8,7 +8,7 @@ export default function AuthorSection() {
     return (
         <section className="py-10  bg-[#f3f6f9]" >
             <div className="max-w-9xl mx-auto px-8">
-                <div className="rounded-none bg-gray-100 backdrop-blur-xl border border-white/60 shadow-lg px-8 py-10">
+                <div className=" bg-gray-100 backdrop-blur-xl border border-white/60 shadow-lg px-8 py-10 rounded-ui-lg">
 
                     <div className="text-center mb-12">
                         <h2 className="text-2xl sm:text-[28px] font-semibold text-[#2E3033]">

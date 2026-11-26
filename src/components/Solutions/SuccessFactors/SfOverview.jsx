@@ -54,7 +54,7 @@ export default function SfOverview() {
                             </div>
                         ))}
                     </div>
-                    <div className="relative w-full lg:w-[46%] lg:max-w-[569px] aspect-[569/300] shrink-0 bg-[#565656] sm:ml-[54px] lg:ml-0">
+                    <div className="relative w-full lg:w-[46%] lg:max-w-[569px] aspect-[569/300] shrink-0 bg-[#565656] sm:ml-[54px] lg:ml-0 rounded-ui-lg overflow-hidden">
                         <Image src={overviewImage} alt="HR team working together around a meeting table in a bright office" fill className="object-cover" />
                     </div>
                 </motion.div>

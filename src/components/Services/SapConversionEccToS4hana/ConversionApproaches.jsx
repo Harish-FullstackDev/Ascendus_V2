@@ -55,7 +55,7 @@ export default function ConversionApproaches() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
-                        className="bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col"
+                        className="bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col rounded-ui-md"
                     >
                         <div aria-hidden className="h-2 w-full" style={{ backgroundColor: approach.color }} />
                         <div className="flex flex-col gap-3 px-6 sm:px-7 py-6 sm:py-7">

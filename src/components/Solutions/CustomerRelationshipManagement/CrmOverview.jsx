@@ -47,9 +47,9 @@ export default function CrmOverview() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
-                        className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6 border border-[#d3d5d8] px-6 py-7 sm:px-8 sm:py-8 h-full"
+                        className="flex flex-col sm:flex-row items-start gap-5 sm:gap-6 border border-[#d3d5d8] px-6 py-7 sm:px-8 sm:py-8 h-full rounded-ui-lg"
                     >
-                        <div className="flex items-center justify-center size-14 sm:size-16 shrink-0 bg-[#f5f6f6]">
+                        <div className="flex items-center justify-center size-14 sm:size-16 shrink-0 bg-[#f5f6f6] rounded-ui-sm">
                             <Image src={item.icon} alt="" width={48} height={48} className="size-8 sm:size-10" />
                         </div>
                         <div className="flex flex-col gap-2 min-w-0">

@@ -15,7 +15,7 @@ export default function WhySwitchToS4hana() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative w-full lg:w-[38%] lg:max-w-[442px] aspect-[442/417] shrink-0 self-start overflow-hidden"
+                className="relative w-full lg:w-[38%] lg:max-w-[442px] aspect-[442/417] shrink-0 self-start overflow-hidden rounded-ui-md"
             >
                 <Image src={whySwitchImage} alt="SAP consultant reviewing an ECC conversion plan" fill className="object-cover" />
             </motion.div>

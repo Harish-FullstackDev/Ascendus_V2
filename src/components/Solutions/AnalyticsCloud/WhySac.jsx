@@ -46,7 +46,7 @@ export default function WhySac() {
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}
                         whileHover={{ y: -6 }}
-                        className="bg-white border border-[#d3d5d8] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.08)] flex flex-col items-center text-center gap-4 px-6 py-8 sm:px-8 sm:py-10 h-full"
+                        className="bg-white border border-[#d3d5d8] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.08)] flex flex-col items-center text-center gap-4 px-6 py-8 sm:px-8 sm:py-10 h-full rounded-ui-md"
                     >
                         <reason.icon aria-hidden="true" strokeWidth={1.5} className="size-8 sm:size-10 shrink-0 text-[#1C5F85]" />
                         <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{reason.title}</h3>

@@ -83,7 +83,7 @@ const AUTOPLAY_MS = 4000;
 // dark gradient, title at the top, description at the bottom, always visible.
 function IndustryCard({ item }) {
     return (
-        <div className="group relative w-full overflow-hidden aspect-[7/8]">
+        <div className="group relative w-full overflow-hidden aspect-[7/8] rounded-ui-md">
             <Image
                 src={item.image}
                 alt=""

@@ -63,7 +63,7 @@ export default function BigDataServices() {
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
                             onMouseEnter={() => setActiveIndex(index)}
-                            className={`relative bg-white px-8 sm:px-10 py-10 sm:py-12 min-h-[240px] lg:min-h-[320px] overflow-hidden transition-colors duration-300 ${isActive ? "text-white" : "text-[#2E3033]"}`}
+                            className={`relative bg-white px-8 sm:px-10 py-10 sm:py-12 min-h-[240px] lg:min-h-[320px] overflow-hidden transition-colors duration-300 rounded-ui-md ${isActive ? "text-white" : "text-[#2E3033]"}`}
                         >
                             <div
                                 aria-hidden

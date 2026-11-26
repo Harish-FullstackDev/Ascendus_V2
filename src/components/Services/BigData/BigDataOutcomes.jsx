@@ -50,7 +50,7 @@ export default function BigDataOutcomes() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.45, delay: index * 0.08 }}
-                        className="group bg-white flex flex-col gap-5 px-6 py-8 border-b-[3px] border-transparent transition-[border-color,box-shadow] duration-300 hover:border-[#2d8ec5] hover:shadow-xl"
+                        className="group bg-white flex flex-col gap-5 px-6 py-8 border-b-[3px] border-transparent transition-[border-color,box-shadow] duration-300 hover:border-[#2d8ec5] hover:shadow-xl rounded-ui-md"
                     >
                         <div className="relative size-8 sm:size-10 shrink-0 transition-transform duration-300 group-hover:-translate-y-1">
                             <item.icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />

@@ -130,12 +130,12 @@ export default function AzureServices() {
                         mirroring the desktop overlay. From sm up the box keeps its 825:587
                         shape with the card absolutely placed. */}
                     {/* Phones: swipe to change item; pb-12 leaves photo below the card for the dots. */}
-                    <motion.div {...phoneSwipeProps(go)} className="relative bg-[#1c5f85] w-full overflow-hidden pt-[28%] pl-[10%] pr-[6%] pb-12 sm:p-0 sm:aspect-[825/587]">
+                    <motion.div {...phoneSwipeProps(go)} className="relative bg-[#1c5f85] w-full overflow-hidden pt-[28%] pl-[10%] pr-[6%] pb-12 sm:p-0 sm:aspect-[825/587] rounded-ui-lg">
                         <Image src={panelImage} alt="" fill className="object-cover" />
                         {/* Every item is rendered in the same grid cell, so the card is
                             always as tall as the longest one and keeps its size when the
                             tab changes; only the visible item swaps (fade + slight rise). */}
-                        <div className="sm:hidden relative grid bg-white p-5">
+                        <div className="sm:hidden relative grid bg-white p-5 rounded-ui-md">
                             {ITEMS.map((item, index) => {
                                 const isShown = index === activeIndex;
                                 return (

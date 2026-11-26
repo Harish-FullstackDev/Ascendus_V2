@@ -35,7 +35,7 @@ export default function GrowIntro() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="w-full sm:w-[59.5%] bg-white flex items-center"
+                    className="w-full sm:w-[59.5%] bg-white flex items-center rounded-ui-lg"
                 >
                     <div className="flex flex-col gap-5 sm:gap-[34px] text-[#2E3033] w-full">
                         <h2 className="text-xl sm:text-2xl font-semibold">Scale on the <span className="text-[#2D8EC5]">SAP S/4HANA</span> ERP Suite</h2>

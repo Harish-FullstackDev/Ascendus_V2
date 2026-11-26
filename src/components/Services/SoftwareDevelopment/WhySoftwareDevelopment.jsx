@@ -49,7 +49,7 @@ export default function WhySoftwareDevelopment() {
                         {DRIVERS.map((label) => (
                             <li
                                 key={label}
-                                className="border border-[#d3dae2] px-3 sm:px-4 py-1.5 text-sm sm:text-base font-light text-[#55595E]"
+                                className="border border-[#d3dae2] px-3 sm:px-4 py-1.5 text-sm sm:text-base font-light text-[#55595E] rounded-ui-sm"
                             >
                                 {label}
                             </li>

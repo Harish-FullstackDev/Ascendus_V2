@@ -73,7 +73,7 @@ export default function RpaUseCases() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, delay: index * 0.08 }}
-                        className="relative w-full h-[220px] overflow-hidden"
+                        className="relative w-full h-[220px] overflow-hidden rounded-ui-md"
                     >
                         <Image src={item.image} alt={item.title} fill className="object-cover" />
                         <div className="absolute inset-0 bg-black/60" />
@@ -99,7 +99,7 @@ export default function RpaUseCases() {
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
                             onMouseEnter={() => setHoveredIndex(index)}
                             onMouseLeave={() => setHoveredIndex(null)}
-                            className="relative aspect-[258/335] overflow-hidden"
+                            className="relative aspect-[258/335] overflow-hidden rounded-ui-md"
                         >
                             <Image
                                 src={item.image}

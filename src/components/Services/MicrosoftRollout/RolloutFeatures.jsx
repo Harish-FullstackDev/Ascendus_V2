@@ -47,7 +47,7 @@ const DRAW_KEYFRAMES = "@keyframes rollout-draw { to { stroke-dashoffset: 0; } }
 
 function FeaturePanel({ feature }) {
     return (
-        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] rounded-ui-lg">
             <style>{DRAW_KEYFRAMES}</style>
             <div className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.4),rgba(28,95,133,0)_65%)]" />
 
@@ -143,7 +143,7 @@ export default function RolloutFeatures() {
                 </div>
 
                 {/* Desktop drawn-icon panel (accordion text carries the content on smaller screens) */}
-                <div className="hidden lg:block relative w-[40%] shrink-0 min-h-[520px] overflow-hidden">
+                <div className="hidden lg:block relative w-[40%] shrink-0 min-h-[520px] overflow-hidden rounded-ui-lg">
                     <FeaturePanel feature={FEATURES[openIndex]} />
                 </div>
             </div>

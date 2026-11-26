@@ -905,6 +905,13 @@ p, li, h1, h2, h3, h4, h5, h6, blockquote, figcaption, dd, dt, td, th, label, sp
   --radius-2xl: calc(var(--radius) * 1.8);
   --radius-3xl: calc(var(--radius) * 2.2);
   --radius-4xl: calc(var(--radius) * 2.6);
+  /* Ascendus corner scale (2026-11-26): every button, card and boxed element
+     uses one of these three, nothing square. Small: buttons, inputs, tags,
+     icon tiles. Medium: mid-size cards and images. Large: big cards, panels,
+     wide media. */
+  --radius-ui-sm: 8px;
+  --radius-ui-md: 12px;
+  --radius-ui-lg: 16px;
 }
 
 :root {

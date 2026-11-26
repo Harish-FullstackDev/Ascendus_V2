@@ -81,7 +81,7 @@ export default function CxSuccessFactors() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.4, delay: (index % 4) * 0.08 }}
-                        className={`group bg-white border flex flex-col gap-4 p-6 sm:p-8 transition-colors duration-300 hover:border-[#2d8ec5] ${isLit ? "border-[#2d8ec5]" : "border-[#E2E5EA]"}`}
+                        className={`group bg-white border flex flex-col gap-4 p-6 sm:p-8 transition-colors duration-300 hover:border-[#2d8ec5] rounded-ui-md ${isLit ? "border-[#2d8ec5]" : "border-[#E2E5EA]"}`}
                     >
                         <item.icon aria-hidden="true" strokeWidth={1.5} className="size-8 sm:size-10 text-[#1C5F85]" />
                         <h3 className="font-switzer text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</h3>

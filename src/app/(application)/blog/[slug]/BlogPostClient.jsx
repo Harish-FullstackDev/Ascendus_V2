@@ -215,7 +215,7 @@ export default function BlogPostClient() {
                     </p>
                     <Link
                         href="/blog"
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#2d8ec5] hover:bg-[#1C5F85] text-white font-bold rounded-2xl transition-all shadow-md"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#2d8ec5] hover:bg-[#1C5F85] text-white font-bold rounded-ui-sm transition-all shadow-md"
                     >
                         <ArrowLeft className="w-5 h-5" /> Back to Blogs
                     </Link>

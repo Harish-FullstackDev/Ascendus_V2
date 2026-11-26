@@ -39,7 +39,7 @@ export default function FicoCoreStrengths() {
                             across the organization within SAP ERP.
                         </p>
                     </div>
-                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656]">
+                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656] rounded-ui-lg overflow-hidden">
                         <Image src={integrationImage} alt="Team reviewing financial charts and reports around a tablet" fill className="object-cover" />
                     </div>
                 </motion.div>
@@ -53,7 +53,7 @@ export default function FicoCoreStrengths() {
                     // stacked below lg the order is reversed so the text leads, as in row 1.
                     className="flex flex-col-reverse lg:flex-row items-center gap-8 lg:gap-[100px]"
                 >
-                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656]">
+                    <div className="relative w-full lg:w-[45%] lg:max-w-[560px] aspect-[560/297] shrink-0 bg-[#565656] rounded-ui-lg overflow-hidden">
                         <Image src={reportingImage} alt="Accountant working through charts and figures with a calculator" fill className="object-cover" />
                     </div>
                     <div className="flex flex-col gap-5 w-full">

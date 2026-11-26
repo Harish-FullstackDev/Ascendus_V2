@@ -49,7 +49,7 @@ export default function ConversionKeyAspects() {
                 {ASPECTS.map((item) => (
                     <li
                         key={item}
-                        className="flex items-center justify-center bg-white border border-[#d3dae2] hover:border-[#2d8ec5] px-3 py-2 sm:px-4 sm:py-3 transition-colors duration-300"
+                        className="flex items-center justify-center bg-white border border-[#d3dae2] hover:border-[#2d8ec5] px-3 py-2 sm:px-4 sm:py-3 transition-colors duration-300 rounded-ui-sm"
                     >
                         <span className="text-[#55595E] text-sm sm:text-xl font-light text-center">{item}</span>
                     </li>

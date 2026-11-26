@@ -2,7 +2,7 @@ import React from 'react'
 
 const BottomCard = () => {
   return (
-    <div className="bg-white rounded-xl shadow-lg border border-gray-100 px-4 sm:px-8 md:px-12 py-4 max-w-3xl mx-auto">
+    <div className="bg-white shadow-lg border border-gray-100 px-4 sm:px-8 md:px-12 py-4 max-w-3xl mx-auto rounded-ui-lg">
       {/* Trusted by text */}
       <div className="text-center mb-3">
         <span className="text-black text-base sm:text-lg font-medium">Trusted by</span>

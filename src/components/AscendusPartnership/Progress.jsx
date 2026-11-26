@@ -60,7 +60,7 @@ const Progress = () => {
                 alt="Partnership illustration"
                 width={300}
                 height={300}
-                className="w-full max-w-xs sm:max-w-sm"
+                className="w-full max-w-xs sm:max-w-sm rounded-ui-md"
                 priority
               />
             </div>
