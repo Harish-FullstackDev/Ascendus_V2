@@ -1,5 +1,6 @@
 "use client";
 
+import { useLayoutEffect, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { Cloud, CodeXml, Layers, ReceiptText } from "lucide-react";
@@ -83,20 +84,87 @@ const itemVariants = {
 //   never slides out from under the cursor,
 // - a deep-blue lift from the foot, one light sweep, and a 1px hairline frame
 //   that draws itself (top, then sides, then bottom),
-// - the icon and summary brighten a touch and the "Explore" arrow eases right.
+// - the icon, title and summary run the sequence described at CARD_MOTION,
+//   and the "Explore" arrow eases right.
 const EASE = "ease-[cubic-bezier(0.22,1,0.36,1)]";
 
 function Hairline({ className, delay }) {
     return (
         <span
-            className={`absolute bg-[#2D8EC5]/80 transition-transform duration-700 ease-out delay-0 group-hover:[transition-delay:var(--d)] ${className}`}
+            className={`absolute bg-[#2D8EC5]/80 transition-transform duration-700 ease-out delay-0 group-hover:[transition-delay:var(--d)] group-focus-visible:[transition-delay:var(--d)] ${className}`}
             style={{ "--d": delay }}
         />
     );
 }
 
+// Hover choreography (pointer devices with motion allowed):
+// 1. a 60ms settle, so sweeping across the row does not fire every card;
+// 2. the icon accelerates away to the left, softening as it goes;
+// 3. as it clears, the title glides up from above "Explore" into its place
+//    (the distance is measured per card, since titles and summaries differ);
+// 4. the summary is uncovered from the top down, just under the title,
+//    sharpening from a slight blur as it settles.
+// Leaving reverses it faster: summary away first, the icon back last.
+// Touch screens and reduced motion get the plain stack (icon, title, summary)
+// with nothing hidden.
+const CARD_MOTION = `
+.svc-icon { margin-bottom: 24px; }
+.svc-title { margin-top: auto; }
+.svc-desc { margin-top: 12px; }
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .svc-icon {
+    transition: translate 420ms cubic-bezier(0.16, 1, 0.3, 1) 220ms,
+                opacity 360ms ease-out 220ms, filter 360ms ease-out 220ms;
+  }
+  .svc-title {
+    transition: translate 480ms cubic-bezier(0.16, 1, 0.3, 1) 120ms;
+  }
+  .svc-desc {
+    position: absolute; inset-inline: 0; top: var(--desc-top); margin-top: 0;
+    opacity: 0; translate: 0 10px; filter: blur(3px);
+    clip-path: inset(0 0 100% 0);
+    transition: opacity 110ms ease-out, translate 0ms linear 120ms,
+                filter 0ms linear 120ms, clip-path 0ms linear 120ms;
+  }
+  .group:is(:hover, :focus-visible) .svc-icon {
+    translate: -32px 0; opacity: 0; filter: blur(2px);
+    transition: translate 380ms cubic-bezier(0.55, 0, 0.8, 0.4) 60ms,
+                opacity 300ms ease-in 60ms, filter 300ms ease-in 60ms;
+  }
+  .group:is(:hover, :focus-visible) .svc-title {
+    translate: 0 calc(-1 * var(--lift, 0px));
+    transition: translate 620ms cubic-bezier(0.45, 0, 0.15, 1) 160ms;
+  }
+  .group:is(:hover, :focus-visible) .svc-desc {
+    opacity: 1; translate: 0 0; filter: blur(0); clip-path: inset(0 0 0 0);
+    transition: opacity 450ms ease-out 500ms, translate 600ms cubic-bezier(0.16, 1, 0.3, 1) 480ms,
+                filter 500ms ease-out 520ms, clip-path 600ms cubic-bezier(0.16, 1, 0.3, 1) 500ms;
+  }
+}
+`;
+
 function ServiceCard({ card }) {
     const Icon = card.icon;
+    const contentRef = useRef(null);
+    const titleRef = useRef(null);
+
+    // How far the title travels (its resting offset from the top of the
+    // content box) and where the summary sits under it once it has arrived.
+    useLayoutEffect(() => {
+        const content = contentRef.current;
+        const title = titleRef.current;
+        if (!content || !title) return undefined;
+        const measure = () => {
+            content.style.setProperty("--lift", `${title.offsetTop}px`);
+            content.style.setProperty("--desc-top", `${title.offsetHeight + 12}px`);
+        };
+        measure();
+        const observer = new ResizeObserver(measure);
+        observer.observe(content);
+        observer.observe(title);
+        return () => observer.disconnect();
+    }, []);
+
     return (
         <Link href={card.href} className="group relative block h-full focus-visible:outline-none">
             <div
@@ -107,34 +175,27 @@ function ServiceCard({ card }) {
                 className={`relative flex h-full min-h-[320px] lg:min-h-[340px] flex-col overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] p-6 lg:p-5 xl:p-6 will-change-transform transition-transform duration-700 rounded-ui-md ${EASE} group-hover:-translate-y-[3px] group-focus-visible:-translate-y-[3px]`}
             >
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-                    <div className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100 bg-[linear-gradient(to_top,rgba(28,95,133,0.45),rgba(28,95,133,0)_70%)]" />
+                    <div className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100 group-focus-visible:opacity-100 bg-[linear-gradient(to_top,rgba(28,95,133,0.45),rgba(28,95,133,0)_70%)]" />
                     {/* One light sweep on enter; snaps back invisibly on leave. */}
-                    <div className="absolute inset-y-0 -left-1/2 w-1/2 -skew-x-12 bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.08),transparent)] transition-transform duration-0 ease-out group-hover:translate-x-[300%] group-hover:duration-[1400ms]" />
-                    <Hairline delay="0ms" className="inset-x-0 top-0 h-px origin-left scale-x-0 group-hover:scale-x-100" />
-                    <Hairline delay="150ms" className="inset-y-0 right-0 w-px origin-top scale-y-0 group-hover:scale-y-100" />
-                    <Hairline delay="150ms" className="inset-y-0 left-0 w-px origin-top scale-y-0 group-hover:scale-y-100" />
-                    <Hairline delay="300ms" className="inset-x-0 bottom-0 h-px origin-left scale-x-0 group-hover:scale-x-100" />
+                    <div className="motion-reduce:hidden absolute inset-y-0 -left-1/2 w-1/2 -skew-x-12 bg-[linear-gradient(to_right,transparent,rgba(255,255,255,0.08),transparent)] transition-transform duration-0 ease-out group-hover:translate-x-[300%] group-hover:duration-[1400ms]" />
+                    <Hairline delay="0ms" className="inset-x-0 top-0 h-px origin-left scale-x-0 group-hover:scale-x-100 group-focus-visible:scale-x-100" />
+                    <Hairline delay="150ms" className="inset-y-0 right-0 w-px origin-top scale-y-0 group-hover:scale-y-100 group-focus-visible:scale-y-100" />
+                    <Hairline delay="150ms" className="inset-y-0 left-0 w-px origin-top scale-y-0 group-hover:scale-y-100 group-focus-visible:scale-y-100" />
+                    <Hairline delay="300ms" className="inset-x-0 bottom-0 h-px origin-left scale-x-0 group-hover:scale-x-100 group-focus-visible:scale-x-100" />
                 </div>
 
-                {/* Same order as the /services page cards: icon at the top; title,
-                    description and "Explore ->" grouped at the foot. */}
-                <div className="relative flex h-full flex-col items-start gap-4">
-                    {/* The icon sits vertically centred in the free space between the
-                        card's top edge and the title: the negative margins cancel the
-                        card's top padding and the gap below, so the space above and
-                        below the icon is equal. */}
-                    <div className="flex flex-1 items-center -mt-6 lg:-mt-5 xl:-mt-6 -mb-4">
-                        <Icon
-                            aria-hidden="true"
-                            strokeWidth={1}
-                            className={`size-8 sm:size-10 text-white opacity-70 transition-opacity duration-700 ${EASE} group-hover:opacity-100`}
-                        />
+                <div ref={contentRef} className="relative flex flex-1 flex-col items-start">
+                    <div className="svc-icon">
+                        <Icon aria-hidden="true" strokeWidth={1} className="size-8 sm:size-10 text-white opacity-80" />
                     </div>
-                    <h3 className="text-white text-xl font-semibold leading-[1.4]">{card.title}</h3>
-                    <p className="text-white/75 text-base font-light leading-[1.5] transition-colors duration-700 ease-out group-hover:text-white/95">
-                        {card.desc}
-                    </p>
-                    <span className="inline-flex items-center gap-2 pt-2 text-sm font-medium text-white">
+
+                    <h3 ref={titleRef} className="svc-title text-white text-xl font-semibold leading-[1.4]">
+                        {card.title}
+                    </h3>
+
+                    <p className="svc-desc text-white/80 text-base font-light leading-[1.5]">{card.desc}</p>
+
+                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-white">
                         Explore
                         <svg
                             viewBox="0 0 24 24"
@@ -154,6 +215,7 @@ function ServiceCard({ card }) {
 export default function Services() {
     return (
         <section id="sst-services" className="w-full bg-white py-10 sm:py-16 px-8 sm:px-16">
+            <style>{CARD_MOTION}</style>
             <div className="flex flex-col gap-8 sm:gap-16">
                 {/* Capped at the same 1280px as the "Built for Enterprise Execution" row
                     so "Explore Our Services" lines up under "More About Us". */}
