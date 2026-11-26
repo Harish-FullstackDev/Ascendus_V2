@@ -25,7 +25,7 @@ export default function WhyChooseAzure() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="group relative h-[360px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[588px] lg:w-[42%] rounded-ui-lg"
+                    className="group relative h-[360px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[588px] lg:w-[42%] lg:rounded-r-ui-lg"
                 >
                     <Image
                         src={whyAzureImg}

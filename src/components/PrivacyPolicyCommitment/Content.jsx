@@ -96,7 +96,7 @@ export default function PrivacyPolicyCommitment() {
           {/* Introduction Banner */}
           <div
             ref={(el) => (sectionRefs.current[introduction.title] = el)}
-            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px] rounded-ui-lg"
+            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px] lg:rounded-l-ui-lg"
           >
             <div className="flex flex-col gap-[42px] ">
               <h1 className="text-xl font-semibold text-black">

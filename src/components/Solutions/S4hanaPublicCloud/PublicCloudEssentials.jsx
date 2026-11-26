@@ -67,7 +67,7 @@ export default function PublicCloudEssentials() {
                     whileInView={{ opacity: 1 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5 }}
-                    className="relative w-full sm:flex-1 sm:self-start aspect-[4/3] sm:aspect-[27/29]"
+                    className="relative w-full sm:flex-1 sm:self-start aspect-[4/3] sm:aspect-[27/29] rounded-ui-lg overflow-hidden"
                 >
                     <Image src={essentialsPhoto} alt="Team gathered around a laptop working through a plan" fill className="object-cover" />
                 </motion.div>

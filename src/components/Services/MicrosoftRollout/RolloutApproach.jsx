@@ -103,7 +103,7 @@ export default function RolloutApproach() {
                                         setHovered(index);
                                     }}
                                     onBlur={() => setIsPaused(false)}
-                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-8 overflow-hidden transition-colors duration-500 ease-in-out rounded-ui-md ${isActive ? "bg-[#0A3A52]" : "bg-white"
+                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 lg:px-8 overflow-hidden transition-colors duration-500 ease-in-out ${isActive ? "bg-[#0A3A52]" : "bg-white"
                                         }`}
                                 >
                                     <motion.h3

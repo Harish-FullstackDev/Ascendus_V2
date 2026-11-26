@@ -25,7 +25,7 @@ export default function AmsBenefits() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="group relative h-[320px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[588px] lg:w-[42%] lg:max-w-[578px] rounded-ui-lg"
+                    className="group relative h-[320px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[588px] lg:w-[42%] lg:max-w-[578px] lg:rounded-r-ui-lg"
                 >
                     <Image
                         src={benefitsImg}
@@ -48,7 +48,7 @@ export default function AmsBenefits() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full lg:flex-1 lg:max-w-[800px] self-center bg-white sm:shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center px-8 sm:px-12 py-10 sm:py-12 lg:min-h-[480px] rounded-ui-lg"
+                    className="relative w-full lg:flex-1 lg:max-w-[800px] self-center bg-white sm:shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center px-8 sm:px-12 py-10 sm:py-12 lg:min-h-[480px] lg:rounded-ui-lg"
                 >
                     <ul className="list-disc pl-5 text-base sm:text-lg font-light leading-[1.6] sm:leading-[2.4] text-[#55595E] sm:pl-6 flex flex-col gap-3 sm:gap-0">
                         {BENEFITS.map((benefit) => (

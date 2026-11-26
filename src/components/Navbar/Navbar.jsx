@@ -385,7 +385,7 @@ const Navbar = () => {
               src={isNavbarLight ? logoOnLight : logoOnDark}
               alt="Ascendus Company logo"
               priority
-              className="h-8 md:h-10 w-auto rounded-ui-sm"
+              className="h-8 md:h-10 w-auto"
             />
           </Link>
         </div>
@@ -402,7 +402,7 @@ const Navbar = () => {
             <IoMdClose className="text-3xl sm:text-4xl text-[#2E3033]" />
           </button>
           <Link href="/" onClick={closeMenu} aria-label="Ascendus Company home">
-            <Image src={logoOnLight} alt="Ascendus Company logo" className="h-8 md:h-10 w-auto rounded-ui-sm" />
+            <Image src={logoOnLight} alt="Ascendus Company logo" className="h-8 md:h-10 w-auto" />
           </Link>
         </div>
 

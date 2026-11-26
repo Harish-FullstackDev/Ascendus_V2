@@ -115,7 +115,7 @@ export default function MigrationPhases() {
                 {/* 798:446 banner from sm up. On phones the large watermark icon is
                     hidden and a small copy sits beside the title instead; the panel fits
                     its copy (sizer) plus the dots, and a swipe changes the tab. */}
-                <motion.div {...phoneSwipeProps(go)} className="relative w-full sm:aspect-[798/446] overflow-hidden bg-[linear-gradient(to_bottom_right,#0A2B3E,#003756_60%,#00447A)] rounded-ui-lg">
+                <motion.div {...phoneSwipeProps(go)} className="relative w-full sm:aspect-[798/446] overflow-hidden bg-[linear-gradient(to_bottom_right,#0A2B3E,#003756_60%,#00447A)] rounded-ui-lg lg:rounded-r-none">
                     {/* Phone sizer: every tab's copy stacked invisibly in one grid cell,
                         plus room for the dots, so the panel is as tall as the longest tab
                         and never jumps or overlaps when the tab changes. */}

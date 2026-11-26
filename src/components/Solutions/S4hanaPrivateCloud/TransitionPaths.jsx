@@ -72,7 +72,7 @@ export default function TransitionPaths() {
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
                             onMouseEnter={() => setActiveIndex(index)}
-                            className={`relative px-8 sm:px-6 lg:px-8 py-10 sm:py-14 min-h-[260px] sm:min-h-[380px] lg:min-h-[480px] overflow-hidden transition-colors duration-300 border-[#8794A3] rounded-ui-md
+                            className={`relative px-8 sm:px-6 lg:px-8 py-10 sm:py-14 min-h-[260px] sm:min-h-[380px] lg:min-h-[480px] overflow-hidden transition-colors duration-300 border-[#8794A3]
  ${isActive ? "text-white" : "text-[#2E3033]"}
                                 border-t ${index === PATHS.length - 1 ? "border-b" : ""}
                                 sm:border-b-0 ${index > 1 ? "sm:border-b" : ""} ${index % 2 === 0 ? "sm:border-r" : ""}

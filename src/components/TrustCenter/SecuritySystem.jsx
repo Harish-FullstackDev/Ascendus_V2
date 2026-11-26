@@ -112,7 +112,7 @@ const SecuritySection = () => {
 
   return (
     <motion.div
-      className="p-6 px-8 lg:p-8 rounded-ui-lg mx-auto max-w-7xl overflow-x-hidden"
+      className="p-6 px-8 lg:p-8 lg:rounded-ui-lg mx-auto max-w-7xl overflow-x-hidden"
       variants={containerVariants}
       initial="hidden"
       animate="visible"

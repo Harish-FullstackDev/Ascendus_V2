@@ -70,7 +70,7 @@ export default function AzureMicrosoftEcosystem() {
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
                             onMouseEnter={() => setActiveIndex(index)}
-                            className={`relative px-8 py-10 sm:px-8 sm:py-14 sm:min-h-[400px] lg:min-h-[480px] overflow-hidden transition-colors duration-300 border-b border-[#8794A3] rounded-ui-md
+                            className={`relative px-8 py-10 sm:px-8 sm:py-14 sm:min-h-[400px] lg:min-h-[480px] overflow-hidden transition-colors duration-300 border-b border-[#8794A3]
  ${isActive ? "text-white" : "text-[#2E3033]"}
                                 ${index % 2 === 0 ? "sm:border-r" : ""}
                                 ${index < 3 ? "lg:border-r" : "lg:border-r-0"}`}

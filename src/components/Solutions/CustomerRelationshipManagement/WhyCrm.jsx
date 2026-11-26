@@ -34,7 +34,7 @@ export default function WhyCrm() {
                         transition={{ duration: 0.6, ease: "easeOut" }}
                         className="flex flex-col gap-4 sm:gap-[15px] w-full lg:flex-1"
                     >
-                        <div className="relative w-full aspect-[546/440]">
+                        <div className="relative w-full aspect-[546/440] rounded-ui-lg overflow-hidden">
                             <Image src={gainsImage} alt="Three colleagues reviewing customer details on a laptop" fill className="object-cover" />
                         </div>
                     </motion.div>

@@ -163,7 +163,7 @@ export default function CookiePolicy() {
           {/* Title Banner */}
           <div
             ref={(el) => (sectionRefs.current["Introduction"] = el)}
-            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px] rounded-ui-lg"
+            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px] lg:rounded-l-ui-lg"
           >
             <div className="flex flex-col gap-[42px] max-w-[848px]">
               <h1 className="text-xl font-semibold text-black">{intro.title}</h1>

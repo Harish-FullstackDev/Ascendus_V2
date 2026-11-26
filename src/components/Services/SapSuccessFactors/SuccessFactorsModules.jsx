@@ -103,7 +103,7 @@ export default function SuccessFactorsModules() {
                     the description; a horizontal swipe also changes the tab. */}
                 <motion.div
                     {...phoneSwipeProps(go)}
-                    className="relative w-full sm:aspect-[798/446] overflow-hidden rounded-ui-lg"
+                    className="relative w-full sm:aspect-[798/446] overflow-hidden rounded-ui-lg lg:rounded-r-none"
                 >
                     {/* Phone sizer: every tab's copy stacked invisibly in one grid cell,
                         plus room for the pagination, so the panel is as tall as the

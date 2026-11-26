@@ -86,7 +86,7 @@ const Progress = () => {
                 alt="Partnership illustration"
                 width={350}
                 height={350}
-                className=""
+                className="rounded-ui-md"
                 priority
               />
               

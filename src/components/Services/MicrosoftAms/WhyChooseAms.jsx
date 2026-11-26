@@ -29,7 +29,7 @@ export default function WhyChooseAms() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="group relative min-h-[400px] w-full shrink-0 overflow-hidden sm:min-h-[460px] lg:min-h-[588px] lg:w-[42%] lg:max-w-[578px] rounded-ui-lg"
+                    className="group relative min-h-[400px] w-full shrink-0 overflow-hidden sm:min-h-[460px] lg:min-h-[588px] lg:w-[42%] lg:max-w-[578px] lg:rounded-r-ui-lg"
                 >
                     <Image
                         src={amsPhoto}
@@ -58,7 +58,7 @@ export default function WhyChooseAms() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full lg:flex-1 lg:max-w-[800px] self-center bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center gap-6 px-8 sm:px-12 py-10 sm:py-12 rounded-ui-lg"
+                    className="relative w-full lg:flex-1 lg:max-w-[800px] self-center bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center gap-6 px-8 sm:px-12 py-10 sm:py-12 lg:rounded-ui-lg"
                 >
                     <h2 className="text-[#2E3033] text-xl sm:text-2xl font-semibold">
                         Reasons for Choosing <span className="text-[#2D8EC5]">AMS</span> for Your Business

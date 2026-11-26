@@ -31,7 +31,7 @@ export default function WhyPrivateCloud() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="group relative h-[340px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[588px] lg:w-[44%] lg:max-w-[578px] rounded-ui-lg"
+                    className="group relative h-[340px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[588px] lg:w-[44%] lg:max-w-[578px] lg:rounded-r-ui-lg"
                 >
                     <Image
                         src={whyPhoto}
@@ -56,7 +56,7 @@ export default function WhyPrivateCloud() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full lg:max-w-[800px] self-center lg:min-h-[480px] bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center gap-8 px-8 sm:px-12 py-12 rounded-ui-lg"
+                    className="relative w-full lg:max-w-[800px] self-center lg:min-h-[480px] bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center gap-8 px-8 sm:px-12 py-12 lg:rounded-ui-lg"
                 >
                     {REASONS.map((reason, index) => (
                         <Fragment key={reason.title}>
