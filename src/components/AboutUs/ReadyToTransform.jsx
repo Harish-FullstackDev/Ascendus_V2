@@ -35,11 +35,11 @@ export default function ReadyToTransform({
                     className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-8 sm:gap-12 px-8 sm:px-[64px] py-14 sm:py-16 lg:py-0 lg:min-h-[288px]"
                 >
                     <div className="flex flex-col gap-3 w-full sm:w-[60%] lg:w-[74%] text-center sm:text-left items-center sm:items-start">
-                        <h2 className={`text-2xl sm:text-[32px] lg:text-[40px] leading-tight font-semibold text-white ${capitalizeTitle ? "capitalize" : ""}`}>
+                        <h2 className={`text-2xl sm:text-[32px] lg:text-[40px] leading-tight font-medium text-white ${capitalizeTitle ? "capitalize" : ""}`}>
                             {title}
                         </h2>
 
-                        <p className="text-base sm:text-xl font-light text-white/90">
+                        <p className="text-base sm:text-xl font-normal text-white/90">
                             {text}
                         </p>
                     </div>

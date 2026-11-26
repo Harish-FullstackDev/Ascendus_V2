@@ -52,7 +52,7 @@ export default function WhatWeDo() {
                 className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between"
             >
                 <div className="flex flex-col gap-4">
-                    <p className="text-[14px] font-medium uppercase leading-4 tracking-[0.7px] text-[#68c2f2]">
+                    <p className="text-[14px] font-semibold uppercase leading-4 tracking-[0.7px] text-[#68c2f2]">
                         What We Do
                     </p>
                     <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-medium capitalize leading-[1.2] text-white">

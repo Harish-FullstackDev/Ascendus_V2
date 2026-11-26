@@ -23,7 +23,7 @@ export default function BeyondGoLive() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="mt-8 sm:mt-10 max-w-3xl mx-auto text-center text-base sm:text-lg font-light leading-relaxed text-[#55595E]"
+                className="mt-8 sm:mt-10 max-w-3xl mx-auto text-center text-base sm:text-lg font-normal leading-relaxed text-[#55595E]"
             >
                 Enterprise systems change as the business changes. One-off projects leave fragmented ownership and a backlog
                 nobody owns. Ascendus aims to support clients through assessment, implementation, integration, optimisation

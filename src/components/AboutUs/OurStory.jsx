@@ -16,7 +16,7 @@ export default function OurStory() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="flex max-w-[1100px] flex-col gap-4"
             >
-                <h2 className="text-[14px] font-medium uppercase tracking-[0.7px] leading-4 text-[#0061af]">
+                <h2 className="text-[14px] font-semibold uppercase tracking-[0.7px] leading-4 text-[#0061af]">
                     Our Story
                 </h2>
 

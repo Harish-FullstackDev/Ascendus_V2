@@ -30,7 +30,7 @@ export default function AboutUsInsights() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 lg:w-[34%] lg:shrink-0"
                 >
-                    <p className="text-[14px] font-medium uppercase leading-4 tracking-[0.7px] text-[#0061af]">Our Insights</p>
+                    <p className="text-[14px] font-semibold uppercase leading-4 tracking-[0.7px] text-[#0061af]">Our Insights</p>
                     <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-medium capitalize leading-[1.2] text-[#0e2b4b]">
                         Ideas that inspire.
                         <br />

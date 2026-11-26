@@ -18,7 +18,7 @@ export default function SectionTitle({ title, highlight, subtitle, dark = false,
             transition={{ duration: 0.6, ease: "easeOut" }}
             className={`text-center max-w-3xl mx-auto ${className}`}
         >
-            <h2 className={`text-2xl sm:text-[28px] font-semibold ${capitalize ? "capitalize" : ""} ${dark ? "text-white" : "text-[#2E3033]"}`}>
+            <h2 className={`text-2xl sm:text-[28px] font-medium ${capitalize ? "capitalize" : ""} ${dark ? "text-white" : "text-[#2E3033]"}`}>
                 {at === -1 ? (
                     title
                 ) : (
@@ -29,7 +29,7 @@ export default function SectionTitle({ title, highlight, subtitle, dark = false,
                     </>
                 )}
             </h2>
-            {subtitle && <p className={`mt-2 text-base sm:text-lg font-light ${dark ? "text-white/85" : "text-[#55595E]"}`}>{subtitle}</p>}
+            {subtitle && <p className={`mt-2 text-base sm:text-lg font-normal ${dark ? "text-white/85" : "text-[#55595E]"}`}>{subtitle}</p>}
         </motion.div>
     );
 }

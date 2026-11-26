@@ -9,7 +9,7 @@ import bandBg from "@/assets/AboutUs/vision-mission-bg.jpg";
 // VisionMissionBand: the black swirl photo behind two columns split by a white
 // rule, icon / title / text centred in each. Only Vision and Mission are shown;
 // the ref's Culture & Values and CSR columns are not in the playbook. The
-// supporting line under Mission is carried over from the previous page.
+// supporting line sits centred under both columns, as in the design.
 const STATEMENTS = [
     {
         icon: Eye,
@@ -19,10 +19,11 @@ const STATEMENTS = [
     {
         icon: Target,
         title: "Our Mission",
-        description: "To translate business challenges into practical enterprise technology solutions.",
-        support: "We measure our work by whether systems keep running as designed, long after the project team has moved on.",
+        description: "To translate business challenges into practical enterprise technology solutions."
     },
 ];
+
+const SUPPORT = "We measure our work by whether systems keep running as designed, long after the project team has moved on.";
 
 export default function WhereWeHeadedAndWhy() {
     return (
@@ -35,9 +36,9 @@ export default function WhereWeHeadedAndWhy() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="mb-10 sm:mb-16 flex flex-col items-center gap-4 text-center"
+                    className="mb-10 sm:mb-14 flex flex-col items-center gap-3 text-center"
                 >
-                    <p className="text-[14px] font-medium uppercase leading-4 tracking-[0.7px] text-[#68c2f2]">
+                    <p className="text-[14px] font-semibold uppercase leading-4 tracking-[0.7px] text-[#68c2f2]">
                         Vision &amp; Mission
                     </p>
                     <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-medium capitalize leading-[1.2] text-white">
@@ -55,18 +56,25 @@ export default function WhereWeHeadedAndWhy() {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true, amount: 0.3 }}
                                 transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.1 }}
-                                className="flex flex-col items-center gap-4 text-center md:px-12 lg:px-20"
+                                className="flex flex-col items-center gap-3 text-center md:px-12 lg:px-20 md:py-2"
                             >
-                                <Icon className="size-12 text-[#68c2f2]" strokeWidth={1.25} aria-hidden="true" />
-                                <h3 className="text-base font-normal uppercase tracking-[0.7px] text-white">{statement.title}</h3>
-                                <p className="max-w-md text-lg sm:text-xl leading-relaxed text-[#ecf2f9]">{statement.description}</p>
-                                {statement.support && (
-                                    <p className="max-w-md text-sm sm:text-base leading-[1.5] text-[#c9d0d8]">{statement.support}</p>
-                                )}
+                                <Icon className="size-8 sm:size-10 text-[#68c2f2]" strokeWidth={1.25} aria-hidden="true" />
+                                <h3 className="mt-1 text-sm sm:text-base font-normal uppercase tracking-[0.7px] text-white">{statement.title}</h3>
+                                <p className="max-w-md text-base sm:text-lg leading-relaxed text-[#ecf2f9]">{statement.description}</p>
                             </motion.div>
                         );
                     })}
                 </div>
+
+                <motion.p
+                    initial={{ opacity: 0, y: 16 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, amount: 0.5 }}
+                    transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
+                    className="mx-auto mt-10 sm:mt-14 max-w-3xl text-center text-sm leading-[1.5] text-[#c9d0d8]"
+                >
+                    {SUPPORT}
+                </motion.p>
             </div>
         </section>
     );

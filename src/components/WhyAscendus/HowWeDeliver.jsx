@@ -38,16 +38,16 @@ export default function HowWeDeliver() {
                             {index + 1}
                         </span>
                         <div className="flex flex-col gap-2">
-                            <h3 className="text-xl font-semibold text-[#2E3033]">{stage.name}</h3>
-                            <p className="text-base font-light leading-relaxed text-[#55595E]">{stage.happens}</p>
-                            <p className="mt-2 text-sm font-medium uppercase tracking-wide text-[#0061AF]">You receive</p>
+                            <h3 className="text-xl font-medium text-[#2E3033]">{stage.name}</h3>
+                            <p className="text-base font-normal leading-relaxed text-[#55595E]">{stage.happens}</p>
+                            <p className="mt-2 text-sm font-semibold uppercase tracking-wide text-[#0061AF]">You receive</p>
                             <p className="text-base text-[#2E3033]">{stage.receive}</p>
                         </div>
                     </motion.li>
                 ))}
             </ol>
 
-            <p className="mt-10 sm:mt-16 max-w-3xl mx-auto text-center text-base sm:text-lg font-light leading-relaxed text-[#55595E]">
+            <p className="mt-10 sm:mt-16 max-w-3xl mx-auto text-center text-base sm:text-lg font-normal leading-relaxed text-[#55595E]">
                 <span className="italic text-[#2E3033]">Activities are tailored to the project and agreed scope.</span> Before
                 delivery starts, we agree objectives, scope, roles, dependencies, acceptance criteria and governance.
             </p>

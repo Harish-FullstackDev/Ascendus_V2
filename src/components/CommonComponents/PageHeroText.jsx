@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 //
 // actions: [{ label, href, primary }]
 
-const buttonBase = "inline-flex items-center justify-center px-6 py-2 text-lg font-light transition-colors rounded-ui-sm";
+const buttonBase = "inline-flex items-center justify-center px-6 py-2 text-lg font-normal transition-colors rounded-ui-sm";
 
 export default function PageHeroText({ eyebrow, title, text, actions = [] }) {
     return (
@@ -28,7 +28,7 @@ export default function PageHeroText({ eyebrow, title, text, actions = [] }) {
                 <h1 className="text-white text-xl sm:text-4xl lg:text-5xl font-medium capitalize mt-6 sm:mt-6 leading-tight">{title}</h1>
 
                 <div className="hidden sm:block">
-                    <p className="mt-6 max-w-[760px] text-lg lg:text-xl font-light leading-relaxed text-white/90">{text}</p>
+                    <p className="mt-6 max-w-[760px] text-lg lg:text-xl font-normal leading-relaxed text-white/90">{text}</p>
                     {actions.length > 0 && (
                         <div className="mt-8 flex flex-wrap gap-4">
                             {actions.map((action) => (
@@ -54,7 +54,7 @@ export default function PageHeroText({ eyebrow, title, text, actions = [] }) {
 export function PageHeroIntroMobile({ text, actions = [] }) {
     return (
         <div className="sm:hidden px-8 pt-10">
-            <p className="text-base font-light leading-relaxed text-[#55595E]">{text}</p>
+            <p className="text-base font-normal leading-relaxed text-[#55595E]">{text}</p>
             {actions.length > 0 && (
                 <div className="mt-6 flex flex-col gap-3">
                     {actions.map((action) => (

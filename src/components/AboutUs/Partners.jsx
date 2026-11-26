@@ -20,7 +20,7 @@ export default function Partners() {
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 className="mt-8 sm:mt-10 max-w-3xl mx-auto text-center"
             >
-                <p className="text-base sm:text-lg font-light leading-relaxed text-[#55595E]">
+                <p className="text-base sm:text-lg font-normal leading-relaxed text-[#55595E]">
                     Clients often need several platforms to work together. We choose partners on customer value, technical
                     fit, delivery capability and long-term alignment.
                 </p>
@@ -33,7 +33,7 @@ export default function Partners() {
             <div className="mt-10 sm:mt-14 flex justify-center">
                 <Link
                     href="/ascendus-partner"
-                    className="inline-flex items-center justify-center bg-[#0061AF] px-6 py-2 text-lg font-light text-white transition-colors hover:bg-[#004174] rounded-ui-sm"
+                    className="inline-flex items-center justify-center bg-[#0061AF] px-6 py-2 text-lg font-normal text-white transition-colors hover:bg-[#004174] rounded-ui-sm"
                 >
                     Discuss a partnership
                 </Link>

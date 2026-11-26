@@ -24,7 +24,7 @@ export default function OurStrength() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="text-center max-w-3xl mx-auto mb-10 sm:mb-16"
             >
-                <h2 className="text-2xl sm:text-[28px] font-semibold capitalize text-[#2E3033]">
+                <h2 className="text-2xl sm:text-[28px] font-medium capitalize text-[#2E3033]">
                     Ascendus <span className="text-[#2D8EC5]">at a glance</span>
                 </h2>
             </motion.div>
@@ -38,7 +38,7 @@ export default function OurStrength() {
                             <div className={`flex min-w-0 justify-center xl:flex-1 ${spans ? "col-span-2" : ""}`}>
                                 <div className={`flex flex-col gap-2 items-center text-center ${spans ? "w-[calc((100%-24px)/2)] xl:w-auto" : ""}`}>
                                     <AnimatedStat value={item.value} />
-                                    <p className="text-[#4a5568] text-lg font-light">
+                                    <p className="text-[#4a5568] text-lg font-normal">
                                         {item.lines[0]}
                                         <br />
                                         {item.lines[1]}

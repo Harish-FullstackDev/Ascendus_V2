@@ -68,8 +68,8 @@ export default function SixReasons() {
                         >
                             <NavyCardBackground isActive={hovered === index} />
                             <div className="relative flex h-full flex-col gap-3">
-                                <h3 className="text-xl font-semibold leading-7">{reason.title}</h3>
-                                <p className="text-base font-light leading-6 text-white/90">{reason.text}</p>
+                                <h3 className="text-xl font-medium leading-7">{reason.title}</h3>
+                                <p className="text-base font-normal leading-6 text-white/90">{reason.text}</p>
                                 <span className="mt-auto inline-flex items-center gap-2 pt-4 text-base font-medium">
                                     Learn more
                                     <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />

@@ -30,11 +30,11 @@ export default function WhereWeWork() {
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
                 >
-                    <p className="text-base sm:text-lg font-light leading-relaxed text-[#55595E]">
+                    <p className="text-base sm:text-lg font-normal leading-relaxed text-[#55595E]">
                         With a regional office in Riyadh, Ascendus works with organisations across Saudi Arabia, the wider GCC and
                         selected international markets, according to delivery requirements.
                     </p>
-                    <p className="mt-8 text-sm font-medium uppercase tracking-wide text-[#2E3033]">Markets we serve</p>
+                    <p className="mt-8 text-sm font-semibold uppercase tracking-wide text-[#2E3033]">Markets we serve</p>
                     <ul className="mt-4 flex flex-wrap gap-3">
                         {MARKETS.map((market) => (
                             <li key={market} className="border border-[#2E3033]/20 bg-[#f3f6f9] px-4 py-2 text-base text-[#2E3033] rounded-ui-sm">
@@ -55,10 +55,10 @@ export default function WhereWeWork() {
                     <div aria-hidden className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/35 to-black/10" />
                     <div className="relative">
                         <MapPin className="size-8 sm:size-10 text-white" strokeWidth={1.5} aria-hidden="true" />
-                        <p className="mt-6 text-sm font-medium uppercase tracking-wide text-white/80">Regional Office</p>
-                        <p className="mt-2 text-xl sm:text-2xl font-semibold">Riyadh</p>
-                        <p className="mt-1 text-base sm:text-lg font-light text-white/90">Kingdom of Saudi Arabia</p>
-                        <address className="mt-4 text-sm sm:text-base font-light not-italic leading-relaxed text-white/80">
+                        <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-white/80">Regional Office</p>
+                        <p className="mt-2 text-xl sm:text-2xl font-medium">Riyadh</p>
+                        <p className="mt-1 text-base sm:text-lg font-normal text-white/90">Kingdom of Saudi Arabia</p>
+                        <address className="mt-4 text-sm sm:text-base font-normal not-italic leading-relaxed text-white/80">
                             7731 King Saud Ibn Abdulaziz Saud,
                             <br />
                             2839 Al Murabba Dist., Riyadh 12624, KSA

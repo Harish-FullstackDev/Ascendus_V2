@@ -33,17 +33,17 @@ export default function EngagementModels() {
                 <table className="hidden md:table w-full border-collapse text-left">
                     <thead>
                         <tr className="border-b-2 border-[#2E3033]">
-                            <th scope="col" className="w-[30%] py-4 pr-6 text-base font-semibold text-[#2E3033]">Model</th>
-                            <th scope="col" className="w-[33%] py-4 pr-6 text-base font-semibold text-[#2E3033]">Best for</th>
-                            <th scope="col" className="py-4 text-base font-semibold text-[#2E3033]">How it works</th>
+                            <th scope="col" className="w-[30%] py-4 pr-6 text-base font-medium text-[#2E3033]">Model</th>
+                            <th scope="col" className="w-[33%] py-4 pr-6 text-base font-medium text-[#2E3033]">Best for</th>
+                            <th scope="col" className="py-4 text-base font-medium text-[#2E3033]">How it works</th>
                         </tr>
                     </thead>
                     <tbody>
                         {MODELS.map((row) => (
                             <tr key={row.model} className="border-b border-[#2E3033]/15">
-                                <th scope="row" className="py-5 pr-6 text-lg font-semibold text-[#2E3033]">{row.model}</th>
-                                <td className="py-5 pr-6 text-base sm:text-lg font-light text-[#55595E]">{row.bestFor}</td>
-                                <td className="py-5 text-base sm:text-lg font-light text-[#55595E]">{row.how}</td>
+                                <th scope="row" className="py-5 pr-6 text-lg font-medium text-[#2E3033]">{row.model}</th>
+                                <td className="py-5 pr-6 text-base sm:text-lg font-normal text-[#55595E]">{row.bestFor}</td>
+                                <td className="py-5 text-base sm:text-lg font-normal text-[#55595E]">{row.how}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -53,16 +53,16 @@ export default function EngagementModels() {
                 <ul className="md:hidden flex flex-col gap-4">
                     {MODELS.map((row) => (
                         <li key={row.model} className="border-l-2 border-[#2D8EC5] bg-[#f3f6f9] p-6 rounded-ui-md">
-                            <h3 className="text-lg font-semibold text-[#2E3033]">{row.model}</h3>
-                            <p className="mt-3 text-sm font-medium uppercase tracking-wide text-[#0061AF]">Best for</p>
-                            <p className="mt-1 text-base font-light text-[#55595E]">{row.bestFor}</p>
-                            <p className="mt-3 text-sm font-medium uppercase tracking-wide text-[#0061AF]">How it works</p>
-                            <p className="mt-1 text-base font-light text-[#55595E]">{row.how}</p>
+                            <h3 className="text-lg font-medium text-[#2E3033]">{row.model}</h3>
+                            <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-[#0061AF]">Best for</p>
+                            <p className="mt-1 text-base font-normal text-[#55595E]">{row.bestFor}</p>
+                            <p className="mt-3 text-sm font-semibold uppercase tracking-wide text-[#0061AF]">How it works</p>
+                            <p className="mt-1 text-base font-normal text-[#55595E]">{row.how}</p>
                         </li>
                     ))}
                 </ul>
 
-                <p className="mt-6 text-sm sm:text-base italic font-light text-[#55595E]">
+                <p className="mt-6 text-sm sm:text-base italic font-normal text-[#55595E]">
                     Subject to capability and availability. Final models are agreed contractually.
                 </p>
             </motion.div>

@@ -24,7 +24,7 @@ import ReadyToTransform from "@/components/AboutUs/ReadyToTransform";
 // the testimonials and the finance filler subtitles.
 
 const HERO_TEXT =
-    "Ascendus works with organisations seeking to modernise the systems and processes that power their business. Our approach brings enterprise applications, finance technology and digital engineering together around clearly defined business priorities.";
+    "Ascendus helps organisations modernise business systems and processes through enterprise applications, finance technology and digital engineering.";
 
 const HERO_ACTIONS = [
     { label: "Discover Ascendus", href: "#our-story", primary: true },

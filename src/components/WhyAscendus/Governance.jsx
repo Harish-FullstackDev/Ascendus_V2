@@ -35,8 +35,8 @@ export default function Governance() {
                         className="bg-white p-6 sm:p-8 shadow-[0px_2px_8px_rgba(0,0,0,0.08)] rounded-ui-md"
                     >
                         <span aria-hidden className="block h-1 w-12 bg-[#2d8ec5]" />
-                        <h3 className="mt-5 text-xl font-semibold text-[#2E3033]">{control.title}</h3>
-                        <p className="mt-2 text-base sm:text-lg font-light leading-relaxed text-[#55595E]">{control.text}</p>
+                        <h3 className="mt-5 text-xl font-medium text-[#2E3033]">{control.title}</h3>
+                        <p className="mt-2 text-base sm:text-lg font-normal leading-relaxed text-[#55595E]">{control.text}</p>
                     </motion.li>
                 ))}
             </ul>

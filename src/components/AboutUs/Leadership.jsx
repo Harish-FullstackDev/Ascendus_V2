@@ -20,7 +20,7 @@ export default function Leadership() {
                 transition={{ duration: 0.6, ease: "easeOut" }}
                 className="relative z-10 flex flex-col gap-3 px-6 py-10 sm:px-[64px] sm:py-16 lg:max-w-[52%] lg:py-10 xl:max-w-none"
             >
-                <p className="text-[14px] font-medium uppercase tracking-[0.7px] text-[#0061af] leading-4">
+                <p className="text-[14px] font-semibold uppercase tracking-[0.7px] text-[#0061af] leading-4">
                     Leadership
                 </p>
 
@@ -65,7 +65,7 @@ export default function Leadership() {
                     glass bends the light. No sheen or colour boost — those read
                     as frosted plastic rather than glass. */}
                     <div className="absolute left-[57%] top-[75%] flex flex-col rounded-ui-sm border border-white/25 bg-black/30 px-3 py-2 text-[12px] capitalize leading-[1.5] text-white whitespace-nowrap shadow-[inset_0_0_10px_rgba(255,255,255,0.18),inset_0_1px_0_rgba(255,255,255,0.25),0_4px_16px_rgba(0,0,0,0.12)] backdrop-blur-[3px] sm:px-6 sm:py-3 sm:text-base">
-                        <p className="font-semibold">Krishnakumar</p>
+                        <p className="font-medium">Krishnakumar</p>
                         <p>Founder &amp; CEO, Ascendus</p>
                     </div>
                 </div>

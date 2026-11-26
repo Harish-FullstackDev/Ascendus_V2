@@ -53,7 +53,7 @@ export default function WhatShapesHowWeDeliver() {
                 className="relative flex w-full flex-col items-start gap-10 xl:flex-row xl:items-center xl:gap-12"
             >
                 <div className="flex w-full flex-col gap-6 xl:w-[340px] xl:shrink-0">
-                    <p className="text-[14px] font-medium uppercase leading-4 tracking-[0.7px] text-[#68c2f2]">How We Build</p>
+                    <p className="text-[14px] font-semibold uppercase leading-4 tracking-[0.7px] text-[#68c2f2]">How We Build</p>
 
                     <h2 className="text-[clamp(1.5rem,3vw,2rem)] font-medium capitalize leading-[1.2] text-white">
                         What shapes how we deliver.
