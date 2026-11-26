@@ -78,7 +78,7 @@ function OutcomeBanner({ item }) {
 function CardBlock({ item }) {
     return (
         <div className="flex w-full max-w-[512px] flex-col items-center gap-6 lg:max-w-none lg:flex-1 lg:basis-1/2">
-            <h3 className="font-houschka-pro text-center text-lg font-semibold text-[#2E3033] sm:text-2xl">{item.title}</h3>
+            <h3 className="font-switzer text-center text-lg font-semibold text-[#2E3033] sm:text-2xl">{item.title}</h3>
             <OutcomeBanner item={item} />
         </div>
     );

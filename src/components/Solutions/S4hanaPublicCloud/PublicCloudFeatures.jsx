@@ -100,7 +100,7 @@ export default function PublicCloudFeatures() {
                                 : "border-[#6c6c6c] text-[#6c6c6c] opacity-70"
                                 }`}
                         >
-                            <h3 className="font-houschka-pro text-base sm:text-2xl font-semibold">{tab.title}</h3>
+                            <h3 className="font-switzer text-base sm:text-2xl font-semibold">{tab.title}</h3>
                         </button>
                     ))}
                 </div>
@@ -133,7 +133,7 @@ export default function PublicCloudFeatures() {
                                     {/* Phones: the large corner icon is hidden (it ran into the long
                                         descriptions) and a small one sits right beside the title. */}
                                     <div className="flex items-center gap-2">
-                                        <h3 className="font-houschka-pro text-white text-xl sm:text-2xl font-semibold">{activeTab.title}</h3>
+                                        <h3 className="font-switzer text-white text-xl sm:text-2xl font-semibold">{activeTab.title}</h3>
                                         <activeTab.icon aria-hidden="true" strokeWidth={1} className="sm:hidden size-7 shrink-0 text-white/60" />
                                     </div>
                                     <p className="text-white/85 text-base sm:text-lg font-light leading-relaxed text-pretty">{activeTab.desc}</p>

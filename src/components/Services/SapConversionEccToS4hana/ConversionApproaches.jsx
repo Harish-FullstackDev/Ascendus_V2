@@ -59,7 +59,7 @@ export default function ConversionApproaches() {
                     >
                         <div aria-hidden className="h-2 w-full" style={{ backgroundColor: approach.color }} />
                         <div className="flex flex-col gap-3 px-6 sm:px-7 py-6 sm:py-7">
-                            <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{approach.title}</h3>
+                            <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{approach.title}</h3>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{approach.desc}</p>
                         </div>
                     </motion.div>

@@ -69,7 +69,7 @@ export default function CxMethodology() {
                             <step.icon aria-hidden="true" strokeWidth={1.5} className="size-6" />
                         </span>
                         <div className="flex flex-col gap-2 min-w-0">
-                            <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h3>
+                            <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h3>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{step.desc}</p>
                         </div>
                     </motion.div>

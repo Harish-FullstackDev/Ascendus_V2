@@ -104,7 +104,7 @@ export default function AribaSolutions() {
                         <CardBackground isActive={false} />
                         <div className="relative flex flex-col justify-start gap-2 px-4 pt-5 pb-6">
                             <CardIcon card={card} isActive={false} className="self-start size-16 mb-2" />
-                            <h3 className="font-houschka-pro text-white text-xl font-semibold">{card.title}</h3>
+                            <h3 className="font-switzer text-white text-xl font-semibold">{card.title}</h3>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{card.desc}</p>
                         </div>
                     </motion.div>
@@ -138,7 +138,7 @@ export default function AribaSolutions() {
                         >
                             <CardBackground isActive={isActive} />
                             <div className="absolute inset-0 flex flex-col px-6 pt-8 pb-6 text-left">
-                                <h3 className="font-houschka-pro text-white text-xl sm:text-2xl font-semibold">{card.title}</h3>
+                                <h3 className="font-switzer text-white text-xl sm:text-2xl font-semibold">{card.title}</h3>
                                 <div className="flex-1 min-h-0 flex justify-center items-start pt-5">
                                     <CardIcon card={card} isActive={isActive} className="h-full max-h-[9rem] w-auto" />
                                 </div>

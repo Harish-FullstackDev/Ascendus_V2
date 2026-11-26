@@ -63,7 +63,7 @@ export default function WhyEnterprisePartnerWithUs() {
                                     <Image src={item.icon} alt="" fill className="object-contain" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-3">
-                                    <h3 className="font-houschka-pro text-[#10161d] text-xl sm:text-2xl font-medium">{item.title}</h3>
+                                    <h3 className="font-switzer text-[#10161d] text-xl sm:text-2xl font-medium">{item.title}</h3>
                                     <p className="text-[#4a5568] text-base sm:text-lg font-light">{item.desc}</p>
                                 </div>
                             </div>

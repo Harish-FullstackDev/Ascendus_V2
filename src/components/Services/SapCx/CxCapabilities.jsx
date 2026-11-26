@@ -115,7 +115,7 @@ export default function CxCapabilities() {
                                     className={`absolute inset-0 flex flex-col justify-between gap-3 transition-[padding] duration-500 ${isActive ? "p-6" : "p-4"
                                         }`}
                                 >
-                                    <h3 className="font-houschka-pro text-white text-xl sm:text-2xl font-semibold">{step.title}</h3>
+                                    <h3 className="font-switzer text-white text-xl sm:text-2xl font-semibold">{step.title}</h3>
                                     <p
                                         className={`text-white/85 text-lg font-light overflow-hidden transition-all duration-700 ease-out ${isActive ? "max-h-64 opacity-100 delay-250" : "max-h-0 opacity-0"
                                             }`}

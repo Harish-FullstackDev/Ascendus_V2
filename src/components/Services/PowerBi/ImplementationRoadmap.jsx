@@ -143,7 +143,7 @@ export default function ImplementationRoadmap() {
                                     <motion.h3
                                         layout
                                         transition={{ layout: { duration: 0.35, ease: "easeInOut" } }}
-                                        className={`font-houschka-pro relative z-10 text-base lg:text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"
+                                        className={`font-switzer relative z-10 text-base lg:text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"
                                             }`}
                                     >
                                         {step.title}

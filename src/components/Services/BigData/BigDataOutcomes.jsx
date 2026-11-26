@@ -55,7 +55,7 @@ export default function BigDataOutcomes() {
                         <div className="relative size-8 sm:size-10 shrink-0 transition-transform duration-300 group-hover:-translate-y-1">
                             <item.icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
                         </div>
-                        <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{item.title}</h3>
+                        <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{item.title}</h3>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{item.desc}</p>
                     </motion.div>
                 ))}

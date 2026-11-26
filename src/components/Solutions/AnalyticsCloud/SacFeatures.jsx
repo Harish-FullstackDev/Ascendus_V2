@@ -126,7 +126,7 @@ export default function SacFeatures() {
                             >
                                 <span className="flex items-center gap-4 min-w-0">
                                     <tab.icon aria-hidden="true" strokeWidth={1.5} className="size-8 sm:size-10 shrink-0 text-[#1C5F85]" />
-                                    <span className="font-['Houschka_Pro'] text-[#2E3033] text-lg font-semibold">{tab.label}</span>
+                                    <span className="font-switzer text-[#2E3033] text-lg font-semibold">{tab.label}</span>
                                 </span>
                                 <span className="relative shrink-0 size-8 flex items-center justify-center">
                                     <Image src={circleIcon} alt="" fill className="object-contain" />
@@ -153,7 +153,7 @@ export default function SacFeatures() {
                                             <h3 className="text-[#2E3033] text-base font-medium">{tab.title}</h3>
                                             <p className="text-[#55595E] text-base font-light leading-[1.5]">{tab.desc}</p>
                                             <div className="bg-[#f3f6f9] border-l-[3px] border-[#2d8ec5] px-4 py-3">
-                                                <p className="font-['Houschka_Pro'] text-[#2E3033] text-base font-semibold">Highlights</p>
+                                                <p className="font-switzer text-[#2E3033] text-base font-semibold">Highlights</p>
                                                 <ul className="mt-1 flex flex-col gap-1">
                                                     {tab.points.map((point) => (
                                                         <li key={point} className="flex items-center gap-3 text-[#55595E] text-base font-light">
@@ -250,7 +250,7 @@ export default function SacFeatures() {
                             transition={{ duration: 0.35 }}
                             className="flex flex-col gap-4"
                         >
-                            <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{activeTab.title}</h3>
+                            <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{activeTab.title}</h3>
                             <p className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed">{activeTab.desc}</p>
                         </motion.div>
                     </AnimatePresence>

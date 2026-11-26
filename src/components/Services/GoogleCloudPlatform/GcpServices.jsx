@@ -124,7 +124,7 @@ export default function GcpServices() {
                         <CardBackground isActive={false} />
                         <div className="relative flex flex-col justify-start gap-2 px-4 py-5">
                             <ServiceIcon service={service} isActive={false} className="self-start size-14 mb-2" />
-                            <h3 className="font-houschka-pro text-white text-xl font-semibold">{service.title}</h3>
+                            <h3 className="font-switzer text-white text-xl font-semibold">{service.title}</h3>
                             <p className="text-white/85 text-sm font-light text-pretty">{service.desc}</p>
                         </div>
                     </motion.div>
@@ -152,7 +152,7 @@ export default function GcpServices() {
                                 as the description row opens it takes room from that row, so
                                 the icon eases smaller instead of running into the copy. */}
                             <div className="absolute inset-0 flex flex-col px-6 pt-8 pb-6 text-left">
-                                <h3 className="font-houschka-pro text-white text-xl sm:text-2xl font-semibold">{service.title}</h3>
+                                <h3 className="font-switzer text-white text-xl sm:text-2xl font-semibold">{service.title}</h3>
                                 <div className="flex-1 min-h-0 flex justify-center items-start pt-5">
                                     <ServiceIcon service={service} isActive={isActive} className="h-full max-h-[10rem] w-auto" />
                                 </div>

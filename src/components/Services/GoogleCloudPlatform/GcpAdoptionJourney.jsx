@@ -127,7 +127,7 @@ export default function GcpAdoptionJourney() {
                                     <motion.h3
                                         layout
                                         transition={{ layout: { duration: 0.35, ease: "easeInOut" } }}
-                                        className={`font-houschka-pro relative z-10 text-xl xl:text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"}`}
+                                        className={`font-switzer relative z-10 text-xl xl:text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"}`}
                                     >
                                         {step.title}
                                     </motion.h3>

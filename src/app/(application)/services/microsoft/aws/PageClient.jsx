@@ -12,7 +12,7 @@ import BestCloudSolution from "@/components/Services/AmazonWebServices/BestCloud
 import AwsEngagementPath from "@/components/Services/AmazonWebServices/AwsEngagementPath";
 import AwsOutcomes from "@/components/Services/AmazonWebServices/AwsOutcomes";
 import ReadyToTransform from "@/components/Services/AmazonWebServices/ReadyToTransform";
-import customBg from "@/assets/sst-cta.webp";
+import customBg from "@/assets/cta-bg.webp";
 
 const page = () => {
     return (

@@ -63,7 +63,7 @@ export default function FicoFaq() {
                                     className="flex w-full items-center justify-between gap-4 py-5 sm:py-6 lg:py-[26px] text-left"
                                     aria-expanded={isOpen}
                                 >
-                                    <span className="font-['Houschka_Pro'] text-[#2E3033] text-lg sm:text-2xl font-medium">
+                                    <span className="font-switzer text-[#2E3033] text-lg sm:text-2xl font-medium">
                                         {item.title}
                                     </span>
                                     <span className="relative shrink-0 size-8 sm:size-[37px] flex items-center justify-center">

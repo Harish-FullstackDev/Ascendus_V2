@@ -54,7 +54,7 @@ export default function WhyChooseSuccessFactors() {
                                 key={box.title}
                                 className="bg-white w-full flex flex-col items-start gap-8 lg:gap-12 px-6 py-8 sm:grid sm:row-span-2 sm:grid-rows-subgrid"
                             >
-                                <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{box.title}</h3>
+                                <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{box.title}</h3>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{box.desc}</p>
                             </div>
                         ))}

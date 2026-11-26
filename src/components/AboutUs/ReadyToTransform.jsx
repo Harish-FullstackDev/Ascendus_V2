@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
-import ctaBg from "@/assets/AboutUs/cta-bg.webp";
+import ctaBg from "@/assets/cta-bg.webp";
 import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 
 // Closing CTA band, shared by About and Why Ascendus; each page passes its own copy.
@@ -24,7 +24,7 @@ export default function ReadyToTransform({
     return (
         <>
             <section className="relative z-0 w-full overflow-hidden">
-                <Image src={ctaBg} alt="" fill className="object-cover object-center" />
+                <Image src={ctaBg} alt="" fill className="object-cover object-bottom" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-black/30 to-black/10" />
 
                 <motion.div

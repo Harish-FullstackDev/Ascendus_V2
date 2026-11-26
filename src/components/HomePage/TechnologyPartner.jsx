@@ -149,7 +149,7 @@ export default function TechnologyPartner() {
                         to the right, vertically centered against that whole text block. */}
                     <div className="flex flex-col gap-2 max-w-[640px]">
                         {/* Same size, weight and accent as the other home headings. */}
-                        <h3 className="font-houschka-pro text-xl sm:text-[28px] font-semibold leading-[1.4]">
+                        <h3 className="font-switzer text-xl sm:text-[28px] font-semibold leading-[1.4]">
                             <span className="text-[#2E3033]">Built for </span>
                             <span className="text-[#2D8EC5]">Enterprise Execution</span>
                         </h3>

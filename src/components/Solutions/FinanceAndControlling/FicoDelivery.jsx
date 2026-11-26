@@ -66,7 +66,7 @@ export default function FicoDelivery() {
                                     <div className="sm:hidden h-px flex-1 bg-[#d3dae2]" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-2 sm:gap-3">
-                                    <h3 className="font-houschka-pro text-[#10161d] text-xl sm:text-2xl font-semibold">{step.title}</h3>
+                                    <h3 className="font-switzer text-[#10161d] text-xl sm:text-2xl font-semibold">{step.title}</h3>
                                     <p className="text-[#4a5568] text-base sm:text-lg font-light">{step.desc}</p>
                                 </div>
                             </div>

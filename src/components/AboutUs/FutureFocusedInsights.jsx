@@ -52,7 +52,7 @@ export default function FutureFocusedInsights({
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="text-center max-w-3xl mx-auto mb-12"
                 >
-                    <h3 className="font-houschka-pro text-xl font-semibold text-[#2E3033]">{title}</h3>
+                    <h3 className="font-switzer text-xl font-semibold text-[#2E3033]">{title}</h3>
                     <p className="mt-2 text-base sm:text-lg font-light text-[#55595E]">
                         {description}
                     </p>
@@ -80,7 +80,7 @@ export default function FutureFocusedInsights({
                                 <Image src={item.img} alt={item.text} fill className="object-cover" />
                             </div>
                             <p className="text-base font-light text-[#55595E]">{item.date}</p>
-                            <h3 className="font-houschka-pro text-base font-medium text-[#55595E]">{item.text}</h3>
+                            <h3 className="font-switzer text-base font-medium text-[#55595E]">{item.text}</h3>
                             <button
                                 type="button"
                                 className="flex items-center justify-between w-[118px] text-[#2d8ec5] text-base font-light"

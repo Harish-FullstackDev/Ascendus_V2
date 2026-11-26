@@ -126,7 +126,7 @@ export default function AiMlServices() {
                                 : "border-[#6c6c6c] text-[#6c6c6c] opacity-70"
                                 }`}
                         >
-                            <h3 className="font-houschka-pro text-base sm:text-xl xl:text-2xl font-semibold">
+                            <h3 className="font-switzer text-base sm:text-xl xl:text-2xl font-semibold">
                                 {tab.title}
                             </h3>
                         </button>
@@ -187,7 +187,7 @@ export default function AiMlServices() {
                                 transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
                                 className="hidden xl:flex absolute left-[55px] top-[46px] w-[58%] max-w-[462px] text-white flex-col gap-3"
                             >
-                                <h3 className="font-houschka-pro text-xl font-semibold">{activeTab.title}</h3>
+                                <h3 className="font-switzer text-xl font-semibold">{activeTab.title}</h3>
                                 <p className="text-white/90 text-lg font-light leading-relaxed">{activeTab.desc}</p>
                             </motion.div>
                         </AnimatePresence>
@@ -205,7 +205,7 @@ export default function AiMlServices() {
                                 className="sm:hidden absolute left-5 right-5 top-4 text-white flex flex-col gap-3"
                             >
                                 <div className="flex items-center gap-2">
-                                    <h3 className="font-houschka-pro text-lg font-semibold">{activeTab.title}</h3>
+                                    <h3 className="font-switzer text-lg font-semibold">{activeTab.title}</h3>
                                     <activeTab.icon aria-hidden="true" strokeWidth={1} className="size-7 shrink-0 text-white/60" />
                                 </div>
                                 <p className="text-white/90 text-sm font-light leading-[1.5]">{activeTab.short}</p>
@@ -231,7 +231,7 @@ export default function AiMlServices() {
 
                     {/* Text (tablet / small desktop) */}
                     <div className="hidden sm:flex xl:hidden flex-col gap-2">
-                        <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{activeTab.title}</h3>
+                        <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{activeTab.title}</h3>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{activeTab.desc}</p>
                     </div>
                 </div>

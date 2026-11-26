@@ -65,7 +65,7 @@ export const sectionContent = {
       {
         parts: [
           "For questions regarding this Disclaimer, please contact Ascendus using the contact details provided on our website or by emailing ",
-          { text: "info@isupportz.com", href: "mailto:info@isupportz.com" },
+          { text: "info@ascendus.sa", href: "mailto:info@ascendus.sa" },
           ".",
         ],
       },

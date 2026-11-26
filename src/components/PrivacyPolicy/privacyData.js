@@ -116,7 +116,7 @@ export const sectionContent = {
       {
         parts: [
           "For questions, requests, or concerns regarding this Privacy Policy or the processing of your personal information, please contact Ascendus at ",
-          { text: "info@isupportz.com", href: "mailto:info@isupportz.com" },
+          { text: "info@ascendus.sa", href: "mailto:info@ascendus.sa" },
           " or through the Contact Us section of our website.",
         ],
       },

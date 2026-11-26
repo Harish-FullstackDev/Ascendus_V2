@@ -68,7 +68,7 @@ export default function ConversionRoadmap() {
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">
-                            <h3 className="font-houschka-pro text-[#2E3033] text-base sm:text-lg font-semibold">{step.title}</h3>
+                            <h3 className="font-switzer text-[#2E3033] text-base sm:text-lg font-semibold">{step.title}</h3>
                             <p className="text-[#55595E] text-sm sm:text-base font-light">{step.desc}</p>
                         </div>
                     </motion.div>
@@ -124,7 +124,7 @@ export default function ConversionRoadmap() {
                                     <motion.h3
                                         layout
                                         transition={{ layout: { duration: 0.35, ease: "easeInOut" } }}
-                                        className={`font-houschka-pro relative z-10 text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"
+                                        className={`font-switzer relative z-10 text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"
                                             }`}
                                     >
                                         {step.title}

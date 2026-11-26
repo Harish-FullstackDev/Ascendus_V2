@@ -1,482 +1,470 @@
 "use client"
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../assets/Navbar/SST_Updated_White.svg";
-import { useState } from "react";
-import { MdOutlineMailOutline } from "react-icons/md";
-import FBIcon from "../../assets/Footer/FacebookIcon.svg";
+import logo from "../../assets/Footer/Ascendus_Outline_Wordmark.svg";
+import logoSecondary from "../../assets/Navbar/Ascendus_Secondary_logo.png";
 import InstagramIcon from "../../assets/Footer/Instagram_Icon.svg";
 import LinkedinIcon from "../../assets/Footer/LinkedIn_Icon.svg";
 import TwitterIcon from "../../assets/Footer/X_Icon.svg";
-import { MENUS } from "@/components/Navbar/menuLinks";
-// import CalendlyIcon from "../../assets/Footer/CalendlyIcon.svg";
+
+const LOGO_RATIO = 193 / 1355.34; // Ascendus_Outline_Wordmark.svg intrinsic size — height per unit width
+
+const AT_END_PX = 2; // how close to the page bottom counts as being at the end
+const RESISTANCE = 0.5; // fraction of the gesture the pull actually travels
+const INPUT_EASE_PER_SEC = 28; // input is fed in over a few frames, so wheel ticks glide instead of jump
+const HOLD_MS = 70; // the band holds while pushes keep arriving within this window
+const MIN_HOLD_DELTA = 6; // wheel deltas below this are momentum coasting, not a push
+const SPRING_OMEGA = 11; // critically damped return: higher is snappier, never overshoots
+const GESTURE_GAP_MS = 180; // a lull this long between wheel events starts a new gesture
+const LINE_PX = 16; // Firefox reports wheel deltas in lines
+
+// Elastic overflow scrolling, done by hand. Chrome on Windows has no native
+// rubber band, so the gesture is read off the wheel and touch directly: once
+// the page is already at its end, further downward input no longer scrolls
+// anything, and that leftover input is what opens the wordmark band.
+//
+// What opens is the band's own height, growing below the footer panel, and
+// the view is held against the new page bottom as it grows. So the page
+// lifts under the gesture exactly as an overscroll would, while the footer
+// panel itself never moves: it cannot be clipped at its top, cannot ride up
+// over the section above it, and leaves no gap behind — all of which happen
+// the moment the panel is the thing being translated.
+//
+// At rest the band is zero-height, so there is no empty strip either. Letting
+// go shrinks it back, and since it is the last thing on the page the browser
+// clamps the scroll as the document shortens, carrying the footer back down
+// over the wordmark.
+//
+// Resistance makes it read as elastic rather than as a drawer — the pull
+// travels a fraction of the gesture, and the closer it gets to the limit the
+// less each additional pixel buys. Input is eased in over a few frames rather
+// than applied per event, so a mouse wheel's discrete ticks glide. Once pushes
+// stop arriving the band returns on a critically damped spring: it starts
+// from rest, gathers speed, and settles without overshooting — so it neither
+// snaps shut nor bounces twice. A repeat swipe mid-return just grabs the band
+// where it is and keeps pulling.
+function useElasticOverscroll() {
+  const footerRef = useRef(null);
+  const bandRef = useRef(null);
+  const [maxPull, setMaxPull] = useState(0);
+  const [inView, setInView] = useState(false);
+
+  // The wordmark is `w-full h-auto`, so how far there is to pull is a function
+  // of width. Derived from the ratio rather than measured off the element,
+  // which keeps it stable while the band is resizing.
+  useEffect(() => {
+    const footer = footerRef.current;
+    if (!footer) return undefined;
+
+    const measure = () => setMaxPull(Math.round(footer.clientWidth * LOGO_RATIO));
+    measure();
+
+    const resize = new ResizeObserver(measure);
+    resize.observe(footer);
+
+    // The gesture listeners only matter once the footer is on screen, so they
+    // are not left reading layout on every wheel tick anywhere on the site.
+    const visibility = new IntersectionObserver(([entry]) => setInView(entry.isIntersecting));
+    visibility.observe(footer);
+
+    return () => {
+      resize.disconnect();
+      visibility.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    const band = bandRef.current;
+    if (!maxPull || !inView || !band) return undefined;
+
+    const root = document.documentElement;
+    const atEnd = () => root.scrollHeight - Math.ceil(window.scrollY + window.innerHeight) <= AT_END_PX;
+
+    let height = 0; // what is currently drawn
+    let velocity = 0; // of the return spring, px/s
+    let pending = 0; // input received but not yet eased into the height
+    let lastPushAt = 0;
+    let frame = null;
+    let lastFrameAt = 0;
+    let touching = false;
+    let touchY = null;
+
+    // A pull only counts if the gesture *started* at the page end. A scroll
+    // that arrives from further up is still moving when it hits the bottom,
+    // and none of that stream — momentum included — may open the band. For
+    // touch the stream starts at touchstart; the wheel has no start event, so
+    // it is the first event after a lull. Starting the clock now means a
+    // stream already in flight when the footer scrolls into view is treated
+    // as a continuation, not a fresh push.
+    let armed = false;
+    let lastWheelAt = performance.now();
+
+    // Height is written straight to the element each frame. Going through
+    // React styles applied it a frame late, so the pin-to-bottom scroll read
+    // a stale document height and the pull stuttered.
+    const tick = (now) => {
+      const dt = Math.min(0.05, (now - lastFrameAt) / 1000);
+      lastFrameAt = now;
+
+      let next = height;
+
+      if (Math.abs(pending) > 0.1) {
+        const step = pending * (1 - Math.exp(-INPUT_EASE_PER_SEC * dt));
+        pending -= step;
+        // Pulling further gets harder towards the limit; giving it back does not.
+        const give = step > 0 ? (1 - next / maxPull) ** 2 : 1;
+        next = Math.min(maxPull, Math.max(0, next + step * give));
+      } else {
+        pending = 0;
+      }
+
+      const held = touching || now - lastPushAt < HOLD_MS || pending > 0.5;
+      if (held) {
+        velocity = 0;
+      } else {
+        const accel = -SPRING_OMEGA * SPRING_OMEGA * next - 2 * SPRING_OMEGA * velocity;
+        velocity += accel * dt;
+        next = Math.max(0, next + velocity * dt);
+        if (next < 0.5 && Math.abs(velocity) < 20) {
+          next = 0;
+          velocity = 0;
+        }
+      }
+
+      const grew = next > height;
+      height = next;
+      band.style.height = `${height}px`;
+
+      // Growing the band lengthens the document below the fold; riding the
+      // scroll down with it is what turns the growth into a visible pull.
+      // Shrinking needs nothing — the browser clamps the scroll as the page
+      // shortens. `instant`, because <html> carries scroll-smooth, which
+      // would turn every pin into an animated scroll that lags the band.
+      if (grew) window.scrollTo({ top: root.scrollHeight, left: 0, behavior: "instant" });
+
+      if (height === 0 && pending <= 0 && !touching) {
+        pending = 0;
+        frame = null;
+        return;
+      }
+      frame = requestAnimationFrame(tick);
+    };
+
+    const wake = () => {
+      if (frame !== null) return;
+      lastFrameAt = performance.now();
+      frame = requestAnimationFrame(tick);
+    };
+
+    const feed = (delta) => {
+      pending += delta * RESISTANCE;
+      wake();
+    };
+
+    const onWheel = (event) => {
+      const now = performance.now();
+      if (now - lastWheelAt > GESTURE_GAP_MS) armed = height > 0 || atEnd();
+      lastWheelAt = now;
+
+      const delta = event.deltaMode === 1 ? event.deltaY * LINE_PX : event.deltaY;
+      if (delta < 0) {
+        // Scrolling back up hands the page straight back to the browser.
+        armed = false;
+        pending = 0;
+        lastPushAt = 0;
+        if (height > 0) wake();
+        return;
+      }
+      if (!armed || delta === 0) return;
+      // A trackpad's momentum tail still stretches the band a little, but only
+      // a real push holds it open — so it lets go when the swipe ends.
+      if (delta >= MIN_HOLD_DELTA) lastPushAt = now;
+      feed(delta);
+    };
+
+    const onTouchStart = (event) => {
+      touching = true;
+      touchY = event.touches[0].clientY;
+      armed = height > 0 || atEnd();
+    };
+
+    // While a finger is down the band tracks it like a drag, and dragging back
+    // down gives the distance back until the page takes over again.
+    const onTouchMove = (event) => {
+      if (touchY === null || !armed) return;
+      const y = event.touches[0].clientY;
+      const delta = touchY - y; // up-swipe is positive
+      touchY = y;
+      feed(delta);
+      if (height + pending <= 0) {
+        pending = 0;
+        armed = false;
+      }
+    };
+
+    const onTouchEnd = () => {
+      touching = false;
+      touchY = null;
+      armed = false;
+      if (height > 0) wake();
+    };
+
+    const options = { passive: true };
+    window.addEventListener("wheel", onWheel, options);
+    window.addEventListener("touchstart", onTouchStart, options);
+    window.addEventListener("touchmove", onTouchMove, options);
+    window.addEventListener("touchend", onTouchEnd, options);
+    window.addEventListener("touchcancel", onTouchEnd, options);
+
+    return () => {
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("touchstart", onTouchStart);
+      window.removeEventListener("touchmove", onTouchMove);
+      window.removeEventListener("touchend", onTouchEnd);
+      window.removeEventListener("touchcancel", onTouchEnd);
+      if (frame !== null) cancelAnimationFrame(frame);
+      // Leaving view mid-pull must not strand the band open.
+      band.style.height = "0px";
+    };
+  }, [maxPull, inView]);
+
+  return { footerRef, bandRef };
+}
+
+const linkClass = "hover:text-white transition-colors duration-200";
+const labelClass = "text-gray-500 cursor-default";
+
+// One entry per footer column. Each renders as its own natural-width block
+// (not an equal-width grid cell), so a short list like Quick Links stays
+// narrow while Industries and Solutions — both full 10-item lists — take
+// the width their longest label needs. Links point at this site's routes;
+// Industries has no pages yet, so its entries stay plain labels.
+const columns = [
+  {
+    heading: "Industries",
+    items: [
+      { name: "Manufacturing" },
+      { name: "Retail & Consumer" },
+      { name: "Government & Public Sector" },
+      { name: "Banking & Financial Services" },
+      { name: "Energy & Utilities" },
+      { name: "Engineering & Construction" },
+      { name: "Healthcare & Life Sciences" },
+      { name: "Technology, Media & Communications" },
+      { name: "Transportation & Logistics" },
+      { name: "Education & Research" },
+    ],
+  },
+  {
+    heading: "Solutions",
+    headingHref: "/solutions/",
+    items: [
+      { name: "SAP S/4HANA", href: "/services/sap/s4hana-transformation/" },
+      { name: "SAP Ariba", href: "/services/sap/ariba/" },
+      { name: "SAP SuccessFactors", href: "/services/sap/successfactors/" },
+      { name: "SAP BTP", href: "/services/sap/btp/" },
+      { name: "SAP Analytics", href: "/services/sap/analytics-reporting/" },
+      { name: "SAP Integration", href: "/services/sap/integration/" },
+      { name: "SAP EHS", href: "/services/sap/ehs/" },
+      { name: "SAP CX", href: "/services/sap/customer-experience/" },
+      { name: "RISE with SAP", href: "/services/sap/s4hana-transformation/" },
+      { name: "GROW with SAP", href: "/services/sap/implementation/" },
+    ],
+  },
+  {
+    heading: "Services",
+    headingHref: "/services/",
+    items: [
+      { name: "SAP", href: "/services/sap/" },
+      { name: "E-Invoicing", href: "/services/e-invoicing/" },
+      { name: "Microsoft", href: "/services/microsoft/" },
+      { name: "Digital Engineering", href: "/services/digital-engineering/" },
+      { name: "Digital Transformation", href: "/services/digital-transformation/" },
+    ],
+  },
+  {
+    heading: "Insights",
+    items: [
+      { name: "Case Studies", href: "/case-studies/" },
+      { name: "Industry Insights", href: "/industry-reports/" },
+      { name: "Blog", href: "/blog/" },
+      { name: "Whitepapers", href: "/whitepapers/" },
+    ],
+  },
+  {
+    heading: "Quick Links",
+    items: [
+      { name: "Home", href: "/" },
+      { name: "About Us", href: "/about-us/" },
+      { name: "Why Ascendus", href: "/why-ascendus/" },
+      { name: "Partners", href: "/ascendus-partner/" },
+      { name: "Careers", href: "/careers/" },
+      { name: "Contact", href: "/contact/" },
+      { name: "Book a call", href: "/book-a-consultation/" },
+    ],
+  },
+];
+
+const socials = [
+  {
+    href: "https://www.linkedin.com/company/ascendus-company/?viewAsMember=true",
+    icon: LinkedinIcon,
+    label: "LinkedIn",
+  },
+  {
+    href: "https://www.instagram.com/ascendus.ksa",
+    icon: InstagramIcon,
+    label: "Instagram",
+  },
+  {
+    href: "https://x.com/ascendus_ksa",
+    icon: TwitterIcon,
+    label: "Twitter",
+  },
+];
+
+const legalLinks = [
+  { name: "Terms & Conditions", href: "/legal/terms/" },
+  { name: "Privacy Policy", href: "/legal/privacy/" },
+  { name: "Security Policy", href: "/legal/security/" },
+  { name: "Cookie Policy", href: "/legal/cookies/" },
+  { name: "Disclaimer", href: "/legal/disclaimer/" },
+];
 
 const Footer = () => {
-  const [email, setEmail] = useState("");
-  const handleSendEmail = () => {
-    if (email) {
-      console.log("Sending email to:", email);
-      setEmail("");
-    }
-  };
-
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      handleSendEmail();
-    }
-  };
+  const { footerRef, bandRef } = useElasticOverscroll();
 
   return (
-    <>
-      <footer className="bg-neutral-900 text-gray-400 px-8 py-8 md:px-16 md:pt-16 md:pb-9">
-        <div className="relative h-8 w-auto aspect-[358.7/80] mb-6 md:hidden">
+    <footer ref={footerRef} className="relative bg-neutral-900 text-gray-400">
+      <div className="relative z-10 bg-neutral-900 px-8 py-8 md:px-16 md:pt-16 md:pb-9">
+        <div className="relative h-8 w-auto aspect-[4/1] mb-6 md:hidden">
           <Image
-            src={logo}
-            alt="Ascendus logo"
+            src={logoSecondary}
+            alt="Ascendus Logo"
             fill
-            style={{
-              objectFit: "contain",
-              objectPosition: "left",
-            }}
+            style={{ objectFit: "contain", objectPosition: "left" }}
           />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-5 gap-8 md:gap-16  pb-4 md:pb-12 mb-2">
-          <div className="md:col-span-1">
-            {/* Logo — first column, so its left edge shares Quick Link's 64px inset.
-                h-10 (40px) + 46px margin = the 86px (mt-21.5) every other column's
-                heading drops by, so Quick Link stays level with them. */}
-            <div className="hidden md:block relative h-10 w-auto aspect-[358.7/80] mb-[46px]">
-              <Image
-                src={logo}
-                alt="Ascendus logo"
-                fill
-                style={{
-                  objectFit: "contain",
-                  objectPosition: "left",
-                }}
-              />
-            </div>
-            {/* Quick Link */}
-            <div className="mt-4 md:mt-0 mb-7.5 md:mb-12">
-              <h2 className="text-white text-base font-semibold mb-4">
-                Quick Link
+
+        {/* Main row: the five nav columns on the left, each its own natural
+          width, with the logo / registered-office / social block pinned to
+          the right via ml-auto. flex-wrap lets that right block drop below
+          the columns on narrow screens instead of squeezing them. */}
+        <div className="flex flex-wrap items-start gap-x-12 gap-y-10">
+          {columns.map((column) => (
+            <div key={column.heading} className="shrink-0">
+              {/* A heading links out only when its section has a page of its own
+                (Industries and Solutions do); the rest stay plain labels. */}
+              <h2 className="text-white text-base lg:text-lg font-semibold mb-4">
+                {column.headingHref ? (
+                  <Link href={column.headingHref} className={linkClass}>
+                    {column.heading}
+                  </Link>
+                ) : (
+                  column.heading
+                )}
               </h2>
-              <ul className="space-y-2">
-                <li>
-                  <Link
-                    href="/"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Home
-                  </Link>
-                </li>
-                {/* <li>
-                  <Link
-                    href="/services"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    What we do
-                  </Link>
-                </li> */}
 
-                <li>
-                  <Link
-                    href="/about-us"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    About Us
-                  </Link>
-                </li>
-
-                {/* <li>
-                  <Link
-                    href="/solutions"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Solutions
-                  </Link>
-                </li> */}
-                <li>
-                  <Link
-                    href="/contact"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Contact
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    href="/careers"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                {/* <li>
-                <Link
-                  href="/sst-partner"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Ascendus Partnership
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/careers"
-                  className="hover:text-white hover:underline-offset-8 transition-colors duration-200"
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/trustcenter"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Trust Center
-                </Link>
-              </li> */}
-                {/* <li>
-                  <Link
-                    href="/book-a-consultation"
-                    className="hover:text-white transition-colors duration-200"
-                  >
-                    Book a call
-                  </Link>
-                </li> */}
-                {/* <li>
-                <Link
-                  href="#contact"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Blog
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#careers"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  News Letter
-                </Link>
-              </li> */}
-              </ul>
-            </div>
-
-            {/* <div className="flex space-x-3 md:col-span-1">
-              {/* <a
-              href="https://www.linkedin.com/company/supportstudiotechnologies/posts/?feedView=all"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="LinkedIn"
-            >
-              <Image
-                src={LinkedinIcon}
-                alt="LinkedIn"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a>
-            <a
-              href="#"
-              className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-              aria-label="Twitter"
-            >
-              <Image
-                src={TwitterIcon}
-                alt="Twitter"
-                className="w-10 h-10"
-                width={24}
-                height={24}
-              />
-            </a> */}
-            {/* </div> */}
-          </div>
-
-
-          {/* Services and Solutions — same lists as the navbar dropdowns. */}
-          {MENUS.map((menu) => (
-            <div key={menu.label} className="md:col-span-1">
-              <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">{menu.label}</h2>
-              <ul className="space-y-2">
-                {menu.items.map((item) => (
+              <ul className="space-y-2 text-sm">
+                {column.items.map((item) => (
                   <li key={item.name}>
-                    <Link
-                      href={item.href}
-                      className="hover:text-white transition-colors duration-200"
-                    >
-                      {item.name}
-                    </Link>
+                    {/* Entries with no page yet stay plain labels rather than
+                      becoming links to nowhere. */}
+                    {item.href ? (
+                      <Link href={item.href} className={linkClass}>
+                        {item.name}
+                      </Link>
+                    ) : (
+                      <span className={labelClass}>{item.name}</span>
+                    )}
                   </li>
                 ))}
               </ul>
             </div>
           ))}
 
-          {/* Industries */}
-          {/* <div className="md:col-span-1">
-            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Industries</h2>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/services/sapService/rise-with-sap"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Manufacturing
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/services/enterpriseTransformation"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Construction & EPC
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#product"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Oil & Gas
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Retail
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Healthcare
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Logistics
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Government
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Utilities
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Financial Services
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="#experience"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Real Estate
-                </Link>
-              </li>
-            </ul>
-          </div> */}
 
-          {/* Support */}
-          <div className="md:col-span-1 ">
-            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">Insights</h2>
-            <ul className="space-y-2">
-              {/* <li>
-                <Link
-                  href="#compliance"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Compliance
-                </Link>
-              </li> */}
-              <li>
-                <Link
-                  href="/case-studies"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/blog"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Blog
-                </Link>
-              </li>
-              {/* <li>
-                <Link
-                  href="/industry-reports"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  Industry Reports
-                </Link>
-              </li> */}
-            </ul>
-          </div>
+          {/* Logo, registered-office address and socials — stacked, right
+            aligned on desktop (ml-auto pins the whole block to the row's
+            right edge); centred if it wraps onto its own line on mobile. */}
+          <div className="ml-auto shrink-0 flex flex-col items-center sm:items-end gap-6 text-center sm:text-right">
+            <div className="relative h-9 w-40 aspect-[4/1]">
+              <Image
+                src={logoSecondary}
+                alt="Ascendus Logo"
+                fill
+                style={{ objectFit: "contain", objectPosition: "right" }}
+              />
+            </div>
 
-          {/* Get In Touch */}
-          <div className="md:col-span-1">
-            <h2 className="text-white text-base font-semibold md:mt-21.5 mb-4">
-              Get In Touch
-            </h2>
-            <ul className="space-y-2">
-              <li>
-                <a
-                  href="tel:+914132191301"
-                  className="hover:text-white transition-colors duration-200"
-                >
-                  0413-2191301
-                </a>
-              </li>
-              <li>
-                <a
-                  href="mailto:info@isupportz.com"
-                  className="break-all hover:text-white transition-colors duration-200"
-                >
-                  info@isupportz.com
-                </a>
-              </li>
-              <li>
-                <p>
-                  Headquarters
-                </p>
-              </li>
-              <li>
-
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=192+Kamaraj+Salai+Puducherry+605013"
-                  className="hover:text-white transition-colors duration-200"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  #192, Kamaraj Salai, Puducherry, India, <br /> Pin Code - 605013
-
-                </a>
-              </li>
-            </ul>
-            {/* <div className="w-full max-w-xs mt-24 space-y-3">
-              <label className="text-white text-sm sm:text-base font-normal block text-start">
-                News Letter
-              </label>
-
-              <div className="relative w-full">
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  onKeyPress={handleKeyPress}
-                  placeholder="Enter your email address"
-                  className="w-full pr-10 px-3 sm:px-4 py-2 sm:py-3  border-b border-white/20 rounded-none text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
-                />
-                <MdOutlineMailOutline className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white text-lg" />
-              </div>
-            </div> */}
-            <div className="flex space-x-3 md:col-span-1 min-h-[50px] mb-2 mt-4">
+            <div className="text-sm space-y-1">
+              <p className="text-white text-lg font-medium">Regional Office</p>
               <a
-                href="https://www.linkedin.com/company/supportstudiotechnologies/posts/?feedView=all"
+                href="https://maps.app.goo.gl/r13crYbGJBBuQiSE7"
+                className={"block " + linkClass}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-                aria-label="LinkedIn"
               >
-                <Image
-                  src={LinkedinIcon}
-                  alt=""
-                  className="w-10 h-10"
-                  width={24}
-                  height={24}
-                />
+                7731 King Saud Ibn Abdulaziz Saud,<br />
+                2839 Al Murabba Dist., Riyadh 12624, KSA
               </a>
-              <a
-                href="https://www.instagram.com/isupportz.official/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-                aria-label="Instagram"
-              >
-                <Image
-                  src={InstagramIcon}
-                  alt=""
-                  className="w-10 h-10"
-                  width={24}
-                  height={24}
-                />
+              <a href="tel:+966573956334" className={"block " + linkClass}>
+                +966 573956334
               </a>
-              <a
-                href="https://x.com/isupportz?s=11"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
-                aria-label="Twitter"
-              >
-                <Image
-                  src={TwitterIcon}
-                  alt=""
-                  className="w-10 h-10"
-                  width={24}
-                  height={24}
-                />
+              <a href="mailto:info@ascendus.sa" className={"block " + linkClass}>
+                info@ascendus.sa
               </a>
             </div>
+
+            <div className="flex gap-3">
+              {socials.map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-white transition-colors duration-200 hover:scale-110 transform"
+                  aria-label={social.label}
+                >
+                  <Image
+                    src={social.icon}
+                    alt=""
+                    className="w-10 h-10"
+                    width={24}
+                    height={24}
+                  />
+                </a>
+              ))}
+            </div>
           </div>
-
         </div>
 
-        {/* Legal row — links above the copyright, right-aligned under a hairline rule. */}
-        <div className="border-t border-white/20 mt-8 pt-8 flex flex-col items-center md:items-end gap-3 text-sm text-white text-center md:text-right">
-          <p className="flex flex-wrap justify-center md:justify-end gap-x-2 gap-y-1">
-                <a href="/legal/terms/" className="whitespace-nowrap hover:text-gray-300 transition-colors">
-                  Terms & Conditions
+        {/* Legal row: one divider, legal links + copyright right-aligned
+          beneath it (centred on mobile). */}
+        <div className="border-t border-white/15 mt-8 pt-8 text-center sm:text-right text-sm">
+          <p className="text-white whitespace-nowrap overflow-x-auto">
+            {legalLinks.map((item, index) => (
+              <span key={item.href}>
+                {index > 0 && " | "}
+                <a href={item.href} className="hover:text-gray-300 transition-colors">
+                  {item.name}
                 </a>
-                <span aria-hidden="true">|</span>
-                <a href="/legal/privacy/" className="whitespace-nowrap hover:text-gray-300 transition-colors">
-                  Privacy Policy
-                </a>
-                <span aria-hidden="true">|</span>
-                <a href="/legal/security/" className="whitespace-nowrap hover:text-gray-300 transition-colors">
-                  Security Policy
-                </a>
-                <span aria-hidden="true" className="max-sm:hidden">|</span>
-                <a href="/legal/cookies/" className="whitespace-nowrap hover:text-gray-300 transition-colors">
-                  Cookie Policy
-                </a>
-                <span aria-hidden="true">|</span>
-                <a href="/legal/disclaimer/" className="whitespace-nowrap hover:text-gray-300 transition-colors">
-                  Disclaimer
-                </a>
+              </span>
+            ))}
           </p>
-          <p className="md:whitespace-nowrap">© 2026 Ascendus. All Rights Reserved.</p>
+          <p className="text-white mt-3">© 2026 Ascendus. All Rights Reserved.</p>
         </div>
-      </footer >
-    </>
+      </div>
+
+      {/* Zero-height at rest, so it costs the footer nothing and leaves no
+          empty strip. The pull grows it; the wordmark is pinned to its bottom
+          edge, which keeps the artwork against the page bottom and uncovers
+          it upward as the band opens. */}
+      <div ref={bandRef} style={{ height: 0 }} className="relative overflow-hidden" aria-hidden="true">
+        <Image src={logo} alt="" className="absolute inset-x-0 bottom-0 block w-full h-auto" />
+      </div>
+    </footer>
   );
 };
 

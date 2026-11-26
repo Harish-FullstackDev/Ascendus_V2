@@ -51,7 +51,7 @@ function PhaseItem({ icon, title, desc, delay }) {
                 <div className="sm:hidden h-px flex-1 bg-[#d3dae2]" />
             </div>
             <div className="flex flex-col gap-2 sm:gap-4">
-                <h3 className="font-houschka-pro text-[#10161d] text-xl sm:text-2xl font-semibold">{title}</h3>
+                <h3 className="font-switzer text-[#10161d] text-xl sm:text-2xl font-semibold">{title}</h3>
                 <p className="text-[#4a5568] text-base sm:text-lg font-light leading-normal">{desc}</p>
             </div>
         </motion.div>

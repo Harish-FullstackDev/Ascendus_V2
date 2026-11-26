@@ -82,8 +82,8 @@ const InteractiveLocationPreview = () => {
     };
 
     // Google Maps location URL details
-    const mapsUrl = "https://www.google.com/maps/search/?api=1&query=192+Kamaraj+Salai+Puducherry+605013";
-    const mapEmbedUrl = "https://www.google.com/maps?q=192+Kamaraj+Salai%2C+Puducherry+605013%2C+India&output=embed";
+    const mapsUrl = "https://www.google.com/maps/search/?api=1&query=7731+King+Saud+Ibn+Abdulaziz+Saud+Al+Murabba+Riyadh+12624";
+    const mapEmbedUrl = "https://www.google.com/maps?q=7731+King+Saud+Ibn+Abdulaziz+Saud%2C+Al+Murabba%2C+Riyadh+12624%2C+Saudi+Arabia&output=embed";
 
     // Framer Motion variants
     const cardVariants = {
@@ -189,10 +189,10 @@ const InteractiveLocationPreview = () => {
                         aria-haspopup="true"
                         aria-expanded={isOpen || isBottomSheetOpen}
                     >
-                        <p className="text-black font-semibold"> Head Office (India) </p>
+                        <p className="text-black font-semibold"> Regional Office (Riyadh)</p>
                         <p>
-                            #192, Kamaraj Salai, Puducherry,
-                            India - 605013
+                            7731 King Saud Ibn Abdulaziz Saud,
+                            2839 Al Murabba Dist., Riyadh 12624, KSA
                         </p>
 
                         <a
@@ -307,7 +307,7 @@ const InteractiveLocationPreview = () => {
                                                     <div className="w-12 h-[3px] bg-blue-500 rounded-full mt-1.5 mb-3" />
 
                                                     <p className="text-xs text-slate-200 leading-relaxed font-light">
-                                                        #192, Kamaraj Salai, Puducherry 605013
+                                                        7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., Riyadh 12624, KSA
                                                     </p>
                                                 </div>
 
@@ -432,7 +432,7 @@ const InteractiveLocationPreview = () => {
                                     <div>
                                         <h4 className="text-xs uppercase tracking-wider font-semibold text-slate-400">Head Office Address</h4>
                                         <p className="text-sm text-slate-200 mt-1 leading-relaxed">
-                                            #192, Kamaraj Salai, Puducherry 605013, India
+                                            7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., Riyadh 12624, KSA
                                         </p>
                                     </div>
                                 </div>
@@ -441,7 +441,7 @@ const InteractiveLocationPreview = () => {
                                 <div className="flex gap-3 pt-2">
                                     {/* Call Action */}
                                     <a
-                                        href="tel:+914132191301"
+                                        href="tel:+966573956334"
                                         className="flex-1 py-3 px-2 bg-slate-900 hover:bg-slate-800 active:bg-slate-800/80 border border-white/10 rounded-xl flex flex-col items-center justify-center gap-1 text-white transition-colors"
                                     >
                                         <Phone className="w-5 h-5 text-cyan-400" />
@@ -450,7 +450,7 @@ const InteractiveLocationPreview = () => {
 
                                     {/* Email Action */}
                                     <a
-                                        href="mailto:hi@isupportz.com"
+                                        href="mailto:info@ascendus.sa"
                                         className="flex-1 py-3 px-2 bg-slate-900 hover:bg-slate-800 active:bg-slate-800/80 border border-white/10 rounded-xl flex flex-col items-center justify-center gap-1 text-white transition-colors"
                                     >
                                         <Mail className="w-5 h-5 text-cyan-400" />

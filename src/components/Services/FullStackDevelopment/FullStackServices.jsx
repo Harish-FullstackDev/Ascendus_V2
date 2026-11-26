@@ -98,7 +98,7 @@ export default function FullStackServices() {
                                 : "border-[#6c6c6c] text-[#6c6c6c] opacity-70"
                                 }`}
                         >
-                            <h3 className="font-houschka-pro text-base sm:text-xl xl:text-2xl font-semibold">{tab.title}</h3>
+                            <h3 className="font-switzer text-base sm:text-xl xl:text-2xl font-semibold">{tab.title}</h3>
                         </button>
                     ))}
                 </div>
@@ -136,7 +136,7 @@ export default function FullStackServices() {
                                 transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
                                 className="absolute left-5 right-5 bottom-[60px] sm:left-[7%] sm:right-auto sm:bottom-[10%] sm:max-w-[462px] text-white flex flex-col gap-2 sm:gap-3"
                             >
-                                <h3 className="font-houschka-pro text-lg sm:text-xl font-semibold">{activeTab.title}</h3>
+                                <h3 className="font-switzer text-lg sm:text-xl font-semibold">{activeTab.title}</h3>
                                 <p className="text-white/90 text-sm sm:text-lg font-light leading-relaxed">{activeTab.desc}</p>
                             </motion.div>
                             </AnimatePresence>

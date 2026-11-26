@@ -67,7 +67,7 @@ export default function IotServices() {
                         {/* Top accent that draws in on hover */}
                         <span className="absolute top-0 left-0 h-[3px] w-full bg-[#2d8ec5] origin-left scale-x-0 transition-transform duration-500 ease-out group-hover:scale-x-100" />
                         <service.icon aria-hidden="true" strokeWidth={1.5} className="size-8 sm:size-10 text-[#1C5F85]" />
-                        <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{service.title}</h3>
+                        <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{service.title}</h3>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{service.desc}</p>
                     </motion.div>
                 ))}

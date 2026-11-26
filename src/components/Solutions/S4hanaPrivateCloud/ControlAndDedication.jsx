@@ -56,7 +56,7 @@ export default function ControlAndDedication() {
                 >
                     {POINTS.map((point) => (
                         <div key={point.title} className="flex flex-col gap-3 border-l-[3px] border-[#2d8ec5] pl-5">
-                            <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{point.title}</h3>
+                            <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{point.title}</h3>
                             <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.5]">{point.desc}</p>
                         </div>
                     ))}

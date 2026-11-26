@@ -21,7 +21,7 @@ const Card = ({ title, desc, index }) => (
         transition={{ duration: 0.4, delay: index * 0.06 }}
         className="flex flex-col gap-4"
     >
-        <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{title}</h3>
+        <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{title}</h3>
         <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4] text-pretty">{desc}</p>
     </motion.div>
 );
@@ -38,7 +38,7 @@ const PhoneItem = ({ title, desc, index }) => (
     >
         <div className="flex items-start">
             <div className="flex-1 min-w-0 flex flex-col gap-2">
-                <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{title}</h3>
+                <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{title}</h3>
                 <p className="text-[#55595E] text-base font-light leading-[1.4] text-pretty">{desc}</p>
             </div>
         </div>

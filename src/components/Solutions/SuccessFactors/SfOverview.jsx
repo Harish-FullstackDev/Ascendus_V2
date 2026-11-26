@@ -49,7 +49,7 @@ export default function SfOverview() {
                     <div className="flex flex-col gap-8 w-full lg:flex-1 sm:pl-[54px] lg:pr-16">
                         {HIGHLIGHTS.map((item) => (
                             <div key={item.title} className="flex flex-col gap-3">
-                                <h3 className="font-houschka-pro text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</h3>
+                                <h3 className="font-switzer text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</h3>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-relaxed">{item.desc}</p>
                             </div>
                         ))}

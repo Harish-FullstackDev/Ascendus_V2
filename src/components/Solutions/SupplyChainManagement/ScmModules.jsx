@@ -167,7 +167,7 @@ export default function ScmModules() {
                                         />
                                     )}
                                     <div className="relative flex flex-col gap-3 ">
-                                        <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h3>
+                                        <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h3>
                                         <AnimatePresence initial={false}>
                                             {isActive && (
                                                 <motion.div

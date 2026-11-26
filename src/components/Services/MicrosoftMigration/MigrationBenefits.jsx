@@ -103,7 +103,7 @@ export default function MigrationBenefits() {
                                 : "border-[#6c6c6c] text-[#6c6c6c] opacity-70"
                                 }`}
                         >
-                            <h3 className="font-houschka-pro text-base sm:text-xl lg:text-2xl font-semibold">{tab.title}</h3>
+                            <h3 className="font-switzer text-base sm:text-xl lg:text-2xl font-semibold">{tab.title}</h3>
                         </button>
                     ))}
                 </div>
@@ -169,7 +169,7 @@ export default function MigrationBenefits() {
                                 className="absolute flex left-5 right-5 top-4 sm:left-10 sm:right-10 sm:top-10 lg:left-[55px] lg:right-auto lg:top-[46px] lg:max-w-[462px] text-white flex-col gap-3"
                             >
                                 <div className="flex items-center gap-2">
-                                    <h3 className="font-houschka-pro text-lg sm:text-xl font-semibold">{activeTab.title}</h3>
+                                    <h3 className="font-switzer text-lg sm:text-xl font-semibold">{activeTab.title}</h3>
                                     <activeTab.icon aria-hidden="true" strokeWidth={1} className="sm:hidden size-7 shrink-0 text-white/60" />
                                 </div>
                                 <p className="sm:hidden text-white/90 text-sm font-light leading-[1.5]">

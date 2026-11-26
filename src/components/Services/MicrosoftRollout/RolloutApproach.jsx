@@ -29,7 +29,7 @@ export default function RolloutApproach() {
     return (
         <section className="w-full py-10 sm:py-0 flex flex-col items-center gap-8 sm:gap-[62px]">
             <div className="flex sm:hidden flex-col items-start sm:items-center gap-2 text-left sm:text-center self-start sm:self-auto px-8">
-                <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">
+                <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">
                     Our Rollout Approach
                 </h3>
                 <p className="text-[#55595E] text-sm font-light">
@@ -109,7 +109,7 @@ export default function RolloutApproach() {
                                     <motion.h3
                                         layout
                                         transition={{ layout: { duration: 0.35, ease: "easeInOut" } }}
-                                        className={`font-houschka-pro relative z-10 text-base lg:text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"
+                                        className={`font-switzer relative z-10 text-base lg:text-2xl font-semibold leading-tight transition-colors duration-500 ease-in-out ${isActive ? "text-white" : "text-black"
                                             }`}
                                     >
                                         {step.title}

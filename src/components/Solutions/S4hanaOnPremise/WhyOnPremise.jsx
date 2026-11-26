@@ -60,7 +60,7 @@ export default function WhyOnPremise() {
                     >
                         {REASONS.map((reason) => (
                             <li key={reason.title} className="flex flex-col gap-1">
-                                <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{reason.title}</h3>
+                                <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{reason.title}</h3>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{reason.desc}</p>
                             </li>
                         ))}

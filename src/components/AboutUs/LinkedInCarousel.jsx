@@ -35,7 +35,7 @@ export default function LinkedInCarousel() {
                 {/* Header */}
                 <div className="flex items-center justify-between mb-10">
 
-                    <h3 className="font-houschka-pro text-xl font-semibold text-[#2E3033]">
+                    <h3 className="font-switzer text-xl font-semibold text-[#2E3033]">
                         Follow Us On LinkedIn
                     </h3>
 

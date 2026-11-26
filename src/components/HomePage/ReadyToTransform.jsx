@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-import ctaBg from "@/assets/sst-cta.webp";
+import ctaBg from "@/assets/cta-bg.webp";
 import CalendlyModal from "@/components/CommonComponents/CommonCalendy";
 
 // Own copy for the home page, sized to match its Figma spec.
@@ -35,7 +35,7 @@ export default function ReadyToTransform({
     return (
         <>
             <section className="relative z-0 w-full overflow-hidden">
-                <Image src={bgImage} alt="" fill className="object-cover object-center" />
+                <Image src={bgImage} alt="" fill className="object-cover object-bottom" />
                 <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-black/40" />
 
                 <motion.div

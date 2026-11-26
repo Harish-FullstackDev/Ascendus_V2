@@ -66,7 +66,7 @@ export default function CyberAssessment() {
                                     className="flex w-full items-center justify-between gap-4 py-5 sm:py-6 text-left"
                                     aria-expanded={isOpen}
                                 >
-                                    <span className="min-w-0 font-houschka-pro text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</span>
+                                    <span className="min-w-0 font-switzer text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</span>
                                     <span className="relative shrink-0 size-8 rounded-full border border-[#2D8EC5] flex items-center justify-center">
                                         <span className="absolute w-[12px] h-[2px] bg-[#2D8EC5] rounded-full" />
                                         <motion.span

@@ -85,7 +85,7 @@ export default function TransitionPaths() {
                             <div className="relative flex flex-col gap-4 sm:gap-6 lg:mt-12">
                                 {/* Every title reserves two lines (2 x 1.25em leading) from sm up, so the
                                     descriptions start at the same height whether a title wraps or not. */}
-                                <h3 className="font-houschka-pro text-xl sm:text-2xl font-semibold leading-tight sm:min-h-[2.5em]">{path.title}</h3>
+                                <h3 className="font-switzer text-xl sm:text-2xl font-semibold leading-tight sm:min-h-[2.5em]">{path.title}</h3>
                                 <p className="text-base sm:text-xl font-light">{path.desc}</p>
                             </div>
                         </motion.div>

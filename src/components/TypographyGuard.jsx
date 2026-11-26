@@ -13,10 +13,8 @@ import { useEffect } from "react";
 // Opt out for an element and its children with data-no-typography.
 
 // Glue between two words that must stay on one line: U+00A0 (no-break
-// space). Houschka Pro, the heading font, draws U+00A0 about 2.3x wider than a
-// normal space; app/font.css overrides that one character so it renders at
-// normal space width. Do not swap in "space + U+2060 word joiner": Chrome
-// still breaks at that space.
+// space). Do not swap in "space + U+2060 word joiner": Chrome still breaks at
+// that space.
 const WJ = "\u2060";
 const GLUE = "\u00A0";
 const SKIP = "script,style,noscript,textarea,input,select,code,pre,svg,[contenteditable],[data-no-typography]";

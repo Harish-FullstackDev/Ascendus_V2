@@ -32,7 +32,7 @@ export default function Partners() {
 
             <div className="mt-10 sm:mt-14 flex justify-center">
                 <Link
-                    href="/sst-partner"
+                    href="/ascendus-partner"
                     className="inline-flex items-center justify-center bg-[#0061AF] px-6 py-2 text-lg font-light text-white transition-colors hover:bg-[#004174]"
                 >
                     Discuss a partnership

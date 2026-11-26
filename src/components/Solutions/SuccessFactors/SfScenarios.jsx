@@ -40,7 +40,7 @@ export default function SfScenarios() {
                         transition={{ duration: 0.6, ease: "easeOut", delay: (index % 3) * 0.08 }}
                         className="group relative border-b max-sm:last:border-b-0 border-white/50 pb-4 flex items-center justify-center"
                     >
-                        <h3 className="font-houschka-pro text-[#f5f6f6] text-xl sm:text-2xl font-medium text-center transition-[color,transform] duration-[1100ms] group-hover:duration-[1400ms] ease-[cubic-bezier(0.37,0,0.63,1)] will-change-transform [backface-visibility:hidden] group-hover:text-white group-hover:-translate-y-1.5 motion-reduce:group-hover:translate-y-0">{scenario}</h3>
+                        <h3 className="font-switzer text-[#f5f6f6] text-xl sm:text-2xl font-medium text-center transition-[color,transform] duration-[1100ms] group-hover:duration-[1400ms] ease-[cubic-bezier(0.37,0,0.63,1)] will-change-transform [backface-visibility:hidden] group-hover:text-white group-hover:-translate-y-1.5 motion-reduce:group-hover:translate-y-0">{scenario}</h3>
                         {/* Hover: the title floats up slowly (sine ease, 1.4s in, 1.1s settling back on
                             mouse out); a brand-blue line draws left to right over the resting underline
                             (same micro-interaction as GROW with SAP's Who it is For). */}

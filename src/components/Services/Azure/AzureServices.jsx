@@ -115,7 +115,7 @@ export default function AzureServices() {
                                 className={`text-left w-full py-[10px] px-[15px] border-l-[3px] transition-colors ${isActive ? "border-[#2d8ec5]" : "border-[#6c6c6c]/60"}`}
                             >
                                 <h3
-                                    className={`font-houschka-pro text-base sm:text-xl xl:text-2xl font-semibold leading-[1.4] transition-colors ${isActive ? "text-[#10161d]" : "text-[#6c6c6c]/70"}`}
+                                    className={`font-switzer text-base sm:text-xl xl:text-2xl font-semibold leading-[1.4] transition-colors ${isActive ? "text-[#10161d]" : "text-[#6c6c6c]/70"}`}
                                 >
                                     {item.title}
                                 </h3>

@@ -37,7 +37,7 @@ export default function SfCloudShift() {
                     The practical differences teams notice once HR runs on SAP SuccessFactors.
                 </p>
 
-                <ul className="text-white text-base list-disc font-['Houschka_Pro'] sm:text-lg pl-5 font-light space-y-1">
+                <ul className="text-white text-base list-disc font-switzer sm:text-lg pl-5 font-light space-y-1">
                     {POINTS.map((point) => (
                         <li key={point}>{point}</li>
                     ))}

@@ -11,7 +11,7 @@ export const validRoutes = [
   "/contact/",
   "/legal/privacy/",
   "/sst-errors/",
-  "/sst-partner/",
+  "/ascendus-partner/",
   "/legal/terms/",
   "/legal/disclaimer/",
   "/trustcenter/",

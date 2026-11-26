@@ -68,7 +68,7 @@ export default function ScmOverview() {
                         // (the grid is gap-0 because at lg these are side-by-side columns).
                         className="justify-self-start max-w-[467px] flex flex-col gap-4 max-sm:mt-4"
                     >
-                        <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold font-houschka-pro lg:pl-16">Key features include</h3>
+                        <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold font-switzer lg:pl-16">Key features include</h3>
                         {/* Drawn bullets instead of list-disc markers, so each dot starts
                             exactly where the heading's "K" starts (same lg:pl-16). */}
                         <ul className="lg:pl-16 space-y-3 text-[#55595E] text-base sm:text-lg font-light">

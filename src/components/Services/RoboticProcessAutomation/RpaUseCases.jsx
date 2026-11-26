@@ -79,7 +79,7 @@ export default function RpaUseCases() {
                         <div className="absolute inset-0 bg-black/60" />
                         {/* Title sits directly above the description, both at the card foot. */}
                         <div className="absolute inset-0 flex flex-col justify-end gap-2 px-4 pt-5 pb-5">
-                            <h3 className="font-houschka-pro text-white text-xl font-semibold">{item.title}</h3>
+                            <h3 className="font-switzer text-white text-xl font-semibold">{item.title}</h3>
                             <p className="text-white/85 text-sm font-light max-w-[280px]">{item.desc}</p>
                         </div>
                     </motion.div>
@@ -111,7 +111,7 @@ export default function RpaUseCases() {
                                 className={`absolute inset-0 transition-colors duration-500 ${isActive ? "bg-black/70" : "bg-black/20"}`}
                             />
                             <div className="absolute inset-0 flex items-start justify-start px-6 py-10 text-left">
-                                <h3 className="font-houschka-pro text-white text-xl sm:text-2xl font-semibold">{item.title}</h3>
+                                <h3 className="font-switzer text-white text-xl sm:text-2xl font-semibold">{item.title}</h3>
                             </div>
                             <div
                                 className={`absolute inset-x-0 bottom-0 px-6 pb-6 grid transition-[grid-template-rows] duration-500 ease-out ${isActive ? "grid-rows-[1fr]" : "grid-rows-[0fr]"

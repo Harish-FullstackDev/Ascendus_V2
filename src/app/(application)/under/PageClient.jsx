@@ -22,10 +22,10 @@ export default function MaintenancePage() {
           <p>Contact us for further information.</p>
 
           <Link
-            href="mailto:info@isupportz.com"
+            href="mailto:info@ascendus.sa"
             className="text-sky-600 hover:text-sky-700 transition-colors font-medium"
           >
-            info@isupportz.com
+            info@ascendus.sa
           </Link>
         </div>
 

@@ -66,7 +66,7 @@ export default function BenefitsForYourOrganization() {
                             <Image src={card.icon} alt="" width={40} height={40} className="size-8 sm:size-10" />
                         </div>
                         <div className="flex flex-col flex-1 gap-4 px-8 pt-14 pb-8 sm:contents">
-                            <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h3>
+                            <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h3>
                             <p className="text-[#55595E] text-base sm:text-lg font-light">{card.desc}</p>
                         </div>
                     </motion.div>

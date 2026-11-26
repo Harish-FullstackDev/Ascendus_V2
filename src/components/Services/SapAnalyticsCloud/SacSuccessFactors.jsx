@@ -78,7 +78,7 @@ export default function SacSuccessFactors() {
                         return (
                             <div key={item.title} className="w-full border-b border-[#a4a7a5] last:border-b-0">
                                 {/* The h3 wraps the button (a heading can't sit inside one), so the
-                                    title inherits Houschka Pro like the Ariba and CX factor titles. */}
+                                    title inherits Switzer like the Ariba and CX factor titles. */}
                                 <h3>
                                 <button
                                     type="button"
@@ -86,7 +86,7 @@ export default function SacSuccessFactors() {
                                     className="flex w-full items-center justify-between gap-4 py-5 sm:py-6 text-left"
                                     aria-expanded={isOpen}
                                 >
-                                    <span className="min-w-0 font-houschka-pro text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</span>
+                                    <span className="min-w-0 font-switzer text-[#2E3033] text-lg sm:text-2xl font-semibold">{item.title}</span>
                                     <span className="relative shrink-0 size-8 sm:size-[37px] flex items-center justify-center">
                                         <Image src={circleIcon} alt="" fill className="object-contain" />
                                         <span className="absolute w-[14px] h-[2px] bg-[#2D8EC5] rounded-full" />

@@ -69,7 +69,7 @@ export default function SacAdoption() {
                                 <step.icon aria-hidden="true" strokeWidth={1.5} className="size-5 sm:size-6" />
                             </span>
                             <div className="flex flex-col gap-2 min-w-0 pt-1 sm:pt-2">
-                                <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h3>
+                                <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h3>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">{step.desc}</p>
                             </div>
                         </motion.div>

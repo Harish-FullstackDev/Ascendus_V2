@@ -62,7 +62,7 @@ export default function RolloutOverview() {
                                 key={box.title}
                                 className="bg-white w-full flex flex-col items-start gap-6 lg:gap-10 px-6 py-8 md:grid md:row-span-2 md:grid-rows-subgrid"
                             >
-                                <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{box.title}</h3>
+                                <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{box.title}</h3>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light">{box.desc}</p>
                             </div>
                         ))}

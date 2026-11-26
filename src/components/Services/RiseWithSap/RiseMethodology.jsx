@@ -69,7 +69,7 @@ export default function RiseMethodology() {
                                 <phase.icon aria-hidden="true" strokeWidth={1.5} className="size-8 shrink-0 text-[#1C5F85]" />
                                 <div className="h-px flex-1 bg-[#d3dae2]" />
                             </div>
-                            <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold mt-3">{phase.title}</h3>
+                            <h3 className="font-switzer text-[#2E3033] text-xl font-semibold mt-3">{phase.title}</h3>
                             <p className="text-[#55595E] text-base font-light mt-2 text-pretty">{phase.desc}</p>
                         </div>
                         <div className="hidden sm:flex flex-col gap-[18px]">
@@ -78,7 +78,7 @@ export default function RiseMethodology() {
                                     <phase.icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
                                 </div>
                                 <div className="flex-1 min-w-0 flex flex-col gap-2 sm:gap-3">
-                                    <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{phase.title}</h3>
+                                    <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{phase.title}</h3>
                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{phase.desc}</p>
                                 </div>
                             </div>

@@ -88,7 +88,7 @@ export default function FullStackDeliveryFlow() {
                                 className={`relative flex-1 min-w-0 flex flex-col justify-center gap-5 px-6 xl:px-10 cursor-pointer transition-colors duration-300 ${isHovered ? "bg-[#0A3A52]/80" : ""}`}
                             >
                                 <step.icon aria-hidden="true" strokeWidth={1.5} className="size-8 text-white/70" />
-                                <h3 className="font-houschka-pro text-white text-xl xl:text-2xl font-semibold">{step.title}</h3>
+                                <h3 className="font-switzer text-white text-xl xl:text-2xl font-semibold">{step.title}</h3>
                                 {isHovered && (
                                     <motion.p
                                         initial={{ opacity: 0, y: 8 }}

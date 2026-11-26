@@ -72,7 +72,7 @@ export default function ProcurementJourney() {
                                 <step.icon aria-hidden="true" strokeWidth={1.5} className="size-8 sm:size-10 shrink-0 text-[#1C5F85]" />
                                 <div className="sm:hidden h-px flex-1 bg-[#d3dae2]" />
                             </div>
-                            <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h3>
+                            <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h3>
                         </div>
                         <p className="text-[#55595E] text-base sm:text-lg font-light">{step.desc}</p>
                     </motion.li>

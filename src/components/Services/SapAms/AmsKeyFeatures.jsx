@@ -151,7 +151,7 @@ export default function AmsKeyFeatures() {
                                 className="snap-start shrink-0 w-[260px] sm:w-[335px] min-h-[280px] sm:min-h-[340px] bg-white border border-black/[0.35] shadow-[0px_2px_4px_0px_rgba(0,0,0,0.25)] flex flex-col items-center text-center px-6 sm:px-7 py-7 sm:py-8"
                             >
                                 <Image src={card.icon} alt="" width={40} height={40} className="mb-5 size-8 sm:size-10 object-contain" />
-                                <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h3>
+                                <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{card.title}</h3>
                                 <p className="text-[#55595E] text-base sm:text-lg font-light mt-5">{card.desc}</p>
                             </motion.div>
                         ))}

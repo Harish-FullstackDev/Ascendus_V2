@@ -105,7 +105,7 @@ export default function RolloutFeatures() {
                                     className="flex w-full items-center gap-4 sm:gap-6 py-5 sm:py-6 text-left"
                                 >
                                     <span
-                                        className={`flex-1 text-lg sm:text-2xl transition-colors duration-300 ${isOpen ? "font-houschka-pro text-[#2E3033] font-semibold" : "text-[#55595E] font-light"
+                                        className={`flex-1 text-lg sm:text-2xl transition-colors duration-300 ${isOpen ? "font-switzer text-[#2E3033] font-semibold" : "text-[#55595E] font-light"
                                             }`}
                                     >
                                         {item.title}

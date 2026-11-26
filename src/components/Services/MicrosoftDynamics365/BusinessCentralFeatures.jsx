@@ -50,7 +50,7 @@ const Card = ({ icon: Icon, title, desc, index }) => (
         <div className="relative size-8 sm:size-10 shrink-0">
             <Icon aria-hidden="true" strokeWidth={1.5} className="size-full text-[#1C5F85]" />
         </div>
-        <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{title}</h3>
+        <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{title}</h3>
         <p className="text-[#55595E] text-base sm:text-lg font-light leading-[1.4]">{desc}</p>
     </motion.div>
 );
@@ -74,7 +74,7 @@ const PhoneItem = ({ icon: Icon, title, desc, index }) => (
                 <div className="h-px flex-1 bg-[#d3dae2]" />
             </div>
             <div className="flex flex-col gap-2">
-                <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{title}</h3>
+                <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{title}</h3>
                 <p className="text-[#55595E] text-base font-light leading-[1.4] text-pretty">{desc}</p>
             </div>
         </div>

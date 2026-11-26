@@ -68,7 +68,7 @@ export default function RpaDeliveryApproach() {
                                     <div className="sm:hidden h-px flex-1 bg-[#d3dae2]" />
                                 </div>
                                 <div className="flex-1 min-w-0 max-sm:w-full flex flex-col gap-2 sm:gap-3">
-                                    <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h3>
+                                    <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{step.title}</h3>
                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{step.desc}</p>
                                 </div>
                             </div>

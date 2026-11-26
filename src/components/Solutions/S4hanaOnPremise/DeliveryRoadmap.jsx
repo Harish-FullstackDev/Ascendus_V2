@@ -79,7 +79,7 @@ function PhaseBanner({ item }) {
 function CardBlock({ item }) {
     return (
         <div className="flex w-full max-w-[420px] flex-col items-center gap-6 sm:max-w-[512px] lg:max-w-none lg:flex-1 lg:basis-1/2">
-            <h3 className="font-houschka-pro text-left sm:text-center self-start sm:self-auto text-base font-semibold text-[#2E3033] sm:text-2xl">{item.title}</h3>
+            <h3 className="font-switzer text-left sm:text-center self-start sm:self-auto text-base font-semibold text-[#2E3033] sm:text-2xl">{item.title}</h3>
             <PhaseBanner item={item} />
         </div>
     );

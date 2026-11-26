@@ -13,7 +13,7 @@ import AmsEngagementFlow from "@/components/Services/SapAms/AmsEngagementFlow";
 import AmsBenefits from "@/components/Services/SapAms/AmsBenefits";
 import AmsFaq from "@/components/Services/SapAms/AmsFaq";
 import ReadyToTransform from "@/components/Services/SapAms/ReadyToTransform";
-import customBg from "@/assets/sst-cta.webp";
+import customBg from "@/assets/cta-bg.webp";
 
 const page = () => {
     return (

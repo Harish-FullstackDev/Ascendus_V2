@@ -35,7 +35,7 @@ export default function TmIndustries() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="border border-[#a5a5a5] bg-[#f5f6f6] flex flex-col gap-4 px-6 py-8"
                     >
-                        <h3 className="font-houschka-pro text-[#2E3033] text-lg sm:text-xl font-semibold">{card.title}</h3>
+                        <h3 className="font-switzer text-[#2E3033] text-lg sm:text-xl font-semibold">{card.title}</h3>
                         {/* text-pretty keeps the last line from ending on a single word. */}
                         <p className="text-[#55595E] text-base font-light text-pretty">{card.desc}</p>
                     </motion.div>
@@ -55,7 +55,7 @@ export default function TmIndustries() {
                             className="flex flex-col"
                         >
                             <div className="bg-white border border-[#a5a5a5] min-h-[121px] flex items-center justify-center text-center px-8">
-                                <h3 className="font-houschka-pro text-[#2E3033] text-xl  font-semibold leading-tight">{card.title}</h3>
+                                <h3 className="font-switzer text-[#2E3033] text-xl  font-semibold leading-tight">{card.title}</h3>
                             </div>
                             {/* Centred, so text-balance evens the lines and no description ends
                                 on a lone word (works in all current browsers). */}

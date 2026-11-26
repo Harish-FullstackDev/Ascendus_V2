@@ -56,7 +56,7 @@ export default function MigrationEssential() {
                                 className="group flex flex-col gap-4 sm:gap-[23px] w-full"
                             >
                                 <div className="flex flex-col gap-3 sm:gap-5">
-                                    <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{gain.title}</h3>
+                                    <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{gain.title}</h3>
                                     <p className="text-[#55595E] text-base sm:text-lg font-light">{gain.desc}</p>
                                 </div>
                                 <div className="relative w-[139px] h-[2px]">

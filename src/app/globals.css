@@ -7,7 +7,7 @@
 body {
   margin: 0;
   /* padding: 0 1rem; */
-  font-family: 'General Sans', sans-serif;
+  font-family: 'Switzer', sans-serif;
   /* background: linear-gradient(to right, #e6f0fa, #e6f0fa, #e6f0fa); */
 }
 
@@ -19,16 +19,6 @@ body {
    whitespace-nowrap, so nowrap spans and links still broke across lines. */
 p, li, h1, h2, h3, h4, h5, h6, blockquote, figcaption, dd, dt, td, th, label, span, a {
   text-wrap-style: pretty;
-}
-
-/* Main section titles (h1/h2) use Houschka Pro; everything else — sub
-   headings, card titles, body copy — stays on General Sans via
-   inheritance from body. Use the .font-general-sans / .font-houschka-pro
-   utilities (see font.css) for the rare heading that needs to opt out
-   of, or in to, this default. */
-h1,
-h2 {
-  font-family: 'Houschka Pro', sans-serif;
 }
 
 .primary-Button{

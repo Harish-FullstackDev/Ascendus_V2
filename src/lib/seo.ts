@@ -39,10 +39,10 @@ export const generateOrganizationSchema = () => {
     "description": "Ascendus is a premium enterprise IT and SAP consulting firm providing digital transformation, cloud managed services, and S/4HANA migration across the UAE, Saudi Arabia, and the GCC.",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "#192, Kamaraj Salai",
-      "addressLocality": "Puducherry",
-      "postalCode": "605013",
-      "addressCountry": "IN"
+      "streetAddress": "7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist.",
+      "addressLocality": "Riyadh",
+      "postalCode": "12624",
+      "addressCountry": "SA"
     },
     "sameAs": [
       "https://www.linkedin.com/company/supportstudiotechnologies/",
@@ -52,8 +52,8 @@ export const generateOrganizationSchema = () => {
     "contactPoint": [
       {
         "@type": "ContactPoint",
-        "telephone": "+91-413-2191301",
-        "email": "info@isupportz.com",
+        "telephone": "+966573956334",
+        "email": "info@ascendus.sa",
         "contactType": "customer service",
         "areaServed": ["AE", "SA", "BH", "QA", "OM", "KW"],
         "availableLanguage": ["en", "ar"]

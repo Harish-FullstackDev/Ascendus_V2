@@ -97,14 +97,14 @@ export default function RolloutEcosystem() {
                             transition={{ duration: 0.35, ease: "easeOut" }}
                             className="flex flex-col gap-4 sm:gap-5"
                         >
-                            <h3 className="font-houschka-pro text-[#2E3033] text-base sm:text-xl lg:text-2xl font-semibold">{activeTab.intro}</h3>
+                            <h3 className="font-switzer text-[#2E3033] text-base sm:text-xl lg:text-2xl font-semibold">{activeTab.intro}</h3>
                             <ul className="flex flex-col gap-4 sm:gap-5 list-disc pl-6">
                                 {activeTab.categories.map((cat) => (
                                     <li
                                         key={cat.label}
                                         className="text-lg font-light text-[#55595E] pl-2"
                                     >
-                                        <span className="font-['Houschka_Pro'] font-semibold text-[#2E3033]">
+                                        <span className="font-switzer font-semibold text-[#2E3033]">
                                             {cat.label}:
                                         </span>{" "}
                                         {cat.desc}

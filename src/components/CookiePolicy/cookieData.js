@@ -86,13 +86,13 @@ export const sectionContent = {
       "If you have any questions about this Cookie Policy or our use of cookies, please contact us:",
     ],
     contacts: [
-      { label: "Email", value: "info@isupportz.com", href: "mailto:info@isupportz.com" },
-      { label: "Phone", value: "0413-2191301", href: "tel:+914132191301" },
+      { label: "Email", value: "info@ascendus.sa", href: "mailto:info@ascendus.sa" },
+      { label: "Phone", value: "+966 573956334", href: "tel:+966573956334" },
       {
-        label: "Registered Address",
+        label: "Regional Office",
         value:
-          "Ascendus, #192, Kamaraj Salai, Puducherry 605013, India.",
-        href: "https://www.google.com/maps/search/?api=1&query=192+Kamaraj+Salai+Puducherry+605013",
+          "Ascendus, 7731 King Saud Ibn Abdulaziz Saud, 2839 Al Murabba Dist., Riyadh 12624, KSA.",
+        href: "https://www.google.com/maps/search/?api=1&query=7731+King+Saud+Ibn+Abdulaziz+Saud+Al+Murabba+Riyadh+12624",
       },
     ],
   },

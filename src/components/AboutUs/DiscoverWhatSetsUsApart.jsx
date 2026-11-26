@@ -68,7 +68,7 @@ export default function DiscoverWhatSetsUsApart() {
                         >
                             <div>
                                 <p className="text-base sm:text-lg font-light text-[#2E3033]">{card.title}</p>
-                                <h3 className="font-houschka-pro text-xl font-semibold text-[#2E3033] mt-1">{card.heading}</h3>
+                                <h3 className="font-switzer text-xl font-semibold text-[#2E3033] mt-1">{card.heading}</h3>
                             </div>
                             <div className="text-sm sm:text-base text-[#55595E] leading-relaxed space-y-1">
                                 <p className="text-sm sm:text-lg text-[#55595E] font-light leading-relaxed">{card.description}</p>

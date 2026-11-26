@@ -48,7 +48,7 @@ export default function AmsSupportScope() {
                         transition={{ duration: 0.4, delay: index * 0.06 }}
                         className="border border-[#a5a5a5] bg-[#f5f6f6] flex flex-col gap-4 px-6 py-8"
                     >
-                        <h3 className="font-houschka-pro text-[#2E3033] text-lg font-semibold">{card.title}</h3>
+                        <h3 className="font-switzer text-[#2E3033] text-lg font-semibold">{card.title}</h3>
                         <p className="text-[#55595E] text-base font-light">{card.desc}</p>
                     </motion.div>
                 ))}
@@ -71,7 +71,7 @@ export default function AmsSupportScope() {
                             className="flex flex-col"
                         >
                             <div className="bg-white border border-[#a5a5a5] h-[120px] flex items-center justify-center text-center px-8">
-                                <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold leading-tight">{card.title}</h3>
+                                <h3 className="font-switzer text-[#2E3033] text-xl font-semibold leading-tight">{card.title}</h3>
                             </div>
                             <p className="text-[#55595E] text-center text-lg font-light px-4 pt-6 pb-10">{card.desc}</p>
                         </motion.div>

@@ -84,7 +84,7 @@ export default function CxSuccessFactors() {
                         className={`group bg-white border flex flex-col gap-4 p-6 sm:p-8 transition-colors duration-300 hover:border-[#2d8ec5] ${isLit ? "border-[#2d8ec5]" : "border-[#E2E5EA]"}`}
                     >
                         <item.icon aria-hidden="true" strokeWidth={1.5} className="size-8 sm:size-10 text-[#1C5F85]" />
-                        <h3 className="font-houschka-pro text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</h3>
+                        <h3 className="font-switzer text-[#2E3033] text-lg sm:text-xl font-semibold">{item.title}</h3>
                         <p className="text-[#55595E] text-base font-light leading-relaxed">{item.desc}</p>
                         <div className={`mt-auto h-[2px] bg-[#2d8ec5] transition-all duration-300 group-hover:w-full ${isLit ? "w-full" : "w-10"}`} />
                     </motion.div>

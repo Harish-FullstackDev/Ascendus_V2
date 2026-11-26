@@ -29,7 +29,7 @@ export default function WhyCyber() {
                     transition={{ duration: 0.6, ease: "easeOut" }}
                     className="flex flex-col gap-4 sm:gap-6 w-full lg:flex-[3_1_0%] lg:min-w-0"
                 >
-                    <h3 className="font-houschka-pro text-white text-lg font-semibold">Why Cybersecurity?</h3>
+                    <h3 className="font-switzer text-white text-lg font-semibold">Why Cybersecurity?</h3>
                     <p className="text-white text-xl sm:text-[32px] font-light leading-snug max-w-[860px]">
                         Strengthen and Secure with Comprehensive Cybersecurity.
                     </p>

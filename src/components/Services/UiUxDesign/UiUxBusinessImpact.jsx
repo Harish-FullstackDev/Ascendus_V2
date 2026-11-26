@@ -64,7 +64,7 @@ export default function UiUxBusinessImpact() {
                         className={`group flex flex-col gap-4 border border-[#d3d5d8] bg-[#f5f6f6] px-6 py-7 sm:px-8 sm:py-8 transition-colors duration-300 hover:border-[#2d8ec5] hover:bg-white ${index === ITEMS.length - 1 ? "sm:col-span-2" : ""}`}
                     >
                         <item.icon aria-hidden="true" strokeWidth={1.5} className="size-8 sm:size-10 shrink-0 text-[#1C5F85]" />
-                        <h3 className="font-houschka-pro text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h3>
+                        <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{item.title}</h3>
                         <p className="text-[#55595E] text-base sm:text-lg font-light text-pretty">{item.desc}</p>
                     </motion.div>
                 ))}

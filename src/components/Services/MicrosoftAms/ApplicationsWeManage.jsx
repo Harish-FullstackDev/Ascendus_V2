@@ -82,7 +82,7 @@ export default function ApplicationsWeManage() {
                                 className={`absolute inset-0 bg-[#0A3A52] transition-opacity duration-500 ${isActive ? "opacity-100" : "opacity-0"}`}
                             />
                             <div className="relative lg:mt-10 flex flex-col gap-8 sm:gap-16">
-                                <h3 className="font-houschka-pro text-xl sm:text-2xl font-semibold">{col.title}</h3>
+                                <h3 className="font-switzer text-xl sm:text-2xl font-semibold">{col.title}</h3>
                                 <p className="text-base sm:text-xl font-light">{col.desc}</p>
                             </div>
                         </motion.div>

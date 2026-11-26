@@ -126,7 +126,7 @@ export default function SfModules() {
                                 : "border-[#6c6c6c] text-[#6c6c6c] opacity-70"
                                 }`}
                         >
-                            <h3 className="font-houschka-pro text-base sm:text-xl lg:text-2xl font-semibold">{tab.label}</h3>
+                            <h3 className="font-switzer text-base sm:text-xl lg:text-2xl font-semibold">{tab.label}</h3>
                         </button>
                     ))}
                 </div>
@@ -189,7 +189,7 @@ export default function SfModules() {
                                 transition={{ duration: 0.35, ease: "easeOut", delay: 0.15 }}
                                 className="hidden lg:flex absolute left-[55px] right-[55px] bottom-[46px] max-w-[560px] text-white flex-col gap-3"
                             >
-                                <h3 className="font-houschka-pro text-2xl font-semibold">{activeTab.label}</h3>
+                                <h3 className="font-switzer text-2xl font-semibold">{activeTab.label}</h3>
                                 <p className="text-white/90 text-lg font-light leading-relaxed">{activeTab.desc}</p>
                             </motion.div>
                         </AnimatePresence>
@@ -207,7 +207,7 @@ export default function SfModules() {
                                 className="sm:hidden absolute left-5 right-5 top-4 text-white flex flex-col gap-3"
                             >
                                 <div className="flex items-center gap-2">
-                                    <h3 className="font-houschka-pro text-lg font-semibold">{activeTab.label}</h3>
+                                    <h3 className="font-switzer text-lg font-semibold">{activeTab.label}</h3>
                                     <activeTab.icon aria-hidden="true" strokeWidth={1} className="size-7 shrink-0 text-white/60" />
                                 </div>
                                 <p className="text-white/90 text-sm font-light leading-[1.5]">{activeTab.short}</p>
@@ -232,7 +232,7 @@ export default function SfModules() {
                     </motion.div>
 
                     <div className="hidden sm:flex lg:hidden flex-col gap-3 bg-white px-6 py-6">
-                        <h3 className="font-houschka-pro text-[#2E3033] text-xl font-semibold">{activeTab.label}</h3>
+                        <h3 className="font-switzer text-[#2E3033] text-xl font-semibold">{activeTab.label}</h3>
                         <p className="text-[#55595E] text-base font-light leading-relaxed">{activeTab.desc}</p>
                     </div>
                 </div>

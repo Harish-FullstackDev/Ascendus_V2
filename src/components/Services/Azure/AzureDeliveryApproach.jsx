@@ -51,7 +51,7 @@ function StepItem({ icon, title, desc, delay }) {
                 <div className="sm:hidden h-px flex-1 bg-[#d3dae2]" />
             </div>
             <div className="flex flex-col gap-4">
-                <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold font-houschka-pro">{title}</h3>
+                <h3 className="text-[#2E3033] text-xl sm:text-2xl font-semibold font-switzer">{title}</h3>
                 <p className="text-[#55595E] text-base sm:text-lg font-light leading-normal">{desc}</p>
             </div>
         </motion.div>
