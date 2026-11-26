@@ -45,9 +45,9 @@ export const generateOrganizationSchema = () => {
       "addressCountry": "SA"
     },
     "sameAs": [
-      "https://www.linkedin.com/company/supportstudiotechnologies/",
-      "https://www.instagram.com/isupportz.official/",
-      "https://x.com/isupportz"
+      "https://www.linkedin.com/company/ascendus-company/",
+      "https://www.instagram.com/ascendus.ksa",
+      "https://x.com/ascendus_ksa"
     ],
     "contactPoint": [
       {

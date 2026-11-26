@@ -52,7 +52,10 @@ const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
   const lightThemeRoutes = ["/legal/privacy/", "/sst-errors/", "/legal/terms/", "/legal/disclaimer/"];
-  const isLight = lightThemeRoutes.includes(pathname) || !isValidRoute(pathname);
+  // Careers sub-pages (open positions, saved jobs, a job, the apply form) have
+  // no dark hero, so the navbar is light from the top; /careers/ itself has one.
+  const isCareersSubpage = pathname?.startsWith("/careers/") && pathname !== "/careers/";
+  const isLight = lightThemeRoutes.includes(pathname) || isCareersSubpage || !isValidRoute(pathname);
   const isNavbarLight = isLight || isScrolled;
 
   useEffect(() => {

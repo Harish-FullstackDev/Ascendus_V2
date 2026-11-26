@@ -4,14 +4,16 @@ import { buildBreadcrumbItems } from "@/lib/breadcrumbs";
 
 export const metadata = {
   alternates: { canonical: "/contact/" },
-  description: "Route your enquiry to the right team — new engagements, existing clients, partnerships, careers or media — with a stated response time.",
+  description:
+    "Talk to Ascendus about a new engagement, a solution assessment, or support for an existing one — and find the office closest to you.",
   openGraph: {
-    title: "Contact Ascendus",
-    description: "Route your enquiry to the right team — new engagements, existing clients, partnerships, careers or media — with a stated response time.",
+    title: "Contact Ascendus | Talk About What's Next",
+    description:
+      "Talk to Ascendus about a new engagement, a solution assessment, or support for an existing one — and find the office closest to you.",
     url: "/contact/",
-    images: [{ url: "/og-image.png?v=4", width: 1200, height: 630, alt: "Ascendus" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ascendus" }],
   },
-  title: { absolute: "Contact Ascendus" },
+  title: { absolute: "Contact Ascendus | Talk About What's Next" },
 };
 
 export default function Page() {

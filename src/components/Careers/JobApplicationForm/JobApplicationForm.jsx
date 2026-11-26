@@ -5,8 +5,9 @@ import { useSearchParams, useRouter } from "next/navigation";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { CheckCircle, Loader2, AlertCircle, FileText } from "lucide-react";
-import dropdownIcon from "@/assets/career/icons/dropdown.svg";
-import uploadIcon from "@/assets/career/icons/upload.svg";
+import dropdownIcon from "@/assets/Careers/icons/dropdown.svg";
+import uploadIcon from "@/assets/Careers/icons/upload.svg";
+import { recordApplication } from "@/lib/candidateStorage";
 
 const inputClass =
     "w-full h-9 bg-[#f3f3f5] px-3 text-sm text-slate-900 placeholder:text-[#717182] border border-transparent outline-none focus:ring-2 focus:ring-blue-500/30 transition-all duration-300";
@@ -294,6 +295,12 @@ export default function JobApplicationForm() {
                 throw new Error(result.error || "Failed to submit application.");
             }
 
+            recordApplication({
+                id: result.data?.id,
+                position: formData.position,
+                resumeName: resumeFile.name,
+                portfolio: formData.portfolio,
+            });
             setStatus("success");
         } catch (err) {
             console.error(err);
@@ -458,7 +465,7 @@ export default function JobApplicationForm() {
                     <button
                         type="submit"
                         disabled={status === "submitting"}
-                        className="bg-[#2D8EC5] hover:bg-[#00447A] text-white text-sm font-medium h-[45px] min-w-[200px] px-6 flex items-center justify-center gap-2 transition-colors disabled:opacity-60 cursor-pointer"
+                        className="bg-[#0061AF] hover:bg-[#00447A] text-white text-sm font-medium h-[45px] min-w-[200px] px-6 flex items-center justify-center gap-2 transition-colors disabled:opacity-60 cursor-pointer"
                     >
                         {status === "submitting" ? (
                             <>

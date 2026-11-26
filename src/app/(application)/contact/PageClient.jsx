@@ -1,13 +1,97 @@
 "use client";
-import ContactUs from '@/components/Contactus/Contact'
-import React from 'react'
 
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
+import Navbar from "@/components/Navbar/Navbar";
+import Footer from "@/components/Footer/Footer";
+import ContactUsHero from "@/components/Contact-us/ContactUsHero";
+import ContactUsHeroText from "@/components/Contact-us/ContactUsHeroText";
+import ChooseWhatFitsYourNeed from "@/components/Contact-us/ChooseWhatFitsYourNeed";
+import StartANewConversation from "@/components/Contact-us/StartANewConversation";
+import IsYourTechnologyLandscapeReady from "@/components/Contact-us/IsYourTechnologyLandscapeReady";
+import AlreadyAnAscendusCustomer from "@/components/Contact-us/AlreadyAnAscendusCustomer";
+import TellUsWhatYoureLookingToAchieve from "@/components/Contact-us/TellUsWhatYoureLookingToAchieve";
+import WhereverYourBusinessTakesYou from "@/components/Contact-us/WhereverYourBusinessTakesYou";
+import YourTrustedPartnerForLongTermSuccess from "@/components/Contact-us/YourTrustedPartnerForLongTermSuccess";
+import PageCta from "@/components/CommonComponents/PageCta";
+import StickyHero from "@/components/CommonComponents/StickyHero";
+
+// Rise-and-settle: the outgoing panel lifts and fades, the incoming one comes up
+// from below into place. The custom cubic-bezier is an ease-out-expo — most of
+// the travel happens immediately and it decelerates into rest, which reads as
+// deliberate rather than springy.
+const PANEL_TRANSITION = { duration: 0.5, ease: [0.22, 1, 0.36, 1] };
+
+const PANEL_MOTION = {
+    animate: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -16, transition: { duration: 0.28, ease: [0.4, 0, 1, 1] } },
+    initial: { opacity: 0, y: 24 },
+    transition: PANEL_TRANSITION,
+};
+
+// The hero is the shared sticky curtain: the image stays put while the page
+// content slides up over it.
 const page = () => {
-  return (
-    <div>
-        <ContactUs/>
-    </div>
-  )
-}
+    // "Choose What Fits Your Need" is a segmented control: exactly one of the two
+    // panels below it is mounted at a time, with Prospective selected on load.
+    const [segment, setSegment] = useState("prospective");
 
-export default page
+    return (
+        <div className="min-h-screen bg-white flex flex-col font-sans">
+            <Navbar />
+
+            <StickyHero background={<ContactUsHero />} overlay={<ContactUsHeroText />}>
+                <ChooseWhatFitsYourNeed selected={segment} onSelect={setSegment} />
+
+                {/* popLayout takes the outgoing panel out of the flow the moment the
+                    swap starts, so the incoming panel drives the page height straight
+                    away instead of the sections below collapsing and re-expanding.
+                    initial={false} keeps the default panel from animating on first
+                    paint — it should already be there when the page loads. */}
+                <AnimatePresence mode="popLayout" initial={false}>
+                    {segment === "prospective" ? (
+                        <motion.div
+                            key="prospective"
+                            id="segment-panel-prospective"
+                            role="tabpanel"
+                            aria-label="For prospective customers"
+                            {...PANEL_MOTION}
+                        >
+                            <StartANewConversation />
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="existing"
+                            id="segment-panel-existing"
+                            role="tabpanel"
+                            aria-label="For existing customers"
+                            {...PANEL_MOTION}
+                        >
+                            <AlreadyAnAscendusCustomer />
+                        </motion.div>
+                    )}
+                </AnimatePresence>
+
+                <IsYourTechnologyLandscapeReady />
+                <TellUsWhatYoureLookingToAchieve />
+                <WhereverYourBusinessTakesYou />
+                <YourTrustedPartnerForLongTermSuccess />
+                {/* Figma's CTA here is "Contact Us" on the contact page itself, so it
+                    jumps to the enquiry form rather than reloading the route. */}
+                <PageCta
+                    title={["Partner With Us", "for a Stronger Tomorrow."]}
+                    description={["Let's connect and explore how we can help you", "transform, innovate and grow."]}
+                    ctaLabel="CONTACT US"
+                    href="#tell-us-what-youre-looking-to-achieve"
+                    titleClassName="lg:w-[445.5px]"
+                    descriptionClassName="lg:whitespace-nowrap"
+                />
+            </StickyHero>
+
+            <Footer />
+        </div>
+    );
+};
+
+export default page;

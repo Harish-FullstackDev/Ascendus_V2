@@ -2,44 +2,35 @@
 
 import Navbar from "@/components/Navbar/Navbar";
 import Footer from "@/components/Footer/Footer";
-import CareersHero from "@/components/Careers/CareersHero";
-import CareersHeroText from "@/components/Careers/CareersHeroText";
-import JoinUsPanel from "@/components/Careers/JoinUsPanel";
-import JoinUsSocialBand from "@/components/Careers/JoinUsSocialBand";
-import JobListingSection from "@/components/Careers/JobListingSection";
-import WhatYouWantToDo from "@/components/Careers/WhatYouWantToDo";
-import TeamStory from "@/components/Careers/TeamStory";
-import LearningDevelopment from "@/components/Careers/LearningDevelopment";
-import OurCulture from "@/components/Careers/OurCulture";
-import WhatSetsUsApart from "@/components/Careers/WhatSetsUsApart";
-import LinkedInCarousel from "@/components/AboutUs/LinkedInCarousel";
+import StickyHero from "@/components/CommonComponents/StickyHero";
+import CareersPageHero from "@/components/Careers/CareersPageHero";
+import CareersPageHeroText from "@/components/Careers/CareersPageHeroText";
+import GreatTransformations from "@/components/Careers/GreatTransformations";
+import LifeAtAscendus from "@/components/Careers/LifeAtAscendus";
+import BuildSkills from "@/components/Careers/BuildSkills";
+import LifeAtAscendusHighlights from "@/components/Careers/LifeAtAscendusHighlights";
+import CareersBenefits from "@/components/Careers/CareersBenefits";
+import StayUpdated from "@/components/Careers/StayUpdated";
+import CareersFaq from "@/components/Careers/CareersFaq";
 
+// The hero is the shared sticky curtain, exactly one viewport tall: the image
+// stays put while the page content slides up over it.
+// Section order follows Figma 1619:10951: the login card, the benefits
+// at-a-glance band and the closing CTA are gone, so the FAQ meets the footer.
 const page = () => {
     return (
         <div className="min-h-screen bg-white flex flex-col font-sans">
             <Navbar />
 
-            <div className="relative -mt-[64px] lg:-mt-[68px] h-[680px] sm:h-[200vh]">
-                <div className="sticky top-0 h-[340px] sm:h-screen z-0">
-                    <CareersHero />
-                </div>
-
-                <div className="absolute inset-x-0 top-0 h-[340px] sm:h-screen z-[5]">
-                    <CareersHeroText />
-                </div>
-            </div>
-
-            <div className="relative z-10 -mt-[340px] sm:-mt-[100vh] bg-white">
-                <JoinUsPanel />
-                <JobListingSection />
-                <WhatYouWantToDo />
-                <LearningDevelopment />
-                <TeamStory />
-                <OurCulture />
-                {/* <WhatSetsUsApart /> */}
-                {/* <LinkedInCarousel /> */}
-                <JoinUsSocialBand />
-            </div>
+            <StickyHero size="screen" background={<CareersPageHero />} overlay={<CareersPageHeroText />}>
+                <GreatTransformations />
+                <LifeAtAscendus />
+                <BuildSkills />
+                <LifeAtAscendusHighlights />
+                <CareersBenefits />
+                <StayUpdated />
+                <CareersFaq />
+            </StickyHero>
 
             <Footer />
         </div>
@@ -47,5 +38,3 @@ const page = () => {
 };
 
 export default page;
-
-

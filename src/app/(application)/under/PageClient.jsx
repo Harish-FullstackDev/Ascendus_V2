@@ -37,7 +37,7 @@ export default function MaintenancePage() {
 
           <div className="flex justify-center items-center gap-4">
             <Link
-              href="https://www.linkedin.com/company/supportstudiotechnologies/posts/?feedView=all"
+              href="https://www.linkedin.com/company/ascendus-company/"
               target="_blank"
               className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
             >
@@ -45,7 +45,7 @@ export default function MaintenancePage() {
             </Link>
 
             <Link
-              href="https://www.instagram.com/isupportz.official/"
+              href="https://www.instagram.com/ascendus.ksa"
               target="_blank"
               className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
             >
@@ -53,7 +53,7 @@ export default function MaintenancePage() {
             </Link>
 
             <Link
-              href="https://x.com/isupportz?s=11"
+              href="https://x.com/ascendus_ksa"
               target="_blank"
               className="w-11 h-11 rounded-full bg-[#05649A] hover:scale-110 transition-all duration-300 flex items-center justify-center text-white"
             >

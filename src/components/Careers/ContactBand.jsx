@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import mailIcon from "@/assets/career/icons/mail.svg";
-import callIcon from "@/assets/career/icons/call.svg";
+import mailIcon from "@/assets/Careers/icons/mail.svg";
+import callIcon from "@/assets/Careers/icons/call.svg";
 
 const WHY_JOIN_US = [
     "Competitive salary and performance-based bonuses",
@@ -38,10 +38,10 @@ export default function ContactBand() {
                                     Email us for general queries, including marketing and partnership opportunities
                                 </p>
                                 <a
-                                    href="mailto:info@ascendus.sa"
+                                    href="mailto:hr@ascendus.sa"
                                     className="block text-blue-600 hover:text-blue-700 font-medium text-sm"
                                 >
-                                    info@ascendus.sa
+                                    hr@ascendus.sa
                                 </a>
                             </div>
                         </div>

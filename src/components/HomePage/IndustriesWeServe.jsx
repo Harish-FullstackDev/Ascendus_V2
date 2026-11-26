@@ -16,60 +16,59 @@ import technologyMediaImg from "@/assets/HomePage/Industries/technology.webp";
 import transportationImg from "@/assets/HomePage/Industries/transportation_logistics.webp";
 import educationImg from "@/assets/HomePage/Industries/education_research.webp";
 
-// Names, descriptions and photos carried over from sst_v2's former
-// Industry-Specific Solutions carousel; the presentation is sst_website_current's.
-const INDUSTRIES = [
-    {
-        title: "Manufacturing",
+import { NAV_INDUSTRIES } from "@/components/Navbar/menuLinks";
+
+// Names and order come from the navbar's Industries menu, so the home page,
+// navbar and footer always list the same industries. Each name maps to its
+// description and photo here.
+const DETAILS = {
+    Manufacturing: {
         desc: "Streamlining supply chain, production planning, and plant-floor integration with SAP and IoT driven systems.",
         image: manufacturingImg,
     },
-    {
-        title: "Retail & Consumer",
-        desc: "Connecting inventory, logistics, and customer experience across every channel, from store to app to fulfillment.",
+    "Retail & Distribution": {
+        desc: "Connecting inventory, distribution, and customer experience across every channel, from warehouse to store to app.",
         image: retailImg,
     },
-    {
-        title: "Government & Public Sector",
-        desc: "Delivering GCC compliant, secure systems built for accountability and scale.",
-        image: governmentImg,
-    },
-    {
-        title: "Banking & Financial Services",
-        desc: "Modernizing core banking and finance systems without compromising on security or regulatory reporting.",
-        image: financialImg,
-    },
-    {
-        title: "Energy & Utilities",
+    "Energy & Utilities": {
         desc: "Modernizing asset management, field operations, and grid systems built for uptime and regulatory reporting.",
         image: energyImg,
     },
-    {
-        title: "Engineering & Construction",
+    "Banking & Financial Services": {
+        desc: "Modernizing core banking and finance systems without compromising on security or regulatory reporting.",
+        image: financialImg,
+    },
+    Healthcare: {
+        desc: "Supporting secure, compliant systems across clinical, patient, and hospital operations.",
+        image: healthcareImg,
+    },
+    "Engineering & Construction": {
         desc: "Coordinating project controls, procurement, and site execution across complex capital programs.",
         image: engineeringImg,
     },
-    {
-        title: "Healthcare & Life Sciences",
-        desc: "Supporting validated, compliant systems across clinical, research, and life sciences operations.",
-        image: healthcareImg,
-    },
-    {
-        title: "Technology, Media & Communications",
-        desc: "Scaling billing, network, and content platforms for high-volume technology and media providers.",
-        image: technologyMediaImg,
-    },
-    {
-        title: "Transportation & Logistics",
+    "Transportation & Logistics": {
         desc: "Connecting fleet, freight, and supply chain systems for real-time visibility and on-time delivery.",
         image: transportationImg,
     },
-    {
-        title: "Education & Research",
-        desc: "Unifying student, academic, research, and administrative systems on one connected platform.",
+    "Government & Public Sector": {
+        desc: "Delivering GCC compliant, secure systems built for accountability and scale.",
+        image: governmentImg,
+    },
+    Education: {
+        desc: "Unifying student, academic, and administrative systems on one connected platform.",
         image: educationImg,
     },
-];
+    Telecommunications: {
+        desc: "Scaling billing, network, and customer platforms for high-volume telecom providers.",
+        image: technologyMediaImg,
+    },
+};
+
+const INDUSTRIES = NAV_INDUSTRIES.map(({ name }) => ({
+    title: name,
+    desc: DETAILS[name]?.desc ?? "",
+    image: DETAILS[name]?.image ?? bannerImg,
+}));
 
 const PAGE_SIZE = 4;
 // Furthest-left card the track can start at — the view always ends on a full
