@@ -49,7 +49,7 @@ export default function PowerBiForYourBusiness() {
                             </p>
                         </div>
                     </div>
-                    <div className="relative w-full lg:w-[46%] lg:max-w-[569px] aspect-[569/340] shrink-0 bg-[#565656] overflow-hidden">
+                    <div className="relative w-full lg:w-[46%] lg:max-w-[569px] aspect-[569/340] shrink-0 bg-[#565656] overflow-hidden rounded-ui-lg">
                         <Image src={overviewImage} alt="Analyst reviewing printed bar charts at a computer desk" fill className="object-cover" />
                     </div>
                 </motion.div>

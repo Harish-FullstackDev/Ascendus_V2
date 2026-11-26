@@ -78,7 +78,7 @@ export default function SuccessFactorsMethodology() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, delay: index * 0.08 }}
-                        className="relative w-full min-h-[200px] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
+                        className="relative w-full min-h-[200px] overflow-hidden shadow-[0px_2px_8px_rgba(0,0,0,0.19)] rounded-ui-md"
                     >
                         <PhaseBackground />
                         <div className="relative flex min-h-[inherit] flex-col justify-center gap-2 px-[10%] py-6 text-white">
@@ -110,7 +110,7 @@ export default function SuccessFactorsMethodology() {
                                 transition={{ duration: 0.5, delay: index * 0.08 }}
                                 onMouseEnter={() => setActiveIndex(index)}
                                 onFocus={() => setActiveIndex(index)}
-                                className={`absolute bottom-0 inset-x-0 overflow-hidden transition-[aspect-ratio] duration-500 ease-out ${isActive ? "aspect-square z-20" : "aspect-[4/3] z-10"
+                                className={`absolute bottom-0 inset-x-0 overflow-hidden transition-[aspect-ratio] duration-500 ease-out rounded-ui-md ${isActive ? "aspect-square z-20" : "aspect-[4/3] z-10"
                                     }`}
                             >
                                 <PhaseBackground />

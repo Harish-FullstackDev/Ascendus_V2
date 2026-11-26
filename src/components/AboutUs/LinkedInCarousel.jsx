@@ -94,7 +94,7 @@ export default function LinkedInCarousel() {
                     {linkedinPosts.map((post, index) => (
                         <SwiperSlide key={index}>
 
-                            <div className="w-full h-[650px] overflow-hidden rounded-lg">
+                            <div className="w-full h-[650px] overflow-hidden rounded-ui-lg">
                                 <iframe
                                     src={post}
                                     className="w-full h-full"

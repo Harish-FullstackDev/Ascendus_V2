@@ -165,7 +165,7 @@ const ResponsibilitySection = () => {
 
     return (
       <motion.div
-        className={`${card.colSpan} relative overflow-hidden rounded-2xl bg-gradient-to-br ${card.gradient} text-white min-h-[280px] group cursor-pointer select-none overflow-x-hidden`}
+        className={`${card.colSpan} relative overflow-hidden rounded-ui-lg bg-gradient-to-br ${card.gradient} text-white min-h-[280px] group cursor-pointer select-none overflow-x-hidden`}
         variants={cardVariants}
         initial="hidden"
         animate={isVisible ? "visible" : "hidden"}
@@ -191,7 +191,7 @@ const ResponsibilitySection = () => {
         />
 
         {/* Border */}
-        <div className="absolute inset-0 rounded-2xl border-2 border-white/30" />
+        <div className="absolute inset-0 rounded-ui-lg border-2 border-white/30" />
 
         {/* Mobile tap indicator */}
         {/* {isMobile && (
@@ -254,7 +254,7 @@ const ResponsibilitySection = () => {
             transition={{ delay: 2, duration: 1 }}
           >
             <motion.p
-              className="text-white text-sm font-medium bg-white/20 px-4 py-2 rounded-lg border border-white/30"
+              className="text-white text-sm font-medium bg-white/20 px-4 py-2 border border-white/30 rounded-ui-sm"
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{ delay: 1, duration: 0.5 }}

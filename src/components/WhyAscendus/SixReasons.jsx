@@ -64,7 +64,7 @@ export default function SixReasons() {
                             onMouseLeave={() => setHovered(null)}
                             onFocus={() => setHovered(index)}
                             onBlur={() => setHovered(null)}
-                            className="group relative flex h-full min-h-[220px] flex-col overflow-hidden px-[10%] py-8 text-white shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
+                            className="group relative flex h-full min-h-[220px] flex-col overflow-hidden px-[10%] py-8 text-white shadow-[0px_2px_8px_rgba(0,0,0,0.19)] rounded-ui-md"
                         >
                             <NavyCardBackground isActive={hovered === index} />
                             <div className="relative flex h-full flex-col gap-3">

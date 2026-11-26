@@ -12,7 +12,7 @@ import React from "react";
  */
 export function Shimmer({
   className = "",
-  rounded = "rounded-xl",
+  rounded = "rounded-ui-md",
   style,
 }: {
   className?: string;
@@ -38,14 +38,14 @@ export function SkeletonNavbar() {
       aria-hidden="true"
     >
       {/* Logo */}
-      <Shimmer className="h-8 w-32" rounded="rounded-lg" />
+      <Shimmer className="h-8 w-32" rounded="rounded-ui-sm" />
       {/* Nav links (desktop) */}
       <div className="hidden md:flex items-center gap-6">
-        <Shimmer className="h-4 w-16" rounded="rounded-md" />
-        <Shimmer className="h-4 w-20" rounded="rounded-md" />
-        <Shimmer className="h-4 w-18" rounded="rounded-md" />
-        <Shimmer className="h-4 w-16" rounded="rounded-md" />
-        <Shimmer className="h-4 w-20" rounded="rounded-md" />
+        <Shimmer className="h-4 w-16" rounded="rounded-ui-sm" />
+        <Shimmer className="h-4 w-20" rounded="rounded-ui-sm" />
+        <Shimmer className="h-4 w-18" rounded="rounded-ui-sm" />
+        <Shimmer className="h-4 w-16" rounded="rounded-ui-sm" />
+        <Shimmer className="h-4 w-20" rounded="rounded-ui-sm" />
       </div>
       {/* CTA button */}
       <Shimmer className="h-9 w-36" rounded="rounded-full" />
@@ -63,10 +63,10 @@ export function SkeletonFooter() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
         {/* Brand column */}
         <div className="flex flex-col gap-4">
-          <Shimmer className="h-8 w-28 bg-slate-700" rounded="rounded-lg" />
-          <Shimmer className="h-3 w-full bg-slate-700" rounded="rounded-md" />
-          <Shimmer className="h-3 w-4/5 bg-slate-700" rounded="rounded-md" />
-          <Shimmer className="h-3 w-3/5 bg-slate-700" rounded="rounded-md" />
+          <Shimmer className="h-8 w-28 bg-slate-700" rounded="rounded-ui-sm" />
+          <Shimmer className="h-3 w-full bg-slate-700" rounded="rounded-ui-sm" />
+          <Shimmer className="h-3 w-4/5 bg-slate-700" rounded="rounded-ui-sm" />
+          <Shimmer className="h-3 w-3/5 bg-slate-700" rounded="rounded-ui-sm" />
           <div className="flex gap-3 mt-2">
             <Shimmer className="h-8 w-8 bg-slate-700" rounded="rounded-full" />
             <Shimmer className="h-8 w-8 bg-slate-700" rounded="rounded-full" />
@@ -77,18 +77,18 @@ export function SkeletonFooter() {
         {/* Link columns */}
         {[0, 1, 2].map((col) => (
           <div key={col} className="flex flex-col gap-3">
-            <Shimmer className="h-4 w-24 bg-slate-700 mb-2" rounded="rounded-md" />
-            <Shimmer className="h-3 w-28 bg-slate-700" rounded="rounded-md" />
-            <Shimmer className="h-3 w-24 bg-slate-700" rounded="rounded-md" />
-            <Shimmer className="h-3 w-32 bg-slate-700" rounded="rounded-md" />
-            <Shimmer className="h-3 w-20 bg-slate-700" rounded="rounded-md" />
-            <Shimmer className="h-3 w-28 bg-slate-700" rounded="rounded-md" />
+            <Shimmer className="h-4 w-24 bg-slate-700 mb-2" rounded="rounded-ui-sm" />
+            <Shimmer className="h-3 w-28 bg-slate-700" rounded="rounded-ui-sm" />
+            <Shimmer className="h-3 w-24 bg-slate-700" rounded="rounded-ui-sm" />
+            <Shimmer className="h-3 w-32 bg-slate-700" rounded="rounded-ui-sm" />
+            <Shimmer className="h-3 w-20 bg-slate-700" rounded="rounded-ui-sm" />
+            <Shimmer className="h-3 w-28 bg-slate-700" rounded="rounded-ui-sm" />
           </div>
         ))}
       </div>
       <div className="max-w-7xl mx-auto mt-10 pt-6 border-t border-slate-700 flex flex-col md:flex-row justify-between gap-4">
-        <Shimmer className="h-3 w-64 bg-slate-700" rounded="rounded-md" />
-        <Shimmer className="h-3 w-48 bg-slate-700" rounded="rounded-md" />
+        <Shimmer className="h-3 w-64 bg-slate-700" rounded="rounded-ui-sm" />
+        <Shimmer className="h-3 w-48 bg-slate-700" rounded="rounded-ui-sm" />
       </div>
     </div>
   );
@@ -108,11 +108,11 @@ export function SkeletonHeroDark() {
       <div className="flex flex-1 items-center px-6 md:px-16 lg:px-24">
         <div className="flex flex-col gap-5 max-w-2xl">
           <Shimmer className="h-4 w-32 bg-slate-700" rounded="rounded-full" />
-          <Shimmer className="h-12 w-full bg-slate-700" rounded="rounded-2xl" />
-          <Shimmer className="h-12 w-4/5 bg-slate-700" rounded="rounded-2xl" />
-          <Shimmer className="h-12 w-3/5 bg-slate-700" rounded="rounded-2xl" />
-          <Shimmer className="h-5 w-full bg-slate-700 mt-2" rounded="rounded-lg" />
-          <Shimmer className="h-5 w-4/5 bg-slate-700" rounded="rounded-lg" />
+          <Shimmer className="h-12 w-full bg-slate-700" rounded="rounded-ui-lg" />
+          <Shimmer className="h-12 w-4/5 bg-slate-700" rounded="rounded-ui-lg" />
+          <Shimmer className="h-12 w-3/5 bg-slate-700" rounded="rounded-ui-lg" />
+          <Shimmer className="h-5 w-full bg-slate-700 mt-2" rounded="rounded-ui-sm" />
+          <Shimmer className="h-5 w-4/5 bg-slate-700" rounded="rounded-ui-sm" />
           <div className="flex gap-4 mt-4">
             <Shimmer className="h-12 w-40 bg-slate-700" rounded="rounded-full" />
             <Shimmer className="h-12 w-36 bg-slate-700" rounded="rounded-full" />
@@ -132,10 +132,10 @@ export function SkeletonHeroLight({ tall = false }: { tall?: boolean }) {
     >
       <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-6">
         <Shimmer className="h-4 w-28" rounded="rounded-full" />
-        <Shimmer className="h-10 w-72 md:w-[520px]" rounded="rounded-2xl" />
-        <Shimmer className="h-10 w-56 md:w-80" rounded="rounded-2xl" />
-        <Shimmer className="h-5 w-80 md:w-[440px]" rounded="rounded-lg" />
-        <Shimmer className="h-5 w-60 md:w-80" rounded="rounded-lg" />
+        <Shimmer className="h-10 w-72 md:w-[520px]" rounded="rounded-ui-lg" />
+        <Shimmer className="h-10 w-56 md:w-80" rounded="rounded-ui-lg" />
+        <Shimmer className="h-5 w-80 md:w-[440px]" rounded="rounded-ui-sm" />
+        <Shimmer className="h-5 w-60 md:w-80" rounded="rounded-ui-sm" />
       </div>
     </div>
   );
@@ -149,8 +149,8 @@ export function SkeletonSectionHeading({ centered = true }: { centered?: boolean
       aria-hidden="true"
     >
       <Shimmer className="h-3 w-24" rounded="rounded-full" />
-      <Shimmer className="h-9 w-72 md:w-96" rounded="rounded-xl" />
-      <Shimmer className="h-5 w-60 md:w-[420px]" rounded="rounded-lg" />
+      <Shimmer className="h-9 w-72 md:w-96" rounded="rounded-ui-md" />
+      <Shimmer className="h-5 w-60 md:w-[420px]" rounded="rounded-ui-sm" />
     </div>
   );
 }
@@ -159,13 +159,13 @@ export function SkeletonSectionHeading({ centered = true }: { centered?: boolean
 export function SkeletonStatCard() {
   return (
     <div
-      className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col gap-3"
+      className="bg-white rounded-ui-lg shadow-sm border border-slate-100 p-6 flex flex-col gap-3"
       aria-hidden="true"
     >
-      <Shimmer className="h-10 w-10" rounded="rounded-xl" />
-      <Shimmer className="h-8 w-24" rounded="rounded-lg" />
-      <Shimmer className="h-4 w-32" rounded="rounded-md" />
-      <Shimmer className="h-3 w-28" rounded="rounded-md" />
+      <Shimmer className="h-10 w-10" rounded="rounded-ui-md" />
+      <Shimmer className="h-8 w-24" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-32" rounded="rounded-ui-sm" />
+      <Shimmer className="h-3 w-28" rounded="rounded-ui-sm" />
     </div>
   );
 }
@@ -174,18 +174,18 @@ export function SkeletonStatCard() {
 export function SkeletonBlogCard() {
   return (
     <div
-      className="bg-white rounded-3xl shadow-md border border-slate-100 overflow-hidden flex flex-col"
+      className="bg-white rounded-ui-lg shadow-md border border-slate-100 overflow-hidden flex flex-col"
       aria-hidden="true"
     >
       {/* Thumbnail */}
-      <Shimmer className="h-56 w-full" rounded="rounded-none" />
+      <Shimmer className="h-56 w-full" rounded="rounded-ui-sm" />
       {/* Body */}
       <div className="p-6 flex flex-col gap-3">
         <Shimmer className="h-3 w-20" rounded="rounded-full" />
-        <Shimmer className="h-6 w-full" rounded="rounded-lg" />
-        <Shimmer className="h-6 w-4/5" rounded="rounded-lg" />
-        <Shimmer className="h-4 w-full mt-2" rounded="rounded-md" />
-        <Shimmer className="h-4 w-3/4" rounded="rounded-md" />
+        <Shimmer className="h-6 w-full" rounded="rounded-ui-sm" />
+        <Shimmer className="h-6 w-4/5" rounded="rounded-ui-sm" />
+        <Shimmer className="h-4 w-full mt-2" rounded="rounded-ui-sm" />
+        <Shimmer className="h-4 w-3/4" rounded="rounded-ui-sm" />
         <div className="flex items-center justify-between mt-4 pt-4 border-t border-slate-100">
           <Shimmer className="h-3 w-24" rounded="rounded-full" />
           <Shimmer className="h-8 w-8" rounded="rounded-full" />
@@ -199,26 +199,26 @@ export function SkeletonBlogCard() {
 export function SkeletonServiceCard() {
   return (
     <div
-      className="bg-white rounded-2xl shadow-sm border border-slate-100 p-7 flex flex-col gap-4"
+      className="bg-white rounded-ui-lg shadow-sm border border-slate-100 p-7 flex flex-col gap-4"
       aria-hidden="true"
     >
-      <Shimmer className="h-12 w-12" rounded="rounded-xl" />
-      <Shimmer className="h-6 w-3/5" rounded="rounded-lg" />
-      <Shimmer className="h-4 w-full" rounded="rounded-md" />
-      <Shimmer className="h-4 w-5/6" rounded="rounded-md" />
-      <Shimmer className="h-4 w-4/5" rounded="rounded-md" />
+      <Shimmer className="h-12 w-12" rounded="rounded-ui-md" />
+      <Shimmer className="h-6 w-3/5" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-full" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-5/6" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-4/5" rounded="rounded-ui-sm" />
       <div className="flex flex-col gap-2 mt-2">
         <div className="flex items-center gap-2">
           <Shimmer className="h-3 w-3 flex-shrink-0" rounded="rounded-full" />
-          <Shimmer className="h-3 w-36" rounded="rounded-md" />
+          <Shimmer className="h-3 w-36" rounded="rounded-ui-sm" />
         </div>
         <div className="flex items-center gap-2">
           <Shimmer className="h-3 w-3 flex-shrink-0" rounded="rounded-full" />
-          <Shimmer className="h-3 w-28" rounded="rounded-md" />
+          <Shimmer className="h-3 w-28" rounded="rounded-ui-sm" />
         </div>
         <div className="flex items-center gap-2">
           <Shimmer className="h-3 w-3 flex-shrink-0" rounded="rounded-full" />
-          <Shimmer className="h-3 w-32" rounded="rounded-md" />
+          <Shimmer className="h-3 w-32" rounded="rounded-ui-sm" />
         </div>
       </div>
       <Shimmer className="h-9 w-32 mt-2" rounded="rounded-full" />
@@ -230,13 +230,13 @@ export function SkeletonServiceCard() {
 export function SkeletonTeamCard() {
   return (
     <div
-      className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col items-center gap-3"
+      className="bg-white rounded-ui-lg shadow-sm border border-slate-100 p-6 flex flex-col items-center gap-3"
       aria-hidden="true"
     >
       <Shimmer className="h-24 w-24" rounded="rounded-full" />
-      <Shimmer className="h-5 w-32" rounded="rounded-lg" />
-      <Shimmer className="h-3 w-24" rounded="rounded-md" />
-      <Shimmer className="h-3 w-36" rounded="rounded-md" />
+      <Shimmer className="h-5 w-32" rounded="rounded-ui-sm" />
+      <Shimmer className="h-3 w-24" rounded="rounded-ui-sm" />
+      <Shimmer className="h-3 w-36" rounded="rounded-ui-sm" />
       <div className="flex gap-3 mt-2">
         <Shimmer className="h-7 w-7" rounded="rounded-full" />
         <Shimmer className="h-7 w-7" rounded="rounded-full" />
@@ -252,8 +252,8 @@ export function SkeletonForm({ rows = 5 }: { rows?: number }) {
     <div className="flex flex-col gap-5" aria-hidden="true">
       {Array.from({ length: rows }).map((_, i) => (
         <div key={i} className="flex flex-col gap-2">
-          <Shimmer className="h-4 w-28" rounded="rounded-md" />
-          <Shimmer className="h-11 w-full" rounded="rounded-xl" />
+          <Shimmer className="h-4 w-28" rounded="rounded-ui-sm" />
+          <Shimmer className="h-11 w-full" rounded="rounded-ui-md" />
         </div>
       ))}
       <Shimmer className="h-12 w-40 mt-2" rounded="rounded-full" />
@@ -273,9 +273,9 @@ export function SkeletonTimelineStep() {
         <div className="w-0.5 h-16 bg-slate-100 mt-1" />
       </div>
       <div className="flex flex-col gap-2 pt-2">
-        <Shimmer className="h-5 w-40" rounded="rounded-lg" />
-        <Shimmer className="h-4 w-full" rounded="rounded-md" />
-        <Shimmer className="h-4 w-4/5" rounded="rounded-md" />
+        <Shimmer className="h-5 w-40" rounded="rounded-ui-sm" />
+        <Shimmer className="h-4 w-full" rounded="rounded-ui-sm" />
+        <Shimmer className="h-4 w-4/5" rounded="rounded-ui-sm" />
       </div>
     </div>
   );
@@ -285,22 +285,22 @@ export function SkeletonTimelineStep() {
 export function SkeletonTestimonialCard() {
   return (
     <div
-      className="bg-white rounded-2xl shadow-sm border border-slate-100 p-7 flex flex-col gap-4"
+      className="bg-white rounded-ui-lg shadow-sm border border-slate-100 p-7 flex flex-col gap-4"
       aria-hidden="true"
     >
       <div className="flex gap-1">
         {[0, 1, 2, 3, 4].map((s) => (
-          <Shimmer key={s} className="h-4 w-4" rounded="rounded-sm" />
+          <Shimmer key={s} className="h-4 w-4" rounded="rounded-ui-sm" />
         ))}
       </div>
-      <Shimmer className="h-4 w-full" rounded="rounded-md" />
-      <Shimmer className="h-4 w-5/6" rounded="rounded-md" />
-      <Shimmer className="h-4 w-4/6" rounded="rounded-md" />
+      <Shimmer className="h-4 w-full" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-5/6" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-4/6" rounded="rounded-ui-sm" />
       <div className="flex items-center gap-3 mt-2">
         <Shimmer className="h-10 w-10" rounded="rounded-full" />
         <div className="flex flex-col gap-1.5">
-          <Shimmer className="h-4 w-28" rounded="rounded-md" />
-          <Shimmer className="h-3 w-20" rounded="rounded-md" />
+          <Shimmer className="h-4 w-28" rounded="rounded-ui-sm" />
+          <Shimmer className="h-3 w-20" rounded="rounded-ui-sm" />
         </div>
       </div>
     </div>
@@ -314,7 +314,7 @@ export function SkeletonFAQRow() {
       className="border-b border-slate-100 py-5 flex items-center justify-between gap-4"
       aria-hidden="true"
     >
-      <Shimmer className="h-5 w-72 md:w-[480px]" rounded="rounded-lg" />
+      <Shimmer className="h-5 w-72 md:w-[480px]" rounded="rounded-ui-sm" />
       <Shimmer className="h-7 w-7 flex-shrink-0" rounded="rounded-full" />
     </div>
   );
@@ -333,7 +333,7 @@ export function SkeletonLogoStrip() {
             key={i}
             className="h-10 flex-shrink-0"
             style={{ width: `${60 + (i % 3) * 20}px` }}
-            rounded="rounded-lg"
+            rounded="rounded-ui-sm"
           />
         ))}
       </div>
@@ -345,10 +345,10 @@ export function SkeletonLogoStrip() {
 export function SkeletonMap() {
   return (
     <div
-      className="w-full h-80 md:h-[480px] bg-slate-100 rounded-2xl relative overflow-hidden"
+      className="w-full h-80 md:h-[480px] bg-slate-100 rounded-ui-lg relative overflow-hidden"
       aria-hidden="true"
     >
-      <Shimmer className="absolute inset-0" rounded="rounded-2xl" />
+      <Shimmer className="absolute inset-0" rounded="rounded-ui-lg" />
       {/* Fake pulse markers */}
       <div className="absolute top-1/3 left-1/4 h-4 w-4 rounded-full bg-blue-300 opacity-60 animate-pulse" />
       <div className="absolute top-1/2 left-1/2 h-4 w-4 rounded-full bg-blue-300 opacity-60 animate-pulse delay-300" />
@@ -361,13 +361,13 @@ export function SkeletonMap() {
 export function SkeletonTrustBadge() {
   return (
     <div
-      className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col items-center gap-3 text-center"
+      className="bg-white rounded-ui-lg shadow-sm border border-slate-100 p-6 flex flex-col items-center gap-3 text-center"
       aria-hidden="true"
     >
-      <Shimmer className="h-14 w-14" rounded="rounded-2xl" />
-      <Shimmer className="h-5 w-28" rounded="rounded-lg" />
-      <Shimmer className="h-4 w-40" rounded="rounded-md" />
-      <Shimmer className="h-4 w-36" rounded="rounded-md" />
+      <Shimmer className="h-14 w-14" rounded="rounded-ui-lg" />
+      <Shimmer className="h-5 w-28" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-40" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-36" rounded="rounded-ui-sm" />
     </div>
   );
 }
@@ -376,13 +376,13 @@ export function SkeletonTrustBadge() {
 export function SkeletonJobRow() {
   return (
     <div
-      className="bg-white rounded-2xl shadow-sm border border-slate-100 p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
+      className="bg-white rounded-ui-lg shadow-sm border border-slate-100 p-5 flex flex-col md:flex-row md:items-center md:justify-between gap-4"
       aria-hidden="true"
     >
       <div className="flex items-center gap-4">
-        <Shimmer className="h-12 w-12 flex-shrink-0" rounded="rounded-xl" />
+        <Shimmer className="h-12 w-12 flex-shrink-0" rounded="rounded-ui-md" />
         <div className="flex flex-col gap-2">
-          <Shimmer className="h-5 w-48" rounded="rounded-lg" />
+          <Shimmer className="h-5 w-48" rounded="rounded-ui-sm" />
           <div className="flex gap-2">
             <Shimmer className="h-3 w-20" rounded="rounded-full" />
             <Shimmer className="h-3 w-16" rounded="rounded-full" />
@@ -408,9 +408,9 @@ export function SkeletonProgressStep() {
       <div className="relative">
         <Shimmer className="h-16 w-16" rounded="rounded-full" />
       </div>
-      <Shimmer className="h-5 w-32" rounded="rounded-lg" />
-      <Shimmer className="h-4 w-40" rounded="rounded-md" />
-      <Shimmer className="h-4 w-36" rounded="rounded-md" />
+      <Shimmer className="h-5 w-32" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-40" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-36" rounded="rounded-ui-sm" />
     </div>
   );
 }
@@ -422,7 +422,7 @@ export function SkeletonImageBanner({ height = "h-64" }: { height?: string }) {
       className={`w-full ${height} overflow-hidden relative`}
       aria-hidden="true"
     >
-      <Shimmer className="absolute inset-0" rounded="rounded-2xl" />
+      <Shimmer className="absolute inset-0" rounded="rounded-ui-lg" />
     </div>
   );
 }
@@ -431,13 +431,13 @@ export function SkeletonImageBanner({ height = "h-64" }: { height?: string }) {
 export function SkeletonCTACard() {
   return (
     <div
-      className="w-full bg-gradient-to-br from-blue-50 to-teal-50 border border-blue-100 rounded-3xl p-10 md:p-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
+      className="w-full bg-gradient-to-br from-blue-50 to-teal-50 border border-blue-100 rounded-ui-lg p-10 md:p-16 flex flex-col md:flex-row md:items-center md:justify-between gap-8"
       aria-hidden="true"
     >
       <div className="flex flex-col gap-4">
-        <Shimmer className="h-8 w-72 md:w-96" rounded="rounded-xl" />
-        <Shimmer className="h-5 w-80 md:w-[440px]" rounded="rounded-lg" />
-        <Shimmer className="h-5 w-64 md:w-[360px]" rounded="rounded-lg" />
+        <Shimmer className="h-8 w-72 md:w-96" rounded="rounded-ui-md" />
+        <Shimmer className="h-5 w-80 md:w-[440px]" rounded="rounded-ui-sm" />
+        <Shimmer className="h-5 w-64 md:w-[360px]" rounded="rounded-ui-sm" />
       </div>
       <Shimmer className="h-12 w-48 flex-shrink-0" rounded="rounded-full" />
     </div>
@@ -448,15 +448,15 @@ export function SkeletonCTACard() {
 export function SkeletonFeatureCard() {
   return (
     <div
-      className="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 flex flex-col gap-3"
+      className="bg-white rounded-ui-lg shadow-sm border border-slate-100 p-6 flex flex-col gap-3"
       aria-hidden="true"
     >
       <div className="flex items-center gap-3">
-        <Shimmer className="h-10 w-10 flex-shrink-0" rounded="rounded-xl" />
-        <Shimmer className="h-5 w-36" rounded="rounded-lg" />
+        <Shimmer className="h-10 w-10 flex-shrink-0" rounded="rounded-ui-md" />
+        <Shimmer className="h-5 w-36" rounded="rounded-ui-sm" />
       </div>
-      <Shimmer className="h-4 w-full" rounded="rounded-md" />
-      <Shimmer className="h-4 w-5/6" rounded="rounded-md" />
+      <Shimmer className="h-4 w-full" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-5/6" rounded="rounded-ui-sm" />
     </div>
   );
 }
@@ -466,17 +466,17 @@ export function SkeletonSplitSection({ imageRight = true }: { imageRight?: boole
   const Text = () => (
     <div className="flex flex-col gap-4 flex-1">
       <Shimmer className="h-3 w-20" rounded="rounded-full" />
-      <Shimmer className="h-9 w-full max-w-sm" rounded="rounded-xl" />
-      <Shimmer className="h-9 w-4/5 max-w-xs" rounded="rounded-xl" />
-      <Shimmer className="h-4 w-full" rounded="rounded-md" />
-      <Shimmer className="h-4 w-5/6" rounded="rounded-md" />
-      <Shimmer className="h-4 w-4/6" rounded="rounded-md" />
+      <Shimmer className="h-9 w-full max-w-sm" rounded="rounded-ui-md" />
+      <Shimmer className="h-9 w-4/5 max-w-xs" rounded="rounded-ui-md" />
+      <Shimmer className="h-4 w-full" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-5/6" rounded="rounded-ui-sm" />
+      <Shimmer className="h-4 w-4/6" rounded="rounded-ui-sm" />
       <Shimmer className="h-11 w-36 mt-4" rounded="rounded-full" />
     </div>
   );
   const Img = () => (
     <div className="flex-1">
-      <Shimmer className="h-64 md:h-80 w-full" rounded="rounded-2xl" />
+      <Shimmer className="h-64 md:h-80 w-full" rounded="rounded-ui-lg" />
     </div>
   );
   return (

@@ -38,7 +38,7 @@ export default function BigDataAdvantages() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                className="relative w-full sm:w-[518px] aspect-[518/325] shrink-0 self-start overflow-hidden"
+                className="relative w-full sm:w-[518px] aspect-[518/325] shrink-0 self-start overflow-hidden rounded-ui-md"
             >
                 <Image src={advantagesImage} alt="Colleagues reviewing data charts and reports at a desk" fill className="object-cover" />
             </motion.div>

@@ -226,7 +226,7 @@ const ContactForm = () => {
   return (
     <>
       <div
-        className="rounded-none shadow-lg p-8 lg:p-8 m-4 lg:m-8 overflow-x-hidden overflow-hidden"
+        className=" shadow-lg p-8 lg:p-8 m-4 lg:m-8 overflow-x-hidden overflow-hidden rounded-ui-lg"
         style={{
           // Figma 2243:3782: one flat slate tone (#47545C where it sits on white),
           // kept translucent over a blur of the hero photo like the earlier frame.
@@ -257,7 +257,7 @@ const ContactForm = () => {
                 value={formData.firstName}
                 onChange={handleChange}
                 placeholder="e.g. Hyra"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.firstName
+                className={`w-full px-4 py-3 border border-gray-200/50 bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 rounded-ui-sm ${errors.firstName
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -278,7 +278,7 @@ const ContactForm = () => {
                 value={formData.secondName}
                 onChange={handleChange}
                 placeholder="e.g. Banu"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.secondName
+                className={`w-full px-4 py-3 border border-gray-200/50 bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 rounded-ui-sm ${errors.secondName
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -302,7 +302,7 @@ const ContactForm = () => {
                 value={formData.companyEmail}
                 onChange={handleChange}
                 placeholder="hyra@company.com"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.companyEmail
+                className={`w-full px-4 py-3 border border-gray-200/50 bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 rounded-ui-sm ${errors.companyEmail
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -327,7 +327,7 @@ const ContactForm = () => {
                     setFormData((prev) => ({ ...prev, contactNumber: formatLocal(prev.contactNumber, next) }));
                     if (errors.contactNumber) setErrors((prev) => ({ ...prev, contactNumber: '' }));
                   }}
-                  className="shrink-0 w-[96px] px-2 py-3 border border-r-0 border-gray-200/50 rounded-none bg-gray-50 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
+                  className="shrink-0 w-[96px] px-2 py-3 border border-r-0 border-gray-200/50 bg-gray-50 text-sm text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 rounded-ui-sm"
                 >
                   {DIAL_CODES.map((d) => (
                     <option key={d.code} value={d.code}>
@@ -344,7 +344,7 @@ const ContactForm = () => {
                   inputMode="numeric"
                   autoComplete="tel-national"
                   placeholder={dial.group.map((n) => 'X'.repeat(n)).join(' ')}
-                  className={`flex-1 min-w-0 px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.contactNumber
+                  className={`flex-1 min-w-0 px-4 py-3 border border-gray-200/50 bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 rounded-ui-sm ${errors.contactNumber
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -369,7 +369,7 @@ const ContactForm = () => {
                 value={formData.country}
                 onChange={handleChange}
                 placeholder="India"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.country
+                className={`w-full px-4 py-3 border border-gray-200/50 bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 rounded-ui-sm ${errors.country
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -390,7 +390,7 @@ const ContactForm = () => {
                 value={formData.companyName}
                 onChange={handleChange}
                 placeholder="ABC Corporation"
-                className={`w-full px-4 py-3 border border-gray-200/50 rounded-none bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 ${errors.companyName
+                className={`w-full px-4 py-3 border border-gray-200/50 bg-gray-50 backdrop-blur-sm placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent focus:bg-white/80 transition-all duration-200 rounded-ui-sm ${errors.companyName
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -414,7 +414,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 rows={4}
                 placeholder="Please describe your enquiry in detail..."
-                className={`w-full px-4 py-3 border border-gray-200 rounded-none bg-gray-50 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-colors resize-none ${errors.enquiries
+                className={`w-full px-4 py-3 border border-gray-200 bg-gray-50 placeholder-gray-400 text-sm focus:outline-none focus:ring-2 focus:border-transparent transition-colors resize-none rounded-ui-lg ${errors.enquiries
                   ? 'border-red-300 focus:ring-red-300'
                   : 'focus:ring-blue-300'
                   }`}
@@ -430,7 +430,7 @@ const ContactForm = () => {
             <button
               type="submit"
               disabled={isSubmitting}
-              className={`flex items-center gap-2 bg-[#2D8EC5] text-white py-2 px-5 rounded-none font-medium text-sm transition duration-200 ease-in-out  ${isSubmitting
+              className={`flex items-center gap-2 bg-[#2D8EC5] text-white py-2 px-5 font-medium text-sm transition duration-200 ease-in-out rounded-ui-sm ${isSubmitting
                 ? 'opacity-50 cursor-not-allowed'
                 : 'hover:shadow-md transform hover:scale-105'
                 }`}

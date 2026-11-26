@@ -25,7 +25,7 @@ export default function WhyChooseAzure() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="group relative h-[360px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[588px] lg:w-[42%]"
+                    className="group relative h-[360px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[588px] lg:w-[42%] rounded-ui-lg"
                 >
                     <Image
                         src={whyAzureImg}
@@ -50,7 +50,7 @@ export default function WhyChooseAzure() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative mx-8 sm:mx-[64px] lg:mx-0 lg:mr-[64px] lg:flex-1 bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center px-6 sm:px-12 py-10 sm:py-12"
+                    className="relative mx-8 sm:mx-[64px] lg:mx-0 lg:mr-[64px] lg:flex-1 bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center px-6 sm:px-12 py-10 sm:py-12 rounded-ui-lg"
                 >
                     <ul className="list-disc pl-5 sm:pl-6 flex flex-col gap-3 sm:gap-4 text-base sm:text-lg font-light leading-[1.5] text-[#55595E]">
                         {BENEFITS.map((benefit) => (

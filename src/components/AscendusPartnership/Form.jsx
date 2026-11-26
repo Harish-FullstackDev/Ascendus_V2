@@ -133,7 +133,7 @@ function Form() {
                   value={formData.fullName}
                   onChange={handleInputChange}
                   placeholder="Exp: John Carter"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors rounded-ui-sm"
                 />
               </div>
               <div>
@@ -150,7 +150,7 @@ function Form() {
                   value={formData.email}
                   onChange={handleInputChange}
                   placeholder="Enter your email"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors rounded-ui-sm"
                 />
               </div>
             </div>
@@ -169,7 +169,7 @@ function Form() {
                   value={formData.phoneNumber}
                   onChange={handleInputChange}
                   placeholder="(123) 000-0000"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors rounded-ui-sm"
                 />
               </div>
               <div>
@@ -186,7 +186,7 @@ function Form() {
                   value={formData.company}
                   onChange={handleInputChange}
                   placeholder="Exp: Company"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+                  className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors rounded-ui-sm"
                 />
               </div>
             </div>
@@ -204,7 +204,7 @@ function Form() {
                 value={formData.address}
                 onChange={handleInputChange}
                 placeholder="Exp: San Francisco, CA"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+                className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors rounded-ui-sm"
               />
             </div>
           </div>
@@ -229,7 +229,7 @@ function Form() {
                 value={formData.partnerName}
                 onChange={handleInputChange}
                 placeholder="Partner's full name"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+                className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors rounded-ui-sm"
               />
             </div>
             <div>
@@ -246,7 +246,7 @@ function Form() {
                 value={formData.partnerAddress}
                 onChange={handleInputChange}
                 placeholder="Partner's address"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+                className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors rounded-ui-sm"
               />
             </div>
           </div>
@@ -271,7 +271,7 @@ function Form() {
                 onChange={handleInputChange}
                 rows="4"
                 placeholder="Provide any other information here..."
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors"
+                className="w-full px-4 py-3 border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-colors rounded-ui-sm"
               ></textarea>
             </div>
           </div>
@@ -282,7 +282,7 @@ function Form() {
             <h2 className="text-xl font-bold text-gray-900 mb-8">
               Summary & Submit
             </h2>
-            <div className="bg-gray-100 p-6 rounded-lg shadow-inner">
+            <div className="bg-gray-100 p-6 rounded-ui-md shadow-inner">
               <h3 className="font-semibold text-base text-gray-800 mb-4">
                 Review Your Information
               </h3>
@@ -349,14 +349,14 @@ function Form() {
       <div className="max-w-7xl w-full px-4 pb-12 flex flex-col lg:flex-row gap-8">
         {/* Sidebar - Steps */}
         <div className="lg:w-2/5 xl:w-1/3">
-          <div className="bg-white rounded-2xl shadow-sm p-10">
+          <div className="bg-white shadow-sm p-10 rounded-ui-md">
             <div className="space-y-10">
               {steps.map((step, index) => (
                 <div key={step.number} className="flex items-start">
                   {/* Step Number */}
                   <div className="flex-shrink-0 relative">
                     <div
-                      className={`w-8 h-8 rounded-lg flex items-center justify-center text-sm font-semibold ${
+                      className={`w-8 h-8 flex items-center justify-center text-sm font-semibold rounded-ui-sm ${
                         step.active
                           ? "bg-black text-white"
                           : step.completed
@@ -399,7 +399,7 @@ function Form() {
 
         {/* Main Form */}
         <div className="lg:w-3/5 xl:w-2/3">
-          <div className="bg-white rounded-2xl shadow-sm p-8">
+          <div className="bg-white shadow-sm p-8 rounded-ui-lg">
             {/* The conditional rendering happens here */}
             {renderStepContent()}
 
@@ -409,7 +409,7 @@ function Form() {
                 <button
                   type="button"
                   onClick={handleBack}
-                  className="px-6 py-1.5 bg-gray-200 text-gray-700 font-medium rounded-lg hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
+                  className="px-6 py-1.5 bg-gray-200 text-gray-700 font-medium rounded-ui-sm hover:bg-gray-300 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-2"
                 >
                   Back
                 </button>
@@ -419,7 +419,7 @@ function Form() {
                 <button
                   type="button"
                   onClick={handleContinue}
-                  className="ml-auto px-6 py-1.5 bg-black text-white font-medium rounded-lg hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
+                  className="ml-auto px-6 py-1.5 bg-black text-white font-medium rounded-ui-sm hover:bg-gray-800 transition-colors focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
                 >
                   Continue
                 </button>
@@ -427,7 +427,7 @@ function Form() {
                 <button
                   type="submit"
                   onClick={handleSubmit}
-                  className="ml-auto px-6 py-1.5 bg-blue-600 text-white font-medium rounded-lg hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  className="ml-auto px-6 py-1.5 bg-blue-600 text-white font-medium rounded-ui-sm hover:bg-blue-700 transition-colors focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                 >
                   Submit
                 </button>

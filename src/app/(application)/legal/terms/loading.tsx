@@ -21,10 +21,10 @@ export default function TermsOfServiceLoading() {
       <main className="max-w-4xl mx-auto px-6 py-16 flex flex-col gap-10">
         {[0, 1, 2, 3, 4].map((section) => (
           <div key={section} className="flex flex-col gap-4">
-            <Shimmer className="h-6 w-64 md:w-80" rounded="rounded-lg" />
-            <Shimmer className="h-4 w-full" rounded="rounded-md" />
-            <Shimmer className="h-4 w-full" rounded="rounded-md" />
-            <Shimmer className="h-4 w-5/6" rounded="rounded-md" />
+            <Shimmer className="h-6 w-64 md:w-80" rounded="rounded-ui-sm" />
+            <Shimmer className="h-4 w-full" rounded="rounded-ui-sm" />
+            <Shimmer className="h-4 w-full" rounded="rounded-ui-sm" />
+            <Shimmer className="h-4 w-5/6" rounded="rounded-ui-sm" />
           </div>
         ))}
       </main>

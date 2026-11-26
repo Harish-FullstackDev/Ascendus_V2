@@ -6,7 +6,7 @@
 // backwards.
 export default function NavyCardBackground({ isActive }) {
     return (
-        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[#004174]">
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[#004174] rounded-ui-md">
             <div
                 className={`absolute inset-0 bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] transition-opacity duration-500 ease-out ${isActive ? "opacity-100" : "opacity-0"}`}
             />

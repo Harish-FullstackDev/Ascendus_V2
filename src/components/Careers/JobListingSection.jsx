@@ -47,7 +47,7 @@ function FilterSelect({ label, value, options, onChange, width }) {
             <select
                 value={value}
                 onChange={(event) => onChange(event.target.value)}
-                className={`h-[34px] cursor-pointer appearance-none truncate w-full ${width} border border-[#c9d0d8] bg-white py-[7px] pl-[13px] pr-[43px] text-[14px] leading-[1.4] text-[#374151] outline-none focus:border-[#2D8EC5]`}
+                className={`h-[34px] cursor-pointer appearance-none truncate w-full rounded-ui-sm ${width} border border-[#c9d0d8] bg-white py-[7px] pl-[13px] pr-[43px] text-[14px] leading-[1.4] text-[#374151] outline-none focus:border-[#2D8EC5]`}
             >
                 <option value="">{label}</option>
                 {options.map((option) => (
@@ -246,7 +246,7 @@ export default function JobListingSection() {
                                 value={search}
                                 onChange={(event) => setSearch(event.target.value)}
                                 placeholder="Search by job title, keyword or location"
-                                className="h-[34px] w-full border border-[#c9d0d8] bg-white pl-[41px] pr-[17px] text-[14px] leading-[1.4] text-[#111827] outline-none placeholder:text-[#8695a7] focus:border-[#2D8EC5]"
+                                className="h-[34px] w-full border border-[#c9d0d8] bg-white pl-[41px] pr-[17px] text-[14px] leading-[1.4] text-[#111827] outline-none placeholder:text-[#8695a7] focus:border-[#2D8EC5] rounded-ui-sm"
                             />
                         </label>
 

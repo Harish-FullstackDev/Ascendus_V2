@@ -87,14 +87,14 @@ export default function PrivacyAndDataprotection() {
         </div>
 
         {/* Right Card Column - Removed background color */}
-        <div className="w-full lg:w-[57%] relative rounded-3xl p-6 sm:p-8 lg:p-12 overflow-hidden">
+        <div className="w-full lg:w-[57%] relative p-6 sm:p-8 lg:p-12 overflow-hidden rounded-ui-lg">
           {/* Background Image */}
           <div className="absolute inset-0 z-0">
             <Image
               src="/trustcenter/Data.webp"
               alt=""
               fill
-              className="object-cover rounded-3xl"
+              className="object-cover rounded-ui-lg"
               priority
             />
             {/* Optional overlay for better text readability */}

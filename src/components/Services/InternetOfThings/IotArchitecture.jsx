@@ -59,7 +59,7 @@ export default function IotArchitecture() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group flex-1 min-w-0 bg-white border border-[#E2E5EA] flex flex-col gap-4 px-6 py-8 transition-[border-color,box-shadow] duration-300 hover:border-[#2d8ec5] hover:shadow-xl"
+                            className="group flex-1 min-w-0 bg-white border border-[#E2E5EA] flex flex-col gap-4 px-6 py-8 transition-[border-color,box-shadow] duration-300 hover:border-[#2d8ec5] hover:shadow-xl rounded-ui-md"
                         >
                             <div className="flex items-center justify-between">
                                 <div className="relative size-8 sm:size-10 shrink-0">

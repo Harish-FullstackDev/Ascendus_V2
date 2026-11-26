@@ -46,7 +46,7 @@ export default function MigrationScope() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.4, delay: index * 0.06 }}
-                        className="border border-[#a5a5a5] bg-[#f5f6f6] flex flex-col gap-4 px-6 py-8"
+                        className="border border-[#a5a5a5] bg-[#f5f6f6] flex flex-col gap-4 px-6 py-8 rounded-ui-md"
                     >
                         <h3 className="font-switzer text-[#2E3033] text-lg sm:text-xl font-semibold">{card.title}</h3>
                         <p className="text-[#55595E] text-base font-light">{card.desc}</p>
@@ -68,7 +68,7 @@ export default function MigrationScope() {
                             transition={{ duration: 0.4, delay: index * 0.06 }}
                             className="flex flex-col"
                         >
-                            <div className="bg-white border border-[#a5a5a5] min-h-[121px] flex items-center justify-center text-center px-8">
+                            <div className="bg-white border border-[#a5a5a5] min-h-[121px] flex items-center justify-center text-center px-8 rounded-ui-md">
                                 <h3 className="font-switzer text-[#2E3033] text-xl font-semibold leading-tight">{card.title}</h3>
                             </div>
                             <p className="text-[#55595E] text-center text-base sm:text-lg font-light p-6">{card.desc}</p>

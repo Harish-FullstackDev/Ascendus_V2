@@ -12,7 +12,7 @@ export default function BestCloudSolution() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
-                className="relative w-full lg:w-[40%] lg:max-w-[520px] aspect-[442/417] shrink-0 overflow-hidden"
+                className="relative w-full lg:w-[40%] lg:max-w-[520px] aspect-[442/417] shrink-0 overflow-hidden rounded-ui-md"
             >
                 <Image src={bestCloudImage} alt="Rows of server cabinets in a data centre hall" fill className="object-cover" />
             </motion.div>

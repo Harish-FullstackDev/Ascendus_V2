@@ -11,7 +11,7 @@ function ServiceCard({ card, onGrey }) {
     return (
         <Link
             href={card.href}
-            className={`group h-full flex flex-col items-start gap-4 p-8 min-h-[260px] transition-shadow duration-300 ${onGrey
+            className={`group h-full flex flex-col items-start gap-4 p-8 min-h-[260px] transition-shadow duration-300 rounded-ui-md ${onGrey
                 ? "bg-white shadow-[2px_4px_8.4px_0px_rgba(0,0,0,0.1)] hover:shadow-[2px_8px_20px_0px_rgba(0,0,0,0.14)]"
                 : "bg-[#f3f6f9] hover:shadow-[2px_8px_20px_0px_rgba(0,0,0,0.1)]"
                 }`}

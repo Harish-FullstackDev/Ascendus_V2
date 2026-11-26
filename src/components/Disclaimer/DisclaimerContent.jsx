@@ -98,7 +98,7 @@ export default function DisclaimerContent() {
               <button
                 key={section}
                 onClick={() => scrollToSection(section)}
-                className={`w-full cursor-pointer text-left px-4 py-2.5 rounded-md text-sm font-medium transition-colors ${activeSection === section
+                className={`w-full cursor-pointer text-left px-4 py-2.5 rounded-ui-sm text-sm font-medium transition-colors ${activeSection === section
                   ? "bg-[#0061AF] text-white"
                   : "text-black hover:bg-gray-100"
                   }`}
@@ -114,7 +114,7 @@ export default function DisclaimerContent() {
           {/* Title Banner */}
           <div
             ref={(el) => (sectionRefs.current["Summary"] = el)}
-            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px]"
+            className="bg-[#eaeaea] px-8 sm:px-[66px] py-[62px] rounded-ui-lg"
           >
             <div className="flex flex-col gap-[42px] ">
               <h1 className="text-xl font-semibold text-black">

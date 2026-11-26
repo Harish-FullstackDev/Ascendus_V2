@@ -17,7 +17,7 @@ export default function SoftwareIntro() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative w-full lg:w-[520px] lg:max-w-[45%] shrink-0 aspect-[4/3] overflow-hidden"
+                    className="relative w-full lg:w-[520px] lg:max-w-[45%] shrink-0 aspect-[4/3] overflow-hidden rounded-ui-md"
                 >
                     <Image src={introPhoto} alt="Developer writing code on a laptop at a desk" fill className="object-cover" />
                 </motion.div>

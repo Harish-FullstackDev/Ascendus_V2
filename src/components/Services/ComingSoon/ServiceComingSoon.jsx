@@ -42,13 +42,13 @@ export default function ServiceComingSoon({ category, title }) {
                     <div className="mt-10 flex flex-col sm:flex-row gap-4">
                         <Link
                             href="/book-a-consultation/"
-                            className="border border-white bg-white px-6 py-2 text-lg font-normal text-black text-center transition-colors hover:bg-transparent hover:text-white"
+                            className="border border-white bg-white px-6 py-2 text-lg font-normal text-black text-center transition-colors hover:bg-transparent hover:text-white rounded-ui-sm"
                         >
                             Book a Consultation
                         </Link>
                         <Link
                             href="/services/"
-                            className="border border-[#d0d0d0] px-6 py-2 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-black"
+                            className="border border-[#d0d0d0] px-6 py-2 text-lg font-light text-white text-center transition-colors hover:bg-white hover:text-black rounded-ui-sm"
                         >
                             View All Services
                         </Link>

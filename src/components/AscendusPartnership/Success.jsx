@@ -124,7 +124,7 @@ const Success = () => {
                 preload="none"
                 loop
                 muted
-                className="w-full h-auto rounded-xl sm:rounded-2xl md:rounded-3xl object-cover"
+                className="w-full h-auto object-cover rounded-ui-lg"
                 style={{
                   minHeight: "200px",
                   maxHeight: "500px",
@@ -178,7 +178,7 @@ const Success = () => {
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
               >
-                <div className="text-[#66CDF3] px-3 py-1 text-base sm:text-lg font-normal whitespace-nowrap rounded-lg sm:bg-transparent ">
+                <div className="text-[#66CDF3] px-3 py-1 text-base sm:text-lg font-normal whitespace-nowrap rounded-ui-sm sm:bg-transparent ">
                   Growth
                 </div>
                 <div className="max-w-full  sm:max-w-md lg:max-w-lg xl:max-w-xl">
@@ -193,7 +193,7 @@ const Success = () => {
               {/* Right Side - CTA Button - Centered on mobile */}
               <div className="flex w-full sm:w-auto justify-center lg:justify-end">
                 <motion.button
-                  className="bg-[#66CDF3] text-white px-4  sm:px-4 md:px-6 py-3 sm:py-2 text-sm sm:text-base md:text-md rounded-lg font-medium flex items-center gap-3 hover:bg-[#96B8FF] transition-colors w-full sm:w-auto max-w-xs sm:max-w-none justify-center shadow-lg hover:shadow-xl"
+                  className="bg-[#66CDF3] text-white px-4 sm:px-4 md:px-6 py-3 sm:py-2 text-sm sm:text-base md:text-md font-medium flex items-center gap-3 hover:bg-[#96B8FF] transition-colors w-full sm:w-auto max-w-xs sm:max-w-none justify-center shadow-lg hover:shadow-xl rounded-ui-sm"
                   variants={buttonVariants}
                   initial="hidden"
                   animate="visible"

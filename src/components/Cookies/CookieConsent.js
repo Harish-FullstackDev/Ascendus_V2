@@ -61,13 +61,13 @@ export default function CookieConsent() {
       <div className="flex space-x-3">
         <button
           onClick={() => handleConsent(false)}
-          className="px-4 py-2 text-sm border border-gray-500 rounded hover:bg-gray-700 transition"
+          className="px-4 py-2 text-sm border border-gray-500 hover:bg-gray-700 transition rounded-ui-sm"
         >
           Reject All
         </button>
         <button
           onClick={() => handleConsent(true)}
-          className="px-4 py-2 text-sm bg-blue-600 text-white rounded font-semibold hover:bg-blue-700 transition"
+          className="px-4 py-2 text-sm bg-blue-600 text-white font-semibold hover:bg-blue-700 transition rounded-ui-sm"
         >
           Accept All
         </button>

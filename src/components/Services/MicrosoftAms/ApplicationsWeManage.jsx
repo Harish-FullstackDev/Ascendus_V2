@@ -74,7 +74,7 @@ export default function ApplicationsWeManage() {
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
                             onMouseEnter={() => setActiveIndex(index)}
-                            className={`relative px-8 sm:px-6 py-10 sm:py-14 min-h-[240px] sm:min-h-[380px] lg:min-h-[460px] overflow-hidden transition-colors duration-300 border-t border-[#8794A3] sm:[&:nth-child(odd)]:border-r lg:border-r lg:last:border-r-0 ${isActive ? "text-white" : "text-[#2E3033]"
+                            className={`relative px-8 sm:px-6 py-10 sm:py-14 min-h-[240px] sm:min-h-[380px] lg:min-h-[460px] overflow-hidden transition-colors duration-300 border-t border-[#8794A3] sm:[&:nth-child(odd)]:border-r lg:border-r lg:last:border-r-0 rounded-ui-md ${isActive ? "text-white" : "text-[#2E3033]"
                                 }`}
                         >
                             <div

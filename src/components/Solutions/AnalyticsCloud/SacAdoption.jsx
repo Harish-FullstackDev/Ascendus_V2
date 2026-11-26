@@ -45,7 +45,7 @@ export default function SacAdoption() {
                             From the first data connection to insight shared across the organization.
                         </p>
                     </div>
-                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#565656]">
+                    <div className="relative w-full aspect-[4/3] overflow-hidden bg-[#565656] rounded-ui-lg">
                         <Image src={adoptionImage} alt="" fill className="object-cover" />
                     </div>
                 </motion.div>
@@ -65,7 +65,7 @@ export default function SacAdoption() {
                             {index < STEPS.length - 1 && (
                                 <span aria-hidden="true" className="absolute left-5 sm:left-6 top-5 sm:top-6 bottom-0 w-px bg-[#d3dae2]" />
                             )}
-                            <span className="relative z-10 flex items-center justify-center size-10 sm:size-12 shrink-0 bg-white border-[1.25px] sm:border-[1.5px] border-[#2d8ec5] text-[#2d8ec5]">
+                            <span className="relative z-10 flex items-center justify-center size-10 sm:size-12 shrink-0 bg-white border-[1.25px] sm:border-[1.5px] border-[#2d8ec5] text-[#2d8ec5] rounded-ui-sm">
                                 <step.icon aria-hidden="true" strokeWidth={1.5} className="size-5 sm:size-6" />
                             </span>
                             <div className="flex flex-col gap-2 min-w-0 pt-1 sm:pt-2">

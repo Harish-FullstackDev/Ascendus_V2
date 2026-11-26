@@ -32,7 +32,7 @@ export default function Governance() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: (index % 3) * 0.08 }}
-                        className="bg-white p-6 sm:p-8 shadow-[0px_2px_8px_rgba(0,0,0,0.08)]"
+                        className="bg-white p-6 sm:p-8 shadow-[0px_2px_8px_rgba(0,0,0,0.08)] rounded-ui-md"
                     >
                         <span aria-hidden className="block h-1 w-12 bg-[#2d8ec5]" />
                         <h3 className="mt-5 text-xl font-semibold text-[#2E3033]">{control.title}</h3>

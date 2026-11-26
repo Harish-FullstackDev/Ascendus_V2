@@ -18,12 +18,12 @@ export default function BlogLoading() {
         <div className="flex flex-col md:flex-row md:items-end justify-between border-b border-neutral-200 dark:border-neutral-850 pb-8 mb-12 gap-6">
           <div className="space-y-3 flex-grow max-w-2xl">
             <Shimmer className="h-4 w-28 bg-[#2d8ec5]/10 dark:bg-[#2d8ec5]/30" rounded="rounded-full" />
-            <Shimmer className="h-8 md:h-12 w-3/5" rounded="rounded-xl" />
-            <Shimmer className="h-5 w-full" rounded="rounded-lg" />
-            <Shimmer className="h-5 w-4/5" rounded="rounded-lg" />
+            <Shimmer className="h-8 md:h-12 w-3/5" rounded="rounded-ui-md" />
+            <Shimmer className="h-5 w-full" rounded="rounded-ui-sm" />
+            <Shimmer className="h-5 w-4/5" rounded="rounded-ui-sm" />
           </div>
 
-          <Shimmer className="h-12 w-40 flex-shrink-0" rounded="rounded-2xl" />
+          <Shimmer className="h-12 w-40 flex-shrink-0" rounded="rounded-ui-lg" />
         </div>
 
         {/* Shimmering blog cards grid */}

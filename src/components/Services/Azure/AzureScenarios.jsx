@@ -58,9 +58,9 @@ export default function AzureScenarios() {
                         // shared with the cards beside it (subgrid), so a title that
                         // wraps to two lines pushes every description in that row down
                         // together and they stay aligned.
-                        className="group relative flex flex-col sm:grid sm:row-span-2 sm:grid-rows-subgrid sm:gap-4 sm:content-start sm:min-h-[280px] mt-[38px] sm:mt-10 sm:px-8 sm:pt-20 sm:pb-10 border border-[#7f7f7f]/40 bg-white text-center transition-shadow duration-300 hover:shadow-xl"
+                        className="group relative flex flex-col sm:grid sm:row-span-2 sm:grid-rows-subgrid sm:gap-4 sm:content-start sm:min-h-[280px] mt-[38px] sm:mt-10 sm:px-8 sm:pt-20 sm:pb-10 border border-[#7f7f7f]/40 bg-white text-center transition-shadow duration-300 hover:shadow-xl rounded-ui-md"
                     >
-                        <div className="absolute -top-[38px] sm:-top-12 left-1/2 -translate-x-1/2 w-24 h-[76px] sm:w-[120px] sm:h-[94px] bg-[#0A3A52] flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105">
+                        <div className="absolute -top-[38px] sm:-top-12 left-1/2 -translate-x-1/2 w-24 h-[76px] sm:w-[120px] sm:h-[94px] bg-[#0A3A52] flex items-center justify-center transition-transform duration-300 group-hover:-translate-y-1 group-hover:scale-105 rounded-ui-sm">
                             <Image src={card.icon} alt="" width={40} height={40} className="size-8 sm:size-10" />
                         </div>
                         <div className="flex flex-col flex-1 gap-4 px-6 pt-14 pb-8 sm:contents">

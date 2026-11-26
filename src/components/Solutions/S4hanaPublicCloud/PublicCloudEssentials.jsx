@@ -46,7 +46,7 @@ export default function PublicCloudEssentials() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="w-full sm:w-[59.5%] bg-white flex items-center"
+                    className="w-full sm:w-[59.5%] bg-white flex items-center rounded-ui-lg"
                 >
                     <div className="flex flex-col gap-5 sm:gap-[34px] w-full">
                         {POINTS.map((point, index) => (

@@ -99,7 +99,7 @@ export default function BtpAreas() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, delay: index * 0.08 }}
-                        className="relative w-full min-h-[220px] overflow-hidden"
+                        className="relative w-full min-h-[220px] overflow-hidden rounded-ui-md"
                     >
                         <CardBackground isActive />
                         <div className="relative flex flex-col justify-start gap-2 px-4 pt-5 pb-6">
@@ -135,7 +135,7 @@ export default function BtpAreas() {
                                 setActive(index);
                             }}
                             tabIndex={0}
-                            className="relative aspect-[258/335] overflow-hidden outline-none"
+                            className="relative aspect-[258/335] overflow-hidden outline-none rounded-ui-md"
                         >
                             <CardBackground isActive={isActive} />
                             <div className="absolute inset-0 flex flex-col px-6 pt-8 pb-6 text-left">

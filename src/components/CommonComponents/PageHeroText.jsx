@@ -10,7 +10,7 @@ import { motion } from "framer-motion";
 //
 // actions: [{ label, href, primary }]
 
-const buttonBase = "inline-flex items-center justify-center px-6 py-2 text-lg font-light transition-colors";
+const buttonBase = "inline-flex items-center justify-center px-6 py-2 text-lg font-light transition-colors rounded-ui-sm";
 
 export default function PageHeroText({ eyebrow, title, text, actions = [] }) {
     return (

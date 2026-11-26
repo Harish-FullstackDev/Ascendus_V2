@@ -108,7 +108,7 @@ export default function PublicCloudFeatures() {
                 {/* Navy panel: copy top left, self-drawing icon bottom right */}
                 <div className="w-full lg:flex-1 lg:min-w-0">
                     {/* A swipe changes the tab on phones. */}
-                    <motion.div {...phoneSwipeProps(go)} className="relative w-full min-h-[320px] lg:min-h-[420px] lg:h-full overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+                    <motion.div {...phoneSwipeProps(go)} className="relative w-full min-h-[320px] lg:min-h-[420px] lg:h-full overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] rounded-ui-lg">
                         <style>{DRAW_KEYFRAMES}</style>
                         <div aria-hidden="true" className="absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.4),rgba(28,95,133,0)_65%)]" />
 

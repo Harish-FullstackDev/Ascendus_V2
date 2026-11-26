@@ -139,7 +139,7 @@ function CountdownTimer() {
     const timeLeft = useCountdown(LAUNCH_DATE);
 
     return (
-        <div className="inline-flex items-start gap-3 overflow-hidden border border-slate-200 bg-white/70 px-5 py-5 shadow-[0_20px_60px_-24px_rgba(46,48,51,0.2)] backdrop-blur-sm md:gap-6 md:px-9 md:py-4">
+        <div className="inline-flex items-start gap-3 overflow-hidden border border-slate-200 bg-white/70 px-5 py-5 shadow-[0_20px_60px_-24px_rgba(46,48,51,0.2)] backdrop-blur-sm md:gap-6 md:px-9 md:py-4 rounded-ui-lg">
             {TIME_UNITS.flatMap((unit, i) => {
                 const items = [
                     <TimeUnit key={unit.key} value={timeLeft[unit.key]} label={unit.label} />,
@@ -172,7 +172,7 @@ export default function LaunchingSoon() {
 
                 <header className="relative z-10 flex items-center justify-between px-8 py-6 md:px-12">
                     <Link href="/" aria-label="Ascendus home">
-                        <Image src={logo} alt="Ascendus logo" className="h-8 w-auto md:h-10.5" priority />
+                        <Image src={logo} alt="Ascendus logo" className="h-8 w-auto md:h-10.5 rounded-ui-sm" priority />
                     </Link>
                     <Link
                         href="/"

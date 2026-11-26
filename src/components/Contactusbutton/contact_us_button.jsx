@@ -10,7 +10,7 @@ const ContactUsButton = ({ floating = false }) => {
       className={`
         inline-flex items-center gap-2
         px-4 py-2
-        rounded-xl bg-[#66CDF3]
+        rounded-ui-sm bg-[#66CDF3]
         text-white shadow-lg transition-all duration-300
         hover:scale-105 hover:shadow-xl
         ${floating ? "fixed bottom-10 right-6 z-50" : ""}

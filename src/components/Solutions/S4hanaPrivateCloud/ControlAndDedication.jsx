@@ -42,7 +42,7 @@ export default function ControlAndDedication() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative w-full sm:w-[38%] sm:max-w-[442px] aspect-[442/417] shrink-0 self-start overflow-hidden"
+                    className="relative w-full sm:w-[38%] sm:max-w-[442px] aspect-[442/417] shrink-0 self-start overflow-hidden rounded-ui-md"
                 >
                     <Image src={controlImage} alt="Colleagues reviewing documents together beside their laptops" fill className="object-cover" />
                 </motion.div>

@@ -134,7 +134,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                     </p>
                     <Link
                         href={basePath}
-                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#2d8ec5] hover:bg-[#1C5F85] text-white font-bold rounded-2xl transition-all shadow-md"
+                        className="inline-flex items-center gap-2 px-6 py-3 bg-[#2d8ec5] hover:bg-[#1C5F85] text-white font-bold rounded-ui-sm transition-all shadow-md"
                     >
                         <ArrowLeft className="w-5 h-5" /> {backLabel}
                     </Link>
@@ -281,11 +281,11 @@ export default function InsightDetail({ item, basePath, backLabel }) {
 
                     {/* Right: Cover Image */}
                     <div className="lg:col-span-6 flex justify-center">
-                        <div className="inline-flex rounded-none overflow-hidden shadow-lg bg-neutral-100">
+                        <div className="inline-flex rounded-ui-lg overflow-hidden shadow-lg bg-neutral-100">
                             <img
                                 src={item.cover_image}
                                 alt={item.title}
-                                className="block max-h-[250px] md:max-h-[400px] w-auto object-contain rounded-none"
+                                className="block max-h-[250px] md:max-h-[400px] w-auto object-contain "
                             />
                         </div>
                     </div>
@@ -297,7 +297,7 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                         {item.highlights.map((stat) => (
                             <div
                                 key={stat.label}
-                                className="text-center p-5 rounded-2xl bg-[#2d8ec5]/5 border border-[#2d8ec5]/10"
+                                className="text-center p-5 rounded-ui-md bg-[#2d8ec5]/5 border border-[#2d8ec5]/10"
                             >
                                 <p className="text-2xl md:text-3xl font-black text-[#2d8ec5]">{stat.value}</p>
                                 <p className="text-xs md:text-sm font-semibold text-slate-500 mt-1">{stat.label}</p>
@@ -426,11 +426,11 @@ export default function InsightDetail({ item, basePath, backLabel }) {
                                 {sec.image && (
                                     <div className="my-6 space-y-2">
                                         <div className="flex justify-center">
-                                            <div className="inline-flex rounded-none overflow-hidden border border-slate-200 shadow-md bg-neutral-100 p-2.5">
+                                            <div className="inline-flex rounded-ui-md overflow-hidden border border-slate-200 shadow-md bg-neutral-100 p-2.5">
                                                 <img
                                                     src={sec.image}
                                                     alt={sec.caption || sec.heading}
-                                                    className="block max-h-[350px] w-auto object-contain rounded-none"
+                                                    className="block max-h-[350px] w-auto object-contain rounded-ui-sm"
                                                 />
                                             </div>
                                         </div>

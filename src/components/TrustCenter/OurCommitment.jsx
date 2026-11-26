@@ -14,7 +14,7 @@ const OurCommitment = () => {
   };
   return (
     <div className="w-full px-8 sm:px-6 md:px-8 lg:px-10 lg:mb-4 mb-7 overflow-x-hidden">
-      <div className="relative w-full rounded-4xl overflow-hidden max-w-7xl lg:ml-25">
+      <div className="relative w-full overflow-hidden max-w-7xl lg:ml-25 rounded-ui-lg">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image

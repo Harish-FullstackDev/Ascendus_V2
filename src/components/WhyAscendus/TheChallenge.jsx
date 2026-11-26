@@ -24,7 +24,7 @@ export default function TheChallenge() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.08 }}
-                        className="flex flex-col gap-4 border-l-2 border-[#2D8EC5] bg-[#f3f6f9] p-6 sm:p-8"
+                        className="flex flex-col gap-4 border-l-2 border-[#2D8EC5] bg-[#f3f6f9] p-6 sm:p-8 rounded-ui-md"
                     >
                         <span className="text-sm font-medium tracking-wide text-[#0061AF]">{String(index + 1).padStart(2, "0")}</span>
                         <p className="text-lg sm:text-xl leading-snug text-[#2E3033]">{text}</p>

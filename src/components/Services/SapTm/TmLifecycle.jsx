@@ -42,7 +42,7 @@ export default function TmLifecycle() {
                         {index < STEPS.length - 1 && (
                             <span className="absolute -left-[29px] top-5 -bottom-8 w-px bg-[#D5D9DE]" aria-hidden="true" />
                         )}
-                        <span className="absolute -left-12 top-0 flex size-10 items-center justify-center bg-[#1C5F85] text-white text-sm font-semibold">
+                        <span className="absolute -left-12 top-0 flex size-10 items-center justify-center bg-[#1C5F85] text-white text-sm font-semibold rounded-ui-sm">
                             {index + 1}
                         </span>
                         <h3 className="text-[#2E3033] text-lg sm:text-xl font-semibold pt-1.5">{step.title}</h3>
@@ -71,7 +71,7 @@ export default function TmLifecycle() {
                         transition={{ duration: 0.45, delay: 0.2 + index * 0.12 }}
                         className="relative flex flex-col items-center text-center gap-4"
                     >
-                        <span className="relative z-10 flex size-12 items-center justify-center bg-[#1C5F85] text-white text-lg font-semibold">
+                        <span className="relative z-10 flex size-12 items-center justify-center bg-[#1C5F85] text-white text-lg font-semibold rounded-ui-sm">
                             {index + 1}
                         </span>
                         <h3 className="text-[#2E3033] text-xl font-semibold">{step.title}</h3>

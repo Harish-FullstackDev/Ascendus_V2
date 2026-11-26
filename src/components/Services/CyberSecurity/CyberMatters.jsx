@@ -65,7 +65,7 @@ export default function CyberMatters() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.45, delay: index * 0.08 }}
-                            className="group bg-white flex flex-col gap-4 px-6 py-8 transition-shadow duration-300 hover:shadow-xl"
+                            className="group bg-white flex flex-col gap-4 px-6 py-8 transition-shadow duration-300 hover:shadow-xl rounded-ui-md"
                         >
                             <div className="relative size-8 sm:size-10 shrink-0 transition-transform duration-300 group-hover:scale-110">
                                 <Image src={pillar.icon} alt="" fill className="object-contain" />

@@ -85,7 +85,7 @@ export default function RolloutStages() {
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, ease: "easeOut", delay: (index % 3) * 0.08 }}
                             onMouseEnter={() => setActiveIndex(index)}
-                            className={`relative px-8 sm:px-10 py-10 sm:py-14 min-h-[240px] sm:min-h-[320px] overflow-hidden transition-colors duration-300 border-b border-[#8794A3] sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 ${isActive ? "text-white" : "text-[#2E3033]"
+                            className={`relative px-8 sm:px-10 py-10 sm:py-14 min-h-[240px] sm:min-h-[320px] overflow-hidden transition-colors duration-300 border-b border-[#8794A3] sm:border-r sm:[&:nth-child(2n)]:border-r-0 lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 rounded-ui-md ${isActive ? "text-white" : "text-[#2E3033]"
                                 }`}
                         >
                             <div

@@ -38,7 +38,7 @@ function Hairline({ isActive, className, axis, delay }) {
 
 function CardBackground({ isActive }) {
     return (
-        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)]">
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] rounded-ui-lg">
             <div
                 className={`absolute inset-0 bg-[linear-gradient(to_top,rgba(28,95,133,0.45),rgba(28,95,133,0)_70%)] transition-opacity duration-700 ease-out ${isActive ? "opacity-100" : "opacity-0"
                     }`}
@@ -107,7 +107,7 @@ export default function MigrationStartingPoints() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.3 }}
                             transition={{ duration: 0.5, delay: index * 0.08 }}
-                            className="relative w-full min-h-[200px] sm:min-h-0 sm:h-[340px] overflow-hidden max-sm:shadow-[0px_2px_8px_rgba(0,0,0,0.19)]"
+                            className="relative w-full min-h-[200px] sm:min-h-0 sm:h-[340px] overflow-hidden max-sm:shadow-[0px_2px_8px_rgba(0,0,0,0.19)] rounded-ui-md"
                         >
                             <CardBackground isActive />
                             <div className="relative flex min-h-[inherit] flex-col justify-center gap-2 px-[10%] py-6 text-white sm:absolute sm:inset-0 sm:justify-between sm:px-4 sm:py-5">
@@ -156,7 +156,7 @@ export default function MigrationStartingPoints() {
                             // Shorter from xl (282:300, about 300px tall at 1280); between lg
                             // and xl the cards are narrower, so they keep 282:368 to leave the
                             // description room under the title.
-                            className="relative flex-[282_0_0] aspect-[282/368] xl:aspect-[282/300] overflow-hidden"
+                            className="relative flex-[282_0_0] aspect-[282/368] xl:aspect-[282/300] overflow-hidden rounded-ui-md"
                         >
                             <CardBackground isActive={isActive} />
                             <div className="absolute inset-0 flex flex-col justify-start p-6">

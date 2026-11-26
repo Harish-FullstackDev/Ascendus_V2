@@ -38,7 +38,7 @@ function Card({ title, desc }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5, ease: "easeOut" }}
-            className="border border-[#d3d5d8] bg-[#E4E6E7] flex flex-col gap-3 px-6 py-7 sm:px-8 sm:py-8 h-full"
+            className="border border-[#d3d5d8] bg-[#E4E6E7] flex flex-col gap-3 px-6 py-7 sm:px-8 sm:py-8 h-full rounded-ui-lg"
         >
             <h3 className="font-switzer text-[#2E3033] text-xl sm:text-2xl font-semibold">{title}</h3>
             <p className="text-[#55595E] text-base sm:text-lg font-light">{desc}</p>

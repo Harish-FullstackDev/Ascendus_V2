@@ -70,9 +70,9 @@ export default function WhatYouWantToDo() {
                         variants={itemVariants}
                         whileHover={{ y: -6 }}
                         transition={{ duration: 0.3, ease: "easeOut" }}
-                        className="bg-white shadow-[0px_2px_7.5px_rgba(0,0,0,0.19)] flex flex-col"
+                        className="bg-white shadow-[0px_2px_7.5px_rgba(0,0,0,0.19)] flex flex-col rounded-ui-md overflow-hidden"
                     >
-                        <div className="relative aspect-[470/263] w-full overflow-hidden">
+                        <div className="relative aspect-[470/263] w-full overflow-hidden rounded-ui-md">
                             <Image
                                 src={card.image}
                                 alt={card.title}

@@ -39,7 +39,7 @@ export default function CalendlyModal({
 
   return (
     <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[999] flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl w-full max-w-5xl h-[90vh] max-h-[800px] relative flex flex-col">
+      <div className="bg-white rounded-ui-lg shadow-2xl w-full max-w-5xl h-[90vh] max-h-[800px] relative flex flex-col">
         {/* Close Button */}
         <button
           onClick={onClose}
@@ -50,7 +50,7 @@ export default function CalendlyModal({
         </button>
 
         {/* Calendly Widget Container - Full Height with Internal Scrolling */}
-        <div className="flex-1 overflow-hidden rounded-2xl">
+        <div className="flex-1 overflow-hidden rounded-ui-lg">
           <InlineWidget
             url={calendlyUrl}
             styles={{

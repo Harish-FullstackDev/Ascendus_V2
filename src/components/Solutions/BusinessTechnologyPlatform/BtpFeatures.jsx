@@ -60,7 +60,7 @@ export default function BtpFeatures() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.5, ease: "easeOut", delay: (index % 3) * 0.08 }}
-                        className="group relative bg-white border border-[#d3d5d8] flex flex-col gap-4 px-6 py-7 sm:px-8 sm:py-8 h-full overflow-hidden"
+                        className="group relative bg-white border border-[#d3d5d8] flex flex-col gap-4 px-6 py-7 sm:px-8 sm:py-8 h-full overflow-hidden rounded-ui-md"
                     >
                         {/* Accent bar grows across the top edge on hover */}
                         <div className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-[#2d8ec5] transition-transform duration-500 ease-out group-hover:scale-x-100" />

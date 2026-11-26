@@ -19,11 +19,11 @@ export default function BlogPostContent({ sections }) {
                     {sec.image && (
                         <div className="my-6 space-y-2">
                             <div className="flex justify-center">
-                                <div className="inline-flex rounded-none overflow-hidden border border-slate-200 shadow-md bg-neutral-100 p-2.5">
+                                <div className="inline-flex rounded-ui-md overflow-hidden border border-slate-200 shadow-md bg-neutral-100 p-2.5">
                                     <img
                                         src={sec.image}
                                         alt={sec.caption || sec.heading}
-                                        className="block max-h-[350px] w-auto object-contain rounded-none"
+                                        className="block max-h-[350px] w-auto object-contain rounded-ui-sm"
                                     />
                                 </div>
                             </div>

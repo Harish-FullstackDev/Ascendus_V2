@@ -20,7 +20,7 @@ export default function OurCulture() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="relative w-full h-[280px] sm:h-[380px] lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-[65.078%] bg-[#5c5c5c]"
+                    className="relative w-full h-[280px] sm:h-[380px] lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-[65.078%] bg-[#5c5c5c] rounded-ui-lg overflow-hidden"
                 >
                     <Image src={cultureImage} alt="Colleagues chatting with notebooks in an open-plan office" fill className="object-cover" />
                 </motion.div>
@@ -30,7 +30,7 @@ export default function OurCulture() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="w-full lg:absolute lg:top-[12.104%] lg:left-[44.766%] lg:h-[77.467%] lg:w-[50.547%] bg-[#F5F6F6] flex flex-col justify-center gap-6 px-6 sm:px-10 py-10 sm:py-14"
+                    className="w-full lg:absolute lg:top-[12.104%] lg:left-[44.766%] lg:h-[77.467%] lg:w-[50.547%] bg-[#F5F6F6] flex flex-col justify-center gap-6 px-6 sm:px-10 py-10 sm:py-14 rounded-ui-lg"
                 >
                     <div>
                         <p className="text-base sm:text-lg text-black">Life Here</p>

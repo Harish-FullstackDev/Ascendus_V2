@@ -244,7 +244,7 @@ const InteractiveLocationPreview = () => {
                                 >
                                     {/* Actual card block with Vertical Layout & Large Map */}
                                     <div
-                                        className="flex flex-col rounded-3xl relative overflow-hidden"
+                                        className="flex flex-col rounded-ui-lg relative overflow-hidden"
                                         style={{
                                             backdropFilter: "blur(14px)",
                                             WebkitBackdropFilter: "blur(14px)",
@@ -257,7 +257,7 @@ const InteractiveLocationPreview = () => {
                                     >
                                         {/* Top Section: Large Map Thumbnail */}
                                         <div
-                                            className="w-full h-60 relative bg-slate-100 flex-shrink-0 rounded-t-3xl overflow-hidden"
+                                            className="w-full h-60 relative bg-slate-100 flex-shrink-0 rounded-t-ui-lg overflow-hidden"
                                             style={{
                                                 WebkitMaskImage: "-webkit-radial-gradient(white, black)",
                                                 maskImage: "radial-gradient(white, black)"
@@ -265,7 +265,7 @@ const InteractiveLocationPreview = () => {
                                         >
                                             <iframe
                                                 src={mapEmbedUrl}
-                                                className="absolute top-0 left-0 w-full h-full border-0 pointer-events-none scale-110 rounded-t-3xl"
+                                                className="absolute top-0 left-0 w-full h-full border-0 pointer-events-none scale-110 rounded-t-ui-lg"
                                                 allowFullScreen=""
                                                 loading="lazy"
                                                 title="Map Thumbnail"
@@ -291,7 +291,7 @@ const InteractiveLocationPreview = () => {
 
                                         {/* Bottom Section: Address & Details */}
                                         <div
-                                            className="p-5 flex justify-between items-stretch gap-4 relative rounded-b-3xl"
+                                            className="p-5 flex justify-between items-stretch gap-4 relative rounded-b-ui-lg"
                                             style={{
                                                 background: "linear-gradient(135deg, rgba(23, 37, 84, 0.93) 0%, rgba(46,48,51, 0.97) 100%)",
                                                 borderTop: "1px solid rgba(255, 255, 255, 0.1)"
@@ -387,7 +387,7 @@ const InteractiveLocationPreview = () => {
                             animate={{ y: 0 }}
                             exit={{ y: "100%" }}
                             transition={{ type: "spring", damping: 24, stiffness: 220 }}
-                            className="fixed bottom-0 left-0 right-0 max-h-[92vh] bg-slate-950 border-t border-white/10 rounded-t-3xl z-[10000] overflow-hidden flex flex-col pointer-events-auto"
+                            className="fixed bottom-0 left-0 right-0 max-h-[92vh] bg-slate-950 border-t border-white/10 rounded-t-ui-lg z-[10000] overflow-hidden flex flex-col pointer-events-auto"
                         >
                             {/* Drag Handle & Close button header */}
                             <div className="flex-shrink-0 relative py-4 flex items-center justify-center border-b border-white/5">
@@ -416,7 +416,7 @@ const InteractiveLocationPreview = () => {
                                 </div>
 
                                 {/* Larger Interactive Map Preview */}
-                                <div className="w-full h-52 relative rounded-2xl overflow-hidden border border-white/10 bg-slate-900">
+                                <div className="w-full h-52 relative rounded-ui-md overflow-hidden border border-white/10 bg-slate-900">
                                     <iframe
                                         src={mapEmbedUrl}
                                         className="absolute top-0 left-0 w-full h-full border-0"
@@ -427,7 +427,7 @@ const InteractiveLocationPreview = () => {
                                 </div>
 
                                 {/* Address block */}
-                                <div className="bg-slate-900/60 p-4 rounded-xl border border-white/5 flex items-start gap-3">
+                                <div className="bg-slate-900/60 p-4 rounded-ui-md border border-white/5 flex items-start gap-3">
                                     <MapPin className="w-5 h-5 text-cyan-400 flex-shrink-0 mt-0.5" />
                                     <div>
                                         <h4 className="text-xs uppercase tracking-wider font-semibold text-slate-400">Head Office Address</h4>
@@ -442,7 +442,7 @@ const InteractiveLocationPreview = () => {
                                     {/* Call Action */}
                                     <a
                                         href="tel:+966573956334"
-                                        className="flex-1 py-3 px-2 bg-slate-900 hover:bg-slate-800 active:bg-slate-800/80 border border-white/10 rounded-xl flex flex-col items-center justify-center gap-1 text-white transition-colors"
+                                        className="flex-1 py-3 px-2 bg-slate-900 hover:bg-slate-800 active:bg-slate-800/80 border border-white/10 rounded-ui-sm flex flex-col items-center justify-center gap-1 text-white transition-colors"
                                     >
                                         <Phone className="w-5 h-5 text-cyan-400" />
                                         <span className="text-[10px] font-medium tracking-wide">Call Office</span>
@@ -451,7 +451,7 @@ const InteractiveLocationPreview = () => {
                                     {/* Email Action */}
                                     <a
                                         href="mailto:info@ascendus.sa"
-                                        className="flex-1 py-3 px-2 bg-slate-900 hover:bg-slate-800 active:bg-slate-800/80 border border-white/10 rounded-xl flex flex-col items-center justify-center gap-1 text-white transition-colors"
+                                        className="flex-1 py-3 px-2 bg-slate-900 hover:bg-slate-800 active:bg-slate-800/80 border border-white/10 rounded-ui-sm flex flex-col items-center justify-center gap-1 text-white transition-colors"
                                     >
                                         <Mail className="w-5 h-5 text-cyan-400" />
                                         <span className="text-[10px] font-medium tracking-wide">Send Email</span>
@@ -462,7 +462,7 @@ const InteractiveLocationPreview = () => {
                                         href={mapsUrl}
                                         target="_blank"
                                         rel="noopener noreferrer"
-                                        className="flex-1 py-3 px-2 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-xl flex flex-col items-center justify-center gap-1 text-white transition-colors shadow-lg shadow-blue-500/15"
+                                        className="flex-1 py-3 px-2 bg-blue-500 hover:bg-blue-600 active:bg-blue-700 rounded-ui-sm flex flex-col items-center justify-center gap-1 text-white transition-colors shadow-lg shadow-blue-500/15"
                                     >
                                         <Compass className="w-5 h-5 text-white" />
                                         <span className="text-[10px] font-semibold tracking-wide">Directions</span>

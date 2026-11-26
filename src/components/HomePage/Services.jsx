@@ -98,7 +98,7 @@ function ServiceCard({ card }) {
                 className={`pointer-events-none absolute inset-x-4 -bottom-1 top-1/2 bg-[#0A2B3E]/45 blur-2xl opacity-0 transition-opacity duration-700 ${EASE} group-hover:opacity-100 group-focus-visible:opacity-100`}
             />
             <div
-                className={`relative flex h-full min-h-[320px] lg:min-h-[340px] flex-col overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] p-6 lg:p-5 xl:p-6 will-change-transform transition-transform duration-700 ${EASE} group-hover:-translate-y-[3px] group-focus-visible:-translate-y-[3px]`}
+                className={`relative flex h-full min-h-[320px] lg:min-h-[340px] flex-col overflow-hidden bg-[linear-gradient(to_top_right,#0A2B3E,#003756)] p-6 lg:p-5 xl:p-6 will-change-transform transition-transform duration-700 rounded-ui-md ${EASE} group-hover:-translate-y-[3px] group-focus-visible:-translate-y-[3px]`}
             >
                 <div aria-hidden="true" className="pointer-events-none absolute inset-0">
                     <div className="absolute inset-0 opacity-0 transition-opacity duration-700 ease-out group-hover:opacity-100 bg-[linear-gradient(to_top,rgba(28,95,133,0.45),rgba(28,95,133,0)_70%)]" />
@@ -177,7 +177,7 @@ export default function Services() {
                         button 45px right and its left edge lines up with "More About Us". */}
                     <Link
                         href="/services"
-                        className="self-start md:self-end shrink-0 md:-mr-[45px] btn-premium px-8 py-3 text-lg font-light text-center"
+                        className="self-start md:self-end shrink-0 md:-mr-[45px] btn-premium px-8 py-3 text-lg font-light text-center rounded-ui-sm"
                     >
                         Explore Our Services
                     </Link>

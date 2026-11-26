@@ -25,7 +25,7 @@ export default function SuccessFactorsOutcomes() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut" }}
-                    className="group relative h-[320px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[560px] lg:w-[42%] lg:max-w-[578px]"
+                    className="group relative h-[320px] w-full shrink-0 overflow-hidden sm:h-[460px] lg:h-[560px] lg:w-[42%] lg:max-w-[578px] rounded-ui-lg"
                 >
                     <Image
                         src={outcomesPhoto}
@@ -50,7 +50,7 @@ export default function SuccessFactorsOutcomes() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.3 }}
                     transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
-                    className="relative w-full lg:max-w-[800px] self-center bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center px-8 sm:px-12 py-10 sm:py-12"
+                    className="relative w-full lg:max-w-[800px] self-center bg-white shadow-[2px_2px_46px_rgba(0,0,0,0.15)] flex flex-col justify-center px-8 sm:px-12 py-10 sm:py-12 rounded-ui-lg"
                 >
                     <ul className="list-disc pl-5 sm:pl-6 text-base sm:text-lg font-light leading-relaxed sm:leading-[48px] text-[#55595E] space-y-3 sm:space-y-0">
                         {OUTCOMES.map((outcome) => (

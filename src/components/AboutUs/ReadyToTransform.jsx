@@ -47,7 +47,7 @@ export default function ReadyToTransform({
                     <button
                         type="button"
                         onClick={handleContactClick}
-                        className="group inline-flex shrink-0 items-center gap-4 rounded-[12px] bg-white px-6 py-3.5 text-sm sm:text-base font-normal uppercase tracking-[0.5px] text-[#0e2b4b] shadow-[0px_4px_16px_rgba(0,0,0,0.18)] transition-colors duration-300 hover:bg-[#ecf2f9]"
+                        className="group inline-flex shrink-0 items-center gap-4 rounded-ui-sm bg-white px-6 py-3.5 text-sm sm:text-base font-normal uppercase tracking-[0.5px] text-[#0e2b4b] shadow-[0px_4px_16px_rgba(0,0,0,0.18)] transition-colors duration-300 hover:bg-[#ecf2f9]"
                     >
                         {buttonLabel}
                         <ArrowRight className="size-5 shrink-0 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.5} aria-hidden="true" />

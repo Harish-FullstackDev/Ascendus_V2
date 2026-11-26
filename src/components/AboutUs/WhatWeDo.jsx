@@ -62,7 +62,7 @@ export default function WhatWeDo() {
 
                 <Link
                     href="/services/"
-                    className="group inline-flex h-10 w-fit shrink-0 items-center gap-2 rounded-[8px] bg-[#0061af] px-4 text-sm font-normal text-white transition-colors duration-300 hover:bg-[#005192] sm:text-base"
+                    className="group inline-flex h-10 w-fit shrink-0 items-center gap-2 rounded-ui-sm bg-[#0061af] px-4 text-sm font-normal text-white transition-colors duration-300 hover:bg-[#005192] sm:text-base"
                 >
                     Explore Our Services
                     <ArrowRight className="size-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
@@ -82,7 +82,7 @@ export default function WhatWeDo() {
                         >
                             <Link
                                 href={division.href}
-                                className="group flex h-full flex-col gap-4 rounded-[8px] bg-white p-6 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0px_8px_24px_rgba(0,0,0,0.25)]"
+                                className="group flex h-full flex-col gap-4 rounded-ui-md bg-white p-6 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0px_8px_24px_rgba(0,0,0,0.25)]"
                             >
                                 <Icon className="size-6 text-[#0061af]" strokeWidth={1.5} aria-hidden="true" />
                                 <h3 className="text-base sm:text-lg font-medium leading-snug text-[#0e2b4b] group-hover:text-[#0061af]">

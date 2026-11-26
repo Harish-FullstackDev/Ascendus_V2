@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useLayoutEffect, useRef } from "react";
 import { IoMdMenu, IoMdClose } from "react-icons/io";
 import Link from "next/link";
 import Image from "next/image";
@@ -127,6 +127,40 @@ const Navbar = () => {
     if (!visible) closeMega();
   }, [visible]);
 
+  // Any page scroll closes an open panel, upward included: the bar stays on
+  // screen when scrolling up, but the panel would keep covering the page the
+  // user is trying to see. A few px of tolerance ignores trackpad jitter.
+  useEffect(() => {
+    if (!openMegaMenu) return undefined;
+    const startY = window.scrollY;
+    const handleScroll = () => {
+      if (Math.abs(window.scrollY - startY) > 4) closeMega();
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [openMegaMenu]);
+
+  // Publish the navbar's height (--nav-height) and how much of the screen top
+  // it covers right now (--nav-offset) on <html>. The navbar itself and sticky
+  // bars under it (SectionAnchorNav) both position from --nav-offset, so they
+  // slide together.
+  const navRef = useRef(null);
+  const [navHeight, setNavHeight] = useState(0);
+  useEffect(() => {
+    const nav = navRef.current;
+    if (!nav) return;
+    const observer = new ResizeObserver(([entry]) => setNavHeight(entry.target.offsetHeight));
+    observer.observe(nav);
+    return () => observer.disconnect();
+  }, []);
+
+  // Layout effect: written before paint, in the same frame the state changes.
+  useLayoutEffect(() => {
+    const root = document.documentElement.style;
+    root.setProperty("--nav-height", `${navHeight}px`);
+    root.setProperty("--nav-offset", `${visible || isMenuOpen ? navHeight : 0}px`);
+  }, [visible, isMenuOpen, navHeight]);
+
   const toggleMenu = () => {
     if (!isMenuOpen) {
       // Unfold the drawer down to the current page.
@@ -236,8 +270,13 @@ const Navbar = () => {
   return (
     <>
       <nav
-        className={`font-switzer w-full z-50 fixed top-0 left-0 transition-transform duration-300 ease-in-out ${visible || isMenuOpen ? "translate-y-0" : "-translate-y-full"
-          }`}
+        ref={navRef}
+        className="font-switzer w-full z-50 fixed left-0 transition-[top] duration-300 ease-in-out"
+        // Slides off by animating `top`, the same property and timing the sticky
+        // SectionAnchorNav uses, so the two move in the same frames. A transform
+        // here runs on the compositor and pulls ahead of the sticky bar's `top`,
+        // opening a gap between them for a moment.
+        style={{ top: "calc(var(--nav-offset, 0px) - var(--nav-height, 0px))" }}
       >
         {/* Desktop: links on the left, logo on the right, 64px in from each edge. */}
         <div className="hidden lg:block">
@@ -346,7 +385,7 @@ const Navbar = () => {
               src={isNavbarLight ? logoOnLight : logoOnDark}
               alt="Ascendus Company logo"
               priority
-              className="h-8 md:h-10 w-auto"
+              className="h-8 md:h-10 w-auto rounded-ui-sm"
             />
           </Link>
         </div>
@@ -363,7 +402,7 @@ const Navbar = () => {
             <IoMdClose className="text-3xl sm:text-4xl text-[#2E3033]" />
           </button>
           <Link href="/" onClick={closeMenu} aria-label="Ascendus Company home">
-            <Image src={logoOnLight} alt="Ascendus Company logo" className="h-8 md:h-10 w-auto" />
+            <Image src={logoOnLight} alt="Ascendus Company logo" className="h-8 md:h-10 w-auto rounded-ui-sm" />
           </Link>
         </div>
 

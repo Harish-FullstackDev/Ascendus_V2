@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 
 // Sticky in-page menu for the long single pages (About, Why Ascendus). It
-// sticks to the top of the screen once the hero has scrolled away, lights the
+// sticks just under the main navbar once the hero has scrolled away (riding up
+// to the screen top, in step with the navbar, when the navbar hides), lights the
 // section in view, and scrolls sideways on phones. Each target section carries
 // the matching id and a scroll margin so its heading lands below this bar.
 export default function SectionAnchorNav({ items }) {
@@ -27,7 +28,7 @@ export default function SectionAnchorNav({ items }) {
     }, [items]);
 
     return (
-        <nav aria-label="On this page" className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-[12px] border-b border-[#2E3033]/10">
+        <nav aria-label="On this page" className="sticky top-[var(--nav-offset,0px)] transition-[top] duration-300 ease-in-out z-40 w-full bg-white/95 backdrop-blur-[12px] border-b border-[#2E3033]/10">
             <ul className="flex items-center gap-6 sm:gap-8 overflow-x-auto px-8 sm:px-[64px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                 {items.map((item) => {
                     const isActive = item.id === activeId;

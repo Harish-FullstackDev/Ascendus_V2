@@ -64,9 +64,9 @@ export default function GcpAdoptionJourney() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, amount: 0.3 }}
                         transition={{ duration: 0.4, delay: index * 0.06 }}
-                        className="flex gap-4 bg-[#F5F6F6] px-5 py-4"
+                        className="flex gap-4 bg-[#F5F6F6] px-5 py-4 rounded-ui-md"
                     >
-                        <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-[#00447A] text-sm font-semibold text-white">
+                        <div className="flex h-9 w-9 shrink-0 items-center justify-center bg-[#00447A] text-sm font-semibold text-white rounded-ui-sm">
                             {index + 1}
                         </div>
                         <div className="flex flex-col gap-1">
@@ -104,7 +104,7 @@ export default function GcpAdoptionJourney() {
                                             animate={{ opacity: 1, scale: 1 }}
                                             exit={{ opacity: 0, scale: 0.7 }}
                                             transition={{ duration: 0.3, ease: "easeOut" }}
-                                            className="absolute -top-[30px] left-1/2 z-20 flex size-[60px] -translate-x-1/2 items-center justify-center bg-white"
+                                            className="absolute -top-[30px] left-1/2 z-20 flex size-[60px] -translate-x-1/2 items-center justify-center bg-white rounded-ui-sm"
                                         >
                                             <span className="text-black text-[32px] font-light leading-none">
                                                 {index + 1}
@@ -122,7 +122,7 @@ export default function GcpAdoptionJourney() {
                                         setHovered(index);
                                     }}
                                     onBlur={() => setIsPaused(false)}
-                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 xl:px-8 overflow-hidden transition-colors duration-500 ease-in-out ${isActive ? "bg-[#0A3A52]" : "bg-white"}`}
+                                    className={`relative h-full w-full flex flex-col items-center justify-center text-center gap-3 px-4 xl:px-8 overflow-hidden transition-colors duration-500 ease-in-out rounded-ui-md ${isActive ? "bg-[#0A3A52]" : "bg-white"}`}
                                 >
                                     <motion.h3
                                         layout
